@@ -1,0 +1,25 @@
+{
+  "name": "studio-kiiro",
+  "private": true,
+  "version": "1.0.0",
+  "main": "package.json",
+  "scripts": {
+    "dev": "sanity dev",
+    "start": "sanity start",
+    "build": "sanity build",
+    "deploy": "sanity deploy",
+    "typegen": "sanity schema extract --force && sanity typegen generate"
+  },
+  "dependencies": {
+    "@sanity/icons": "^3.5.0",
+    "@sanity/vision": "^3.78.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "sanity": "^3.78.0",
+    "styled-components": "^6.1.15"
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "typescript": "^5.7.3"
+  }
+}
