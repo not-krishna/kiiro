@@ -51,12 +51,12 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
             loop
             muted
             playsInline
-            className="w-full h-full object-cover opacity-25 filter saturate-[0.85] contrast-[1.05]"
+            className="w-full h-full object-cover opacity-45 filter saturate-[0.95] contrast-[1.05]"
           >
             <source src="/assets/bg-vdo-1.mp4" type="video/mp4" />
           </video>
-          {/* Subtle Warm Overlay Tint for Text Legibility */}
-          <div className="absolute inset-0 bg-[#F3EFE6]/75 backdrop-blur-[1px]" />
+          {/* Light Warm Overlay Tint for Distinct Video Visibility and Text Legibility */}
+          <div className="absolute inset-0 bg-[#F3EFE6]/55" />
         </div>
 
         {/* Foreground Content */}
