@@ -30,6 +30,8 @@ export function Footer() {
               Repertoire
             </h4>
             <ul className="space-y-2.5 text-xs text-[#968A80]">
+              <li><Link href="#about" className="hover:text-[#FBF9F4] transition-colors">About Us & Manifesto</Link></li>
+              <li><Link href="#events" className="hover:text-[#C2593F] transition-colors font-medium">Weekly Events</Link></li>
               <li><Link href="#artforms" className="hover:text-[#FBF9F4] transition-colors">Traditional Artforms</Link></li>
               <li><Link href="#artforms" className="hover:text-[#FBF9F4] transition-colors">Contemporary Crafts</Link></li>
               <li><Link href="#artforms" className="hover:text-[#FBF9F4] transition-colors">Tactile Wellness</Link></li>

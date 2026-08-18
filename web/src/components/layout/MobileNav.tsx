@@ -58,23 +58,29 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       </div>
 
       {/* Navigation Links */}
-      <nav className="flex flex-col space-y-6 py-10 font-sans text-xl uppercase tracking-[0.15em] font-light">
-        <Link href="#artforms" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+      <nav className="flex flex-col space-y-5 py-8 font-sans text-lg md:text-xl uppercase tracking-[0.15em] font-light">
+        <Link href="#about" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+          About Us
+        </Link>
+        <Link href="#artforms" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Artforms
         </Link>
-        <Link href="#experiences" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+        <Link href="#experiences" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Experiences
         </Link>
-        <Link href="#artisans" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+        <Link href="#events" onClick={onClose} className="text-[#C2593F] hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+          Weekly Events
+        </Link>
+        <Link href="#artisans" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Artisans & Impact
         </Link>
-        <Link href="#partnerships" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+        <Link href="#partnerships" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Partnerships & CSR
         </Link>
-        <Link href="#journal" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+        <Link href="#journal" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Journal
         </Link>
-        <Link href="#enquiry" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-3">
+        <Link href="#enquiry" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Enquiries
         </Link>
       </nav>

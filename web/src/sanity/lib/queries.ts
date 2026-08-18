@@ -106,3 +106,18 @@ export const JOURNAL_QUERY = defineQuery(`
     heroImage
   }
 `)
+
+export const TESTIMONIALS_QUERY = defineQuery(`
+  *[_type == "testimonial"] | order(featured desc, _createdAt desc) {
+    _id,
+    quote,
+    personName,
+    role,
+    organisation,
+    portrait,
+    isVideo,
+    videoUrl,
+    videoThumbnail
+  }
+`)
+

@@ -69,6 +69,18 @@
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
+.font-signature {
+  font-family: var(--font-signature), 'Caveat', 'Alex Brush', cursive, sans-serif;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
 .text-fluid-display {
   font-size: var(--text-display);
   line-height: 1.05;

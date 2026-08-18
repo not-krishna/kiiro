@@ -35,6 +35,23 @@ export const testimonial = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'isVideo',
+      title: 'Is Video Testimonial',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'videoUrl',
+      title: 'Video URL (MP4 / YouTube / Vimeo)',
+      type: 'url',
+    }),
+    defineField({
+      name: 'videoThumbnail',
+      title: 'Video Cover Thumbnail',
+      type: 'image',
+      options: { hotspot: true },
+    }),
+    defineField({
       name: 'featured',
       title: 'Featured',
       type: 'boolean',

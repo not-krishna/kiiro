@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
 
 interface ArtisanFeatureData {
   heading?: string
@@ -102,7 +103,10 @@ export function ArtisanImpact({ data }: ArtisanImpactProps) {
             <div className="pt-6 border-t border-[#E8E1D5] space-y-4">
               <div className="font-sans text-xs text-[#6E635B]">
                 <span className="font-semibold text-[#2B231F] uppercase tracking-wider block mb-1">Direct Livelihood Impact</span>
-                100% Fair Wages & Transparent Craft Cluster Support
+                <span className="inline-flex items-center gap-1 font-semibold text-[#2B231F]">
+                  <AnimatedNumber value="100%" /> Fair Wages
+                </span>{' '}
+                & Transparent Craft Cluster Support
               </div>
 
               <Link

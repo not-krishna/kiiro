@@ -5,6 +5,7 @@ export default defineCliConfig({
     projectId: 's47moswb',
     dataset: 'production',
   },
+  // @ts-expect-error typegen is supported in Sanity CLI schema configuration
   typegen: {
     enabled: true,
     path: '../web/src/**/*.{ts,tsx,js,jsx}',

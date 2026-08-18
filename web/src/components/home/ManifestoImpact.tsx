@@ -1,3 +1,5 @@
+import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
+
 interface ManifestoImpactProps {
   manifestoTitle?: string
   manifestoText?: string
@@ -27,7 +29,7 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
   ]
 
   return (
-    <section className="bg-[#F3EFE6] text-[#2B231F] border-b border-[#E8E1D5]">
+    <section id="about" className="bg-[#F3EFE6] text-[#2B231F] border-b border-[#E8E1D5]">
       {/* 01 Editorial Manifesto Paper Band */}
       <div className="py-20 md:py-28 px-6 md:px-10 border-b border-[#E8E1D5]">
         <div className="max-w-4xl mx-auto text-center space-y-6">
@@ -62,9 +64,10 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
                 key={idx}
                 className="space-y-2 border-l border-[#E8E1D5] pl-6 first:border-l-0 md:first:border-l border-t md:border-t-0 pt-6 md:pt-0"
               >
-                <span className="block font-display text-fluid-4xl font-normal text-[#2B231F] leading-none">
-                  {stat.value}
-                </span>
+                <AnimatedNumber
+                  value={stat.value}
+                  className="block font-display text-fluid-4xl font-normal text-[#2B231F] leading-none"
+                />
                 <div>
                   <h3 className="font-sans text-xs font-semibold uppercase tracking-[0.15em] text-[#2B231F]">
                     {stat.label}

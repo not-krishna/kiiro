@@ -31,15 +31,15 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
   ]
 
   return (
-    <section id="partnerships" className="bg-[#2B231F] text-[#FBF9F4] py-20 md:py-32 px-6 md:px-10 border-b border-[#3D332E]">
+    <section id="partnerships" className="bg-[#F3EFE6] text-[#2B231F] py-20 md:py-32 px-6 md:px-10 border-b border-[#E8E1D5]">
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header */}
-        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#3D332E] pb-10">
+        <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#E8E1D5] pb-10">
           <div className="space-y-4 max-w-2xl">
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#D99B26]">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
               Institutional Framework • Section 06
             </span>
-            <h2 className="font-display text-fluid-3xl font-normal text-[#FBF9F4] leading-[1.15]">
+            <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]">
               {heading}
             </h2>
           </div>
@@ -56,15 +56,15 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
           {capabilities.map((cap, idx) => (
             <div
               key={idx}
-              className="space-y-4 border-l border-[#3D332E] pl-6 first:border-l-0 md:first:border-l border-t md:border-t-0 pt-6 md:pt-0"
+              className="space-y-4 border-l border-[#E8E1D5] pl-6 first:border-l-0 md:first:border-l border-t md:border-t-0 pt-6 md:pt-0"
             >
-              <span className="font-mono text-xs font-bold text-[#D99B26] tracking-wider block">
+              <span className="font-mono text-xs font-bold text-[#C2593F] tracking-wider block">
                 {cap.id}
               </span>
-              <h3 className="font-display text-fluid-xl text-[#FBF9F4] leading-snug">
+              <h3 className="font-display text-fluid-xl text-[#2B231F] leading-snug">
                 {cap.title}
               </h3>
-              <p className="font-sans text-xs text-[#C5BCB3] font-light leading-relaxed">
+              <p className="font-sans text-xs text-[#6E635B] font-light leading-relaxed">
                 {cap.desc}
               </p>
             </div>
