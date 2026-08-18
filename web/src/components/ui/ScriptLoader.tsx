@@ -2,24 +2,18 @@
 
 import { useEffect, useState } from 'react'
 
-interface ScriptCharacter {
-  char: string
-  script: string
-  lang: string
-}
-
-const SCRIPT_SEQUENCE: ScriptCharacter[] = [
-  { char: 'क', script: 'Devanagari', lang: 'Hindi • Sanskrit • Marathi' },
-  { char: 'ক', script: 'Bengali', lang: 'Bangla • Assamese' },
-  { char: 'க', script: 'Tamil', lang: 'Tamil' },
-  { char: 'క', script: 'Telugu', lang: 'Telugu' },
-  { char: 'ಕ', script: 'Kannada', lang: 'Kannada' },
-  { char: 'ക', script: 'Malayalam', lang: 'Malayalam' },
-  { char: 'ક', script: 'Gujarati', lang: 'Gujarati' },
-  { char: 'ਕ', script: 'Gurmukhi', lang: 'Punjabi' },
-  { char: 'କ', script: 'Odia', lang: 'Odia' },
-  { char: 'ک', script: 'Urdu', lang: 'Urdu • Perso-Arabic' },
-  { char: 'K', script: 'Latin', lang: 'Heritage • Mastery • Livelihood' },
+const SCRIPT_SEQUENCE: string[] = [
+  'क',
+  'ক',
+  'க',
+  'క',
+  'ಕ',
+  'ക',
+  'ક',
+  'ਕ',
+  'କ',
+  'ک',
+  'K',
 ]
 
 export function ScriptLoader() {
@@ -77,7 +71,7 @@ export function ScriptLoader() {
     return null
   }
 
-  const currentItem = SCRIPT_SEQUENCE[currentIndex]
+  const currentChar = SCRIPT_SEQUENCE[currentIndex]
   const isFinal = currentIndex === SCRIPT_SEQUENCE.length - 1
 
   return (
@@ -99,8 +93,8 @@ export function ScriptLoader() {
         </span>
       </div>
 
-      {/* Main Center Glyph & Script Container */}
-      <div className="flex flex-col items-center justify-center my-auto space-y-8 text-center max-w-lg w-full">
+      {/* Main Center Glyph Container (Only Characters) */}
+      <div className="flex flex-col items-center justify-center my-auto text-center max-w-lg w-full">
         {/* Character Display Stage */}
         <div className="relative h-40 md:h-52 w-full flex items-center justify-center">
           {isFinal ? (
@@ -118,23 +112,9 @@ export function ScriptLoader() {
               className="animate-in fade-in zoom-in-90 duration-100 flex flex-col items-center justify-center"
             >
               <span className="font-serif text-7xl md:text-9xl text-[#C2593F] leading-none drop-shadow-sm transition-all">
-                {currentItem.char}
+                {currentChar}
               </span>
             </div>
-          )}
-        </div>
-
-        {/* Script & Language Info Label */}
-        <div className="h-12 flex flex-col items-center justify-center space-y-1">
-          {!isFinal && (
-            <>
-              <span className="font-mono text-xs font-bold uppercase tracking-[0.25em] text-[#2B231F]">
-                {currentItem.script} Script
-              </span>
-              <span className="font-sans text-[11px] text-[#968A80] font-light tracking-wider">
-                {currentItem.lang}
-              </span>
-            </>
           )}
         </div>
       </div>
