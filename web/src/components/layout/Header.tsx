@@ -32,11 +32,11 @@ export function Header() {
             <Link href="#experiences" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Experiences
             </Link>
-            <Link href="#events" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap text-[#C2593F]">
-              Weekly Events
-            </Link>
             <Link href="#artisans" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Artisans & Impact
+            </Link>
+            <Link href="#events" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap text-[#C2593F]">
+              Weekly Events
             </Link>
             <Link href="#partnerships" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Partnerships

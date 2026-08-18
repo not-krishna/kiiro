@@ -68,11 +68,11 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         <Link href="#experiences" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Experiences
         </Link>
-        <Link href="#events" onClick={onClose} className="text-[#C2593F] hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
-          Weekly Events
-        </Link>
         <Link href="#artisans" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Artisans & Impact
+        </Link>
+        <Link href="#events" onClick={onClose} className="text-[#C2593F] hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+          Weekly Events
         </Link>
         <Link href="#partnerships" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Partnerships & CSR

@@ -1,3 +1,6 @@
+'use client'
+
+import { useRef, useEffect } from 'react'
 import { AnimatedNumber } from '@/components/ui/AnimatedNumber'
 
 interface ManifestoImpactProps {
@@ -6,6 +9,14 @@ interface ManifestoImpactProps {
 }
 
 export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpactProps) {
+  const videoRef = useRef<HTMLVideoElement>(null)
+
+  useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.playbackRate = 0.75
+    }
+  }, [])
+
   const title = manifestoTitle || 'We believe culture is not something to preserve behind glass. It is something to learn, make, share and carry forward.'
   const text = manifestoText || 'Kiiro connects heritage craft traditions directly to participants, ensuring cultural knowledge lives on through hands-on learning and sustained artisan livelihoods.'
 
@@ -30,9 +41,26 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
 
   return (
     <section id="about" className="bg-[#F3EFE6] text-[#2B231F] border-b border-[#E8E1D5]">
-      {/* 01 Editorial Manifesto Paper Band */}
-      <div className="py-20 md:py-28 px-6 md:px-10 border-b border-[#E8E1D5]">
-        <div className="max-w-4xl mx-auto text-center space-y-6">
+      {/* 01 Editorial Manifesto Paper Band with Subtle Background Video */}
+      <div className="relative py-20 md:py-28 px-6 md:px-10 border-b border-[#E8E1D5] overflow-hidden bg-[#F3EFE6]">
+        {/* Background Video Layer */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          <video
+            ref={videoRef}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-full object-cover opacity-25 filter saturate-[0.85] contrast-[1.05]"
+          >
+            <source src="/assets/bg-vdo-1.mp4" type="video/mp4" />
+          </video>
+          {/* Subtle Warm Overlay Tint for Text Legibility */}
+          <div className="absolute inset-0 bg-[#F3EFE6]/75 backdrop-blur-[1px]" />
+        </div>
+
+        {/* Foreground Content */}
+        <div className="relative z-10 max-w-4xl mx-auto text-center space-y-6">
           <div className="inline-flex items-center space-x-3 text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
             <span className="w-1.5 h-1.5 bg-[#C2593F]" />
             <span>Kiiro Cultural Manifesto</span>
