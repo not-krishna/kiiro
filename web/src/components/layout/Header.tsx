@@ -23,26 +23,29 @@ export function Header() {
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8 font-sans text-[11px] font-semibold tracking-[0.15em] xl:tracking-[0.18em] uppercase text-[#6E635B]">
-            <Link href="#about" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
-              About Us
-            </Link>
-            <Link href="#artforms" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+            <Link href="/artforms" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Artforms
             </Link>
-            <Link href="#experiences" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+            <Link href="/experiences" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Experiences
             </Link>
-            <Link href="#artisans" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+            <Link href="/artisans" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Artisans & Impact
             </Link>
-            <Link href="#events" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap text-[#C2593F]">
+            <Link href="/weekly-events" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap text-[#C2593F]">
               Weekly Events
             </Link>
-            <Link href="#partnerships" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+            <Link href="/partnerships-csr" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Partnerships
             </Link>
-            <Link href="#journal" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+            <Link href="/journal" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
               Journal
+            </Link>
+            <Link href="/about" className="hover:text-[#2B231F] border-b-2 border-transparent hover:border-[#C2593F] transition-all py-2 whitespace-nowrap">
+              About Us
+            </Link>
+            <Link href="/enquire" className="bg-[#2B231F] text-white px-4 py-2 hover:bg-[#C2593F] transition-colors ml-2">
+              Enquire
             </Link>
           </nav>
 

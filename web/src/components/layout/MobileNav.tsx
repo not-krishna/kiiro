@@ -59,28 +59,28 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
 
       {/* Navigation Links */}
       <nav className="flex flex-col space-y-5 py-8 font-sans text-lg md:text-xl uppercase tracking-[0.15em] font-light">
-        <Link href="#about" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
-          About Us
-        </Link>
-        <Link href="#artforms" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/artforms" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Artforms
         </Link>
-        <Link href="#experiences" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/experiences" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Experiences
         </Link>
-        <Link href="#artisans" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/artisans" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Artisans & Impact
         </Link>
-        <Link href="#events" onClick={onClose} className="text-[#C2593F] hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/weekly-events" onClick={onClose} className="text-[#C2593F] hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Weekly Events
         </Link>
-        <Link href="#partnerships" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/partnerships-csr" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Partnerships & CSR
         </Link>
-        <Link href="#journal" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/journal" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Journal
         </Link>
-        <Link href="#enquiry" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+        <Link href="/about" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
+          About Us
+        </Link>
+        <Link href="/enquire" onClick={onClose} className="hover:text-[#D99B26] transition-colors border-b border-[#3D332E] pb-2.5">
           Enquiries
         </Link>
       </nav>
@@ -88,7 +88,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       {/* Footer CTA */}
       <div className="border-t border-[#3D332E] pt-8 space-y-4 font-sans">
         <Link
-          href="#enquiry"
+          href="/enquire"
           onClick={onClose}
           className="block w-full text-center py-4 bg-[#C2593F] text-[#FBF9F4] text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#A64830] transition-all"
         >
