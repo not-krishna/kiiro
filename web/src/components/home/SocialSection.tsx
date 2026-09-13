@@ -3,7 +3,7 @@ export function SocialSection() {
     {
       handle: '@kiiroexperiences',
       tag: '#LivingCraft',
-      caption: 'Hands covered in natural terracotta clay during yesterday’s blue pottery masterclass in Jaipur.',
+      caption: "Hands covered in natural terracotta clay during yesterday's blue pottery masterclass in Jaipur.",
     },
     {
       handle: '@kiiroexperiences',
@@ -51,7 +51,7 @@ export function SocialSection() {
                 {post.tag}
               </span>
               <p className="font-sans text-xs text-[#6E635B] font-light leading-relaxed">
-                "{post.caption}"
+                &ldquo;{post.caption}&rdquo;
               </p>
               <div className="text-[10px] font-mono uppercase tracking-wider text-[#968A80] pt-2 border-t border-[#E8E1D5]">
                 {post.handle}

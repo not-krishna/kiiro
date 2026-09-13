@@ -40,6 +40,28 @@ export const event = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'duration',
+      title: 'Duration',
+      type: 'string',
+    }),
+    defineField({
+      name: 'facilitator',
+      title: 'Facilitator / artisan',
+      type: 'string',
+    }),
+    defineField({
+      name: 'experienceType',
+      title: 'Experience type',
+      type: 'string',
+    }),
+    defineField({
+      name: 'heroImage',
+      title: 'Image',
+      type: 'image',
+      options: { hotspot: true },
+      fields: [defineField({ name: 'alt', title: 'Alt text', type: 'string' })],
+    }),
+    defineField({
       name: 'experienceReference',
       title: 'Experience',
       type: 'reference',

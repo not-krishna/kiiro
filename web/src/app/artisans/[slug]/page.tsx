@@ -65,7 +65,7 @@ export default async function ArtisanDetailPage({ params }: { params: Promise<{ 
         <section className="py-16 px-6 md:px-10 max-w-5xl mx-auto space-y-12">
           {artisan.quote && (
             <blockquote className="bg-[#F3EDE2] border-l-4 border-[#C2593F] p-8 font-serif text-xl md:text-2xl text-[#2B231F] italic leading-relaxed">
-              "{artisan.quote}"
+              &ldquo;{artisan.quote}&rdquo;
             </blockquote>
           )}
 

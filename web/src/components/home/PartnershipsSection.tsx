@@ -44,10 +44,10 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
             </h2>
           </div>
           <Link
-            href="#enquiry"
+            href="/partnerships-csr"
             className="inline-flex items-center px-8 py-4 bg-[#C2593F] text-[#FBF9F4] font-sans text-xs font-semibold tracking-[0.2em] uppercase hover:bg-[#A64830] transition-all border border-[#C2593F] self-start lg:self-auto"
           >
-            Build a Partnership →
+            Partner With Kiiro →
           </Link>
         </div>
 

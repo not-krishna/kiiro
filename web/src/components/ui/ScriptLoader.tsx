@@ -107,14 +107,12 @@ export function ScriptLoader() {
               </span>
             </div>
           ) : (
-            <div
-              key={currentIndex}
-              className="animate-in fade-in zoom-in-90 duration-100 flex flex-col items-center justify-center"
-            >
-              <span className="font-serif text-7xl md:text-9xl text-[#C2593F] leading-none drop-shadow-sm transition-all">
+              <span
+                key={currentIndex}
+                className="script-loader-glyph font-serif text-7xl md:text-9xl text-[#C2593F] leading-none"
+              >
                 {currentChar}
               </span>
-            </div>
           )}
         </div>
       </div>

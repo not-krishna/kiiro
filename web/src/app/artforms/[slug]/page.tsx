@@ -137,7 +137,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
                     <h3 className="font-serif text-2xl text-[#FBF9F4]">{artisan.name}</h3>
                     {artisan.quote && (
                       <p className="text-xs italic text-[#D1C7BD] font-serif leading-relaxed">
-                        "{artisan.quote}"
+                        &ldquo;{artisan.quote}&rdquo;
                       </p>
                     )}
                     <Link

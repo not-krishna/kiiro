@@ -16,9 +16,16 @@ import { partnershipsCsrPage } from './partnershipsCsrPage'
 import { productsPage } from './productsPage'
 import { product } from './product'
 import { location } from './location'
+import { workshop } from './workshop'
+import { cta } from './cta'
+import { mediaAsset } from './mediaAsset'
+import { pricingTier } from './pricingTier'
 
 export const schemaTypes = [
-  // Page Singletons
+  cta,
+  mediaAsset,
+  pricingTier,
+
   homePage,
   aboutPage,
   communityPage,
@@ -28,11 +35,11 @@ export const schemaTypes = [
   productsPage,
   siteSettings,
 
-  // Core Content Documents
   artform,
   artisan,
   experience,
   event,
+  workshop,
   journalPost,
   product,
   testimonial,

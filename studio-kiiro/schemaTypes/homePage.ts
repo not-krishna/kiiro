@@ -12,79 +12,71 @@ export const homePage = defineType({
       initialValue: 'Homepage',
       validation: (Rule) => Rule.required(),
     }),
-
-    // 01 Hero
     defineField({
       name: 'heroEyebrow',
       title: 'Hero Eyebrow',
       type: 'string',
-      initialValue: 'Where Heritage Meets Hands-On Learning',
+      initialValue: 'A creative wellness space rooted in living art',
     }),
     defineField({
       name: 'heroHeading',
       title: 'Hero Heading',
       type: 'string',
-      initialValue: 'Hands On. Rooted. Real.',
+      initialValue: 'ROOT. CREATE. RESTORE.',
     }),
     defineField({
       name: 'heroSubheading',
       title: 'Hero Subheading',
       type: 'text',
       rows: 3,
-      initialValue: 'Connecting living craft traditions, master artisans, knowledge, and contemporary experiences through immersive hands-on learning.',
     }),
+    defineField({ name: 'heroPrimaryCta', title: 'Hero primary CTA', type: 'cta' }),
+    defineField({ name: 'heroSecondaryCta', title: 'Hero secondary CTA', type: 'cta' }),
     defineField({
-      name: 'heroPrimaryCta',
-      title: 'Hero Primary CTA Text',
-      type: 'string',
-      initialValue: 'Explore Experiences',
+      name: 'heroMedia',
+      title: 'Hero media',
+      type: 'array',
+      of: [defineArrayMember({ type: 'mediaAsset' })],
     }),
+    defineField({ name: 'heroImage', title: 'Hero image (legacy)', type: 'image', hidden: true }),
+    defineField({ name: 'methodologyIntro', title: 'Methodology intro', type: 'text', rows: 3 }),
     defineField({
-      name: 'heroSecondaryCta',
-      title: 'Hero Secondary CTA Text',
-      type: 'string',
-      initialValue: 'View Weekly Events',
-    }),
-    defineField({
-      name: 'heroImage',
-      title: 'Hero Image',
-      type: 'image',
-      options: { hotspot: true },
-      fields: [
-        defineField({ name: 'alt', title: 'Alt Text', type: 'string' }),
+      name: 'methodologyStages',
+      title: 'Root / Create / Restore',
+      type: 'array',
+      of: [
+        defineArrayMember({
+          type: 'object',
+          fields: [
+            defineField({ name: 'id', title: 'Stage id', type: 'string' }),
+            defineField({ name: 'title', title: 'Title', type: 'string' }),
+            defineField({ name: 'heading', title: 'Heading', type: 'string' }),
+            defineField({ name: 'body', title: 'Body', type: 'text', rows: 4 }),
+          ],
+        }),
       ],
     }),
-
-    // 02 Manifesto & Impact
-    defineField({
-      name: 'manifestoTitle',
-      title: 'Manifesto Title',
-      type: 'string',
-      initialValue: 'We believe culture is not something to preserve behind glass. It is something to learn, make, share and carry forward.',
-    }),
-    defineField({
-      name: 'manifestoText',
-      title: 'Manifesto Body Text',
-      type: 'text',
-      rows: 4,
-      initialValue: 'Kiiro connects heritage craft traditions directly to participants, ensuring cultural knowledge lives on through hands-on learning and sustained artisan livelihoods.',
-    }),
-
-    // 03 Artforms
+    defineField({ name: 'manifestoTitle', title: 'Manifesto Title', type: 'text', rows: 3 }),
+    defineField({ name: 'manifestoText', title: 'Manifesto Body Text', type: 'text', rows: 4 }),
     defineField({
       name: 'featuredArtforms',
       title: 'Featured Artforms',
       type: 'array',
       of: [defineArrayMember({ type: 'reference', to: [{ type: 'artform' }] })],
     }),
-
-    // 04 Artisan Impact Feature
+    defineField({
+      name: 'featuredEvents',
+      title: 'Featured events',
+      type: 'array',
+      of: [defineArrayMember({ type: 'reference', to: [{ type: 'event' }] })],
+    }),
     defineField({
       name: 'artisanFeature',
       title: 'Artisan Feature',
       type: 'object',
       fields: [
-        defineField({ name: 'heading', title: 'Section Heading', type: 'string', initialValue: 'The Craft is the Experience. The Artisan is the Knowledge.' }),
+        defineField({ name: 'heading', title: 'Section Heading', type: 'string' }),
+        defineField({ name: 'body', title: 'Body', type: 'text', rows: 4 }),
         defineField({ name: 'name', title: 'Artisan Name', type: 'string' }),
         defineField({ name: 'craft', title: 'Craft Practice', type: 'string' }),
         defineField({ name: 'region', title: 'Region', type: 'string' }),
@@ -98,16 +90,7 @@ export const homePage = defineType({
         }),
       ],
     }),
-
-    // 05 Partnerships & CSR
-    defineField({
-      name: 'partnershipsTitle',
-      title: 'Partnerships Section Title',
-      type: 'string',
-      initialValue: 'Cultural Programs & Capacity Building',
-    }),
-
-    // 06 Journal
+    defineField({ name: 'partnershipsTitle', title: 'Partnerships Section Title', type: 'string' }),
     defineField({
       name: 'featuredJournalPosts',
       title: 'Featured Journal Posts',

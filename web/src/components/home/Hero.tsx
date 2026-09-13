@@ -1,197 +1,207 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { urlFor } from '@/sanity/lib/image'
+import { DEFAULT_HOMEPAGE } from '@/content/homepage'
+import { cleanVisibleCopy } from '@/lib/copy'
+import type { Cta, MediaAsset } from '@/content/types'
 
 interface HeroProps {
   data?: {
     heroEyebrow?: string
     heroHeading?: string
     heroSubheading?: string
-    heroPrimaryCta?: string
-    heroSecondaryCta?: string
+    heroPrimaryCta?: Cta | string
+    heroSecondaryCta?: Cta | string
+    heroMedia?: MediaAsset[]
     heroImage?: unknown
   }
 }
 
-export function Hero({ data }: HeroProps) {
-  const eyebrow = data?.heroEyebrow || 'Living Cultural Platform'
-  const subheading =
-    data?.heroSubheading ||
-    'Connecting living cultural traditions, master artisans, and contemporary experiences through immersive hands-on learning.'
-  const primaryCta = data?.heroPrimaryCta || 'Explore Experiences'
+function asCta(value: Cta | string | undefined, fallback: Cta): Cta {
+  if (!value) return fallback
+  if (typeof value === 'string') return { ...fallback, label: value }
+  return { ...fallback, ...value }
+}
 
-  const heroImageUrl = data?.heroImage
-    ? urlFor(data.heroImage as any).url()
-    : 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1000&auto=format&fit=crop'
+function cleanCta(cta: Cta): Cta {
+  return { ...cta, label: cleanVisibleCopy(cta.label) }
+}
+
+function mediaSrc(media?: MediaAsset, sanityImage?: unknown) {
+  if (media?.source) return media.source
+  if (sanityImage) {
+    try {
+      return urlFor(sanityImage as never).url()
+    } catch {
+      return null
+    }
+  }
+  return null
+}
+
+function InstagramIcon() {
+  return (
+    <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M7.8 2h8.4C19.4 2 22 4.6 22 7.8v8.4c0 3.2-2.6 5.8-5.8 5.8H7.8C4.6 22 2 19.4 2 16.2V7.8C2 4.6 4.6 2 7.8 2Zm-.2 2A3.6 3.6 0 0 0 4 7.6v8.8A3.6 3.6 0 0 0 7.6 20h8.8a3.6 3.6 0 0 0 3.6-3.6V7.6A3.6 3.6 0 0 0 16.4 4H7.6Zm9.7 1.5a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Z" />
+    </svg>
+  )
+}
+
+function LinkedinIcon() {
+  return (
+    <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M6.94 8.98H3.56V20h3.38V8.98ZM5.25 4a1.95 1.95 0 1 0 0 3.9 1.95 1.95 0 0 0 0-3.9Zm15.18 9.65c0-3.33-1.78-4.88-4.16-4.88a3.58 3.58 0 0 0-3.24 1.78h-.05V8.98H9.74V20h3.38v-5.45c0-1.44.27-2.83 2.05-2.83 1.75 0 1.78 1.64 1.78 2.92V20h3.38v-6.35h.1Z" />
+    </svg>
+  )
+}
+
+function YoutubeIcon() {
+  return (
+    <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M21.58 7.2a2.72 2.72 0 0 0-1.92-1.92C17.96 4.82 12 4.82 12 4.82s-5.96 0-7.66.46A2.72 2.72 0 0 0 2.42 7.2 28.3 28.3 0 0 0 2 12a28.3 28.3 0 0 0 .42 4.8 2.72 2.72 0 0 0 1.92 1.92c1.7.46 7.66.46 7.66.46s5.96 0 7.66-.46a2.72 2.72 0 0 0 1.92-1.92A28.3 28.3 0 0 0 22 12a28.3 28.3 0 0 0-.42-4.8ZM10 15.27V8.73L15.66 12 10 15.27Z" />
+    </svg>
+  )
+}
+
+const HERO_SOCIAL_LINKS = [
+  { label: 'Instagram', href: 'https://www.instagram.com/kiiroexperiences/', Icon: InstagramIcon },
+  { label: 'LinkedIn', href: 'https://www.linkedin.com/company/kiiro-experiences/', Icon: LinkedinIcon },
+  { label: 'YouTube', href: 'https://www.youtube.com/@kiiroexperiences', Icon: YoutubeIcon },
+]
+
+export function Hero({ data }: HeroProps) {
+  const content = DEFAULT_HOMEPAGE
+  const eyebrow = cleanVisibleCopy(data?.heroEyebrow || content.heroEyebrow)
+  const heading = cleanVisibleCopy(data?.heroHeading || content.heroHeading)
+  const subheading = cleanVisibleCopy(data?.heroSubheading || content.heroSubheading)
+  const primary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
+  const secondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
+  const media = data?.heroMedia?.length ? data.heroMedia : content.heroMedia
+  const primaryImage = mediaSrc(media[0], data?.heroImage)
+  const secondImage = mediaSrc(media[1])
+  const thirdImage = mediaSrc(media[2])
+  const featuredImage = thirdImage || primaryImage || secondImage
 
   return (
     <section className="relative bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5] overflow-hidden">
-      {/* Decorative Organic Ambient Shapes in Background */}
-      <div className="absolute -top-24 -left-20 w-96 h-96 bg-[#C2593F]/10 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-[#D99B26]/10 rounded-full blur-3xl pointer-events-none" />
-
-      {/* Main Hero Container */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-20 lg:py-24 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-          
-          {/* Left Column: Typographic Statement & CTAs */}
-          <div className="lg:col-span-5 space-y-8 text-left">
-            <div className="space-y-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 lg:py-20 relative z-10">
+        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
+          <div className="lg:col-span-5 space-y-7 text-left">
+            <div className="space-y-3">
               <span className="inline-block font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
                 {eyebrow}
               </span>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08] tracking-tight">
-                <span className="text-[#2B231F]">Hands On :</span> <br />
-                <span className="text-[#C2593F]">Rooted, </span>
-                <span className="text-[#D99B26]">Real, </span> <br />
-                <span className="text-[#2B231F]">Empowered.</span>
+              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
+                <span className="text-[#2B231F]">Root.</span>{' '}
+                <span className="text-[#C2593F]">Create.</span>
+                <br />
+                <span className="text-[#D99B26]">Restore.</span>
               </h1>
+              {heading !== 'ROOT. CREATE. RESTORE.' && (
+                <p className="sr-only">{heading}</p>
+              )}
             </div>
 
-            <p className="font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-md">
+            <p className="font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg">
               {subheading}
             </p>
 
-            {/* Action Sharp CTA Button */}
-            <div>
+            <div className="flex flex-col sm:flex-row gap-3">
               <Link
-                href="/experiences"
-                className="inline-flex items-center justify-center px-8 py-4 bg-[#C2593F] text-white font-sans text-xs font-semibold tracking-[0.18em] uppercase rounded-none shadow-md hover:bg-[#A84A33] hover:shadow-lg transition-all"
+                href={primary.href}
+                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#C2593F] text-white font-sans text-xs font-semibold tracking-[0.18em] uppercase hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
               >
-                {primaryCta} →
+                {primary.label}
+              </Link>
+              <Link
+                href={secondary.href}
+                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-xs font-semibold tracking-[0.18em] uppercase hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+              >
+                {secondary.label}
               </Link>
             </div>
 
-            {/* Social Icons Strip */}
-            <div className="pt-6 border-t border-[#E8E1D5] flex items-center space-x-4 text-[#2B231F]">
-              <a
-                href="https://instagram.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-white border border-[#E8E1D5] rounded-none hover:border-[#C2593F] hover:text-[#C2593F] transition-colors"
-                aria-label="Instagram"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                </svg>
-              </a>
-              <a
-                href="https://facebook.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-white border border-[#E8E1D5] rounded-none hover:border-[#C2593F] hover:text-[#C2593F] transition-colors"
-                aria-label="Facebook"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M9 8H6v4h3v12h5V12h3.642L18 8h-4V6.333C14 5.374 14.5 5 15.7 5H18V0h-3.808C10.592 0 9 1.583 9 4.615V8z" />
-                </svg>
-              </a>
-              <a
-                href="https://twitter.com"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="p-2.5 bg-white border border-[#E8E1D5] rounded-none hover:border-[#C2593F] hover:text-[#C2593F] transition-colors"
-                aria-label="X / Twitter"
-              >
-                <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                  <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-                </svg>
-              </a>
-              <span className="text-[11px] text-[#968A80] font-sans tracking-wider uppercase pl-2">
-                Connect With Kiiro
+            <div className="pt-5 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-3 text-[#2B231F]">
+              <span className="text-[11px] text-[#968A80] font-sans tracking-[0.18em] uppercase">
+                Follow the studio
               </span>
+              <div className="flex items-center gap-2" aria-label="Kiiro social channels">
+                {HERO_SOCIAL_LINKS.map(({ label, href, Icon }) => (
+                  <a
+                    key={label}
+                    href={href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex h-11 w-11 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#C2593F] hover:text-[#C2593F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] transition-colors"
+                    aria-label={`Visit Kiiro on ${label}`}
+                    title={label}
+                  >
+                    <Icon />
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
 
-          {/* Right Column: Sharp Collage Layout */}
           <div className="lg:col-span-7 relative">
-            <div className="grid grid-cols-12 gap-5 items-center">
-              
-              {/* Left Column of Collage (Top landscape card + Bottom portrait card) */}
-              <div className="col-span-12 sm:col-span-6 space-y-5">
-                
-                {/* Top Left Card (Landscape, Floating Badge) */}
+            <div className="grid grid-cols-12 gap-4 md:gap-5 items-end">
+              <div className="hidden sm:block sm:col-span-5 space-y-5">
                 <div className="relative group">
-                  <div className="absolute -top-3 right-6 z-20 bg-[#D99B26] text-white text-[10px] font-semibold uppercase tracking-wider px-4 py-1.5 rounded-none shadow-md">
-                    Jaipur Studio
-                  </div>
-                  
-                  <div className="relative h-52 sm:h-56 w-full rounded-none overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] shadow-sm group-hover:shadow-md transition-all duration-300">
-                    <Image
-                      src={heroImageUrl}
-                      alt="Artisan Hands Working with Blue Pottery"
-                      fill
-                      className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                      priority
-                      sizes="(max-width: 768px) 100vw, 30vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2B231F]/60 via-transparent to-transparent" />
-                    <span className="absolute bottom-4 left-5 text-xs text-white font-sans font-medium tracking-wide">
-                      Blue Pottery Glazing
-                    </span>
+                  <div className="relative h-48 md:h-56 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300">
+                    {primaryImage ? (
+                      <Image
+                        src={primaryImage}
+                        alt={media[0]?.alt || 'Making process'}
+                        fill
+                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                        priority
+                        sizes="(max-width: 768px) 100vw, 30vw"
+                      />
+                    ) : (
+                      <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
+                        Making process
+                      </span>
+                    )}
                   </div>
                 </div>
-
-                {/* Bottom Left Card (Portrait, Floating Accent Badge) */}
                 <div className="relative group">
-                  <div className="absolute -top-2 -left-2 z-20 w-7 h-7 bg-[#C2593F] rounded-none border-2 border-[#FBF9F4] shadow-sm flex items-center justify-center text-white text-[9px] font-bold">
-                    ✦
-                  </div>
-
-                  <div className="relative h-64 sm:h-72 w-full rounded-none overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] shadow-sm group-hover:shadow-md transition-all duration-300">
-                    <Image
-                      src="https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=800&auto=format&fit=crop"
-                      alt="Warli Master Artisan"
-                      fill
-                      className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                      sizes="(max-width: 768px) 100vw, 30vw"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#2B231F]/70 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-5 text-white space-y-0.5">
-                      <span className="text-xs font-serif font-medium block">Ramesh Hengadi</span>
-                      <span className="text-[10px] text-[#D8CEBE] uppercase tracking-wider block">Warli Lineage Lead</span>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-
-              {/* Right Column of Collage (Tall Portrait Card) */}
-              <div className="col-span-12 sm:col-span-6 relative">
-                <div className="relative h-[420px] sm:h-[460px] w-full rounded-none overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] shadow-lg group">
-                  <Image
-                    src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=800&auto=format&fit=crop"
-                    alt="Hands-on Group Workshop"
-                    fill
-                    className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                    sizes="(max-width: 768px) 100vw, 35vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B231F]/80 via-[#2B231F]/20 to-transparent" />
-                  
-                  {/* Floating Tag */}
-                  <div className="absolute top-4 left-4 z-10">
-                    <span className="px-3 py-1.5 bg-[#FBF9F4]/90 backdrop-blur-md rounded-none text-[#2B231F] font-sans text-[10px] font-semibold uppercase tracking-wider shadow-sm">
-                      Weekly Public Gathering
-                    </span>
-                  </div>
-
-                  <div className="absolute bottom-6 left-6 right-6 text-white space-y-1 z-10">
-                    <span className="text-[10px] font-semibold uppercase tracking-[0.2em] text-[#D99B26] block">
-                      COMMUNITY CIRCLE
-                    </span>
-                    <h4 className="font-serif text-lg text-white font-normal leading-snug">
-                      Tactile Clay & Organic Pigment Immersion
-                    </h4>
-                    <p className="text-xs text-[#D8CEBE] font-light">
-                      Mumbai • Jaipur • Bengaluru
-                    </p>
+                  <div className="relative h-64 md:h-72 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300">
+                    {secondImage ? (
+                      <Image
+                        src={secondImage}
+                        alt={media[1]?.alt || 'Artisan-led practice'}
+                        fill
+                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                        sizes="(max-width: 768px) 100vw, 30vw"
+                      />
+                    ) : (
+                      <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
+                        Artisan-led practice
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>
 
+              <div className="col-span-12 sm:col-span-7 relative">
+                <div className="relative h-64 sm:h-[460px] w-full overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] group">
+                  {featuredImage ? (
+                    <Image
+                      src={featuredImage}
+                      alt={media[2]?.alt || 'Participants at work'}
+                      fill
+                      className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                      sizes="(max-width: 768px) 100vw, 35vw"
+                    />
+                  ) : (
+                    <span className="absolute bottom-6 left-6 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
+                      Participants at work
+                    </span>
+                  )}
+                </div>
+              </div>
             </div>
           </div>
-
         </div>
       </div>
     </section>

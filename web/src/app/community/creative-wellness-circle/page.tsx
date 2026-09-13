@@ -73,12 +73,12 @@ export default function CreativeWellnessCirclePage() {
             <h3 className="font-serif text-2xl text-[#2B231F]">Member Experiences</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <blockquote className="bg-white p-6 border border-[#E8E1D5] font-serif text-sm text-[#4A4036] italic leading-relaxed space-y-2">
-                <p>"Two hours in the circle felt like a weekend retreat. Working with terracotta clay helped me quiet a noisy week of corporate deadlines."</p>
+                <p>&ldquo;Two hours in the circle felt like a weekend retreat. Working with terracotta clay helped me quiet a noisy week of corporate deadlines.&rdquo;</p>
                 <cite className="block text-xs font-sans not-italic text-[#968A80] font-medium">— Radhika S., Architect (Mumbai Circle)</cite>
               </blockquote>
 
               <blockquote className="bg-white p-6 border border-[#E8E1D5] font-serif text-sm text-[#4A4036] italic leading-relaxed space-y-2">
-                <p>"Learning the rhythm of Warli line work from Master Ramesh was deeply humbling. It changed how I view art in daily life."</p>
+                <p>&ldquo;Learning the rhythm of Warli line work from Master Ramesh was deeply humbling. It changed how I view art in daily life.&rdquo;</p>
                 <cite className="block text-xs font-sans not-italic text-[#968A80] font-medium">— Siddharth M., Designer (Bengaluru Circle)</cite>
               </blockquote>
             </div>

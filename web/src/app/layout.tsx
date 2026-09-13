@@ -90,11 +90,13 @@ const gurmukhi = Noto_Sans_Gurmukhi({
 })
 
 export const metadata: Metadata = {
-  title: 'Kiiro Experiences — Where Heritage Meets Hands-On Learning',
-  description: 'A contemporary cultural wellness platform connecting living craft traditions, master artisans, hands-on learning, and community impact.',
+  title: 'Kiiro — Root. Create. Restore.',
+  description:
+    'A creative wellness space rooted in living art. Traditional craft, contemporary practice, and restoration through making.',
   openGraph: {
-    title: 'Kiiro Experiences — Where Heritage Meets Hands-On Learning',
-    description: 'Living craft traditions, master artisans, hands-on learning, and community impact.',
+    title: 'Kiiro — Root. Create. Restore.',
+    description:
+      'A creative wellness space rooted in living art. The making is the medium. Restoration is the outcome.',
     type: 'website',
   },
 }

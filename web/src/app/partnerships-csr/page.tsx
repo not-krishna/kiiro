@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { EnquiryForm } from '@/components/ui/EnquiryForm'
+import { CsrPartnershipForm } from '@/components/ui/forms/CsrPartnershipForm'
 import { client } from '@/sanity/lib/client'
 import { PARTNERSHIPS_CSR_PAGE_QUERY } from '@/sanity/lib/queries'
 
@@ -107,7 +107,7 @@ export default async function PartnershipsCsrPage() {
               <h3 className="font-serif text-3xl text-[#2B231F]">Initiate a CSR & Partnership Conversation</h3>
               <p className="text-sm text-[#6E635B]">Connect with our social impact team to explore cluster sponsorship.</p>
             </div>
-            <EnquiryForm defaultCategory="CSR & Partnerships" />
+            <CsrPartnershipForm />
           </div>
         </section>
       </main>
