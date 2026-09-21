@@ -43,5 +43,10 @@ export const siteSettings = defineType({
       title: 'LinkedIn URL',
       type: 'url',
     }),
+    defineField({
+      name: 'facebook',
+      title: 'Facebook URL',
+      type: 'url',
+    }),
   ],
 })

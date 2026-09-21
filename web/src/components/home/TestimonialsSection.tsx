@@ -18,7 +18,6 @@ export interface TestimonialItem {
 
 interface TestimonialsSectionProps {
   testimonials?: TestimonialItem[]
-  eyebrow?: string
   title?: string
 }
 
@@ -65,8 +64,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
 
 export function TestimonialsSection({
   testimonials,
-  eyebrow = 'TESTIMONIALS',
-  title = "Don't take our word for it!\nHear it from our partners.",
+  title = 'Heard from people who sat with the work.',
 }: TestimonialsSectionProps) {
   const items = testimonials && testimonials.length > 0 ? testimonials : DEFAULT_TESTIMONIALS
   const scrollRef = useRef<HTMLDivElement | null>(null)
@@ -96,11 +94,7 @@ export function TestimonialsSection({
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="space-y-4 max-w-2xl">
-            <div className="inline-flex items-center space-x-3 text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
-              <span className="w-1.5 h-1.5 bg-[#C2593F]" />
-              <span>{eyebrow}</span>
-            </div>
-            <h2 className="font-display text-fluid-3xl md:text-fluid-4xl font-normal text-[#2B231F] leading-[1.08] whitespace-pre-line">
+            <h2 className="font-display text-fluid-3xl md:text-fluid-4xl font-normal text-[#2B231F] leading-[1.08]">
               {title}
             </h2>
           </div>
@@ -137,7 +131,6 @@ export function TestimonialsSection({
             const avatarUrl = getPortraitUrl(item)
             const thumbUrl = getThumbUrl(item)
             const subtitle = item.role || item.organisation || ''
-            const numIndex = String(idx + 1).padStart(2, '0')
 
             if (item.isVideo) {
               return (
@@ -157,29 +150,17 @@ export function TestimonialsSection({
                   />
 
                   {/* Dark Editorial Gradient Overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#1F1916] via-[#1F1916]/50 to-[#1F1916]/40 z-10" />
+                  <div className="absolute inset-0 bg-[#1F1916]/45 z-10" />
 
-                  {/* Header Bar */}
-                  <div className="relative z-20 flex items-center justify-between border-b border-white/20 pb-4">
-                    <span className="font-mono text-xs text-[#D99B26] uppercase tracking-widest font-semibold">
-                      [ {numIndex} / VIDEO ]
-                    </span>
-                    <span className="font-sans text-[10px] uppercase tracking-[0.2em] font-semibold bg-black/60 backdrop-blur-sm px-2.5 py-1 border border-white/20 text-white">
-                      Field Story
-                    </span>
-                  </div>
-
-                  {/* Central Play Button */}
                   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-20">
-                    <div className="w-16 h-16 bg-[#C2593F] text-white flex items-center justify-center group-hover:bg-[#A64830] transition-all border border-white/30 shadow-2xl">
+                    <div className="w-16 h-16 bg-[#C2593F] text-white flex items-center justify-center group-hover:bg-[#A64830] transition-colors">
                       <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24">
                         <polygon points="6 3 20 12 6 21 6 3" />
                       </svg>
                     </div>
                   </div>
 
-                  {/* Bottom Author Info */}
-                  <div className="relative z-20 space-y-2 mt-auto pt-6 border-t border-white/20">
+                  <div className="relative z-20 space-y-2 mt-auto pt-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 border border-white/30 relative bg-[#2B231F] flex-shrink-0">
                         <Image src={avatarUrl} alt={item.personName} fill className="object-cover" />
@@ -189,7 +170,7 @@ export function TestimonialsSection({
                           {item.personName}
                         </h3>
                         {subtitle && (
-                          <p className="font-sans text-[11px] text-white/70 font-light uppercase tracking-wider">
+                          <p className="font-sans text-sm text-white/80 font-light">
                             {subtitle}
                           </p>
                         )}
@@ -203,24 +184,12 @@ export function TestimonialsSection({
             return (
               <div
                 key={item._id || idx}
-                className="bg-[#F3EFE6] border border-[#D8CEBE] p-7 md:p-8 flex flex-col justify-between min-h-[460px] w-[320px] sm:w-[360px] md:w-[410px] flex-shrink-0 snap-start relative group hover:bg-[#FBF9F4] hover:border-[#2B231F] transition-all duration-300 border-t-4 border-t-[#C2593F]"
+                className="bg-[#F3EFE6] border border-[#D8CEBE] p-7 md:p-8 flex flex-col justify-between min-h-[460px] w-[320px] sm:w-[360px] md:w-[410px] flex-shrink-0 snap-start relative group hover:bg-[#FBF9F4] hover:border-[#2B231F] transition-colors"
               >
-                {/* Header Bar */}
-                <div className="flex items-center justify-between border-b border-[#E8E1D5] pb-4 mb-6">
-                  <span className="font-mono text-xs text-[#C2593F] font-semibold tracking-wider">
-                    [ {numIndex} / PERSPECTIVE ]
-                  </span>
-                  <span className="font-sans text-[10px] font-semibold uppercase tracking-[0.2em] text-[#968A80]">
-                    Verified Partner
-                  </span>
-                </div>
-
-                {/* Main Quotation Body */}
-                <p className="font-sans text-xs md:text-sm text-[#2B231F] font-normal leading-relaxed mb-8 flex-1">
+                <p className="font-sans text-sm md:text-base text-[#2B231F] font-normal leading-relaxed mb-8 flex-1">
                   {item.quote}
                 </p>
 
-                {/* Bottom Author Info */}
                 <div className="pt-5 border-t border-[#E8E1D5] flex items-center space-x-4">
                   <div className="w-11 h-11 border border-[#D8CEBE] relative bg-[#EAE3D5] flex-shrink-0">
                     <Image src={avatarUrl} alt={item.personName} fill className="object-cover" />
@@ -230,7 +199,7 @@ export function TestimonialsSection({
                       {item.personName}
                     </h3>
                     {subtitle && (
-                      <p className="font-sans text-[11px] text-[#6E635B] font-light uppercase tracking-wider truncate">
+                      <p className="font-sans text-sm text-[#6E635B] font-light truncate">
                         {subtitle}
                       </p>
                     )}
@@ -255,9 +224,8 @@ export function TestimonialsSection({
             {/* Modal Header */}
             <div className="flex justify-between items-center px-6 py-4 border-b border-[#3D332E] text-[#FBF9F4]">
               <div className="flex items-center space-x-2">
-                <span className="w-2 h-2 bg-[#C2593F]" />
-                <span className="font-sans text-xs font-semibold uppercase tracking-[0.2em] text-[#FBF9F4]">
-                  Testimonial Video • {activeVideo.title}
+                <span className="font-sans text-sm text-[#FBF9F4]">
+                  {activeVideo.title}
                 </span>
               </div>
               <button

@@ -25,11 +25,8 @@ export function JournalSection({ posts }: JournalSectionProps) {
     <section id="journal" className="bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5] py-20 md:py-28 px-6 md:px-10">
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="flex items-end justify-between border-b border-[#E8E1D5] pb-6">
-          <div className="space-y-2">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">Journal</p>
-            <h2 className="font-serif text-3xl md:text-4xl">From the studio floor</h2>
-          </div>
-          <Link href="/journal" className="text-xs uppercase tracking-[0.18em] font-semibold border-b-2 border-[#2B231F] pb-1">
+          <h2 className="font-display text-fluid-3xl">From the studio floor</h2>
+          <Link href="/journal" className="text-[15px] font-medium border-b-2 border-[#2B231F] pb-1">
             All stories
           </Link>
         </div>
@@ -45,8 +42,8 @@ export function JournalSection({ posts }: JournalSectionProps) {
                   </div>
                 )}
                 <div className={imageUrl ? 'md:col-span-9' : 'md:col-span-12'}>
-                  <p className="text-[10px] uppercase tracking-[0.18em] text-[#C2593F] mb-2">{post.category}</p>
-                  <h3 className="font-serif text-2xl mb-2">{post.title}</h3>
+                  <p className="text-sm text-[#C2593F] mb-2">{post.category}</p>
+                  <h3 className="font-display text-2xl mb-2">{post.title}</h3>
                   {post.standfirst && <p className="text-sm text-[#6E635B] font-light">{post.standfirst}</p>}
                   {post.slug && (
                     <Link href={`/journal/${post.slug}`} className="inline-block mt-3 text-xs uppercase tracking-[0.16em] font-semibold">

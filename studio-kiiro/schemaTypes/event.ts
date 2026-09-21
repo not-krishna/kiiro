@@ -30,6 +30,11 @@ export const event = defineType({
       type: 'string',
     }),
     defineField({
+      name: 'endTime',
+      title: 'End Time',
+      type: 'string',
+    }),
+    defineField({
       name: 'city',
       title: 'City',
       type: 'string',
@@ -38,6 +43,38 @@ export const event = defineType({
       name: 'venue',
       title: 'Venue',
       type: 'string',
+      initialValue: 'Venue to be confirmed',
+    }),
+    defineField({
+      name: 'locationRef',
+      title: 'Location Reference',
+      type: 'reference',
+      to: [{ type: 'location' }],
+    }),
+    defineField({
+      name: 'workshop',
+      title: 'Workshop',
+      type: 'reference',
+      to: [{ type: 'workshop' }],
+    }),
+    defineField({
+      name: 'isWeekly',
+      title: 'Weekly event',
+      type: 'boolean',
+      initialValue: false,
+    }),
+    defineField({
+      name: 'audience',
+      title: 'Audience',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'B2C', value: 'b2c' },
+          { title: 'B2B', value: 'b2b' },
+          { title: 'Both', value: 'both' },
+        ],
+      },
+      initialValue: 'b2c',
     }),
     defineField({
       name: 'duration',

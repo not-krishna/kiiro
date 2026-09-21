@@ -97,7 +97,16 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                 <p className="text-sm text-[#6E635B] font-light">
                   This holds a request for the listed session. Payment, if required, is confirmed by the Kiiro team after your request.
                 </p>
-                <IndividualBookingForm eventTitle={event.title} eventDate={event.date} eventTime={event.startTime} />
+                <IndividualBookingForm
+                  eventTitle={event.title}
+                  eventDate={event.date}
+                  eventTime={event.startTime}
+                  eventEndTime={event.endTime}
+                  eventCity={event.city}
+                  eventVenue={event.venue}
+                  eventPrice={event.price}
+                  isWeekly={event.isWeekly}
+                />
               </div>
             ) : (
               <p className="text-sm text-[#6E635B]">This session is not open for individual booking.</p>

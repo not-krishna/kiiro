@@ -66,12 +66,16 @@
     line-height: 1.5;
   }
 
+  :focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 2px;
+  }
+
   ::selection {
     background-color: #E8D9C8;
     color: #2B231F;
   }
 
-  /* Accessibility: Reduced motion support */
   @media (prefers-reduced-motion: reduce) {
     *, ::before, ::after {
       animation-duration: 0.01ms !important;
@@ -81,11 +85,28 @@
     }
     .animate-marquee {
       animation: none !important;
+      flex-wrap: wrap;
+      width: 100% !important;
+      justify-content: center;
+      row-gap: 0.5rem;
+    }
+    .animate-marquee [aria-hidden="true"] {
+      display: none;
     }
   }
 }
 
-.font-display {
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.animate-marquee {
+  animation: marquee 48s linear infinite;
+}
+
+.font-display,
+.font-serif {
   font-family: var(--font-playfair), Georgia, serif;
 }
 

@@ -4,6 +4,7 @@ import { useEffect, useId, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { MobileNav } from './MobileNav'
+import { LocationBar } from './LocationBar'
 import { PRIMARY_NAV, SITE_TAGLINE } from '@/content/navigation'
 import type { NavItem } from '@/content/types'
 
@@ -21,7 +22,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
   const active = matchesPath(pathname, item.href) || Boolean(item.children?.some((child) => matchesPath(pathname, child.href)))
-  const triggerClass = `hover:text-[#2B231F] border-b-2 transition-colors py-2 whitespace-nowrap focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
+  const triggerClass = `hover:text-[#2B231F] border-b-2 transition-colors py-2 whitespace-nowrap text-[15px] leading-none tracking-[0.08em] uppercase font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
     active ? 'text-[#2B231F] border-[#C2593F]' : 'border-transparent'
   }`
 
@@ -87,9 +88,9 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
                 aria-current={childActive ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
-                <span className="block text-[11px] tracking-[0.14em] uppercase text-[#2B231F]">{child.label}</span>
+                <span className="block text-[15px] font-medium tracking-[0.08em] uppercase text-[#2B231F]">{child.label}</span>
                 {child.description && (
-                  <span className="mt-1 block font-sans text-[11px] font-normal normal-case tracking-normal text-[#6E635B] leading-relaxed">
+                  <span className="mt-1 block font-sans text-sm font-normal normal-case tracking-normal text-[#6E635B] leading-relaxed">
                     {child.description}
                   </span>
                 )}
@@ -108,19 +109,20 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full border-b border-[#E8E1D5] bg-[#FBF9F4]/95">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 h-20 flex items-center justify-between gap-6">
+      <header className="sticky top-0 z-40 w-full bg-[#FBF9F4]">
+        <div className="border-b border-[#E8E1D5]">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 h-[4.5rem] flex items-center justify-between gap-6">
           <Link href="/" className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] py-1 shrink-0">
-            <span className="font-sans text-xl font-bold tracking-[0.25em] uppercase text-[#2B231F] group-hover:text-[#C2593F] transition-colors">
+            <span className="font-sans text-[1.35rem] font-bold tracking-[0.18em] uppercase text-[#2B231F] group-hover:text-[#C2593F] transition-colors">
               KIIRO
             </span>
-            <span className="block text-[9px] tracking-[0.18em] uppercase text-[#968A80] font-sans mt-0.5 max-w-[14rem]">
+            <span className="block text-[12px] tracking-normal normal-case text-[#6E635B] font-sans mt-0.5 max-w-[16rem] leading-snug">
               {SITE_TAGLINE}
             </span>
           </Link>
 
           <nav
-            className="hidden lg:flex items-center space-x-5 xl:space-x-7 font-sans text-[11px] font-semibold tracking-[0.14em] xl:tracking-[0.16em] uppercase text-[#6E635B]"
+            className="hidden lg:flex items-center gap-5 xl:gap-6 font-sans text-[#6E635B]"
             aria-label="Primary"
           >
             {PRIMARY_NAV.map((item) =>
@@ -128,7 +130,7 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                className="bg-[#2B231F] text-white px-4 py-2 hover:bg-[#C2593F] transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="bg-[#2B231F] text-white px-5 py-2.5 text-[15px] font-medium tracking-[0.08em] uppercase hover:bg-[#C2593F] transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
                 aria-current={matchesPath(pathname, item.href) ? 'page' : undefined}
               >
                 {item.label}
@@ -149,6 +151,8 @@ export function Header() {
             </svg>
           </button>
         </div>
+        </div>
+        <LocationBar />
       </header>
 
       <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />

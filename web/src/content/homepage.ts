@@ -6,16 +6,32 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
   heroSubheading:
     'Kiiro sits where traditional craft, contemporary art, and mindful practice meet. The making is the medium. Restoration is the outcome.',
   heroPrimaryCta: {
-    label: 'Explore Experiences',
-    href: '/experiences',
-    kind: 'internal',
-  },
-  heroSecondaryCta: {
-    label: 'Plan a Group Experience',
+    label: 'Plan a Corporate Experience',
     href: '/experiences/corporates',
     kind: 'enquiry',
   },
-  heroMedia: [],
+  heroSecondaryCta: {
+    label: 'Discover Experiences',
+    href: '/experiences',
+    kind: 'internal',
+  },
+  heroMedia: [
+    {
+      type: 'image',
+      source: '/images/hero/hero-1.png',
+      alt: 'Kiiro workshop experience - Making process',
+    },
+    {
+      type: 'image',
+      source: '/images/hero/hero-2.png',
+      alt: 'Artisan-led practice session',
+    },
+    {
+      type: 'image',
+      source: '/images/hero/hero-3.png',
+      alt: 'Participants engaged in creative workshop',
+    },
+  ],
   methodologyIntro:
     'Every Kiiro experience follows the same three-part arc, whether it begins with craft, contemporary art, or mindful practice.',
   methodologyStages: [
@@ -70,7 +86,7 @@ export const AUDIENCE_PATHWAYS: AudiencePathway[] = [
     promise: 'Team wellness through tactile collaboration: screen-free, quietly bonding, and not another icebreaker.',
     who: 'Organisations planning group experiences with measurable restoration, not theatre.',
     href: '/experiences/corporates',
-    cta: { label: 'Plan a Group Experience', href: '/experiences/corporates', kind: 'enquiry' },
+    cta: { label: 'Plan a Corporate Experience', href: '/experiences/corporates', kind: 'enquiry' },
   },
   {
     id: 'hospitality',

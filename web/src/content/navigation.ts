@@ -12,40 +12,40 @@ export const PRIMARY_NAV: NavItem[] = [
     href: '/experiences',
     children: [
       {
-        label: 'All experiences',
+        label: 'All Experiences',
         href: '/experiences',
-        description: 'Scheduled sessions and group programmes.',
+        description: 'Browse workshops by category and book as an individual.',
       },
       {
-        label: 'Weekly public sessions',
+        label: 'Weekly Public Sessions',
         href: '/weekly-events',
-        description: 'Book a seat in upcoming programming.',
+        description: 'Listed public sessions with dates when they are published.',
       },
       {
-        label: 'Corporates & organisations',
+        label: 'Corporates & Organisations',
         href: '/experiences/corporates',
-        description: 'Screen-free team wellness through making.',
+        description: 'Plan a customised group experience.',
       },
       {
-        label: 'Hospitality & luxury',
+        label: 'Hospitality & Luxury',
         href: '/experiences/hospitality-luxury',
         description: 'Signature cultural wellness for guests.',
       },
       {
-        label: 'Schools & colleges',
+        label: 'Schools & Colleges',
         href: '/experiences/schools-colleges',
         description: 'Creative literacy with student wellbeing.',
       },
     ],
   },
   {
-    label: 'Artforms',
+    label: 'Our Offerings',
     href: '/artforms',
     children: [
       {
-        label: 'All artforms',
+        label: 'All Offerings',
         href: '/artforms',
-        description: 'The practices themselves, separate from the booking calendar.',
+        description: 'Browse all creative workshops, heritage artforms, and wellness practices.',
       },
       {
         label: 'Traditional Art',
@@ -65,7 +65,7 @@ export const PRIMARY_NAV: NavItem[] = [
     ],
   },
   { label: 'About', href: '/about' },
-  { label: 'Collaboration', href: '/partnerships-csr' },
+  { label: 'CSR COLLABS', href: '/partnerships-csr' },
   { label: 'Journal', href: '/journal' },
   { label: 'Enquire', href: '/enquire', cta: true },
 ]

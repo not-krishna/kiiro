@@ -47,6 +47,14 @@ function InstagramIcon() {
   )
 }
 
+function FacebookIcon() {
+  return (
+    <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
+      <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" />
+    </svg>
+  )
+}
+
 function LinkedinIcon() {
   return (
     <svg aria-hidden="true" className="h-4 w-4" fill="currentColor" viewBox="0 0 24 24">
@@ -65,6 +73,7 @@ function YoutubeIcon() {
 
 const HERO_SOCIAL_LINKS = [
   { label: 'Instagram', href: 'https://www.instagram.com/kiiroexperiences/', Icon: InstagramIcon },
+  { label: 'Facebook', href: 'https://www.facebook.com/kiiroexperiences/', Icon: FacebookIcon },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/kiiro-experiences/', Icon: LinkedinIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@kiiroexperiences', Icon: YoutubeIcon },
 ]
@@ -77,9 +86,9 @@ export function Hero({ data }: HeroProps) {
   const primary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
   const secondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
   const media = data?.heroMedia?.length ? data.heroMedia : content.heroMedia
-  const primaryImage = mediaSrc(media[0], data?.heroImage)
-  const secondImage = mediaSrc(media[1])
-  const thirdImage = mediaSrc(media[2])
+  const primaryImage = mediaSrc(media[0], data?.heroImage) || '/images/hero/hero-1.png'
+  const secondImage = mediaSrc(media[1]) || '/images/hero/hero-2.png'
+  const thirdImage = mediaSrc(media[2]) || '/images/hero/hero-3.png'
   const featuredImage = thirdImage || primaryImage || secondImage
 
   return (
@@ -88,10 +97,10 @@ export function Hero({ data }: HeroProps) {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-5 space-y-7 text-left">
             <div className="space-y-3">
-              <span className="inline-block font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
+              <span className="inline-block font-sans text-sm text-[#C2593F]">
                 {eyebrow}
               </span>
-              <h1 className="font-serif text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
+              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
                 <span className="text-[#2B231F]">Root.</span>{' '}
                 <span className="text-[#C2593F]">Create.</span>
                 <br />
@@ -109,20 +118,20 @@ export function Hero({ data }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={primary.href}
-                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#C2593F] text-white font-sans text-xs font-semibold tracking-[0.18em] uppercase hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#C2593F] text-white font-sans text-[15px] font-medium tracking-normal hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
               >
                 {primary.label}
               </Link>
               <Link
                 href={secondary.href}
-                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-xs font-semibold tracking-[0.18em] uppercase hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-[15px] font-medium tracking-normal hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
               >
                 {secondary.label}
               </Link>
             </div>
 
             <div className="pt-5 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-3 text-[#2B231F]">
-              <span className="text-[11px] text-[#968A80] font-sans tracking-[0.18em] uppercase">
+              <span className="text-sm text-[#6E635B] font-sans">
                 Follow the studio
               </span>
               <div className="flex items-center gap-2" aria-label="Kiiro social channels">

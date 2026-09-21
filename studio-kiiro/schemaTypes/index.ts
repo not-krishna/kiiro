@@ -17,6 +17,7 @@ import { productsPage } from './productsPage'
 import { product } from './product'
 import { location } from './location'
 import { workshop } from './workshop'
+import { workshopCategory } from './workshopCategory'
 import { cta } from './cta'
 import { mediaAsset } from './mediaAsset'
 import { pricingTier } from './pricingTier'
@@ -40,6 +41,7 @@ export const schemaTypes = [
   experience,
   event,
   workshop,
+  workshopCategory,
   journalPost,
   product,
   testimonial,

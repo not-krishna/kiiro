@@ -15,7 +15,12 @@ export interface Cta {
   kind: CtaKind
 }
 
-export type WorkshopCategory = 'traditional' | 'contemporary' | 'wellness'
+export type WorkshopCategory = string
+
+export interface WorkshopCategoryItem {
+  id: string
+  label: string
+}
 
 export interface PricingTier {
   min: number
@@ -32,7 +37,10 @@ export interface Workshop {
   definition?: string
   origin?: string
   process?: string
+  processSteps?: string[]
   outcome?: string
+  skillLevel?: string
+  materials?: string
   durationDays?: number
   pricing: PricingTier[]
   corporateAvailable: boolean
@@ -75,6 +83,7 @@ export interface EventItem {
   title: string
   date?: string
   startTime?: string
+  endTime?: string
   location?: string
   city?: string
   venue?: string
@@ -87,6 +96,8 @@ export interface EventItem {
   bookingHref: string
   experienceSlug?: string
   workshopSlug?: string
+  isWeekly?: boolean
+  audience?: 'b2c' | 'b2b' | 'both'
   media: MediaAsset[]
 }
 

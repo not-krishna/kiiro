@@ -57,8 +57,8 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     >
       <div className="flex items-center justify-between border-b border-[#3D332E] pb-6">
         <Link href="/" onClick={onClose} className="group">
-          <span className="font-sans text-xl font-bold tracking-[0.25em] uppercase text-[#FBF9F4]">KIIRO</span>
-          <span className="block text-[9px] tracking-[0.18em] uppercase text-[#968A80] font-sans mt-0.5">
+          <span className="font-sans text-[1.35rem] font-bold tracking-[0.18em] uppercase text-[#FBF9F4]">KIIRO</span>
+          <span className="block text-[12px] tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
             {SITE_TAGLINE}
           </span>
         </Link>
@@ -75,7 +75,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </button>
       </div>
 
-      <nav className="flex flex-col py-6 font-sans text-base uppercase tracking-[0.12em] font-light">
+      <nav className="flex flex-col py-6 font-sans text-[17px] font-medium tracking-[0.08em] uppercase">
         {PRIMARY_NAV.map((item) => {
           if (item.cta) {
             const active = matchesPath(pathname, item.href)
@@ -84,7 +84,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="mt-6 block w-full text-center py-4 bg-[#C2593F] text-[#FBF9F4] text-xs uppercase tracking-[0.2em] font-semibold hover:bg-[#A64830] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
+                className="mt-6 block w-full text-center py-4 bg-[#C2593F] text-[#FBF9F4] text-[15px] font-medium tracking-[0.08em] uppercase hover:bg-[#A64830] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
                 aria-current={active ? 'page' : undefined}
               >
                 {item.label}
@@ -115,7 +115,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <div key={item.label} className="border-b border-[#3D332E]">
               <button
                 type="button"
-                className={`flex w-full items-center justify-between py-3.5 text-left uppercase tracking-[0.12em] hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
+                className={`flex w-full items-center justify-between py-3.5 text-left tracking-[0.08em] uppercase hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
                   groupActive ? 'text-[#D99B26]' : ''
                 }`}
                 aria-expanded={expanded}
@@ -133,14 +133,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         key={child.href + child.label}
                         href={child.href}
                         onClick={onClose}
-                        className={`block pl-1 text-sm normal-case tracking-normal hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
+                        className={`block pl-1 text-sm tracking-[0.08em] uppercase hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
                           childActive ? 'text-white' : 'text-[#D8CEBE]'
                         }`}
                         aria-current={childActive ? 'page' : undefined}
                       >
-                        <span className="block uppercase tracking-[0.14em] text-[11px] text-[#FBF9F4]">{child.label}</span>
+                        <span className="block text-[16px] text-[#FBF9F4]">{child.label}</span>
                         {child.description && (
-                          <span className="mt-1 block text-[12px] leading-relaxed text-[#968A80]">{child.description}</span>
+                          <span className="mt-1 block text-[14px] leading-relaxed text-[#968A80] normal-case tracking-normal">{child.description}</span>
                         )}
                       </Link>
                     )

@@ -9,21 +9,20 @@ import {
   priceRangeLabel,
   WORKSHOP_CATEGORIES,
 } from '@/content/workshops'
-import type { Workshop, WorkshopCategory } from '@/content/types'
+import type { Workshop } from '@/content/types'
 
-function isCategory(value: string | null): value is WorkshopCategory {
-  return value === 'traditional' || value === 'contemporary' || value === 'wellness'
+function isCategory(value: string | null): value is string {
+  return Boolean(value && value !== 'all')
 }
 
 export function CorporateCatalogue({
   audienceLabel = 'Corporate & hospitality',
 }: {
   audienceLabel?: string
-  defaultCategory?: string
 }) {
   const searchParams = useSearchParams()
   const initial = searchParams.get('category')
-  const [category, setCategory] = useState<WorkshopCategory | 'all'>(
+  const [category, setCategory] = useState<string>(
     isCategory(initial) ? initial : 'all'
   )
   const [selected, setSelected] = useState<Workshop | null>(null)

@@ -15,7 +15,7 @@ export const workshop = defineType({
     }),
     defineField({
       name: 'category',
-      title: 'Category',
+      title: 'Category (legacy string)',
       type: 'string',
       options: {
         list: [
@@ -24,12 +24,25 @@ export const workshop = defineType({
           { title: 'Wellness Practice', value: 'wellness' },
         ],
       },
-      validation: (Rule) => Rule.required(),
+    }),
+    defineField({
+      name: 'categoryRef',
+      title: 'Category',
+      type: 'reference',
+      to: [{ type: 'workshopCategory' }],
     }),
     defineField({ name: 'definition', title: 'Definition', type: 'text', rows: 4 }),
     defineField({ name: 'origin', title: 'Origin', type: 'string' }),
     defineField({ name: 'process', title: 'Process', type: 'text', rows: 6 }),
+    defineField({
+      name: 'processSteps',
+      title: 'Process steps',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
+    }),
     defineField({ name: 'outcome', title: 'Outcome & takeaway', type: 'text', rows: 5 }),
+    defineField({ name: 'skillLevel', title: 'Skill level', type: 'string' }),
+    defineField({ name: 'materials', title: 'Materials / inclusions', type: 'text', rows: 3 }),
     defineField({
       name: 'durationDays',
       title: 'Duration (days)',

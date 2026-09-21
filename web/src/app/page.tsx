@@ -6,7 +6,7 @@ import { ExperiencesSection } from '@/components/home/ExperiencesSection'
 import { WeeklyEventsPreview } from '@/components/home/WeeklyEventsPreview'
 import { MethodologySection } from '@/components/home/MethodologySection'
 import { ArtformsSection } from '@/components/home/ArtformsSection'
-import { ExperiencesAudience } from '@/components/home/ExperiencesAudience'
+import { PartnersRibbon } from '@/components/home/PartnersRibbon'
 import { ArtisanImpact } from '@/components/home/ArtisanImpact'
 import { PartnershipsSection } from '@/components/home/PartnershipsSection'
 import { JournalSection } from '@/components/home/JournalSection'
@@ -56,14 +56,14 @@ export default async function HomePage() {
             heroImage: homeData?.heroImage,
           }}
         />
-        <ExperiencesSection />
         <MethodologySection intro={homeData?.methodologyIntro} stages={homeData?.methodologyStages} />
         <ManifestoImpact manifestoTitle={homeData?.manifestoTitle} manifestoText={homeData?.manifestoText} />
         <WeeklyEventsPreview events={featuredEvents} />
         <ArtformsSection />
-        <ExperiencesAudience />
+        <PartnersRibbon />
         <ArtisanImpact data={homeData?.artisanFeature} />
         <TestimonialsSection testimonials={testimonialsData} />
+        <ExperiencesSection />
         <PartnershipsSection title={homeData?.partnershipsTitle} />
         <JournalSection posts={homeData?.featuredJournalPosts || journalData} />
         <EnquirySection />

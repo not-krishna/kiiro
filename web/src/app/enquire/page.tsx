@@ -12,10 +12,23 @@ export const metadata = {
 export default async function EnquirePage({
   searchParams,
 }: {
-  searchParams: Promise<{ intent?: string; subject?: string }>
+  searchParams: Promise<{
+    intent?: string
+    subject?: string
+    event?: string
+    date?: string
+    time?: string
+    endTime?: string
+    city?: string
+    venue?: string
+    weekly?: string
+    price?: string
+    workshop?: string
+  }>
 }) {
   const params = await searchParams
   const intent = params.intent
+  const price = params.price ? Number(params.price) : undefined
 
   return (
     <div className="min-h-screen bg-[#FBF9F4] flex flex-col font-sans">
@@ -23,10 +36,9 @@ export default async function EnquirePage({
       <main className="flex-grow">
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-4xl mx-auto space-y-5">
-            <p className="text-xs uppercase tracking-[0.25em] text-[#C2593F] font-semibold">Get in touch</p>
-            <h1 className="font-serif text-4xl md:text-6xl font-normal leading-tight">Start a conversation</h1>
-            <p className="text-sm text-[#968A80] font-light leading-relaxed">
-              Each request type has its own form. Choose the journey that matches what you need.
+            <h1 className="font-display text-4xl md:text-6xl font-normal leading-tight">Start a conversation</h1>
+            <p className="text-base text-[#D8CEBE] font-light leading-relaxed">
+              Individual bookings and group enquiries use different forms. A submitted request is not a confirmed reservation.
             </p>
           </div>
         </section>
@@ -34,7 +46,16 @@ export default async function EnquirePage({
           {(intent === 'individual' || !intent) && (
             <div className="border border-[#D8CEBE] p-8 md:p-12 bg-white space-y-6">
               <h2 className="font-display text-2xl">Book a seat</h2>
-              <IndividualBookingForm eventTitle={params.subject} />
+              <IndividualBookingForm
+                eventTitle={params.subject}
+                eventDate={params.date}
+                eventTime={params.time}
+                eventEndTime={params.endTime}
+                eventCity={params.city}
+                eventVenue={params.venue}
+                eventPrice={Number.isFinite(price) ? price : undefined}
+                isWeekly={params.weekly === '1'}
+              />
             </div>
           )}
           {(intent === 'group' || !intent) && (

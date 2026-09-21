@@ -26,7 +26,7 @@ export default function HospitalityLuxuryPage() {
         </section>
         <section className="py-16 px-6 md:px-10 max-w-7xl mx-auto">
           <Suspense fallback={<p className="text-sm text-[#6E635B]">Loading catalogue…</p>}>
-            <CorporateCatalogue audienceLabel="Hospitality" defaultCategory="Hospitality & Luxury" />
+            <CorporateCatalogue audienceLabel="Hospitality" />
           </Suspense>
         </section>
       </main>

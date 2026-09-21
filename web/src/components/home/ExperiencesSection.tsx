@@ -13,10 +13,6 @@ export function ExperiencesSection() {
     <section id="experiences" className="bg-[#F3EFE6] border-b border-[#E8E1D5] py-20 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="max-w-3xl space-y-4">
-          <div className="inline-flex items-center space-x-3 text-xs font-sans font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
-            <span className="w-1.5 h-1.5 bg-[#C2593F]" />
-            <span>Experiences</span>
-          </div>
           <h2 className="font-display text-fluid-3xl font-normal">What you can participate in</h2>
           <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed">
             Artforms are the practices. Experiences are the sessions and programmes you actually join.
@@ -26,14 +22,14 @@ export function ExperiencesSection() {
         <div className="grid md:grid-cols-2 border-t border-[#D8CEBE]">
           {HOMEPAGE_EXPERIENCES.map((experience) => (
             <article key={experience.id} className="py-10 md:p-8 border-b border-[#D8CEBE] md:odd:border-r">
-              <p className="text-[10px] uppercase tracking-[0.2em] text-[#968A80] mb-3">
+              <p className="text-sm text-[#6E635B] mb-3">
                 {experience.audience.join(' · ')}
               </p>
               <h3 className="font-display text-fluid-xl mb-3">{experience.name}</h3>
               <p className="text-sm text-[#6E635B] font-light leading-relaxed mb-6">{experience.description}</p>
               <Link
                 href={experience.href}
-                className="text-xs font-sans font-semibold uppercase tracking-[0.2em] text-[#2B231F] border-b border-[#2B231F] hover:text-[#C2593F] hover:border-[#C2593F] pb-0.5"
+                className="text-[15px] font-sans font-medium text-[#2B231F] border-b border-[#2B231F] hover:text-[#C2593F] hover:border-[#C2593F] pb-0.5"
               >
                 {LABELS[experience.id] || 'Continue'} →
               </Link>

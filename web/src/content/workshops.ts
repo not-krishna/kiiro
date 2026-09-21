@@ -34,6 +34,9 @@ export const CORPORATE_WORKSHOPS: Workshop[] = (raw as Array<{
   t46: number | null
   t100: number | null
   durationDays: number | null
+  processSteps?: string[]
+  skillLevel?: string
+  materials?: string
 }>).map((row) => ({
   id: `workshop-${row.slug}`,
   slug: row.slug,
@@ -42,7 +45,10 @@ export const CORPORATE_WORKSHOPS: Workshop[] = (raw as Array<{
   definition: row.definition ?? undefined,
   origin: row.origin ?? undefined,
   process: row.process ?? undefined,
+  processSteps: parseProcessSteps(row.processSteps, row.process),
   outcome: row.outcome ?? undefined,
+  skillLevel: row.skillLevel ?? undefined,
+  materials: row.materials ?? undefined,
   durationDays: row.durationDays ?? undefined,
   pricing: tiers(row),
   corporateAvailable: true,
@@ -76,8 +82,22 @@ export function formatTierLabel(tier: PricingTier): string {
 }
 
 export const WORKSHOP_CATEGORIES: { id: WorkshopCategory | 'all'; label: string }[] = [
-  { id: 'all', label: 'All workshops' },
-  { id: 'traditional', label: 'Traditional Art' },
+  { id: 'all', label: 'All Experiences' },
+  { id: 'traditional', label: 'Traditional' },
   { id: 'contemporary', label: 'Contemporary Art' },
   { id: 'wellness', label: 'Wellness Practice' },
 ]
+
+export function parseProcessSteps(steps?: string[] | null, process?: string | null): string[] {
+  if (steps?.length) return steps.map((step) => step.trim()).filter(Boolean)
+  if (!process?.trim()) return []
+  const lines = process
+    .split(/\n+/)
+    .map((line) => line.replace(/^[\s*\-•\d.]+/, '').trim())
+    .filter(Boolean)
+  return lines.length > 1 ? lines : [process.trim()]
+}
+
+export function categoryLabel(id: string, cms: { id: string; label: string }[] = WORKSHOP_CATEGORIES): string {
+  return cms.find((item) => item.id === id)?.label || id
+}

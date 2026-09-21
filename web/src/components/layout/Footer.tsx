@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { ACTIVE_CITIES } from '@/content/presence'
 
 export function Footer() {
   return (
@@ -10,11 +11,11 @@ export function Footer() {
               <span className="font-sans text-2xl font-bold tracking-[0.25em] uppercase text-[#FBF9F4] group-hover:text-[#C2593F] transition-colors">
                 KIIRO
               </span>
-              <span className="block text-[9px] tracking-[0.3em] uppercase text-[#968A80] font-sans mt-0.5">
-                Living Cultural Platform
+              <span className="block text-sm tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
+                Living cultural platform
               </span>
             </Link>
-            <p className="text-xs text-[#968A80] max-w-sm leading-relaxed font-light">
+            <p className="text-sm text-[#968A80] max-w-sm leading-relaxed font-light">
               Connecting living cultural traditions, master artisans, knowledge, and contemporary experiences through immersive hands-on learning.
             </p>
             <div className="pt-2 text-[11px] font-sans uppercase tracking-[0.2em] text-[#D99B26]">
@@ -23,8 +24,8 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FBF9F4]">Repertoire</h4>
-            <ul className="space-y-2.5 text-xs text-[#968A80]">
+            <h4 className="text-sm font-medium text-[#FBF9F4]">Repertoire</h4>
+            <ul className="space-y-2.5 text-sm text-[#968A80]">
               <li>
                 <Link href="/weekly-events" className="hover:text-[#C2593F] transition-colors font-medium">
                   Weekly Events
@@ -54,8 +55,8 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FBF9F4]">Institutional</h4>
-            <ul className="space-y-2.5 text-xs text-[#968A80]">
+            <h4 className="text-sm font-medium text-[#FBF9F4]">Institutional</h4>
+            <ul className="space-y-2.5 text-sm text-[#968A80]">
               <li>
                 <Link href="/experiences/schools-colleges" className="hover:text-[#FBF9F4] transition-colors">
                   Schools & Colleges
@@ -80,12 +81,12 @@ export function Footer() {
           </div>
 
           <div className="space-y-4">
-            <h4 className="text-xs font-semibold uppercase tracking-[0.2em] text-[#FBF9F4]">Presence</h4>
-            <p className="text-xs text-[#968A80] leading-relaxed font-light">
-              7 Active Cities across India: Jaipur, Mumbai, Delhi NCR, Bengaluru, Hyderabad, Pune, Goa.
+            <h4 className="text-sm font-medium text-[#FBF9F4]">Presence</h4>
+            <p className="text-sm text-[#968A80] leading-relaxed font-light">
+              {ACTIVE_CITIES.join(', ')}.
             </p>
-            <Link href="/enquire" className="inline-block text-xs uppercase tracking-[0.18em] text-[#D99B26] hover:underline">
-              Get in Touch →
+            <Link href="/enquire" className="inline-block text-sm text-[#D99B26] hover:underline">
+              Get in touch
             </Link>
           </div>
         </div>

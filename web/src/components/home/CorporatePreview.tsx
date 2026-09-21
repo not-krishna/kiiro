@@ -19,7 +19,7 @@ export function CorporatePreview() {
             </p>
           </div>
           <CtaLink
-            cta={{ label: 'Plan a Group Experience', href: '/experiences/corporates', kind: 'enquiry' }}
+            cta={{ label: 'Plan a Corporate Experience', href: '/experiences/corporates', kind: 'enquiry' }}
             variant="primary"
           />
         </div>

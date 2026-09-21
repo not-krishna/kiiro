@@ -161,6 +161,7 @@ export const ALL_EVENTS_QUERY = defineQuery(`
     "slug": slug.current,
     date,
     startTime,
+    endTime,
     city,
     venue,
     price,
@@ -169,8 +170,12 @@ export const ALL_EVENTS_QUERY = defineQuery(`
     duration,
     facilitator,
     experienceType,
+    isWeekly,
+    audience,
     "heroImageUrl": heroImage.asset->url,
     "heroImageAlt": heroImage.alt,
+    "workshopSlug": workshop->slug.current,
+    workshop->{ name, "slug": slug.current },
     experienceReference-> {
       _id,
       title,
@@ -186,6 +191,7 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
     "slug": slug.current,
     date,
     startTime,
+    endTime,
     city,
     venue,
     price,
@@ -194,8 +200,12 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
     duration,
     facilitator,
     experienceType,
+    isWeekly,
+    audience,
     "heroImageUrl": heroImage.asset->url,
     "heroImageAlt": heroImage.alt,
+    "workshopSlug": workshop->slug.current,
+    workshop->{ name, "slug": slug.current },
     experienceReference-> {
       _id,
       title,
@@ -476,5 +486,36 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     address,
     socialLinks,
     footerTagline
+  }
+`)
+
+export const WORKSHOP_CATEGORIES_QUERY = defineQuery(`
+  *[_type == "workshopCategory"] | order(order asc, title asc) {
+    _id,
+    title,
+    "slug": slug.current,
+    order
+  }
+`)
+
+export const ALL_WORKSHOPS_QUERY = defineQuery(`
+  *[_type == "workshop" && published == true] | order(name asc) {
+    _id,
+    name,
+    "slug": slug.current,
+    category,
+    "categorySlug": coalesce(categoryRef->slug.current, category),
+    "categoryTitle": categoryRef->title,
+    definition,
+    origin,
+    process,
+    processSteps,
+    outcome,
+    skillLevel,
+    materials,
+    durationDays,
+    corporateAvailable,
+    hospitalityAvailable,
+    individualAvailable
   }
 `)
