@@ -1,11 +1,10 @@
 export const ACTIVE_CITIES = [
-  'Jaipur',
   'Mumbai',
-  'Delhi NCR',
-  'Bengaluru',
-  'Hyderabad',
+  'Kolkata',
   'Pune',
   'Goa',
+  'Bangalore',
+  'Jaipur',
 ] as const
 
 /** Organisations named in existing site testimonials — not invented clients. */

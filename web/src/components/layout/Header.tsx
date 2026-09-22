@@ -22,8 +22,8 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
   const id = useId()
   const ref = useRef<HTMLDivElement>(null)
   const active = matchesPath(pathname, item.href) || Boolean(item.children?.some((child) => matchesPath(pathname, child.href)))
-  const triggerClass = `hover:text-[#2B231F] border-b-2 transition-colors py-2 whitespace-nowrap text-[15px] leading-none tracking-[0.08em] uppercase font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
-    active ? 'text-[#2B231F] border-[#C2593F]' : 'border-transparent'
+  const triggerClass = `hover:text-[#2B231F] border-b-2 transition-colors py-1.5 whitespace-nowrap text-[13.5px] leading-none tracking-[0.06em] uppercase font-medium focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
+    active ? 'text-[#2B231F] border-[#C2593F]' : 'border-transparent text-[#6E635B]'
   }`
 
   useEffect(() => {
@@ -48,6 +48,8 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         href={item.href}
         className={triggerClass}
         aria-current={active ? 'page' : undefined}
+        data-nav-motion
+        data-link-motion
       >
         {item.label}
       </Link>
@@ -63,6 +65,7 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
         aria-haspopup="true"
         aria-controls={id}
         onClick={() => setOpen((value) => !value)}
+        data-nav-motion
       >
         {item.label}
         <svg aria-hidden="true" className="h-3 w-3" fill="none" viewBox="0 0 12 12" stroke="currentColor">
@@ -82,15 +85,15 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
                 key={child.href + child.label}
                 href={child.href}
                 role="menuitem"
-                className={`block px-5 py-3 focus-visible:outline-none ${
+                className={`block px-5 py-2.5 focus-visible:outline-none ${
                   childActive ? 'bg-[#F3EFE6]' : 'hover:bg-[#F3EFE6] focus-visible:bg-[#F3EFE6]'
                 }`}
                 aria-current={childActive ? 'page' : undefined}
                 onClick={() => setOpen(false)}
               >
-                <span className="block text-[15px] font-medium tracking-[0.08em] uppercase text-[#2B231F]">{child.label}</span>
+                <span className="block text-[13.5px] font-medium tracking-[0.06em] uppercase text-[#2B231F]">{child.label}</span>
                 {child.description && (
-                  <span className="mt-1 block font-sans text-sm font-normal normal-case tracking-normal text-[#6E635B] leading-relaxed">
+                  <span className="mt-0.5 block font-sans text-[13px] font-normal normal-case tracking-normal text-[#6E635B] leading-relaxed">
                     {child.description}
                   </span>
                 )}
@@ -109,20 +112,20 @@ export function Header() {
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-[#FBF9F4]">
+      <header className="sticky top-0 z-40 w-full bg-[#FBF9F4]" data-site-header>
         <div className="border-b border-[#E8E1D5]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 h-[4.5rem] flex items-center justify-between gap-6">
-          <Link href="/" className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] py-1 shrink-0">
-            <span className="font-sans text-[1.35rem] font-bold tracking-[0.18em] uppercase text-[#2B231F] group-hover:text-[#C2593F] transition-colors">
+        <div className="max-w-7xl mx-auto px-6 md:px-10 h-[4.125rem] flex items-center justify-between gap-6">
+          <Link href="/" className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] py-1 shrink-0" data-nav-motion>
+            <span className="font-sans text-[1.55rem] font-bold tracking-[0.18em] uppercase text-[#2B231F] group-hover:text-[#C2593F] transition-colors leading-none block">
               KIIRO
             </span>
-            <span className="block text-[12px] tracking-normal normal-case text-[#6E635B] font-sans mt-0.5 max-w-[16rem] leading-snug">
+            <span className="block text-[11px] tracking-normal normal-case text-[#6E635B] font-sans mt-0.5 max-w-[16rem] leading-snug">
               {SITE_TAGLINE}
             </span>
           </Link>
 
           <nav
-            className="hidden lg:flex items-center gap-5 xl:gap-6 font-sans text-[#6E635B]"
+            className="hidden lg:flex items-center gap-4 xl:gap-5.5 font-sans text-[#6E635B]"
             aria-label="Primary"
           >
             {PRIMARY_NAV.map((item) =>
@@ -130,10 +133,12 @@ export function Header() {
                 <Link
                   key={item.href}
                   href={item.href}
-                className="bg-[#2B231F] text-white px-5 py-2.5 text-[15px] font-medium tracking-[0.08em] uppercase hover:bg-[#C2593F] transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="kiiro-cta bg-[#2B231F] text-white px-4 py-2 text-[13.5px] font-medium tracking-[0.06em] uppercase hover:bg-[#C2593F] transition-colors ml-1 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
                 aria-current={matchesPath(pathname, item.href) ? 'page' : undefined}
+                data-nav-motion
               >
-                {item.label}
+                <span>{item.label}</span>
+                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
             ) : (
                 <DesktopDropdown key={item.label} item={item} pathname={pathname} />
@@ -145,6 +150,7 @@ export function Header() {
             onClick={() => setMobileMenuOpen(true)}
             className="lg:hidden min-h-11 min-w-11 p-2 text-[#2B231F] hover:text-[#C2593F] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
             aria-label="Open navigation menu"
+            data-nav-motion
           >
             <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M4 6h16M4 12h16M4 18h16" />

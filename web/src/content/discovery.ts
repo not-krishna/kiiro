@@ -21,8 +21,8 @@ export interface ExperienceCardModel {
 }
 
 const WORKSHOP_IMAGES: Record<string, string> = {
-  pottery: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=800&auto=format&fit=crop',
-  kintsugi: 'https://images.unsplash.com/photo-1610701596007-11502861dcfa?q=80&w=800&auto=format&fit=crop',
+  pottery: '/images/other/pottery-1.png',
+  kintsugi: '/images/other/kintsugi-1.png',
   'bandhni-tie-dye': 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop',
   'batik-print-wax-resist-dyeing': 'https://images.unsplash.com/photo-1579783902614-a3fb3927b675?q=80&w=800&auto=format&fit=crop',
   'cyanotype-printing': 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=800&auto=format&fit=crop',

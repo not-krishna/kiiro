@@ -1,15 +1,16 @@
+import { Suspense } from 'react'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ExperienceBrowser } from '@/components/experiences/ExperienceBrowser'
 import { client } from '@/sanity/lib/client'
 import { ALL_EVENTS_QUERY, ALL_WORKSHOPS_QUERY } from '@/sanity/lib/queries'
-import { mapSanityEvent } from '@/content/events'
+import { mapSanityEvent, CONFIRMED_SCHEDULED_EVENTS, sortEventsChronologically } from '@/content/events'
 import { eventToCard, fallbackWorkshops, mapCmsWorkshop } from '@/content/discovery'
 import type { EventItem, Workshop } from '@/content/types'
 
 export const metadata = {
-  title: 'Weekly Events | Kiiro',
-  description: 'Upcoming public creative wellness sessions. Book a spot when programming is listed.',
+  title: 'Weekly Events Calendar | Kiiro',
+  description: 'Upcoming public creative wellness sessions. Make something with your hands, learn new hobbies, and connect with people offline.',
 }
 
 export const revalidate = 30
@@ -25,12 +26,15 @@ export default async function WeeklyEventsPage() {
     .filter((item): item is Workshop => Boolean(item))
   const workshopIndex = new Map((workshops.length ? workshops : fallbackWorkshops()).map((item) => [item.slug, item]))
 
-  const events: EventItem[] = ((cmsEvents || []) as unknown[])
+  const eventsFromCms: EventItem[] = ((cmsEvents || []) as unknown[])
     .map((doc) => mapSanityEvent(doc as Parameters<typeof mapSanityEvent>[0]))
     .filter((event): event is EventItem => Boolean(event))
     .filter((event) => event.audience !== 'b2b')
 
-  const cards = events.map((event) => eventToCard(event, event.workshopSlug ? workshopIndex.get(event.workshopSlug) : undefined))
+  const rawEvents = eventsFromCms.length > 0 ? eventsFromCms : CONFIRMED_SCHEDULED_EVENTS
+  const { sortedAll } = sortEventsChronologically(rawEvents)
+
+  const cards = sortedAll.map((event) => eventToCard(event, event.workshopSlug ? workshopIndex.get(event.workshopSlug) : undefined))
 
   return (
     <div className="min-h-screen bg-[#FBF9F4] flex flex-col font-sans">
@@ -38,9 +42,10 @@ export default async function WeeklyEventsPage() {
       <main className="flex-grow">
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-5">
-            <h1 className="font-display text-4xl md:text-6xl font-normal leading-tight">Join a listed session</h1>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#C2593F] font-semibold">Weekly Events Schedule</span>
+            <h1 className="font-display text-4xl md:text-6xl font-normal leading-tight">Living Events Calendar</h1>
             <p className="text-base text-[#D8CEBE] max-w-2xl leading-relaxed font-light">
-              Public programming for individuals and small groups. Weekly session prices appear on the card when they are listed.
+              Tactile, hands-on public sessions for individuals and small groups. Browse upcoming Sunday dates, pick something new to try, and spend time differently.
             </p>
           </div>
         </section>
@@ -54,12 +59,14 @@ export default async function WeeklyEventsPage() {
               </p>
             </div>
           ) : (
-            <ExperienceBrowser
-              cards={cards}
-              categories={[]}
-              showWeeklyPrice
-              emptyMessage="No weekly sessions in this category."
-            />
+            <Suspense fallback={<div className="py-12 text-center text-[#6E635B]">Loading weekly sessions...</div>}>
+              <ExperienceBrowser
+                cards={cards}
+                categories={[]}
+                showWeeklyPrice
+                emptyMessage="No weekly sessions in this category."
+              />
+            </Suspense>
           )}
         </section>
       </main>

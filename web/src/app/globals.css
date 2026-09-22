@@ -66,6 +66,11 @@
     line-height: 1.5;
   }
 
+  img,
+  video {
+    backface-visibility: hidden;
+  }
+
   :focus-visible {
     outline: 2px solid var(--terracotta);
     outline-offset: 2px;
@@ -92,6 +97,18 @@
     }
     .animate-marquee [aria-hidden="true"] {
       display: none;
+    }
+    .kiiro-page-transition {
+      display: none;
+    }
+    [data-motion-image],
+    [data-motion-reveal],
+    [data-motion-item],
+    [data-hero-word],
+    .kiiro-word {
+      opacity: 1 !important;
+      transform: none !important;
+      clip-path: none !important;
     }
   }
 }
@@ -176,6 +193,82 @@
 
 .script-loader-glyph {
   animation: scriptGlyph 110ms ease-out;
+}
+
+.kiiro-word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+}
+
+.kiiro-word {
+  display: inline-block;
+  will-change: transform, opacity;
+}
+
+[data-motion-image],
+[data-hero-image] {
+  will-change: clip-path;
+}
+
+[data-motion-image] img,
+[data-motion-image] video,
+[data-hero-image] img,
+[data-hero-image] video,
+[data-parallax] {
+  will-change: transform;
+}
+
+[data-motion-card] {
+  will-change: transform;
+}
+
+[data-motion-card] img,
+[data-motion-card] video {
+  transform-origin: center;
+}
+
+.kiiro-cta {
+  position: relative;
+  overflow: hidden;
+  gap: 0.55rem;
+}
+
+.kiiro-cta [data-cta-arrow] {
+  display: inline-block;
+  transition: transform 220ms ease;
+}
+
+.kiiro-cta:hover [data-cta-arrow],
+.kiiro-cta:focus-visible [data-cta-arrow] {
+  transform: translateX(0.3rem);
+}
+
+[data-link-motion] {
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 1px;
+  transition: color 220ms ease, background-size 220ms ease;
+}
+
+[data-link-motion]:hover,
+[data-link-motion]:focus-visible {
+  background-size: 72% 1px;
+}
+
+[data-site-header] {
+  transition: background-color 260ms ease, box-shadow 260ms ease, transform 260ms ease;
+}
+
+[data-site-header].kiiro-nav-scrolled {
+  background-color: rgba(251, 249, 244, 0.94);
+  box-shadow: 0 12px 30px rgba(43, 35, 31, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+.kiiro-page-transition {
+  will-change: transform;
 }
 
 /* Prevent horizontal overflow on root */

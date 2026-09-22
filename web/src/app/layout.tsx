@@ -13,6 +13,8 @@ import {
   Noto_Sans_Gurmukhi,
 } from 'next/font/google'
 import { ScriptLoader } from '@/components/ui/ScriptLoader'
+import { PageTransitionLayer } from '@/components/motion/PageTransitionLayer'
+import { SiteMotion } from '@/components/motion/SiteMotion'
 import './globals.css'
 
 const playfair = Playfair_Display({
@@ -109,10 +111,13 @@ export default function RootLayout({
   return (
     <html
       lang="en"
+      data-scroll-behavior="smooth"
       className={`${playfair.variable} ${inter.variable} ${caveat.variable} ${devanagari.variable} ${bengali.variable} ${tamil.variable} ${telugu.variable} ${kannada.variable} ${malayalam.variable} ${gujarati.variable} ${gurmukhi.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col bg-[#FBF9F4] text-[#2B231F] font-sans">
         <ScriptLoader />
+        <SiteMotion />
+        <PageTransitionLayer />
         {children}
       </body>
     </html>

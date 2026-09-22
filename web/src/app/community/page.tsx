@@ -61,7 +61,7 @@ export default async function CommunityPage() {
                 <span className="text-xs font-semibold uppercase tracking-widest text-[#D99B26]">Public Gatherings</span>
                 <h2 className="font-serif text-3xl text-[#2B231F]">Weekly Events & Masterclasses</h2>
                 <p className="text-sm text-[#6E635B] leading-relaxed font-light">
-                  Hands-on weekend workshops hosted in Mumbai, Jaipur, Bengaluru, Delhi NCR, and Pune led directly by master artisans.
+                  Hands-on weekend workshops hosted in Mumbai, Kolkata, Pune, Goa, Bangalore, and Jaipur led directly by master artisans.
                 </p>
               </div>
               <Link

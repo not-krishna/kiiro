@@ -92,7 +92,7 @@ export function ExperienceBrowser({
         </div>
       )}
 
-      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E8E1D5] pb-6">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-[#E8E1D5] pb-6" data-motion-reveal data-motion-distance="18">
         <div
           className="flex gap-2 overflow-x-auto no-scrollbar py-1 scroll-smooth"
           role="tablist"
@@ -180,7 +180,7 @@ export function ExperienceBrowser({
           </button>
         </div>
       ) : (
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-motion-stagger>
           {list.map((card) => (
             <ExperienceCard
               key={card.id}

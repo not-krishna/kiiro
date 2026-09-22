@@ -9,7 +9,15 @@ export const HOMEPAGE_QUERY = defineQuery(`
     heroSubheading,
     heroPrimaryCta,
     heroSecondaryCta,
-    heroMedia,
+    heroMedia[] {
+      type,
+      alt,
+      "source": select(
+        type == "video" => videoUrl,
+        image.asset->url
+      ),
+      "poster": poster.asset->url
+    },
     heroImage,
     methodologyIntro,
     methodologyStages,
@@ -39,7 +47,18 @@ export const HOMEPAGE_QUERY = defineQuery(`
       bookingStatus,
       duration,
       facilitator,
-      experienceType
+      experienceType,
+      isWeekly,
+      audience,
+      "heroImageUrl": heroImage.asset->url,
+      "heroImageAlt": heroImage.alt,
+      "workshopSlug": workshop->slug.current,
+      workshop->{ name, "slug": slug.current },
+      experienceReference-> {
+        _id,
+        title,
+        "slug": slug.current
+      }
     },
     artisanFeature {
       heading,
@@ -516,6 +535,15 @@ export const ALL_WORKSHOPS_QUERY = defineQuery(`
     durationDays,
     corporateAvailable,
     hospitalityAvailable,
-    individualAvailable
+    individualAvailable,
+    media[] {
+      type,
+      alt,
+      "source": select(
+        type == "video" => videoUrl,
+        image.asset->url
+      ),
+      "poster": poster.asset->url
+    }
   }
 `)

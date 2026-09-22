@@ -14,7 +14,7 @@ import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { EnquirySection } from '@/components/home/EnquirySection'
 import { client } from '@/sanity/lib/client'
 import { HOMEPAGE_QUERY, JOURNAL_QUERY, TESTIMONIALS_QUERY, ALL_EVENTS_QUERY } from '@/sanity/lib/queries'
-import { mapSanityEvent } from '@/content/events'
+import { mapSanityEvent, CONFIRMED_SCHEDULED_EVENTS } from '@/content/events'
 import type { Cta, EventItem, MediaAsset } from '@/content/types'
 
 export const revalidate = 30
@@ -35,9 +35,10 @@ export default async function HomePage() {
   ])
 
   const rawEvents = (homeData?.featuredEvents?.length ? homeData.featuredEvents : eventsData || []) as unknown[]
-  const featuredEvents: EventItem[] = rawEvents
+  const cmsEvents: EventItem[] = rawEvents
     .map((doc) => mapSanityEvent(doc as Parameters<typeof mapSanityEvent>[0]))
     .filter((event): event is EventItem => event !== null)
+  const featuredEvents = cmsEvents.length > 0 ? cmsEvents : CONFIRMED_SCHEDULED_EVENTS
 
   const heroMedia: MediaAsset[] = Array.isArray(homeData?.heroMedia) ? homeData.heroMedia : []
 
@@ -56,8 +57,8 @@ export default async function HomePage() {
             heroImage: homeData?.heroImage,
           }}
         />
-        <MethodologySection intro={homeData?.methodologyIntro} stages={homeData?.methodologyStages} />
         <ManifestoImpact manifestoTitle={homeData?.manifestoTitle} manifestoText={homeData?.manifestoText} />
+        <MethodologySection intro={homeData?.methodologyIntro} stages={homeData?.methodologyStages} />
         <WeeklyEventsPreview events={featuredEvents} />
         <ArtformsSection />
         <PartnersRibbon />

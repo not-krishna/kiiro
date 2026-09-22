@@ -57,7 +57,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
     >
       <div className="flex items-center justify-between border-b border-[#3D332E] pb-6">
         <Link href="/" onClick={onClose} className="group">
-          <span className="font-sans text-[1.35rem] font-bold tracking-[0.18em] uppercase text-[#FBF9F4]">KIIRO</span>
+          <span className="font-sans text-[1.6rem] font-bold tracking-[0.18em] uppercase text-[#FBF9F4] leading-none block">KIIRO</span>
           <span className="block text-[12px] tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
             {SITE_TAGLINE}
           </span>
@@ -75,7 +75,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         </button>
       </div>
 
-      <nav className="flex flex-col py-6 font-sans text-[17px] font-medium tracking-[0.08em] uppercase">
+      <nav className="flex flex-col py-6 font-sans text-[15px] font-medium tracking-[0.06em] uppercase">
         {PRIMARY_NAV.map((item) => {
           if (item.cta) {
             const active = matchesPath(pathname, item.href)
@@ -84,7 +84,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="mt-6 block w-full text-center py-4 bg-[#C2593F] text-[#FBF9F4] text-[15px] font-medium tracking-[0.08em] uppercase hover:bg-[#A64830] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
+                className="mt-6 block w-full text-center py-3.5 bg-[#C2593F] text-[#FBF9F4] text-[14px] font-medium tracking-[0.06em] uppercase hover:bg-[#A64830] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
                 aria-current={active ? 'page' : undefined}
               >
                 {item.label}
@@ -99,7 +99,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className={`border-b border-[#3D332E] py-3.5 hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
+                className={`border-b border-[#3D332E] py-3 hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
                   active ? 'text-[#D99B26]' : ''
                 }`}
                 aria-current={active ? 'page' : undefined}
@@ -115,17 +115,17 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
             <div key={item.label} className="border-b border-[#3D332E]">
               <button
                 type="button"
-                className={`flex w-full items-center justify-between py-3.5 text-left tracking-[0.08em] uppercase hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
+                className={`flex w-full items-center justify-between py-3 text-left tracking-[0.06em] uppercase hover:text-[#D99B26] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
                   groupActive ? 'text-[#D99B26]' : ''
                 }`}
                 aria-expanded={expanded}
                 onClick={() => setOpenGroup(expanded ? null : item.label)}
               >
                 {item.label}
-                <span aria-hidden>{expanded ? '-' : '+'}</span>
+                <span aria-hidden className="text-lg leading-none">{expanded ? '−' : '+'}</span>
               </button>
               {expanded && (
-                <div className="pb-4 space-y-3">
+                <div className="pb-3.5 space-y-2.5">
                   {item.children.map((child) => {
                     const childActive = matchesPath(pathname, child.href)
                     return (
@@ -133,14 +133,14 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                         key={child.href + child.label}
                         href={child.href}
                         onClick={onClose}
-                        className={`block pl-1 text-sm tracking-[0.08em] uppercase hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
+                        className={`block pl-1 text-sm tracking-[0.06em] uppercase hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26] ${
                           childActive ? 'text-white' : 'text-[#D8CEBE]'
                         }`}
                         aria-current={childActive ? 'page' : undefined}
                       >
-                        <span className="block text-[16px] text-[#FBF9F4]">{child.label}</span>
+                        <span className="block text-[14.5px] text-[#FBF9F4]">{child.label}</span>
                         {child.description && (
-                          <span className="mt-1 block text-[14px] leading-relaxed text-[#968A80] normal-case tracking-normal">{child.description}</span>
+                          <span className="mt-0.5 block text-[13px] leading-relaxed text-[#968A80] normal-case tracking-normal">{child.description}</span>
                         )}
                       </Link>
                     )

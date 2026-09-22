@@ -92,56 +92,64 @@ export function Hero({ data }: HeroProps) {
   const featuredImage = thirdImage || primaryImage || secondImage
 
   return (
-    <section className="relative bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5] overflow-hidden">
+    <section
+      className="relative bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5] overflow-hidden"
+      data-motion-hero
+      data-parallax-container
+    >
       <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 lg:py-20 relative z-10">
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-5 space-y-7 text-left">
             <div className="space-y-3">
-              <span className="inline-block font-sans text-sm text-[#C2593F]">
+              <span className="inline-block font-sans text-sm text-[#C2593F]" data-hero-eyebrow>
                 {eyebrow}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
-                <span className="text-[#2B231F]">Root.</span>{' '}
-                <span className="text-[#C2593F]">Create.</span>
+                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#2B231F]" data-hero-word>Root.</span></span>{' '}
+                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#C2593F]" data-hero-word>Create.</span></span>
                 <br />
-                <span className="text-[#D99B26]">Restore.</span>
+                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#D99B26]" data-hero-word>Restore.</span></span>
               </h1>
               {heading !== 'ROOT. CREATE. RESTORE.' && (
                 <p className="sr-only">{heading}</p>
               )}
             </div>
 
-            <p className="font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg">
+            <p className="font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg" data-hero-copy>
               {subheading}
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={primary.href}
-                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#C2593F] text-white font-sans text-[15px] font-medium tracking-normal hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 bg-[#C2593F] text-white font-sans text-[14px] font-medium tracking-wide hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                data-hero-cta
               >
-                {primary.label}
+                <span>{primary.label}</span>
+                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
               <Link
                 href={secondary.href}
-                className="inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-[15px] font-medium tracking-normal hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 border border-[#2B231F] text-[#2B231F] font-sans text-[14px] font-medium tracking-wide hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                data-hero-cta
               >
-                {secondary.label}
+                <span>{secondary.label}</span>
+                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
             </div>
 
-            <div className="pt-5 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-3 text-[#2B231F]">
-              <span className="text-sm text-[#6E635B] font-sans">
+            <div className="pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-2.5 text-[#2B231F]" data-hero-meta>
+              <span className="text-xs uppercase tracking-[0.08em] font-medium text-[#6E635B]">
                 Follow the studio
               </span>
-              <div className="flex items-center gap-2" aria-label="Kiiro social channels">
+              <div className="flex items-center gap-1.5" aria-label="Kiiro social channels">
                 {HERO_SOCIAL_LINKS.map(({ label, href, Icon }) => (
                   <a
                     key={label}
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-11 w-11 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#C2593F] hover:text-[#C2593F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#C2593F] hover:text-[#C2593F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] transition-colors"
                     aria-label={`Visit Kiiro on ${label}`}
                     title={label}
                   >
@@ -150,13 +158,19 @@ export function Hero({ data }: HeroProps) {
                 ))}
               </div>
             </div>
+
+            <div className="hidden md:flex items-center gap-3 pt-2 text-[11px] uppercase tracking-[0.18em] text-[#968A80]" data-hero-meta>
+              <span>Scroll</span>
+              <span className="h-10 w-px origin-top bg-[#D8CEBE]" data-hero-scroll-line />
+              <span>Discover</span>
+            </div>
           </div>
 
           <div className="lg:col-span-7 relative">
             <div className="grid grid-cols-12 gap-4 md:gap-5 items-end">
               <div className="hidden sm:block sm:col-span-5 space-y-5">
                 <div className="relative group">
-                  <div className="relative h-48 md:h-56 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300">
+                  <div className="relative h-48 md:h-56 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300" data-hero-image data-parallax="-5">
                     {primaryImage ? (
                       <Image
                         src={primaryImage}
@@ -174,7 +188,7 @@ export function Hero({ data }: HeroProps) {
                   </div>
                 </div>
                 <div className="relative group">
-                  <div className="relative h-64 md:h-72 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300">
+                  <div className="relative h-64 md:h-72 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300" data-hero-image data-parallax="-8">
                     {secondImage ? (
                       <Image
                         src={secondImage}
@@ -193,13 +207,14 @@ export function Hero({ data }: HeroProps) {
               </div>
 
               <div className="col-span-12 sm:col-span-7 relative">
-                <div className="relative h-64 sm:h-[460px] w-full overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] group">
+                <div className="relative h-64 sm:h-[460px] w-full overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] group" data-hero-image data-parallax="-10">
                   {featuredImage ? (
                     <Image
                       src={featuredImage}
                       alt={media[2]?.alt || 'Participants at work'}
                       fill
                       className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                      priority
                       sizes="(max-width: 768px) 100vw, 35vw"
                     />
                   ) : (
@@ -207,6 +222,15 @@ export function Hero({ data }: HeroProps) {
                       Participants at work
                     </span>
                   )}
+                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#2B231F]/60 to-transparent pointer-events-none" />
+                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-[#FBF9F4]" data-hero-meta>
+                    <span className="max-w-[11rem] text-[10px] uppercase tracking-[0.18em] leading-relaxed">
+                      Hands-on cultural experiences
+                    </span>
+                    <span className="text-[10px] uppercase tracking-[0.18em]">
+                      Make / Connect / Restore
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

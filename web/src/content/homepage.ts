@@ -1,14 +1,14 @@
 import type { AudiencePathway, Experience, HomepageContent, MethodologyStage } from './types'
 
 export const DEFAULT_HOMEPAGE: HomepageContent = {
-  heroEyebrow: 'A creative wellness space rooted in living art',
+  heroEyebrow: 'A cultural space for making, discovering & connecting',
   heroHeading: 'ROOT. CREATE. RESTORE.',
   heroSubheading:
-    'Kiiro sits where traditional craft, contemporary art, and mindful practice meet. The making is the medium. Restoration is the outcome.',
+    'Kiiro is a destination for people who want to make something with their hands, learn from master artisans, and spend time differently — together, offline, and in person.',
   heroPrimaryCta: {
-    label: 'Plan a Corporate Experience',
-    href: '/experiences/corporates',
-    kind: 'enquiry',
+    label: 'Explore Weekly Events',
+    href: '/weekly-events',
+    kind: 'booking',
   },
   heroSecondaryCta: {
     label: 'Discover Experiences',
@@ -33,42 +33,42 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
     },
   ],
   methodologyIntro:
-    'Every Kiiro experience follows the same three-part arc, whether it begins with craft, contemporary art, or mindful practice.',
+    'In a world of constant scrolling, Kiiro gives people something real to do with their time. Every experience follows a thoughtful three-part arc.',
   methodologyStages: [
     {
       id: 'root',
       title: 'Root',
       heading: 'Context, material, culture, lineage',
-      body: 'Participants understand what they are about to engage with and where it comes from: history, hands, and story before making begins.',
+      body: 'Understand what you are about to create and where it comes from: history, hands, and story before making begins.',
     },
     {
       id: 'create',
       title: 'Create',
       heading: 'Hands-on making, guided practice',
-      body: 'Immersion in process with a master artisan or contemporary practitioner. Attention settles into the work of the hands.',
+      body: 'Immerse in tactile process with master artisans and contemporary practitioners. Attention settles into the work of your hands.',
     },
     {
       id: 'restore',
       title: 'Restore',
-      heading: 'Reflection, stillness, closure',
-      body: 'Guided reflection or a closing practice tied to the day’s making. The creative experience becomes restorative.',
+      heading: 'Connection, reflection, closure',
+      body: 'Leave with a handcrafted piece, a new skill, and meaningful connections made through shared creative discovery.',
     },
   ] satisfies MethodologyStage[],
   manifestoTitle:
-    'Creativity itself is a wellness practice. Not as performance or product, but as process: the slow attention a maker brings to material.',
+    'Make something. Learn something. Try something new. Meet people. Spend time differently.',
   manifestoText:
-    'Kiiro exists to make that experience accessible, structured, and shared: traditional craft, contemporary art, and mindful practice in one continuous methodology.',
+    'Kiiro is a place to discover things worth doing. Whether you are picking up clay for the first time, learning an ancient textile technique, or joining a weekend sound circle, our sessions prioritize the joy of making and the people you meet along the way.',
   impactStats: [
-    { value: '800+', label: 'Workshops' },
-    { value: '10,000+', label: 'Participants' },
-    { value: '7', label: 'Cities' },
-    { value: '15+', label: 'Corporates' },
-    { value: '10+', label: 'Resorts' },
+    { value: '800+', label: 'Sessions hosted' },
+    { value: '10,000+', label: 'Hands-on makers' },
+    { value: '7', label: 'Active cities' },
+    { value: '15+', label: 'Corporate teams' },
+    { value: '10+', label: 'Hospitality partners' },
   ],
   ethicalHeading: 'Participant wellbeing and artisan livelihood are the same outcome.',
   ethicalBody:
-    'Every session channels fair, transparent income to the master artisans who lead it. Creative wellness for participants and dignified livelihood for artisans are designed together, not as competing priorities and not as generic CSR language.',
-  partnershipsTitle: 'Collaboration that holds culture and livelihood in the same frame',
+    'Every session channels fair, transparent income to the master artisans who lead it. Creative wellness for participants and dignified livelihood for artisans are designed together, not as competing priorities.',
+  partnershipsTitle: 'Collaboration that holds culture and community in the same frame',
 }
 
 export const AUDIENCE_PATHWAYS: AudiencePathway[] = [

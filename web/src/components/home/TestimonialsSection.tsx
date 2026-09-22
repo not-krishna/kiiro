@@ -10,10 +10,10 @@ export interface TestimonialItem {
   personName: string
   role?: string
   organisation?: string
-  portrait?: any
+  portrait?: unknown
   isVideo?: boolean
   videoUrl?: string
-  videoThumbnail?: any
+  videoThumbnail?: unknown
 }
 
 interface TestimonialsSectionProps {
@@ -78,23 +78,23 @@ export function TestimonialsSection({
 
   const getPortraitUrl = (item: TestimonialItem) => {
     if (typeof item.portrait === 'string') return item.portrait
-    if (item.portrait?.asset) return urlFor(item.portrait).url()
+    if (item.portrait && typeof item.portrait === 'object' && 'asset' in item.portrait) return urlFor(item.portrait).url()
     return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop'
   }
 
   const getThumbUrl = (item: TestimonialItem) => {
     if (typeof item.videoThumbnail === 'string') return item.videoThumbnail
-    if (item.videoThumbnail?.asset) return urlFor(item.videoThumbnail).url()
+    if (item.videoThumbnail && typeof item.videoThumbnail === 'object' && 'asset' in item.videoThumbnail) return urlFor(item.videoThumbnail).url()
     return getPortraitUrl(item)
   }
 
   return (
-    <section className="bg-[#FBF9F4] text-[#2B231F] border-t border-[#E8E1D5] py-20 md:py-28 px-6 md:px-10 overflow-hidden">
+    <section className="bg-[#FBF9F4] text-[#2B231F] border-t border-[#E8E1D5] py-16 md:py-24 px-6 md:px-10 overflow-hidden" data-motion-horizontal>
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Section Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="space-y-4 max-w-2xl">
-            <h2 className="font-display text-fluid-3xl md:text-fluid-4xl font-normal text-[#2B231F] leading-[1.08]">
+            <h2 className="font-display text-fluid-3xl md:text-fluid-4xl font-normal text-[#2B231F] leading-[1.08]" data-motion-text>
               {title}
             </h2>
           </div>
@@ -126,6 +126,7 @@ export function TestimonialsSection({
         <div
           ref={scrollRef}
           className="flex gap-6 overflow-x-auto scrollbar-none snap-x snap-mandatory pt-2 pb-6 px-1"
+          data-motion-horizontal-track
         >
           {items.map((item, idx) => {
             const avatarUrl = getPortraitUrl(item)
@@ -140,6 +141,7 @@ export function TestimonialsSection({
                     item.videoUrl && setActiveVideo({ url: item.videoUrl, title: item.personName })
                   }
                   className="relative bg-[#2B231F] border border-[#3D332E] min-h-[460px] w-[320px] sm:w-[360px] md:w-[410px] flex-shrink-0 snap-start flex flex-col justify-between p-7 md:p-8 text-[#FBF9F4] group cursor-pointer hover:border-[#C2593F] transition-all duration-300"
+                  data-motion-card
                 >
                   {/* Video Thumbnail Background */}
                   <Image
@@ -147,6 +149,7 @@ export function TestimonialsSection({
                     alt={item.personName}
                     fill
                     className="object-cover opacity-75 transition-all duration-700 group-hover:scale-105 group-hover:opacity-90"
+                    sizes="(max-width: 640px) 320px, (max-width: 768px) 360px, 410px"
                   />
 
                   {/* Dark Editorial Gradient Overlay */}
@@ -163,14 +166,14 @@ export function TestimonialsSection({
                   <div className="relative z-20 space-y-2 mt-auto pt-6">
                     <div className="flex items-center space-x-3">
                       <div className="w-10 h-10 border border-white/30 relative bg-[#2B231F] flex-shrink-0">
-                        <Image src={avatarUrl} alt={item.personName} fill className="object-cover" />
+                        <Image src={avatarUrl} alt={item.personName} fill className="object-cover" sizes="40px" />
                       </div>
                       <div>
-                        <h3 className="font-display text-lg text-white font-normal leading-snug">
+                        <h3 className="font-display text-lg text-white font-normal leading-snug" data-card-title>
                           {item.personName}
                         </h3>
                         {subtitle && (
-                          <p className="font-sans text-sm text-white/80 font-light">
+                          <p className="font-sans text-sm text-white/80 font-light" data-card-meta>
                             {subtitle}
                           </p>
                         )}
@@ -185,6 +188,7 @@ export function TestimonialsSection({
               <div
                 key={item._id || idx}
                 className="bg-[#F3EFE6] border border-[#D8CEBE] p-7 md:p-8 flex flex-col justify-between min-h-[460px] w-[320px] sm:w-[360px] md:w-[410px] flex-shrink-0 snap-start relative group hover:bg-[#FBF9F4] hover:border-[#2B231F] transition-colors"
+                data-motion-card
               >
                 <p className="font-sans text-sm md:text-base text-[#2B231F] font-normal leading-relaxed mb-8 flex-1">
                   {item.quote}
@@ -192,14 +196,14 @@ export function TestimonialsSection({
 
                 <div className="pt-5 border-t border-[#E8E1D5] flex items-center space-x-4">
                   <div className="w-11 h-11 border border-[#D8CEBE] relative bg-[#EAE3D5] flex-shrink-0">
-                    <Image src={avatarUrl} alt={item.personName} fill className="object-cover" />
+                    <Image src={avatarUrl} alt={item.personName} fill className="object-cover" sizes="44px" />
                   </div>
                   <div className="space-y-0.5 min-w-0">
-                    <h3 className="font-display text-base font-normal text-[#2B231F] truncate">
+                    <h3 className="font-display text-base font-normal text-[#2B231F] truncate" data-card-title>
                       {item.personName}
                     </h3>
                     {subtitle && (
-                      <p className="font-sans text-sm text-[#6E635B] font-light truncate">
+                      <p className="font-sans text-sm text-[#6E635B] font-light truncate" data-card-meta>
                         {subtitle}
                       </p>
                     )}

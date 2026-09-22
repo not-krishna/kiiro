@@ -33,6 +33,8 @@ export function PartnersRibbon() {
           className="logo-carousel-container w-full mx-auto relative will-change-transform"
           role="region"
           aria-label="Partner logos carousel"
+          data-motion-reveal
+          data-motion-distance="18"
         >
           <div
             className="logo-carousel-track relative w-full overflow-hidden py-2"

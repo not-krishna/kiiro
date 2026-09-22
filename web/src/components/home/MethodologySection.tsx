@@ -14,19 +14,20 @@ export function MethodologySection({ intro, stages }: MethodologySectionProps) {
     <section id="methodology" className="bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5] py-20 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto">
         <div className="max-w-3xl space-y-4 mb-16">
-          <h2 className="font-display text-fluid-3xl font-normal leading-[1.14]">How a session unfolds</h2>
-          <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed">
+          <h2 className="font-display text-fluid-3xl font-normal leading-[1.14]" data-motion-text>How a session unfolds</h2>
+          <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
             {intro || content.methodologyIntro}
           </p>
         </div>
 
-        <ol className="grid md:grid-cols-3 border-t border-[#D8CEBE]">
+        <ol className="grid md:grid-cols-3 border-t border-[#D8CEBE]" data-motion-stagger>
           {items.map((stage, index) => (
             <li
               key={stage.id || stage.title}
               className={`py-10 md:py-14 md:px-10 ${index === 0 ? 'md:pl-0' : ''} ${
                 index < items.length - 1 ? 'md:border-r border-[#D8CEBE]' : ''
               } border-b md:border-b-0 border-[#D8CEBE]`}
+              data-motion-item
             >
               <p className="font-display text-sm text-[#C2593F] mb-6">
                 {String(index + 1).padStart(2, '0')}

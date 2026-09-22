@@ -79,7 +79,7 @@ export default function CreativeWellnessCirclePage() {
 
               <blockquote className="bg-white p-6 border border-[#E8E1D5] font-serif text-sm text-[#4A4036] italic leading-relaxed space-y-2">
                 <p>&ldquo;Learning the rhythm of Warli line work from Master Ramesh was deeply humbling. It changed how I view art in daily life.&rdquo;</p>
-                <cite className="block text-xs font-sans not-italic text-[#968A80] font-medium">— Siddharth M., Designer (Bengaluru Circle)</cite>
+                <cite className="block text-xs font-sans not-italic text-[#968A80] font-medium">— Siddharth M., Designer (Bangalore Circle)</cite>
               </blockquote>
             </div>
           </div>

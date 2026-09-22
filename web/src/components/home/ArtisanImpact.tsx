@@ -9,7 +9,7 @@ interface ArtisanFeatureData {
   craft?: string
   region?: string
   quote?: string
-  portrait?: any
+  portrait?: unknown
 }
 
 interface ArtisanImpactProps {
@@ -30,15 +30,15 @@ export function ArtisanImpact({ data }: ArtisanImpactProps) {
       <div className="max-w-7xl mx-auto space-y-16">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3 border-b border-[#E8E1D5] pb-8">
-          <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]">
+          <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]" data-motion-text>
             {heading}
           </h2>
         </div>
 
         {/* 60/40 Editorial Feature Essay Layout (No Rounded Profile Card) */}
-        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch border border-[#D8CEBE] p-4 bg-[#F3EFE6]">
+        <div className="grid lg:grid-cols-12 gap-12 lg:gap-16 items-stretch border border-[#D8CEBE] p-4 bg-[#F3EFE6]" data-parallax-container data-motion-stagger>
           {/* Portrait Media Field */}
-          <div className="lg:col-span-7 relative bg-[#EAE3D5] min-h-[420px] lg:min-h-[540px] border border-[#D8CEBE] overflow-hidden flex flex-col justify-end p-8 md:p-12">
+          <div className="lg:col-span-7 relative bg-[#EAE3D5] min-h-[420px] lg:min-h-[540px] border border-[#D8CEBE] overflow-hidden flex flex-col justify-end p-8 md:p-12" data-motion-image="organic" data-parallax="-6" data-motion-item>
             <Image
               src={portraitUrl || '/images/ramu-master-craftsman.png'}
               alt={name}
@@ -61,7 +61,7 @@ export function ArtisanImpact({ data }: ArtisanImpactProps) {
           </div>
 
           {/* Narrative & High Editorial Quote Column */}
-          <div className="lg:col-span-5 flex flex-col justify-between space-y-8 py-4 px-2">
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8 py-4 px-2" data-motion-item>
             <div className="space-y-6">
               <blockquote className="font-display text-fluid-xl text-[#2B231F] leading-relaxed italic pl-0 py-2">
                 {quote}
@@ -83,9 +83,10 @@ export function ArtisanImpact({ data }: ArtisanImpactProps) {
 
               <Link
                 href="#enquiry"
-                className="inline-flex items-center text-[15px] font-sans font-medium text-[#2B231F] hover:text-[#C2593F] border-b-2 border-[#2B231F] hover:border-[#C2593F] transition-all pb-1"
+                className="kiiro-cta inline-flex items-center text-[15px] font-sans font-medium text-[#2B231F] hover:text-[#C2593F] border-b-2 border-[#2B231F] hover:border-[#C2593F] transition-all pb-1"
               >
-                Meet the artisan network
+                <span>Meet the artisan network</span>
+                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
             </div>
           </div>

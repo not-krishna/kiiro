@@ -17,11 +17,6 @@ export const PRIMARY_NAV: NavItem[] = [
         description: 'Browse workshops by category and book as an individual.',
       },
       {
-        label: 'Weekly Public Sessions',
-        href: '/weekly-events',
-        description: 'Listed public sessions with dates when they are published.',
-      },
-      {
         label: 'Corporates & Organisations',
         href: '/experiences/corporates',
         description: 'Plan a customised group experience.',

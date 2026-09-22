@@ -32,24 +32,28 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
         {/* Section Header */}
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-8 border-b border-[#E8E1D5] pb-10">
           <div className="space-y-4 max-w-2xl">
-            <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]">
+            <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]" data-motion-text>
               {heading}
             </h2>
           </div>
           <Link
             href="/partnerships-csr"
-            className="inline-flex items-center px-8 py-4 bg-[#C2593F] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#A64830] transition-all self-start lg:self-auto"
+            className="kiiro-cta inline-flex items-center px-8 py-4 bg-[#C2593F] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#A64830] transition-all self-start lg:self-auto"
+            data-motion-reveal
+            data-motion-distance="18"
           >
-            Partner with Kiiro
+            <span>Partner with Kiiro</span>
+            <span aria-hidden="true" data-cta-arrow>&rarr;</span>
           </Link>
         </div>
 
         {/* Institutional 4-Column Architectural Grid (No Card Containers) */}
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8" data-motion-stagger>
           {capabilities.map((cap) => (
             <div
               key={cap.title}
               className="space-y-4"
+              data-motion-item
             >
               <h3 className="font-display text-fluid-xl text-[#2B231F] leading-snug">
                 {cap.title}

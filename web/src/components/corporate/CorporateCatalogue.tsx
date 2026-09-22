@@ -39,7 +39,7 @@ export function CorporateCatalogue({
 
   return (
     <div className="space-y-10">
-      <div className="flex flex-col lg:flex-row gap-4 lg:items-end justify-between">
+      <div className="flex flex-col lg:flex-row gap-4 lg:items-end justify-between" data-motion-reveal data-motion-distance="18">
         <div className="flex flex-wrap gap-2" role="tablist" aria-label="Workshop category">
           {WORKSHOP_CATEGORIES.map((item) => (
             <button
@@ -67,11 +67,11 @@ export function CorporateCatalogue({
         </label>
       </div>
 
-      <p className="text-xs uppercase tracking-[0.16em] text-[#968A80]">
+      <p className="text-xs uppercase tracking-[0.16em] text-[#968A80]" data-motion-reveal data-motion-distance="14">
         {list.length} workshops · prices per person by batch size
       </p>
 
-      <div className="overflow-x-auto border border-[#E8E1D5]">
+      <div className="overflow-x-auto border border-[#E8E1D5]" data-motion-reveal data-motion-distance="18">
         <table className="min-w-full text-left text-sm">
           <thead className="bg-[#F3EFE6] text-[10px] uppercase tracking-[0.14em] text-[#968A80]">
             <tr>
@@ -84,7 +84,7 @@ export function CorporateCatalogue({
           </thead>
           <tbody>
             {list.map((workshop) => (
-              <tr key={workshop.slug} className="border-t border-[#E8E1D5] align-top">
+              <tr key={workshop.slug} className="border-t border-[#E8E1D5] align-top hover:bg-[#F3EFE6]/55 transition-colors" data-motion-card>
                 <td className="px-4 py-4">
                   <p className="font-serif text-lg text-[#2B231F]">{workshop.name}</p>
                   {workshop.origin && <p className="text-xs text-[#968A80] mt-1">{workshop.origin}</p>}
@@ -100,9 +100,10 @@ export function CorporateCatalogue({
                   <button
                     type="button"
                     onClick={() => setSelected(workshop)}
-                    className="text-xs uppercase tracking-[0.14em] font-semibold text-[#C2593F]"
+                    className="kiiro-cta text-xs uppercase tracking-[0.14em] font-semibold text-[#C2593F]"
                   >
-                    Compare
+                    <span>Compare</span>
+                    <span aria-hidden="true" data-cta-arrow>&rarr;</span>
                   </button>
                 </td>
               </tr>
@@ -112,8 +113,8 @@ export function CorporateCatalogue({
       </div>
 
       {selected && (
-        <div className="grid lg:grid-cols-12 gap-8 border border-[#E8E1D5] bg-[#FBF9F4] p-6 md:p-10">
-          <div className="lg:col-span-7 space-y-5">
+        <div className="grid lg:grid-cols-12 gap-8 border border-[#E8E1D5] bg-[#FBF9F4] p-6 md:p-10" data-motion-stagger>
+          <div className="lg:col-span-7 space-y-5" data-motion-item>
             <p className="text-[10px] uppercase tracking-[0.2em] text-[#C2593F]">{selected.category}</p>
             <h2 className="font-serif text-3xl">{selected.name}</h2>
             {selected.durationDays === 2 && (
@@ -152,7 +153,7 @@ export function CorporateCatalogue({
               </ul>
             </div>
           </div>
-          <div className="lg:col-span-5">
+          <div className="lg:col-span-5" data-motion-item>
             <h3 className="font-serif text-2xl mb-4">Enquire for {audienceLabel.toLowerCase()}</h3>
             <CorporatePlanningForm workshopSlug={selected.slug} workshopName={selected.name} />
           </div>
