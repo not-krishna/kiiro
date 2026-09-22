@@ -202,7 +202,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1615397349754-cfa2066a298e?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/perfume-blending-masterclass.jpg',
         alt: 'Perfume Making Masterclass',
       },
     ],
@@ -229,7 +229,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1515377905703-c4788e51af15?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/sound-healing-session.jpg',
         alt: 'Sound Healing & Vibrational Bath',
       },
     ],
@@ -283,7 +283,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/block-printing-workshop.jpg',
         alt: 'Block Printing Textile Workshop',
       },
     ],
@@ -310,7 +310,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1603006905003-be475563bc59?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/perfume-blending-masterclass.jpg',
         alt: 'Candle Making Studio',
       },
     ],
@@ -337,7 +337,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1517842645767-c639042777db?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/madhubani-painting-process.jpg',
         alt: 'Art Journaling & Reflective Sketching',
       },
     ],
