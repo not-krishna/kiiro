@@ -69,7 +69,7 @@ export default async function ImpactPage() {
             <div className="bg-white border border-[#E8E1D5] overflow-hidden group shadow-xs">
               <div className="relative h-64 w-full overflow-hidden bg-[#EAE3D5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=800&auto=format&fit=crop"
+                  src="/images/workshops/block-printing-workshop.jpg"
                   alt="Transparent Financial Livelihood"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"
@@ -91,7 +91,7 @@ export default async function ImpactPage() {
             <div className="bg-white border border-[#E8E1D5] overflow-hidden group shadow-xs">
               <div className="relative h-64 w-full overflow-hidden bg-[#EAE3D5]">
                 <Image
-                  src="https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=800&auto=format&fit=crop"
+                  src="/images/workshops/madhubani-painting-process.jpg"
                   alt="Youth Apprenticeships"
                   fill
                   className="object-cover group-hover:scale-105 transition-transform duration-700 ease-out"

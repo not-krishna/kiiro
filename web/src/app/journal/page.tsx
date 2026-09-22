@@ -54,7 +54,7 @@ export default async function JournalPage() {
               const imageSrc = post.heroImage
                 ? urlFor(post.heroImage as any).url()
                 : post.imageUrl ||
-                  'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=800&auto=format&fit=crop'
+                  '/images/workshops/warli-art-workshop.jpg'
 
               return (
                 <article

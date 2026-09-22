@@ -7,9 +7,9 @@ import { ARTFROM_CHAPTERS } from '@/content/homepage'
 import { workshopsByCategory } from '@/content/workshops'
 
 const CATEGORY_IMAGES: Record<string, string> = {
-  traditional: 'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=1200&auto=format&fit=crop',
-  contemporary: 'https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?q=80&w=1200&auto=format&fit=crop',
-  wellness: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=1200&auto=format&fit=crop',
+  traditional: '/images/hero/traditional-art-hero.jpg',
+  contemporary: '/images/other/pottery-1.png',
+  wellness: '/images/workshops/sound-healing-session.jpg',
 }
 
 const WORKSHOP_IMAGES: Record<string, string> = {

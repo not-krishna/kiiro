@@ -364,7 +364,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/block-printing-workshop.jpg',
         alt: 'Kolhapuri Chappal Crafting Workshop',
       },
     ],
@@ -391,7 +391,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1513542789411-b6a5d4f31634?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/cyanotype-printing.jpg',
         alt: 'Cyanotype Botanical Printing',
       },
     ],
@@ -418,7 +418,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1582562124811-c09040d0a901?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/cyanotype-printing.jpg',
         alt: 'Resin Art & Coaster Workshop',
       },
     ],
@@ -445,7 +445,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/sound-healing-session.jpg',
         alt: 'Breathwork & Pranayama Sanctuary',
       },
     ],
@@ -499,7 +499,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1544816155-12df9643f363?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/bandhni-tie-dye.jpg',
         alt: 'Bandhni & Tie Dye Textile Art',
       },
     ],
@@ -526,7 +526,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1519892300165-cb5542fb47c7?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/sound-healing-session.jpg',
         alt: 'Drum Circle Facilitated Session',
       },
     ],
@@ -553,7 +553,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/sound-healing-session.jpg',
         alt: 'Dance Movement Therapy Session',
       },
     ],
@@ -580,7 +580,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/block-printing-workshop.jpg',
         alt: 'Block Printing Textile Workshop',
       },
     ],
@@ -607,7 +607,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1528459801416-a9e53bbf4e17?q=80&w=800&auto=format&fit=crop',
+        source: '/images/other/pottery-3.png',
         alt: 'Portuguese Azulejo Tile Painting',
       },
     ],
@@ -634,7 +634,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1548199973-03cce0bbc87b?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/sound-healing-session.jpg',
         alt: 'Pet Therapy & Animal Bond Experience',
       },
     ],
@@ -661,7 +661,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1543163521-1bf539c55dd2?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/block-printing-workshop.jpg',
         alt: 'Kolhapuri Chappal Crafting Workshop',
       },
     ],
@@ -688,7 +688,7 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     media: [
       {
         type: 'image',
-        source: 'https://images.unsplash.com/photo-1578749556568-bc2c40e68b61?q=80&w=800&auto=format&fit=crop',
+        source: '/images/workshops/madhubani-painting-process.jpg',
         alt: 'Madhubani Painting Masterclass',
       },
     ],

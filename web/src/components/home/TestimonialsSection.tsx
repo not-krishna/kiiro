@@ -55,9 +55,9 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
       '"Our luxury resort guests constantly highlight the bespoke artisan residency as the pinnacle of their stay. Kiiro makes Indian heritage engaging, authentic, and modern."',
     personName: 'Divya Nair',
     role: 'Head of Guest Experience at Taj Hotels',
-    portrait: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?q=80&w=400&auto=format&fit=crop',
+    portrait: '/images/testimonials/divya-sudarshana.png',
     isVideo: true,
-    videoThumbnail: 'https://images.unsplash.com/photo-1606744888344-493238951221?q=80&w=1000&auto=format&fit=crop',
+    videoThumbnail: '/images/workshops/warli-art-workshop.jpg',
     videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerEscapes.mp4',
   },
 ]
@@ -79,7 +79,7 @@ export function TestimonialsSection({
   const getPortraitUrl = (item: TestimonialItem) => {
     if (typeof item.portrait === 'string') return item.portrait
     if (item.portrait && typeof item.portrait === 'object' && 'asset' in item.portrait) return urlFor(item.portrait).url()
-    return 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=400&auto=format&fit=crop'
+    return '/images/testimonials/avatar1.png'
   }
 
   const getThumbUrl = (item: TestimonialItem) => {
