@@ -61,7 +61,7 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
 
         {/* Article Body */}
         <article className="py-16 px-6 md:px-10 max-w-4xl mx-auto space-y-10">
-          <div className="border-l-2 border-[#C2593F] pl-6 py-2">
+          <div className="border-l-2 border-[#4F5B2A] pl-6 py-2">
             <p className="text-xl md:text-2xl font-serif text-[#2B231F] leading-relaxed italic">
               {post.standfirst}
             </p>
@@ -81,10 +81,10 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
 
           {/* Share & Explore links */}
           <div className="border-t border-[#E8E1D5] pt-8 flex items-center justify-between">
-            <Link href="/journal" className="text-xs uppercase tracking-[0.2em] text-[#C2593F] font-semibold">
+            <Link href="/journal" className="text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold">
               ← Back to Journal Index
             </Link>
-            <Link href="/artforms" className="text-xs uppercase tracking-[0.2em] text-[#2B231F] hover:text-[#C2593F] font-semibold">
+            <Link href="/artforms" className="text-xs uppercase tracking-[0.2em] text-[#2B231F] hover:text-[#4F5B2A] font-semibold">
               Explore Related Artforms →
             </Link>
           </div>

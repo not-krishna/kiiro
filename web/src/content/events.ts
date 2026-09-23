@@ -80,29 +80,15 @@ export function formatEventDate(date?: string): string | undefined {
   })
 }
 
-export function formatPrice(price?: number): string | undefined {
-  if (price == null) return undefined
+export function formatPrice(price?: number): string {
+  if (price === undefined || price === null) return 'Price on enquiry'
+  if (price === 0) return 'Free Entry'
   return `₹${price.toLocaleString('en-IN')}`
 }
 
-export function availabilityLabel(status?: EventItem['availability']): string {
-  switch (status) {
-    case 'open':
-      return 'Seats open'
-    case 'limited':
-      return 'Limited seats'
-    case 'sold-out':
-      return 'Sold out'
-    case 'closed':
-      return 'Closed'
-    default:
-      return 'Enquiry'
-  }
-}
-
-export function isEventPast(dateStr?: string): boolean {
-  if (!dateStr) return false
-  const eventDate = new Date(dateStr)
+export function isEventPast(date?: string): boolean {
+  if (!date) return false
+  const eventDate = new Date(date)
   if (Number.isNaN(eventDate.getTime())) return false
   const today = new Date()
   today.setHours(0, 0, 0, 0)
@@ -110,64 +96,137 @@ export function isEventPast(dateStr?: string): boolean {
 }
 
 export function sortEventsChronologically(events: EventItem[]): {
+  sortedAll: EventItem[]
   upcoming: EventItem[]
   past: EventItem[]
-  sortedAll: EventItem[]
 } {
-  const today = new Date()
-  today.setHours(0, 0, 0, 0)
-
-  const upcoming: EventItem[] = []
-  const past: EventItem[] = []
-
-  for (const event of events) {
-    if (!event.date) {
-      upcoming.push(event)
-      continue
-    }
-    const d = new Date(event.date)
-    if (Number.isNaN(d.getTime()) || d >= today) {
-      upcoming.push(event)
-    } else {
-      past.push(event)
-    }
-  }
-
-  upcoming.sort((a, b) => {
-    if (!a.date) return 1
-    if (!b.date) return -1
-    return new Date(a.date).getTime() - new Date(b.date).getTime()
+  const sortedAll = [...events].sort((a, b) => {
+    const timeA = a.date ? new Date(a.date).getTime() : 0
+    const timeB = b.date ? new Date(b.date).getTime() : 0
+    return timeA - timeB
   })
 
-  past.sort((a, b) => {
-    if (!a.date) return 1
-    if (!b.date) return -1
-    return new Date(b.date).getTime() - new Date(a.date).getTime()
-  })
+  const upcoming = sortedAll.filter((evt) => !isEventPast(evt.date))
+  const past = sortedAll.filter((evt) => isEventPast(evt.date))
 
-  return {
-    upcoming,
-    past,
-    sortedAll: [...upcoming, ...past],
+  return { sortedAll, upcoming, past }
+}
+
+export function formatAvailabilityLabel(availability?: EventItem['availability']): string {
+  switch (availability) {
+    case 'open':
+      return 'Seats Available'
+    case 'limited':
+      return 'Limited Seats'
+    case 'sold-out':
+      return 'Sold Out'
+    case 'closed':
+      return 'Booking Closed'
+    case 'enquiry-only':
+    default:
+      return 'Enquiry Only'
   }
 }
 
+export const availabilityLabel = formatAvailabilityLabel
+
 export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
   {
-    id: 'event-2026-06-07-pottery',
-    slug: 'pottery-studio-experience-june-7',
-    title: 'Clay, Calm & Centering (Pottery Studio Experience)',
-    date: '2026-06-07',
+    id: 'event-block-printing-1',
+    slug: 'bagru-block-printing-bangalore',
+    title: 'Bagru Block Printing & Natural Dye Studio',
+    date: '2026-10-04',
     startTime: '10:30 AM',
-    endTime: '1:30 PM',
+    endTime: '01:30 PM',
     city: 'Bangalore',
     venue: 'Indiranagar Craft Sanctuary',
     location: 'Indiranagar Craft Sanctuary, Bangalore',
-    price: 1500,
+    price: 2200,
+    capacity: 15,
+    availability: 'open',
+    workshopSlug: 'bagru-block-printing',
+    experienceType: 'Traditional Textile Craft',
+    duration: '3 hours',
+    facilitator: 'Master Block Printer from Rajasthan',
+    isWeekly: true,
+    audience: 'b2c',
+    media: [
+      {
+        type: 'image',
+        source: '/images/workshops/madhubani-painting-process.jpg',
+        alt: 'Bagru Block Printing Studio Experience',
+      },
+    ],
+  },
+  {
+    id: 'event-block-printing-2',
+    slug: 'natural-dye-block-printing-bangalore',
+    title: 'Indigo & Woodblock Relief Printing',
+    date: '2026-10-11',
+    startTime: '02:00 PM',
+    endTime: '05:00 PM',
+    city: 'Bangalore',
+    venue: 'Koramangala Studio Hub',
+    location: 'Koramangala Studio Hub, Bangalore',
+    price: 2400,
+    capacity: 12,
+    availability: 'open',
+    workshopSlug: 'bagru-block-printing',
+    experienceType: 'Textile Art',
+    duration: '3 hours',
+    facilitator: 'Master Block Printer',
+    isWeekly: true,
+    audience: 'b2c',
+    media: [
+      {
+        type: 'image',
+        source: '/images/workshops/kalamkari-art-process.jpg',
+        alt: 'Indigo Block Printing Masterclass',
+      },
+    ],
+  },
+  {
+    id: 'event-block-printing-3',
+    slug: 'contemporary-textile-block-printing-bangalore',
+    title: 'Botanical & Geometric Block Printing',
+    date: '2026-10-18',
+    startTime: '11:00 AM',
+    endTime: '02:00 PM',
+    city: 'Bangalore',
+    venue: 'Whitefield Creative Space',
+    location: 'Whitefield Creative Space, Bangalore',
+    price: 2100,
+    capacity: 15,
+    availability: 'open',
+    workshopSlug: 'bagru-block-printing',
+    experienceType: 'Contemporary Craft',
+    duration: '3 hours',
+    facilitator: 'Textile Artisan Facilitator',
+    isWeekly: true,
+    audience: 'b2c',
+    media: [
+      {
+        type: 'image',
+        source: '/images/workshops/madhubani-painting-process.jpg',
+        alt: 'Botanical Block Printing Workshop',
+      },
+    ],
+  },
+  {
+    id: 'event-pottery-1',
+    slug: 'pottery-studio-experience-bangalore',
+    title: 'Clay, Calm & Centering (Pottery Studio)',
+    date: '2026-10-03',
+    startTime: '10:30 AM',
+    endTime: '01:30 PM',
+    city: 'Bangalore',
+    venue: 'Indiranagar Craft Sanctuary',
+    location: 'Indiranagar Craft Sanctuary, Bangalore',
+    price: 2500,
     capacity: 15,
     availability: 'open',
     workshopSlug: 'pottery',
-    experienceType: 'Traditional Artforms',
+    experienceType: 'Studio Craft',
     duration: '3 hours',
     facilitator: 'Master Ceramicist',
     isWeekly: true,
@@ -181,517 +240,111 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     ],
   },
   {
-    id: 'event-2026-06-14-perfume',
-    slug: 'perfume-making-masterclass-june-14',
-    title: 'Perfume Making Masterclass',
-    date: '2026-06-14',
-    startTime: '2:00 PM',
-    endTime: '5:00 PM',
-    city: 'Mumbai',
-    venue: 'Bandra Olfactory Lab',
-    location: 'Bandra Olfactory Lab, Mumbai',
-    price: 1800,
-    capacity: 12,
-    availability: 'open',
-    workshopSlug: 'perfume-making',
-    experienceType: 'Contemporary Art',
-    duration: '3 hours',
-    facilitator: 'Senior Perfumer',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/perfume-blending-masterclass.jpg',
-        alt: 'Perfume Making Masterclass',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-06-21-sound-healing',
-    slug: 'sound-healing-vibrational-bath-june-21',
-    title: 'Sound Healing & Vibrational Bath',
-    date: '2026-06-21',
-    startTime: '5:00 PM',
-    endTime: '7:00 PM',
-    city: 'Delhi NCR',
-    venue: 'Gurugram Wellness Pavilion',
-    location: 'Gurugram Wellness Pavilion, Delhi NCR',
-    price: 1500,
-    capacity: 20,
-    availability: 'open',
-    workshopSlug: 'sound-healing',
-    experienceType: 'Wellness Practice',
-    duration: '2 hours',
-    facilitator: 'Sound Practitioner',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/sound-healing-session.jpg',
-        alt: 'Sound Healing & Vibrational Bath',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-06-28-kintsugi',
-    slug: 'kintsugi-studio-workshop-june-28',
-    title: 'Kintsugi Studio Workshop',
-    date: '2026-06-28',
-    startTime: '11:00 AM',
-    endTime: '2:00 PM',
-    city: 'Pune',
-    venue: 'Koregaon Park Studio',
-    location: 'Koregaon Park Studio, Pune',
-    price: 1800,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'kintsugi',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Kintsugi Artisan',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/other/kintsugi-1.png',
-        alt: 'Kintsugi Studio Workshop',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-07-05-block-printing',
-    slug: 'block-printing-textile-july-5',
-    title: 'Block Printing Textile Workshop',
-    date: '2026-07-05',
-    startTime: '10:30 AM',
-    endTime: '1:30 PM',
-    city: 'Jaipur',
-    venue: 'Heritage Craft Studio',
-    location: 'Heritage Craft Studio, Jaipur',
-    price: 1500,
-    capacity: 18,
-    availability: 'open',
-    workshopSlug: 'block-printing',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Master Block Printer',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/block-printing-workshop.jpg',
-        alt: 'Block Printing Textile Workshop',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-07-12-candle-making',
-    slug: 'candle-making-studio-july-12',
-    title: 'Candle Making Studio',
-    date: '2026-07-12',
-    startTime: '3:00 PM',
-    endTime: '5:30 PM',
+    id: 'event-pottery-2',
+    slug: 'blue-pottery-glaze-bangalore',
+    title: 'Jaipur Blue Pottery Underglaze Workshop',
+    date: '2026-10-17',
+    startTime: '02:30 PM',
+    endTime: '05:30 PM',
     city: 'Bangalore',
-    venue: 'Koramangala Creative Hub',
-    location: 'Koramangala Creative Hub, Bangalore',
-    price: 1500,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'candle-making',
-    experienceType: 'Contemporary Art',
-    duration: '2.5 hours',
-    facilitator: 'Artisan Chandler',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/perfume-blending-masterclass.jpg',
-        alt: 'Candle Making Studio',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-07-19-art-journaling',
-    slug: 'art-journaling-reflective-sketching-july-19',
-    title: 'Art Journaling & Reflective Sketching',
-    date: '2026-07-19',
-    startTime: '10:00 AM',
-    endTime: '1:00 PM',
-    city: 'Goa',
-    venue: 'Fontainhas Studio Loft',
-    location: 'Fontainhas Studio Loft, Goa',
-    price: 1500,
+    venue: 'Koramangala Studio Hub',
+    location: 'Koramangala Studio Hub, Bangalore',
+    price: 2800,
     capacity: 12,
-    availability: 'open',
-    workshopSlug: 'art-journaling',
-    experienceType: 'Wellness Practice',
-    duration: '3 hours',
-    facilitator: 'Expressive Art Facilitator',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/madhubani-painting-process.jpg',
-        alt: 'Art Journaling & Reflective Sketching',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-07-26-kolhapuri',
-    slug: 'kolhapuri-chappal-making-july-26',
-    title: 'Kolhapuri Chappal Crafting Workshop',
-    date: '2026-07-26',
-    startTime: '10:30 AM',
-    endTime: '2:30 PM',
-    city: 'Mumbai',
-    venue: 'Juhu Artisan Studio',
-    location: 'Juhu Artisan Studio, Mumbai',
-    price: 2600,
-    capacity: 12,
-    availability: 'open',
-    workshopSlug: 'kolhapuri-chappal-making',
-    experienceType: 'Traditional Artforms',
-    duration: '4 hours',
-    facilitator: 'Master Leather Craftsman',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/block-printing-workshop.jpg',
-        alt: 'Kolhapuri Chappal Crafting Workshop',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-08-02-cyanotype',
-    slug: 'cyanotype-botanical-printing-aug-2',
-    title: 'Cyanotype Botanical Printing',
-    date: '2026-08-02',
-    startTime: '11:00 AM',
-    endTime: '2:00 PM',
-    city: 'Kolkata',
-    venue: 'Ballygunge Art Space',
-    location: 'Ballygunge Art Space, Kolkata',
-    price: 2000,
-    capacity: 12,
-    availability: 'open',
-    workshopSlug: 'cyanotype-printing',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Alternative Process Artist',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/cyanotype-printing.jpg',
-        alt: 'Cyanotype Botanical Printing',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-08-09-resin-art',
-    slug: 'resin-art-coaster-workshop-aug-9',
-    title: 'Resin Art & Coaster Workshop',
-    date: '2026-08-09',
-    startTime: '3:00 PM',
-    endTime: '6:00 PM',
-    city: 'Hyderabad',
-    venue: 'Jubilee Hills Design Studio',
-    location: 'Jubilee Hills Design Studio, Hyderabad',
-    price: 1800,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'resin-art',
-    experienceType: 'Contemporary Art',
-    duration: '3 hours',
-    facilitator: 'Fluid Art Specialist',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/cyanotype-printing.jpg',
-        alt: 'Resin Art & Coaster Workshop',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-08-16-breathwork',
-    slug: 'breathwork-pranayama-sanctuary-aug-16',
-    title: 'Breathwork & Pranayama Sanctuary',
-    date: '2026-08-16',
-    startTime: '9:30 AM',
-    endTime: '11:30 AM',
-    city: 'Bangalore',
-    venue: 'Whitefield Mindful Space',
-    location: 'Whitefield Mindful Space, Bangalore',
-    price: 1500,
-    capacity: 20,
-    availability: 'open',
-    workshopSlug: 'breathwork',
-    experienceType: 'Wellness Practice',
-    duration: '2 hours',
-    facilitator: 'Breathwork Facilitator',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/sound-healing-session.jpg',
-        alt: 'Breathwork & Pranayama Sanctuary',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-08-23-pottery',
-    slug: 'pottery-studio-experience-aug-23',
-    title: 'Clay, Calm & Centering (Pottery Studio Experience)',
-    date: '2026-08-23',
-    startTime: '10:30 AM',
-    endTime: '1:30 PM',
-    city: 'Pune',
-    venue: 'Deccan Clay Studio',
-    location: 'Deccan Clay Studio, Pune',
-    price: 1500,
-    capacity: 15,
-    availability: 'open',
+    availability: 'limited',
     workshopSlug: 'pottery',
-    experienceType: 'Traditional Artforms',
+    experienceType: 'Heritage Ceramics',
     duration: '3 hours',
-    facilitator: 'Master Ceramicist',
+    facilitator: 'Master Blue Pottery Artisan',
     isWeekly: true,
     audience: 'b2c',
     media: [
       {
         type: 'image',
         source: '/images/other/pottery-3.png',
-        alt: 'Clay Pottery Studio Experience',
+        alt: 'Blue Pottery Tiles & Underglaze Masterclass',
       },
     ],
   },
   {
-    id: 'event-2026-08-30-bandhni',
-    slug: 'bandhni-tie-dye-textile-art-aug-30',
-    title: 'Bandhni & Tie Dye Textile Art',
-    date: '2026-08-30',
-    startTime: '2:00 PM',
-    endTime: '5:00 PM',
-    city: 'Delhi NCR',
-    venue: 'Hauz Khas Textile Atelier',
-    location: 'Hauz Khas Textile Atelier, Delhi NCR',
-    price: 1500,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'bandhni-tie-dye',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Heritage Dyeing Master',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/bandhni-tie-dye.jpg',
-        alt: 'Bandhni & Tie Dye Textile Art',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-09-06-drum-circle',
-    slug: 'drum-circle-facilitated-session-sep-6',
-    title: 'Drum Circle Facilitated Session',
-    date: '2026-09-06',
-    startTime: '4:30 PM',
-    endTime: '6:30 PM',
-    city: 'Bangalore',
-    venue: 'Cubbon Open Air Amphitheatre',
-    location: 'Cubbon Open Air Amphitheatre, Bangalore',
-    price: 1500,
-    capacity: 25,
-    availability: 'open',
-    workshopSlug: 'drum-circle',
-    experienceType: 'Contemporary Art',
-    duration: '2 hours',
-    facilitator: 'Master Rhythm Facilitator',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/sound-healing-session.jpg',
-        alt: 'Drum Circle Facilitated Session',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-09-13-dance-therapy',
-    slug: 'dance-movement-therapy-sep-13',
-    title: 'Dance Movement Therapy Session',
-    date: '2026-09-13',
-    startTime: '10:00 AM',
-    endTime: '12:30 PM',
-    city: 'Mumbai',
-    venue: 'Andheri Expressive Arts Movement',
-    location: 'Andheri Expressive Arts Movement, Mumbai',
-    price: 1500,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'dance-movement-therapy',
-    experienceType: 'Wellness Practice',
-    duration: '2.5 hours',
-    facilitator: 'Certified DMT Specialist',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/sound-healing-session.jpg',
-        alt: 'Dance Movement Therapy Session',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-09-20-block-printing',
-    slug: 'block-printing-textile-sep-20',
-    title: 'Block Printing Textile Workshop',
-    date: '2026-09-20',
-    startTime: '10:30 AM',
-    endTime: '1:30 PM',
-    city: 'Delhi NCR',
-    venue: 'Shahpur Jat Craft Studio',
-    location: 'Shahpur Jat Craft Studio, Delhi NCR',
-    price: 1500,
-    capacity: 18,
-    availability: 'open',
-    workshopSlug: 'block-printing',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Master Block Printer',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/block-printing-workshop.jpg',
-        alt: 'Block Printing Textile Workshop',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-09-27-azulejo',
-    slug: 'portuguese-azulejo-tile-painting-sep-27',
-    title: 'Portuguese Azulejo Tile Painting',
-    date: '2026-09-27',
+    id: 'event-kolhapuri-1',
+    slug: 'kolhapuri-chappal-making-mumbai',
+    title: 'Kolhapuri Chappal & Hand-Stitched Leather Craft',
+    date: '2026-10-10',
     startTime: '11:00 AM',
-    endTime: '2:00 PM',
+    endTime: '03:00 PM',
+    city: 'Mumbai',
+    venue: 'Kiiro Studio, Bandra West',
+    location: 'Kiiro Studio, Bandra West, Mumbai',
+    price: 3200,
+    capacity: 10,
+    availability: 'limited',
+    workshopSlug: 'kolhapuri-chappal',
+    experienceType: 'Generational Leather Craft',
+    duration: '4 hours',
+    facilitator: 'Generational Artisan from Kolhapur',
+    isWeekly: true,
+    audience: 'b2c',
+    media: [
+      {
+        type: 'image',
+        source: '/images/other/pottery-2.png',
+        alt: 'Kolhapuri Chappal Craft Session',
+      },
+    ],
+  },
+  {
+    id: 'event-portuguese-1',
+    slug: 'portuguese-azulejo-tile-painting-goa',
+    title: 'Portuguese Azulejo Tile Painting Workshop',
+    date: '2026-10-24',
+    startTime: '03:00 PM',
+    endTime: '06:00 PM',
     city: 'Goa',
-    venue: 'Panjim Heritage Villa',
-    location: 'Panjim Heritage Villa, Goa',
-    price: 1800,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'portuguese-azulejo-tile-painting',
-    experienceType: 'Traditional Artforms',
-    duration: '3 hours',
-    facilitator: 'Azulejo Tile Artist',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/other/pottery-3.png',
-        alt: 'Portuguese Azulejo Tile Painting',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-10-04-pet-therapy',
-    slug: 'pet-therapy-animal-bond-oct-4',
-    title: 'Pet Therapy & Animal Bond Experience',
-    date: '2026-10-04',
-    startTime: '4:00 PM',
-    endTime: '6:00 PM',
-    city: 'Kolkata',
-    venue: 'Salt Lake Open Garden Sanctuary',
-    location: 'Salt Lake Open Garden Sanctuary, Kolkata',
-    price: 2000,
-    capacity: 12,
-    availability: 'open',
-    workshopSlug: 'pet-therapy',
-    experienceType: 'Wellness Practice',
-    duration: '2 hours',
-    facilitator: 'Animal Therapy Specialist',
-    isWeekly: true,
-    audience: 'b2c',
-    media: [
-      {
-        type: 'image',
-        source: '/images/workshops/sound-healing-session.jpg',
-        alt: 'Pet Therapy & Animal Bond Experience',
-      },
-    ],
-  },
-  {
-    id: 'event-2026-10-11-kolhapuri',
-    slug: 'kolhapuri-chappal-making-oct-11',
-    title: 'Kolhapuri Chappal Crafting Workshop',
-    date: '2026-10-11',
-    startTime: '10:30 AM',
-    endTime: '2:30 PM',
-    city: 'Bangalore',
-    venue: 'Indiranagar Artisan Studio',
-    location: 'Indiranagar Artisan Studio, Bangalore',
+    venue: 'Fontainhas Heritage House, Panjim',
+    location: 'Fontainhas Heritage House, Panjim, Goa',
     price: 2600,
     capacity: 12,
     availability: 'open',
-    workshopSlug: 'kolhapuri-chappal-making',
-    experienceType: 'Traditional Artforms',
-    duration: '4 hours',
-    facilitator: 'Master Leather Craftsman',
+    workshopSlug: 'portuguese-azulejo',
+    experienceType: 'Heritage Tile Art',
+    duration: '3 hours',
+    facilitator: 'Master Azulejo Painter',
     isWeekly: true,
     audience: 'b2c',
     media: [
       {
         type: 'image',
-        source: '/images/workshops/block-printing-workshop.jpg',
-        alt: 'Kolhapuri Chappal Crafting Workshop',
+        source: '/images/other/pottery-3.png',
+        alt: 'Portuguese Azulejo Tile Painting Workshop',
       },
     ],
   },
   {
-    id: 'event-2026-10-18-madhubani',
-    slug: 'madhubani-painting-masterclass-oct-18',
-    title: 'Madhubani Painting Masterclass',
-    date: '2026-10-18',
-    startTime: '11:00 AM',
-    endTime: '2:00 PM',
-    city: 'Delhi NCR',
-    venue: 'Connaught Place Art Gallery',
-    location: 'Connaught Place Art Gallery, Delhi NCR',
-    price: 1500,
-    capacity: 15,
-    availability: 'open',
-    workshopSlug: 'madhubani-painting',
-    experienceType: 'Traditional Artforms',
+    id: 'event-kintsugi-1',
+    slug: 'kintsugi-golden-repair-goa',
+    title: 'Kintsugi: The Mindful Art of Golden Joinery',
+    date: '2026-10-25',
+    startTime: '10:30 AM',
+    endTime: '01:30 PM',
+    city: 'Goa',
+    venue: 'Assagao Craft Studio',
+    location: 'Assagao Craft Studio, Goa',
+    price: 3500,
+    capacity: 10,
+    availability: 'limited',
+    workshopSlug: 'kintsugi',
+    experienceType: 'Mindful Ceramic Repair',
     duration: '3 hours',
-    facilitator: 'Mithila Folk Artist',
+    facilitator: 'Kintsugi Practitioner',
     isWeekly: true,
     audience: 'b2c',
     media: [
       {
         type: 'image',
-        source: '/images/workshops/madhubani-painting-process.jpg',
-        alt: 'Madhubani Painting Masterclass',
+        source: '/images/other/pottery-1.png',
+        alt: 'Kintsugi Golden Joinery Workshop',
       },
     ],
   },
 ]
-

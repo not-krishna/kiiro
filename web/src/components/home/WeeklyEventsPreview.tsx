@@ -16,7 +16,7 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="max-w-2xl space-y-3">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C2593F] font-semibold" data-motion-reveal data-motion-distance="14">Living Calendar</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold" data-motion-reveal data-motion-distance="14">Living Calendar</span>
             <h2 className="font-display text-fluid-3xl font-normal" data-motion-text>Upcoming Public Programming</h2>
             <p className="text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
               Tactile, hands-on sessions for individuals and small groups. Sorted dynamically by date so you can see what is happening next in your city.
@@ -24,7 +24,7 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
           </div>
           <Link
             href="/weekly-events"
-            className="text-[15px] font-medium text-[#2B231F] border-b-2 border-[#2B231F] pb-1 hover:text-[#C2593F] hover:border-[#C2593F] transition-colors"
+            className="text-[15px] font-medium text-[#2B231F] border-b-2 border-[#2B231F] pb-1 hover:text-[#4F5B2A] hover:border-[#4F5B2A] transition-colors"
             data-motion-reveal
             data-motion-distance="18"
             data-link-motion
@@ -55,7 +55,7 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
                 >
                   <div className="md:col-span-3 text-sm text-[#6E635B] space-y-1">
                     <div className="flex items-center gap-2">
-                      <p className={`font-medium ${past ? 'text-[#968A80] line-through' : 'text-[#C2593F]'}`}>
+                      <p className={`font-medium ${past ? 'text-[#968A80] line-through' : 'text-[#4F5B2A]'}`}>
                         {formatEventDate(event.date) || 'Date to be confirmed'}
                       </p>
                       {past && (

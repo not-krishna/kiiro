@@ -51,7 +51,7 @@ export function ArtformsSection() {
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="inline-block text-xs uppercase tracking-[0.2em] text-[#C2593F] font-semibold" data-motion-reveal data-motion-distance="14">Our Offerings</span>
+          <span className="inline-block text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold" data-motion-reveal data-motion-distance="14">Our Offerings</span>
           <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F]" data-motion-text>The Pillars & Practices</h2>
           <p className="text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
             Explore our offerings structured inside three core disciplines: Traditional Art, Contemporary Art, and Wellness Practice. Click Explore on any category card to reveal the offerings contained inside.
@@ -71,7 +71,7 @@ export function ArtformsSection() {
               <article
                 key={item.id}
                 className={`border transition-all duration-300 bg-white overflow-hidden shadow-sm ${
-                  isExpanded ? 'border-[#C2593F] ring-1 ring-[#C2593F]' : 'border-[#E8E1D5] hover:border-[#2B231F]'
+                  isExpanded ? 'border-[#4F5B2A] ring-1 ring-[#4F5B2A]' : 'border-[#E8E1D5] hover:border-[#2B231F]'
                 }`}
                 data-motion-item
                 data-motion-card
@@ -119,8 +119,8 @@ export function ArtformsSection() {
                         onClick={() => toggleCategory(item.id)}
                         className={`min-h-11 px-6 inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
                           isExpanded
-                            ? 'bg-[#C2593F] text-white hover:bg-[#A84A33]'
-                            : 'bg-[#2B231F] text-white hover:bg-[#C2593F]'
+                            ? 'bg-[#4F5B2A] text-white hover:bg-[#3D4721]'
+                            : 'bg-[#2B231F] text-white hover:bg-[#4F5B2A]'
                         }`}
                         >
                         <span>{isExpanded ? `Close ${item.title}` : `Explore ${item.title}`}</span>
@@ -143,7 +143,7 @@ export function ArtformsSection() {
                   <div className="border-t border-[#E8E1D5] bg-[#FBF9F4] p-6 md:p-8 space-y-6 animate-in fade-in duration-300">
                     <div className="flex items-center justify-between border-b border-[#E8E1D5] pb-4">
                       <div>
-                        <span className="text-[11px] uppercase tracking-[0.16em] text-[#C2593F] font-semibold">
+                        <span className="text-[11px] uppercase tracking-[0.16em] text-[#4F5B2A] font-semibold">
                           Catalogue
                         </span>
                         <h4 className="font-display text-xl text-[#2B231F]">
@@ -152,7 +152,7 @@ export function ArtformsSection() {
                       </div>
                       <Link
                         href={`/experiences?category=${item.id}`}
-                        className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2593F] hover:underline"
+                        className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4F5B2A] hover:underline"
                       >
                         View in Full Catalogue →
                       </Link>
@@ -164,7 +164,7 @@ export function ArtformsSection() {
                         return (
                           <article
                             key={workshop.slug}
-                            className="bg-white border border-[#E8E1D5] flex flex-col justify-between group hover:border-[#C2593F] transition-all duration-300 shadow-sm"
+                            className="bg-white border border-[#E8E1D5] flex flex-col justify-between group hover:border-[#4F5B2A] transition-all duration-300 shadow-sm"
                             data-motion-card
                           >
                             <div>
@@ -184,7 +184,7 @@ export function ArtformsSection() {
                               </div>
 
                               <div className="p-5 space-y-2">
-                                <h5 className="font-display text-lg text-[#2B231F] group-hover:text-[#C2593F] transition-colors" data-card-title>
+                                <h5 className="font-display text-lg text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors" data-card-title>
                                   {workshop.name}
                                 </h5>
                                 {workshop.definition && (
@@ -197,7 +197,7 @@ export function ArtformsSection() {
 
                             <div className="p-5 pt-0">
                               <Link
-                                href={`/experiences?slug=${encodeURIComponent(workshop.slug)}`}
+                                href={`/experiences/${encodeURIComponent(workshop.slug)}`}
                                 className="kiiro-cta w-full min-h-10 inline-flex items-center justify-center gap-2 border border-[#2B231F] text-[#2B231F] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#2B231F] hover:text-white transition-colors"
                               >
                                 <span>Explore</span>

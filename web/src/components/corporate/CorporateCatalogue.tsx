@@ -62,7 +62,7 @@ export function CorporateCatalogue({
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by name or origin"
-            className="w-full bg-white border border-[#E8E1D5] px-4 py-3 text-sm focus:outline-none focus:border-[#C2593F]"
+            className="w-full bg-white border border-[#E8E1D5] px-4 py-3 text-sm focus:outline-none focus:border-[#4F5B2A]"
           />
         </label>
       </div>
@@ -100,7 +100,7 @@ export function CorporateCatalogue({
                   <button
                     type="button"
                     onClick={() => setSelected(workshop)}
-                    className="kiiro-cta text-xs uppercase tracking-[0.14em] font-semibold text-[#C2593F]"
+                    className="kiiro-cta text-xs uppercase tracking-[0.14em] font-semibold text-[#4F5B2A]"
                   >
                     <span>Compare</span>
                     <span aria-hidden="true" data-cta-arrow>&rarr;</span>
@@ -115,7 +115,7 @@ export function CorporateCatalogue({
       {selected && (
         <div className="grid lg:grid-cols-12 gap-8 border border-[#E8E1D5] bg-[#FBF9F4] p-6 md:p-10" data-motion-stagger>
           <div className="lg:col-span-7 space-y-5" data-motion-item>
-            <p className="text-[10px] uppercase tracking-[0.2em] text-[#C2593F]">{selected.category}</p>
+            <p className="text-[10px] uppercase tracking-[0.2em] text-[#4F5B2A]">{selected.category}</p>
             <h2 className="font-serif text-3xl">{selected.name}</h2>
             {selected.durationDays === 2 && (
               <p className="text-sm font-semibold text-[#2B231F]">This is a 2-day workshop.</p>

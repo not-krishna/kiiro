@@ -72,7 +72,7 @@ export default async function ProductsPage() {
               return (
                 <div
                   key={prod._id}
-                  className="bg-white border border-[#E8E1D5] hover:border-[#C2593F] transition-all flex flex-col justify-between overflow-hidden group shadow-xs hover:shadow-md"
+                  className="bg-white border border-[#E8E1D5] hover:border-[#4F5B2A] transition-all flex flex-col justify-between overflow-hidden group shadow-xs hover:shadow-md"
                 >
                   <div className="relative h-60 w-full overflow-hidden bg-[#EAE3D5]">
                     <Image
@@ -97,7 +97,7 @@ export default async function ProductsPage() {
 
                   <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                     <div className="space-y-3">
-                      <h2 className="font-serif text-2xl text-[#2B231F] group-hover:text-[#C2593F] transition-colors leading-snug">
+                      <h2 className="font-serif text-2xl text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors leading-snug">
                         {prod.title}
                       </h2>
 
@@ -116,7 +116,7 @@ export default async function ProductsPage() {
                       <span className="font-serif text-xl text-[#2B231F]">{prod.price}</span>
                       <Link
                         href={`/enquire?subject=${encodeURIComponent(`Product Enquiry: ${prod.title}`)}`}
-                        className="bg-[#2B231F] group-hover:bg-[#C2593F] text-white px-4 py-2 text-xs uppercase tracking-[0.18em] font-semibold transition-colors"
+                        className="bg-[#2B231F] group-hover:bg-[#4F5B2A] text-white px-4 py-2 text-xs uppercase tracking-[0.18em] font-semibold transition-colors"
                       >
                         Inquire / Order →
                       </Link>

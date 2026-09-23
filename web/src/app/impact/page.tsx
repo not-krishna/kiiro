@@ -44,7 +44,7 @@ export default async function ImpactPage() {
         <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto space-y-16">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div className="bg-white border border-[#E8E1D5] p-8 space-y-2 shadow-xs">
-              <span className="font-serif text-4xl md:text-5xl text-[#C2593F] font-normal">85%+</span>
+              <span className="font-serif text-4xl md:text-5xl text-[#4F5B2A] font-normal">85%+</span>
               <p className="text-xs text-[#6E635B] uppercase tracking-wider font-medium">Direct Livelihood Share</p>
             </div>
 
@@ -59,7 +59,7 @@ export default async function ImpactPage() {
             </div>
 
             <div className="bg-white border border-[#E8E1D5] p-8 space-y-2 shadow-xs">
-              <span className="font-serif text-4xl md:text-5xl text-[#C2593F] font-normal">12,500+</span>
+              <span className="font-serif text-4xl md:text-5xl text-[#4F5B2A] font-normal">12,500+</span>
               <p className="text-xs text-[#6E635B] uppercase tracking-wider font-medium">Workshop Participants</p>
             </div>
           </div>
@@ -116,7 +116,7 @@ export default async function ImpactPage() {
           <h3 className="font-serif text-3xl text-[#2B231F]">Partner With Kiiro for Measured Impact</h3>
           <Link
             href="/partnerships-csr"
-            className="inline-block bg-[#C2593F] hover:bg-[#A84A33] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+            className="inline-block bg-[#4F5B2A] hover:bg-[#3D4721] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
           >
             Explore Corporate CSR Partnerships →
           </Link>

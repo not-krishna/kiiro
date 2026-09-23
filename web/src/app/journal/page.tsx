@@ -59,7 +59,7 @@ export default async function JournalPage() {
               return (
                 <article
                   key={post._id || post.slug}
-                  className="bg-white border border-[#E8E1D5] hover:border-[#C2593F] transition-all flex flex-col justify-between overflow-hidden group shadow-xs hover:shadow-md"
+                  className="bg-white border border-[#E8E1D5] hover:border-[#4F5B2A] transition-all flex flex-col justify-between overflow-hidden group shadow-xs hover:shadow-md"
                 >
                   <div className="relative h-48 w-full overflow-hidden bg-[#EAE3D5]">
                     <Image
@@ -84,7 +84,7 @@ export default async function JournalPage() {
 
                   <div className="p-6 space-y-4 flex-grow flex flex-col justify-between">
                     <div className="space-y-3">
-                      <h2 className="font-serif text-xl text-[#2B231F] group-hover:text-[#C2593F] transition-colors leading-snug">
+                      <h2 className="font-serif text-xl text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors leading-snug">
                         {post.title}
                       </h2>
 
@@ -97,7 +97,7 @@ export default async function JournalPage() {
                       <span className="text-[11px] text-[#968A80]">By {post.author}</span>
                       <Link
                         href={`/journal/${post.slug}`}
-                        className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C2593F] group-hover:translate-x-1 transition-transform inline-flex items-center space-x-1"
+                        className="text-xs font-semibold uppercase tracking-[0.18em] text-[#4F5B2A] group-hover:translate-x-1 transition-transform inline-flex items-center space-x-1"
                       >
                         <span>Read Article</span>
                         <span>→</span>

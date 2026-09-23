@@ -92,7 +92,7 @@ export function ScriptLoader() {
       {/* Top Header Branding */}
       <div className="w-full max-w-7xl flex justify-between items-center text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#968A80]">
         <div className="flex items-center space-x-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#C2593F] animate-pulse" />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#4F5B2A] animate-pulse" />
           <span>KIIRO CULTURAL PLATFORM</span>
         </div>
         <span className="hidden sm:inline tracking-[0.2em] text-[#B87B1E]">
@@ -109,7 +109,7 @@ export function ScriptLoader() {
               <span className="font-display text-fluid-4xl font-normal tracking-[0.15em] text-[#2B231F] leading-none">
                 KIIRO
               </span>
-              <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#C2593F] font-semibold">
+              <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#4F5B2A] font-semibold">
                 Living Cultural Platform
               </span>
             </div>
@@ -118,7 +118,7 @@ export function ScriptLoader() {
               key={currentIndex}
               className="animate-in fade-in zoom-in-90 duration-100 flex flex-col items-center justify-center"
             >
-              <span className="script-loader-glyph font-serif text-7xl md:text-9xl text-[#C2593F] leading-none drop-shadow-sm transition-all">
+              <span className="script-loader-glyph font-serif text-7xl md:text-9xl text-[#4F5B2A] leading-none drop-shadow-sm transition-all">
                 {currentItem.char}
               </span>
             </div>
@@ -148,7 +148,7 @@ export function ScriptLoader() {
         </div>
         <div className="w-full h-[2px] bg-[#E8E1D5] overflow-hidden relative">
           <div
-            className="h-full bg-[#C2593F] transition-all duration-100 ease-linear"
+            className="h-full bg-[#4F5B2A] transition-all duration-100 ease-linear"
             style={{
               width: `${((currentIndex + 1) / SCRIPT_SEQUENCE.length) * 100}%`,
             }}

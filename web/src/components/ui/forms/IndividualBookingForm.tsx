@@ -85,7 +85,7 @@ export function IndividualBookingForm({
         {eventDate && <p>{formatEventDate(eventDate)}</p>}
         {timeLabel && <p>{timeLabel}</p>}
         {(eventVenue || eventCity) && <p>{[eventVenue || 'Venue to be confirmed', eventCity].filter(Boolean).join(', ')}</p>}
-        <p className="font-semibold text-[#C2593F] text-base pt-1">
+        <p className="font-semibold text-[#4F5B2A] text-base pt-1">
           {priceLabel
             ? isWeekly
               ? `Listed session price: ${priceLabel}`
@@ -102,11 +102,11 @@ export function IndividualBookingForm({
       <Field label="Phone number" required error={errors.phone}>
         <input type="tel" className={inputClass} value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} autoComplete="tel" />
       </Field>
-      {status === 'error' && <p className="text-sm text-[#C2593F]">The request could not be sent. Please try again.</p>}
+      {status === 'error' && <p className="text-sm text-[#4F5B2A]">The request could not be sent. Please try again.</p>}
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full min-h-12 py-4 bg-[#2B231F] text-[#FBF9F4] text-[15px] font-medium hover:bg-[#C2593F] transition-colors disabled:opacity-50"
+        className="w-full min-h-12 py-4 bg-[#2B231F] text-[#FBF9F4] text-[15px] font-medium hover:bg-[#4F5B2A] transition-colors disabled:opacity-50"
       >
         {status === 'submitting' ? 'Sending…' : 'Send booking request'}
       </button>

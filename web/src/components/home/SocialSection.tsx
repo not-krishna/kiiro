@@ -28,7 +28,7 @@ export function SocialSection() {
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E8E1D5] pb-6">
           <div>
-            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
+            <span className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#4F5B2A]">
               Community & Dispatches • Section 09
             </span>
             <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] mt-1">
@@ -47,7 +47,7 @@ export function SocialSection() {
               key={idx}
               className="space-y-4 border-l border-[#E8E1D5] pl-6 first:border-l-0 sm:first:border-l sm:nth-1:border-l-0 lg:first:border-l-0 border-t sm:border-t-0 pt-6 sm:pt-0"
             >
-              <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
+              <span className="text-[10px] font-sans font-semibold uppercase tracking-[0.25em] text-[#4F5B2A]">
                 {post.tag}
               </span>
               <p className="font-sans text-xs text-[#6E635B] font-light leading-relaxed">

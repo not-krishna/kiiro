@@ -52,7 +52,7 @@ export default async function PartnershipsCsrPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-[#E8E1D5] p-8 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <span className="text-xs uppercase tracking-widest text-[#C2593F] font-semibold">Pillar 01</span>
+                <span className="text-xs uppercase tracking-widest text-[#4F5B2A] font-semibold">Pillar 01</span>
                 <h3 className="font-serif text-2xl text-[#2B231F]">Capacity Building & Training</h3>
                 <p className="text-xs text-[#6E635B] leading-relaxed font-light">
                   Direct funding for village workspace infrastructure, natural dye boiling cauldrons, tool upgrades, and digital literacy for younger artisans.
@@ -60,7 +60,7 @@ export default async function PartnershipsCsrPage() {
               </div>
               <Link
                 href="/partnerships-csr/capacity-building"
-                className="text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
+                className="text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
               >
                 Explore Capacity Building →
               </Link>
@@ -76,7 +76,7 @@ export default async function PartnershipsCsrPage() {
               </div>
               <Link
                 href="/partnerships-csr/gifting"
-                className="text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
+                className="text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
               >
                 Explore Craft Gifting →
               </Link>
@@ -92,7 +92,7 @@ export default async function PartnershipsCsrPage() {
               </div>
               <Link
                 href="/partnerships-csr/needs-ideation"
-                className="text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
+                className="text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
               >
                 Needs Ideation Lab →
               </Link>

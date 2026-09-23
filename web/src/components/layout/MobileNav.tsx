@@ -66,7 +66,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
         <button
           ref={closeButtonRef}
           onClick={onClose}
-          className="min-h-11 min-w-11 p-2 text-[#968A80] hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+          className="min-h-11 min-w-11 p-2 text-[#968A80] hover:text-white transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
           aria-label="Close menu"
         >
           <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -84,7 +84,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
                 key={item.href}
                 href={item.href}
                 onClick={onClose}
-                className="mt-6 block w-full text-center py-3.5 bg-[#C2593F] text-[#FBF9F4] text-[14px] font-medium tracking-[0.06em] uppercase hover:bg-[#A64830] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
+                className="mt-6 block w-full text-center py-3.5 bg-[#4F5B2A] text-[#FBF9F4] text-[14px] font-medium tracking-[0.06em] uppercase hover:bg-[#3D4721] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#D99B26]"
                 aria-current={active ? 'page' : undefined}
               >
                 {item.label}

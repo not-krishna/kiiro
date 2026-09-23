@@ -115,11 +115,11 @@ export function CorporatePlanningForm({ workshopSlug, workshopName }: CorporateP
           placeholder="Tell us what kind of experience you have in mind..."
         />
       </Field>
-      {status === 'error' && <p className="text-sm text-[#C2593F]">The enquiry could not be sent. Please try again.</p>}
+      {status === 'error' && <p className="text-sm text-[#4F5B2A]">The enquiry could not be sent. Please try again.</p>}
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="w-full min-h-12 py-4 bg-[#2B231F] text-[#FBF9F4] text-[15px] font-medium hover:bg-[#C2593F] disabled:opacity-50"
+        className="w-full min-h-12 py-4 bg-[#2B231F] text-[#FBF9F4] text-[15px] font-medium hover:bg-[#4F5B2A] disabled:opacity-50"
       >
         {status === 'submitting' ? 'Sending…' : 'Plan a Corporate Experience'}
       </button>

@@ -38,7 +38,7 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
           </div>
           <Link
             href="/partnerships-csr"
-            className="kiiro-cta inline-flex items-center px-8 py-4 bg-[#C2593F] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#A64830] transition-all self-start lg:self-auto"
+            className="kiiro-cta inline-flex items-center px-8 py-4 bg-[#4F5B2A] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#3D4721] transition-all self-start lg:self-auto"
             data-motion-reveal
             data-motion-distance="18"
           >

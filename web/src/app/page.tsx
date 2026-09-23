@@ -7,13 +7,13 @@ import { WeeklyEventsPreview } from '@/components/home/WeeklyEventsPreview'
 import { MethodologySection } from '@/components/home/MethodologySection'
 import { ArtformsSection } from '@/components/home/ArtformsSection'
 import { PartnersRibbon } from '@/components/home/PartnersRibbon'
-import { ArtisanImpact } from '@/components/home/ArtisanImpact'
+import { ArtisanImpact, type ArtisanStoryItem } from '@/components/home/ArtisanImpact'
 import { PartnershipsSection } from '@/components/home/PartnershipsSection'
 import { JournalSection } from '@/components/home/JournalSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { EnquirySection } from '@/components/home/EnquirySection'
 import { client } from '@/sanity/lib/client'
-import { HOMEPAGE_QUERY, JOURNAL_QUERY, TESTIMONIALS_QUERY, ALL_EVENTS_QUERY } from '@/sanity/lib/queries'
+import { HOMEPAGE_QUERY, JOURNAL_QUERY, TESTIMONIALS_QUERY, ALL_EVENTS_QUERY, ARTISAN_STORIES_QUERY } from '@/sanity/lib/queries'
 import { mapSanityEvent, CONFIRMED_SCHEDULED_EVENTS } from '@/content/events'
 import type { Cta, EventItem, MediaAsset } from '@/content/types'
 
@@ -27,11 +27,12 @@ function mapCta(value: unknown): Cta | undefined {
 }
 
 export default async function HomePage() {
-  const [homeData, journalData, testimonialsData, eventsData] = await Promise.all([
+  const [homeData, journalData, testimonialsData, eventsData, artisanStoriesData] = await Promise.all([
     client.fetch(HOMEPAGE_QUERY).catch(() => null),
     client.fetch(JOURNAL_QUERY).catch(() => []),
     client.fetch(TESTIMONIALS_QUERY).catch(() => []),
     client.fetch(ALL_EVENTS_QUERY).catch(() => []),
+    client.fetch(ARTISAN_STORIES_QUERY).catch(() => []),
   ])
 
   const rawEvents = (homeData?.featuredEvents?.length ? homeData.featuredEvents : eventsData || []) as unknown[]
@@ -41,6 +42,24 @@ export default async function HomePage() {
   const featuredEvents = cmsEvents.length > 0 ? cmsEvents : CONFIRMED_SCHEDULED_EVENTS
 
   const heroMedia: MediaAsset[] = Array.isArray(homeData?.heroMedia) ? homeData.heroMedia : []
+
+  const artisanStories: ArtisanStoryItem[] = Array.isArray(artisanStoriesData) && artisanStoriesData.length > 0
+    ? artisanStoriesData.map((doc: any) => ({
+        id: doc._id || doc.name,
+        name: doc.name,
+        craft: doc.craft,
+        region: doc.region,
+        portraitUrl: doc.imageUrl,
+        portrait: doc.portrait,
+        quote: doc.quote,
+        description: doc.description,
+        impactMetric: doc.impactMetric,
+        impactLabel: doc.impactLabel,
+        impactDescription: doc.impactDescription,
+        ctaLabel: doc.ctaLabel,
+        ctaUrl: doc.ctaUrl,
+      }))
+    : []
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF9F4] text-[#2B231F] font-sans selection:bg-[#E8D9C8]">
@@ -62,7 +81,7 @@ export default async function HomePage() {
         <WeeklyEventsPreview events={featuredEvents} />
         <ArtformsSection />
         <PartnersRibbon />
-        <ArtisanImpact data={homeData?.artisanFeature} />
+        <ArtisanImpact data={homeData?.artisanFeature} stories={artisanStories} />
         <TestimonialsSection testimonials={testimonialsData} />
         <ExperiencesSection />
         <PartnershipsSection title={homeData?.partnershipsTitle} />

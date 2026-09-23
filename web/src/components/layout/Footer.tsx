@@ -8,7 +8,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#3D332E]">
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
-              <span className="font-sans text-2xl font-bold tracking-[0.25em] uppercase text-[#FBF9F4] group-hover:text-[#C2593F] transition-colors">
+              <span className="font-sans text-2xl font-bold tracking-[0.25em] uppercase text-[#FBF9F4] group-hover:text-[#4F5B2A] transition-colors">
                 KIIRO
               </span>
               <span className="block text-sm tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
@@ -27,7 +27,7 @@ export function Footer() {
             <h4 className="text-sm font-medium text-[#FBF9F4]">Repertoire</h4>
             <ul className="space-y-2.5 text-sm text-[#968A80]">
               <li>
-                <Link href="/weekly-events" className="hover:text-[#C2593F] transition-colors font-medium">
+                <Link href="/weekly-events" className="hover:text-[#4F5B2A] transition-colors font-medium">
                   Weekly Events
                 </Link>
               </li>

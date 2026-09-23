@@ -11,7 +11,7 @@ export function EventListing({ event }: { event: EventItem }) {
       </div>
       <div className="md:col-span-8 p-6 md:p-8 flex flex-col justify-between gap-6">
         <div className="space-y-3">
-          <p className="text-[10px] uppercase tracking-[0.2em] text-[#C2593F]">
+          <p className="text-[10px] uppercase tracking-[0.2em] text-[#4F5B2A]">
             {formatEventDate(event.date) || 'Date to be confirmed'}
             {event.startTime ? ` · ${event.startTime}` : ''}
           </p>

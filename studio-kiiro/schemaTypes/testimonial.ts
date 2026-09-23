@@ -9,7 +9,7 @@ export const testimonial = defineType({
       name: 'quote',
       title: 'Quote',
       type: 'text',
-      rows: 3,
+      rows: 4,
       validation: (Rule) => Rule.required(),
     }),
     defineField({
@@ -22,17 +22,26 @@ export const testimonial = defineType({
       name: 'role',
       title: 'Role / Designation',
       type: 'string',
+      description: 'e.g. Creative Director, AVP Human Resources, Ceramic Artist',
     }),
     defineField({
       name: 'organisation',
-      title: 'Organisation',
+      title: 'Organisation / Company',
       type: 'string',
+      description: 'Optional company name, e.g. Studio Taj, Network 18',
     }),
     defineField({
       name: 'portrait',
-      title: 'Portrait Image',
+      title: 'Profile / Portrait Image',
       type: 'image',
       options: { hotspot: true },
+    }),
+    defineField({
+      name: 'order',
+      title: 'Display Order',
+      type: 'number',
+      description: 'Numerical order for sorting testimonials on the homepage',
+      initialValue: 0,
     }),
     defineField({
       name: 'isVideo',
@@ -57,5 +66,12 @@ export const testimonial = defineType({
       type: 'boolean',
       initialValue: false,
     }),
+  ],
+  orderings: [
+    {
+      title: 'Custom Order',
+      name: 'orderAsc',
+      by: [{ field: 'order', direction: 'asc' }],
+    },
   ],
 })

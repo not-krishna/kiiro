@@ -59,7 +59,7 @@ export default async function ArtisansPage() {
               return (
                 <div
                   key={artisan._id || artisan.slug}
-                  className="bg-white border border-[#E8E1D5] hover:border-[#C2593F] transition-all flex flex-col sm:flex-row overflow-hidden group shadow-xs hover:shadow-md"
+                  className="bg-white border border-[#E8E1D5] hover:border-[#4F5B2A] transition-all flex flex-col sm:flex-row overflow-hidden group shadow-xs hover:shadow-md"
                 >
                   {/* Portrait Side */}
                   <div className="relative sm:w-2/5 h-64 sm:h-auto overflow-hidden bg-[#EAE3D5]">
@@ -88,12 +88,12 @@ export default async function ArtisansPage() {
                         <span className="text-[#D99B26] font-semibold">{artisan.lineage}</span>
                       </div>
 
-                      <h2 className="font-serif text-2xl text-[#2B231F] group-hover:text-[#C2593F] transition-colors">
+                      <h2 className="font-serif text-2xl text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors">
                         {artisan.name}
                       </h2>
 
                       {artisan.quote && (
-                        <blockquote className="text-xs italic font-serif text-[#6E635B] border-l-2 border-[#C2593F] pl-3 py-1">
+                        <blockquote className="text-xs italic font-serif text-[#6E635B] border-l-2 border-[#4F5B2A] pl-3 py-1">
                           &quot;{artisan.quote}&quot;
                         </blockquote>
                       )}
@@ -105,7 +105,7 @@ export default async function ArtisansPage() {
 
                     <div className="pt-4 border-t border-[#E8E1D5] flex items-center justify-between">
                       <span className="text-[11px] text-[#968A80] inline-flex items-center gap-1">
-                        <svg className="h-3.5 w-3.5 text-[#C2593F]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <svg className="h-3.5 w-3.5 text-[#4F5B2A]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                         </svg>
@@ -113,7 +113,7 @@ export default async function ArtisansPage() {
                       </span>
                       <Link
                         href={`/artisans/${artisan.slug}`}
-                        className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C2593F] group-hover:translate-x-1 transition-transform inline-flex items-center space-x-1"
+                        className="text-xs font-semibold uppercase tracking-[0.18em] text-[#4F5B2A] group-hover:translate-x-1 transition-transform inline-flex items-center space-x-1"
                       >
                         <span>Profile</span>
                         <span>→</span>
@@ -135,7 +135,7 @@ export default async function ArtisansPage() {
             </p>
             <Link
               href="/impact"
-              className="inline-block bg-[#2B231F] hover:bg-[#C2593F] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+              className="inline-block bg-[#2B231F] hover:bg-[#4F5B2A] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
             >
               Explore Artisan Impact →
             </Link>

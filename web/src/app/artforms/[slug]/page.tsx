@@ -69,7 +69,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
 
         {/* Section 2 & 3: What It Is & Origin */}
         <section className="py-16 px-6 md:px-10 max-w-5xl mx-auto space-y-12">
-          <div className="border-l-2 border-[#C2593F] pl-6 py-2">
+          <div className="border-l-2 border-[#4F5B2A] pl-6 py-2">
             <p className="text-xl md:text-2xl font-serif text-[#2B231F] leading-relaxed">
               {artform.shortDescription}
             </p>
@@ -96,7 +96,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
                 <ul className="space-y-1.5 text-xs text-[#6E635B]">
                   {artform.materials?.map((m: string, idx: number) => (
                     <li key={idx} className="flex items-center space-x-2">
-                      <span className="text-[#C2593F]">✦</span>
+                      <span className="text-[#4F5B2A]">✦</span>
                       <span>{m}</span>
                     </li>
                   ))}
@@ -142,7 +142,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
                     )}
                     <Link
                       href={`/artisans/${artisan.slug}`}
-                      className="inline-block text-xs uppercase tracking-[0.18em] text-[#C2593F] hover:underline pt-2"
+                      className="inline-block text-xs uppercase tracking-[0.18em] text-[#4F5B2A] hover:underline pt-2"
                     >
                       View Artisan Profile →
                     </Link>
@@ -159,7 +159,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
             <h2 className="font-serif text-3xl text-[#2B231F]">Hands-on Experiences in {artform.title}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {relatedExperiences.map((exp: any) => (
-                <div key={exp._id || exp.slug} className="bg-white border border-[#E8E1D5] p-6 space-y-4 hover:border-[#C2593F] transition-colors">
+                <div key={exp._id || exp.slug} className="bg-white border border-[#E8E1D5] p-6 space-y-4 hover:border-[#4F5B2A] transition-colors">
                   <span className="text-[10px] uppercase tracking-widest text-[#968A80] block">
                     {exp.duration} • {exp.format}
                   </span>
@@ -169,7 +169,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
                   </p>
                   <Link
                     href={`/experiences/${exp.slug}`}
-                    className="inline-block text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold pt-2"
+                    className="inline-block text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold pt-2"
                   >
                     View Details →
                   </Link>
@@ -188,7 +188,7 @@ export default async function ArtformDetailPage({ params }: { params: Promise<{ 
             </p>
             <Link
               href={`/enquire?artform=${encodeURIComponent(artform.title)}`}
-              className="inline-block bg-[#C2593F] hover:bg-[#A84A33] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+              className="inline-block bg-[#4F5B2A] hover:bg-[#3D4721] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
             >
               Enquire About {artform.title} →
             </Link>

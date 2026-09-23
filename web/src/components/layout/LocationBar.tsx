@@ -12,13 +12,13 @@ export function LocationBar() {
           {ACTIVE_CITIES.map((city, index) => (
             <li key={city} className="inline-flex items-center">
               {index > 0 && (
-                <span className="mx-2 sm:mx-2.5 text-[#C2593F] opacity-75 select-none" aria-hidden>
+                <span className="mx-2 sm:mx-2.5 text-[#4F5B2A] opacity-75 select-none" aria-hidden>
                   ·
                 </span>
               )}
               <Link
                 href={`/experiences?city=${encodeURIComponent(city)}`}
-                className="hover:text-[#C2593F] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] font-medium"
+                className="hover:text-[#4F5B2A] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] font-medium"
                 title={`View all experiences listed in ${city}`}
               >
                 {city}

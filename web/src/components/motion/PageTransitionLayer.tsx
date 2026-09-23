@@ -42,7 +42,7 @@ export function PageTransitionLayer() {
   return (
     <div
       ref={layerRef}
-      className="kiiro-page-transition fixed inset-0 z-[90] origin-bottom scale-y-0 bg-[#C2593F] pointer-events-none"
+      className="kiiro-page-transition fixed inset-0 z-[90] origin-bottom scale-y-0 bg-[#4F5B2A] pointer-events-none"
       aria-hidden="true"
     />
   )

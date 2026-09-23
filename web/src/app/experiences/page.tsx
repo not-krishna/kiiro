@@ -14,8 +14,8 @@ import {
 import type { EventItem, Workshop } from '@/content/types'
 
 export const metadata = {
-  title: 'Find Your Next Experience | Kiiro',
-  description: 'Discover creative workshops, explore upcoming events, and find an experience that interests you.',
+  title: 'Discover creative workshops | Kiiro',
+  description: 'Explore upcoming events, and find an experience that interests you.',
 }
 
 export const revalidate = 30
@@ -52,10 +52,10 @@ export default async function ExperiencesPage() {
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-5">
             <h1 className="font-display text-4xl md:text-6xl font-normal max-w-3xl leading-tight">
-              Find Your Next Experience
+              Discover creative workshops
             </h1>
             <p className="text-base text-[#D8CEBE] max-w-2xl leading-relaxed font-light">
-              Discover creative workshops, explore upcoming events, and find an experience that interests you.
+              Explore upcoming events, and find an experience that interests you.
             </p>
           </div>
         </section>

@@ -29,7 +29,7 @@ export function MethodologySection({ intro, stages }: MethodologySectionProps) {
               } border-b md:border-b-0 border-[#D8CEBE]`}
               data-motion-item
             >
-              <p className="font-display text-sm text-[#C2593F] mb-6">
+              <p className="font-display text-sm text-[#4F5B2A] mb-6">
                 {String(index + 1).padStart(2, '0')}
               </p>
               <h3 className="font-display text-fluid-2xl text-[#2B231F] mb-3">{stage.title}</h3>

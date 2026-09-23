@@ -64,7 +64,7 @@ export default async function ArtisanDetailPage({ params }: { params: Promise<{ 
         {/* Profile Content */}
         <section className="py-16 px-6 md:px-10 max-w-5xl mx-auto space-y-12">
           {artisan.quote && (
-            <blockquote className="bg-[#F3EDE2] border-l-4 border-[#C2593F] p-8 font-serif text-xl md:text-2xl text-[#2B231F] italic leading-relaxed">
+            <blockquote className="bg-[#F3EDE2] border-l-4 border-[#4F5B2A] p-8 font-serif text-xl md:text-2xl text-[#2B231F] italic leading-relaxed">
               &ldquo;{artisan.quote}&rdquo;
             </blockquote>
           )}
@@ -93,7 +93,7 @@ export default async function ArtisanDetailPage({ params }: { params: Promise<{ 
                   <ul className="space-y-1.5 text-xs text-[#6E635B]">
                     {artisan.craftReferences.map((c: any) => (
                       <li key={c.slug}>
-                        <Link href={`/artforms/${c.slug}`} className="text-[#C2593F] hover:underline">
+                        <Link href={`/artforms/${c.slug}`} className="text-[#4F5B2A] hover:underline">
                           {c.title} →
                         </Link>
                       </li>
@@ -117,7 +117,7 @@ export default async function ArtisanDetailPage({ params }: { params: Promise<{ 
                     <h4 className="font-serif text-xl text-[#2B231F]">{exp.title}</h4>
                     <Link
                       href={`/experiences/${exp.slug}`}
-                      className="inline-block text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold pt-2"
+                      className="inline-block text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold pt-2"
                     >
                       Learn More →
                     </Link>

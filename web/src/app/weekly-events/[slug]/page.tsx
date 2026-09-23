@@ -45,7 +45,7 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
         <section className="border-b border-[#E8E1D5]">
           <div className="max-w-5xl mx-auto px-6 md:px-10 py-12 md:py-16 grid md:grid-cols-12 gap-10">
             <div className="md:col-span-7 space-y-6">
-              <p className="text-xs uppercase tracking-[0.25em] text-[#C2593F]">Weekly Events</p>
+              <p className="text-xs uppercase tracking-[0.25em] text-[#4F5B2A]">Weekly Events</p>
               <h1 className="font-serif text-4xl md:text-5xl font-normal leading-tight">{event.title}</h1>
               <dl className="space-y-3 text-sm text-[#6E635B]">
                 <div>

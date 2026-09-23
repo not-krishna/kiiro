@@ -43,7 +43,7 @@ export function JournalSection({ posts }: JournalSectionProps) {
                   </div>
                 )}
                 <div className={imageUrl ? 'md:col-span-9' : 'md:col-span-12'}>
-                  <p className="text-sm text-[#C2593F] mb-2" data-card-meta>{post.category}</p>
+                  <p className="text-sm text-[#4F5B2A] mb-2" data-card-meta>{post.category}</p>
                   <h3 className="font-display text-2xl mb-2" data-card-title>{post.title}</h3>
                   {post.standfirst && <p className="text-sm text-[#6E635B] font-light">{post.standfirst}</p>}
                   {post.slug && (

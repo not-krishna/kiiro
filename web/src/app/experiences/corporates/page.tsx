@@ -5,7 +5,7 @@ import { CorporateCatalogue } from '@/components/corporate/CorporateCatalogue'
 import { CorporatePlanningForm } from '@/components/ui/forms/CorporatePlanningForm'
 
 export const metadata = {
-  title: 'Create an Experience for Your Group | Kiiro',
+  title: 'Create an Experience for Your Team | Kiiro',
   description: 'Planning a creative workshop or group experience? Tell us what you have in mind.',
 }
 
@@ -17,7 +17,7 @@ export default function CorporateExperiencesPage() {
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-5">
             <h1 className="font-display text-4xl md:text-6xl font-normal max-w-3xl leading-tight">
-              Create an Experience for Your Group
+              Create an Experience for Your Team
             </h1>
             <p className="text-base text-[#D8CEBE] max-w-2xl leading-relaxed font-light">
               Planning a creative workshop or group experience? Tell us what you have in mind, and let&apos;s explore the

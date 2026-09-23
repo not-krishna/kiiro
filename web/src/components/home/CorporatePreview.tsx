@@ -10,7 +10,7 @@ export function CorporatePreview() {
       <div className="max-w-7xl mx-auto space-y-10">
         <div className="flex flex-col lg:flex-row lg:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="max-w-2xl space-y-3">
-            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#C2593F]">
+            <p className="font-sans text-xs font-semibold uppercase tracking-[0.25em] text-[#4F5B2A]">
               Corporate & hospitality
             </p>
             <h2 className="font-serif text-3xl md:text-5xl font-normal">Browse, compare, then enquire</h2>
@@ -26,7 +26,7 @@ export function CorporatePreview() {
 
         <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.14em] text-[#968A80]">
           {WORKSHOP_CATEGORIES.filter((item) => item.id !== 'all').map((item) => (
-            <Link key={item.id} href={`/experiences/corporates?category=${item.id}`} className="hover:text-[#C2593F]">
+            <Link key={item.id} href={`/experiences/corporates?category=${item.id}`} className="hover:text-[#4F5B2A]">
               {item.label}
             </Link>
           ))}
@@ -35,7 +35,7 @@ export function CorporatePreview() {
         <ul className="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-[#E8E1D5] border border-[#E8E1D5]">
           {featured.map((workshop) => (
             <li key={workshop.slug} className="bg-[#FBF9F4] p-6 space-y-3">
-              <p className="text-[10px] uppercase tracking-[0.18em] text-[#C2593F]">{workshop.category}</p>
+              <p className="text-[10px] uppercase tracking-[0.18em] text-[#4F5B2A]">{workshop.category}</p>
               <h3 className="font-serif text-xl">{workshop.name}</h3>
               {workshop.durationDays === 2 && (
                 <p className="text-xs text-[#2B231F] font-semibold">2-day workshop</p>

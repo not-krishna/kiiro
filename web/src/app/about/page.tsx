@@ -45,7 +45,7 @@ export default async function AboutPage() {
 
         {/* Manifesto Content */}
         <section className="py-20 px-6 md:px-10 max-w-4xl mx-auto space-y-12">
-          <div className="border-l-4 border-[#C2593F] pl-6 py-2 space-y-4">
+          <div className="border-l-4 border-[#4F5B2A] pl-6 py-2 space-y-4">
             <h2 className="font-serif text-3xl text-[#2B231F]">{visionTitle}</h2>
             <p className="text-lg text-[#4A4036] font-light leading-relaxed">
               {visionText}
@@ -75,7 +75,7 @@ export default async function AboutPage() {
             <h3 className="font-serif text-2xl text-[#2B231F]">What We Stand For</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white border border-[#E8E1D5] p-6 space-y-2">
-                <span className="text-xs uppercase tracking-widest text-[#C2593F] font-semibold">01. Authenticity</span>
+                <span className="text-xs uppercase tracking-widest text-[#4F5B2A] font-semibold">01. Authenticity</span>
                 <p className="text-xs text-[#6E635B] leading-relaxed">
                   Real master artisans with documented lineage and respectful attribution—no invented stories.
                 </p>
@@ -96,7 +96,7 @@ export default async function AboutPage() {
               </div>
 
               <div className="bg-white border border-[#E8E1D5] p-6 space-y-2">
-                <span className="text-xs uppercase tracking-widest text-[#C2593F] font-semibold">04. Fair Dignity</span>
+                <span className="text-xs uppercase tracking-widest text-[#4F5B2A] font-semibold">04. Fair Dignity</span>
                 <p className="text-xs text-[#6E635B] leading-relaxed">
                   Direct revenue sharing that honors artisan expertise and supports cluster economic independence.
                 </p>
@@ -107,7 +107,7 @@ export default async function AboutPage() {
           <div className="pt-8 border-t border-[#E8E1D5] text-center">
             <Link
               href="/enquire"
-              className="inline-block bg-[#C2593F] hover:bg-[#A84A33] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
+              className="inline-block bg-[#4F5B2A] hover:bg-[#3D4721] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
             >
               Get In Touch With Kiiro →
             </Link>

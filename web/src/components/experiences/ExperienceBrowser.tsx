@@ -71,7 +71,7 @@ export function ExperienceBrowser({
       {activeCity && (
         <div className="bg-[#2B231F] text-[#FBF9F4] p-4 sm:p-5 border border-[#3D332E] flex flex-col sm:flex-row sm:items-center justify-between gap-3 animate-in fade-in duration-300">
           <div className="flex items-center gap-3">
-            <svg className="h-5 w-5 text-[#C2593F] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+            <svg className="h-5 w-5 text-[#4F5B2A] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.75} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
             </svg>
@@ -85,7 +85,7 @@ export function ExperienceBrowser({
           <button
             type="button"
             onClick={() => setActiveCity(null)}
-            className="shrink-0 text-xs font-semibold uppercase tracking-[0.14em] px-4 py-2 border border-[#D8CEBE]/40 text-[#FBF9F4] hover:border-[#C2593F] hover:text-[#C2593F] transition-colors"
+            className="shrink-0 text-xs font-semibold uppercase tracking-[0.14em] px-4 py-2 border border-[#D8CEBE]/40 text-[#FBF9F4] hover:border-[#4F5B2A] hover:text-[#4F5B2A] transition-colors"
           >
             Show All Cities
           </button>
@@ -103,7 +103,7 @@ export function ExperienceBrowser({
             role="tab"
             aria-selected={category === 'all'}
             onClick={() => setCategory('all')}
-            className={`shrink-0 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
+            className={`shrink-0 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] ${
               category === 'all'
                 ? 'bg-[#2B231F] text-[#FBF9F4] border border-[#2B231F] shadow-sm'
                 : 'bg-white border border-[#E8E1D5] text-[#6E635B] hover:border-[#2B231F] hover:text-[#2B231F]'
@@ -120,7 +120,7 @@ export function ExperienceBrowser({
                 role="tab"
                 aria-selected={category === item.id}
                 onClick={() => setCategory(item.id)}
-                className={`shrink-0 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
+                className={`shrink-0 px-5 py-2.5 text-xs font-semibold uppercase tracking-[0.14em] transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] ${
                   category === item.id
                     ? 'bg-[#2B231F] text-[#FBF9F4] border border-[#2B231F] shadow-sm'
                     : 'bg-white border border-[#E8E1D5] text-[#6E635B] hover:border-[#2B231F] hover:text-[#2B231F]'
@@ -142,7 +142,7 @@ export function ExperienceBrowser({
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Search experiences..."
-            className="w-full bg-white border border-[#E8E1D5] px-4 py-2.5 text-sm text-[#2B231F] placeholder-[#968A80] focus:outline-none focus:border-[#C2593F] focus:ring-1 focus:ring-[#C2593F] transition-colors"
+            className="w-full bg-white border border-[#E8E1D5] px-4 py-2.5 text-sm text-[#2B231F] placeholder-[#968A80] focus:outline-none focus:border-[#4F5B2A] focus:ring-1 focus:ring-[#4F5B2A] transition-colors"
           />
           {searchQuery && (
             <button
@@ -174,7 +174,7 @@ export function ExperienceBrowser({
               setActiveCity(null)
               setSearchQuery('')
             }}
-            className="inline-flex min-h-11 items-center px-6 bg-[#2B231F] text-white text-xs font-semibold uppercase tracking-[0.14em] hover:bg-[#C2593F] transition-colors"
+            className="inline-flex min-h-11 items-center px-6 bg-[#2B231F] text-white text-xs font-semibold uppercase tracking-[0.14em] hover:bg-[#4F5B2A] transition-colors"
           >
             Show All Experiences
           </button>

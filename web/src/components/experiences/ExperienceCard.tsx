@@ -79,7 +79,7 @@ export function ExperienceCard({ card, expanded, onToggle, showPrice }: Experien
         <div className="space-y-1">
           <h2
             className={`font-display text-2xl transition-colors ${
-              past ? 'text-[#6E635B]' : 'text-[#2B231F] group-hover:text-[#C2593F]'
+              past ? 'text-[#6E635B]' : 'text-[#2B231F] group-hover:text-[#4F5B2A]'
             }`}
             data-card-title
           >
@@ -125,7 +125,7 @@ export function ExperienceCard({ card, expanded, onToggle, showPrice }: Experien
           )}
           {showPrice && formatPrice(event?.price) && (
             <div className="flex justify-between gap-4">
-              <dt className="text-xs uppercase tracking-[0.1em] text-[#C2593F] font-semibold">Price</dt>
+              <dt className="text-xs uppercase tracking-[0.1em] text-[#4F5B2A] font-semibold">Price</dt>
               <dd className="font-semibold text-[#2B231F]">{formatPrice(event?.price)}</dd>
             </div>
           )}
@@ -181,7 +181,7 @@ export function ExperienceCard({ card, expanded, onToggle, showPrice }: Experien
             type="button"
             onClick={onToggle}
             aria-expanded={expanded}
-            className="kiiro-cta flex-1 min-h-12 inline-flex items-center justify-center gap-2 border border-[#2B231F] text-[#2B231F] text-[14px] font-medium hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+            className="kiiro-cta flex-1 min-h-12 inline-flex items-center justify-center gap-2 border border-[#2B231F] text-[#2B231F] text-[14px] font-medium hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
           >
             <span>{expanded ? 'Hide details' : 'Show details'}</span>
             <svg
@@ -198,10 +198,10 @@ export function ExperienceCard({ card, expanded, onToggle, showPrice }: Experien
           <Link
             href={bookingHref(card, past)}
             onClick={(e) => e.stopPropagation()}
-            className={`kiiro-cta flex-1 min-h-12 inline-flex items-center justify-center text-[14px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] ${
+            className={`kiiro-cta flex-1 min-h-12 inline-flex items-center justify-center text-[14px] font-medium transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] ${
               past
                 ? 'border border-[#6E635B] text-[#6E635B] hover:bg-[#2B231F] hover:text-white hover:border-[#2B231F]'
-                : 'bg-[#C2593F] text-white hover:bg-[#A84A33]'
+                : 'bg-[#4F5B2A] text-white hover:bg-[#3D4721]'
             }`}
           >
             <span>{past ? 'Enquire Next Date' : 'Book Now'}</span>

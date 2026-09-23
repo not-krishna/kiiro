@@ -329,13 +329,17 @@ export const ARTISANS_QUERY = ALL_ARTISANS_QUERY
 export const JOURNAL_QUERY = ALL_JOURNAL_POSTS_QUERY
 
 export const TESTIMONIALS_QUERY = defineQuery(`
-  *[_type == "testimonial"] | order(featured desc, _createdAt desc) {
+  *[_type == "testimonial"] | order(order asc, featured desc, _createdAt desc) {
     _id,
     quote,
     personName,
+    "name": personName,
     role,
+    "designation": role,
     organisation,
+    "company": organisation,
     portrait,
+    "profileImage": portrait,
     isVideo,
     videoUrl,
     videoThumbnail
@@ -545,5 +549,24 @@ export const ALL_WORKSHOPS_QUERY = defineQuery(`
       ),
       "poster": poster.asset->url
     }
+  }
+`)
+
+export const ARTISAN_STORIES_QUERY = defineQuery(`
+  *[_type == "artisanStory" && isPublished != false] | order(displayOrder asc, _createdAt asc) {
+    _id,
+    name,
+    craft,
+    region,
+    portrait,
+    "imageUrl": portrait.asset->url,
+    quote,
+    description,
+    impactMetric,
+    impactLabel,
+    impactDescription,
+    ctaLabel,
+    ctaUrl,
+    displayOrder
   }
 `)

@@ -1,3 +1,4 @@
+import { artisanStory } from './artisanStory'
 import { artform } from './artform'
 import { artisan } from './artisan'
 import { experience } from './experience'

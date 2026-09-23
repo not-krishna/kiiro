@@ -85,7 +85,7 @@ export function CsrPartnershipForm() {
               <input type="tel" className={inputClass} value={data.phone} onChange={(e) => setData({ ...data, phone: e.target.value })} />
             </Field>
           </div>
-          <button type="button" onClick={() => validate(1) && setStep(2)} className="w-full py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#C2593F]">
+          <button type="button" onClick={() => validate(1) && setStep(2)} className="w-full py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#4F5B2A]">
             Continue
           </button>
         </div>
@@ -130,7 +130,7 @@ export function CsrPartnershipForm() {
             <button type="button" onClick={() => setStep(1)} className="flex-1 py-4 border border-[#2B231F] text-xs font-semibold uppercase tracking-[0.2em]">
               Back
             </button>
-            <button type="button" onClick={() => validate(2) && setStep(3)} className="flex-1 py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#C2593F]">
+            <button type="button" onClick={() => validate(2) && setStep(3)} className="flex-1 py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#4F5B2A]">
               Continue
             </button>
           </div>
@@ -143,12 +143,12 @@ export function CsrPartnershipForm() {
           <Field label="Message / requirements" required error={errors.message}>
             <textarea rows={5} className={inputClass} value={data.message} onChange={(e) => setData({ ...data, message: e.target.value })} />
           </Field>
-          {status === 'error' && <p className="text-sm text-[#C2593F]">The note could not be sent. Please try again.</p>}
+          {status === 'error' && <p className="text-sm text-[#4F5B2A]">The note could not be sent. Please try again.</p>}
           <div className="flex gap-3">
             <button type="button" onClick={() => setStep(2)} className="flex-1 py-4 border border-[#2B231F] text-xs font-semibold uppercase tracking-[0.2em]">
               Back
             </button>
-            <button type="submit" disabled={status === 'submitting'} className="flex-1 py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#C2593F] disabled:opacity-50">
+            <button type="submit" disabled={status === 'submitting'} className="flex-1 py-4 bg-[#2B231F] text-[#FBF9F4] text-xs font-semibold uppercase tracking-[0.2em] hover:bg-[#4F5B2A] disabled:opacity-50">
               {status === 'submitting' ? 'Sending…' : 'Partner with Kiiro'}
             </button>
           </div>

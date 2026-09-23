@@ -35,7 +35,7 @@ export default function CreativeWellnessCirclePage() {
 
         {/* Purpose & Principles */}
         <section className="py-20 px-6 md:px-10 max-w-5xl mx-auto space-y-12">
-          <div className="border-l-4 border-[#C2593F] pl-6 py-2">
+          <div className="border-l-4 border-[#4F5B2A] pl-6 py-2">
             <h2 className="font-serif text-3xl text-[#2B231F] mb-3">Circle Purpose</h2>
             <p className="text-lg text-[#4A4036] font-light leading-relaxed">
               We live in a culture saturated with screens, speed, and digital abstraction. The Creative Wellness Circle provides a space to slow down through organic clay, natural pigments, and quiet presence.
@@ -44,7 +44,7 @@ export default function CreativeWellnessCirclePage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-[#E8E1D5] p-6 space-y-3">
-              <span className="text-xs uppercase tracking-widest text-[#C2593F] font-semibold">Principle 01</span>
+              <span className="text-xs uppercase tracking-widest text-[#4F5B2A] font-semibold">Principle 01</span>
               <h3 className="font-serif text-xl text-[#2B231F]">No Performance Judgement</h3>
               <p className="text-xs text-[#6E635B] leading-relaxed font-light">
                 Creation without pressure. The goal is sensory engagement and process intimacy, not polished perfection.

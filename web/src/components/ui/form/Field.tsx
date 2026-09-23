@@ -17,13 +17,13 @@ export function Field({ label, required, error, children }: FieldProps) {
         {required ? ' *' : ''}
       </span>
       {children}
-      {error ? <span className="block text-[11px] text-[#C2593F]">{error}</span> : null}
+      {error ? <span className="block text-[11px] text-[#4F5B2A]">{error}</span> : null}
     </label>
   )
 }
 
 export const inputClass =
-  'w-full min-h-12 px-4 py-3 bg-[#F3EFE6] border border-[#E8E1D5] text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]'
+  'w-full min-h-12 px-4 py-3 bg-[#F3EFE6] border border-[#E8E1D5] text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]'
 
 export async function postEnquiry(payload: Record<string, unknown>) {
   const response = await fetch('/api/enquire', {

@@ -42,7 +42,7 @@ export default async function WeeklyEventsPage() {
       <main className="flex-grow">
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-5">
-            <span className="text-xs uppercase tracking-[0.2em] text-[#C2593F] font-semibold">Weekly Events Schedule</span>
+            <span className="text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold">Weekly Events Schedule</span>
             <h1 className="font-display text-4xl md:text-6xl font-normal leading-tight">Living Events Calendar</h1>
             <p className="text-base text-[#D8CEBE] max-w-2xl leading-relaxed font-light">
               Tactile, hands-on public sessions for individuals and small groups. Browse upcoming Sunday dates, pick something new to try, and spend time differently.

@@ -43,7 +43,7 @@ export default async function LearningPage() {
         <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto space-y-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div className="bg-white border border-[#E8E1D5] p-8 space-y-4">
-              <span className="text-xs font-semibold uppercase tracking-widest text-[#C2593F]">Level 01</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-[#4F5B2A]">Level 01</span>
               <h3 className="font-serif text-2xl text-[#2B231F]">Beginner Appreciation</h3>
               <p className="text-xs text-[#6E635B] leading-relaxed font-light">
                 Single-session weekend immersions. Learn elemental line grammar, pigment mixing, and cultural history. No prior artistic experience required.
@@ -76,7 +76,7 @@ export default async function LearningPage() {
             </div>
             <Link
               href="/learning/certificates"
-              className="bg-[#2B231F] hover:bg-[#C2593F] text-white px-6 py-3 text-xs uppercase tracking-[0.18em] font-semibold transition-colors whitespace-nowrap"
+              className="bg-[#2B231F] hover:bg-[#4F5B2A] text-white px-6 py-3 text-xs uppercase tracking-[0.18em] font-semibold transition-colors whitespace-nowrap"
             >
               Verify Certificate →
             </Link>

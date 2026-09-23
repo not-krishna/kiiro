@@ -44,7 +44,7 @@ export function PortableTextRenderer({ value }: PortableTextRendererProps) {
 
           if (style === 'blockquote') {
             return (
-              <blockquote key={idx} className="border-l-2 border-[#C2593F] pl-6 py-2 my-6 italic text-[#2B231F] font-serif text-lg bg-[#F3EDE2]/50 rounded-r-lg">
+              <blockquote key={idx} className="border-l-2 border-[#4F5B2A] pl-6 py-2 my-6 italic text-[#2B231F] font-serif text-lg bg-[#F3EDE2]/50 rounded-r-lg">
                 &quot;{text}&quot;
               </blockquote>
             )

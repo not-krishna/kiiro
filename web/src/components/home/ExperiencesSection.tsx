@@ -4,8 +4,8 @@ import { HOMEPAGE_EXPERIENCES } from '@/content/homepage'
 const LABELS: Record<string, string> = {
   'exp-public': 'View events',
   'exp-corporate': 'Browse the catalogue',
-  'exp-hospitality': 'See hospitality programmes',
-  'exp-schools': 'See school programmes',
+  'exp-hospitality': 'View hospitality programmes',
+  'exp-schools': 'View school programmes',
 }
 
 export function ExperiencesSection() {
@@ -29,7 +29,7 @@ export function ExperiencesSection() {
               <p className="text-sm text-[#6E635B] font-light leading-relaxed mb-6">{experience.description}</p>
               <Link
                 href={experience.href}
-                className="kiiro-cta text-[15px] font-sans font-medium text-[#2B231F] border-b border-[#2B231F] hover:text-[#C2593F] hover:border-[#C2593F] pb-0.5"
+                className="kiiro-cta text-[15px] font-sans font-medium text-[#2B231F] border-b border-[#2B231F] hover:text-[#4F5B2A] hover:border-[#4F5B2A] pb-0.5"
               >
                 <span>{LABELS[experience.id] || 'Continue'}</span>
                 <span aria-hidden="true" data-cta-arrow>&rarr;</span>

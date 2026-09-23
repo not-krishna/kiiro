@@ -75,7 +75,7 @@ export default function ArtformsPage() {
                 <article
                   key={item.id}
                   className={`border transition-all duration-300 bg-white overflow-hidden shadow-sm ${
-                    isExpanded ? 'border-[#C2593F] ring-1 ring-[#C2593F]' : 'border-[#E8E1D5] hover:border-[#2B231F]'
+                    isExpanded ? 'border-[#4F5B2A] ring-1 ring-[#4F5B2A]' : 'border-[#E8E1D5] hover:border-[#2B231F]'
                   }`}
                 >
                   {/* Category Card Header (Landscape) */}
@@ -114,8 +114,8 @@ export default function ArtformsPage() {
                           onClick={() => toggleCategory(item.id)}
                           className={`min-h-11 px-6 inline-flex items-center justify-center gap-2 text-xs font-semibold uppercase tracking-[0.12em] transition-colors ${
                             isExpanded
-                              ? 'bg-[#C2593F] text-white hover:bg-[#A84A33]'
-                              : 'bg-[#2B231F] text-white hover:bg-[#C2593F]'
+                              ? 'bg-[#4F5B2A] text-white hover:bg-[#3D4721]'
+                              : 'bg-[#2B231F] text-white hover:bg-[#4F5B2A]'
                           }`}
                         >
                           <span>{isExpanded ? `Close ${item.title}` : `Explore ${item.title}`}</span>
@@ -137,7 +137,7 @@ export default function ArtformsPage() {
                     <div className="border-t border-[#E8E1D5] bg-[#FBF9F4] p-6 md:p-8 space-y-6 animate-in fade-in duration-300">
                       <div className="flex items-center justify-between border-b border-[#E8E1D5] pb-4">
                         <div>
-                          <span className="text-[11px] uppercase tracking-[0.16em] text-[#C2593F] font-semibold">
+                          <span className="text-[11px] uppercase tracking-[0.16em] text-[#4F5B2A] font-semibold">
                             Catalogue
                           </span>
                           <h3 className="font-display text-xl text-[#2B231F]">
@@ -146,7 +146,7 @@ export default function ArtformsPage() {
                         </div>
                         <Link
                           href={`/experiences?category=${item.id}`}
-                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#C2593F] hover:underline"
+                          className="text-xs font-semibold uppercase tracking-[0.14em] text-[#4F5B2A] hover:underline"
                         >
                           View in Full Catalogue →
                         </Link>
@@ -158,7 +158,7 @@ export default function ArtformsPage() {
                           return (
                             <article
                               key={workshop.slug}
-                              className="bg-white border border-[#E8E1D5] flex flex-col justify-between group hover:border-[#C2593F] transition-all duration-300 shadow-sm"
+                              className="bg-white border border-[#E8E1D5] flex flex-col justify-between group hover:border-[#4F5B2A] transition-all duration-300 shadow-sm"
                             >
                               <div>
                                 <div className="relative h-44 w-full overflow-hidden bg-[#EAE3D5]">
@@ -177,7 +177,7 @@ export default function ArtformsPage() {
                                 </div>
 
                                 <div className="p-5 space-y-2">
-                                  <h4 className="font-display text-lg text-[#2B231F] group-hover:text-[#C2593F] transition-colors">
+                                  <h4 className="font-display text-lg text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors">
                                     {workshop.name}
                                   </h4>
                                   {workshop.definition && (
@@ -190,7 +190,7 @@ export default function ArtformsPage() {
 
                               <div className="p-5 pt-0">
                                 <Link
-                                  href={`/experiences?slug=${encodeURIComponent(workshop.slug)}`}
+                                  href={`/experiences/${encodeURIComponent(workshop.slug)}`}
                                   className="w-full min-h-10 inline-flex items-center justify-center gap-2 border border-[#2B231F] text-[#2B231F] text-xs font-semibold uppercase tracking-[0.12em] hover:bg-[#2B231F] hover:text-white transition-colors"
                                 >
                                   <span>Explore</span>

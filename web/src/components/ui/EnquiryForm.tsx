@@ -82,7 +82,7 @@ export function EnquiryForm({
                 className={`py-2 px-3 text-xs tracking-wider border text-center ${
                   category === cat
                     ? 'bg-[#2B231F] text-white border-[#2B231F]'
-                    : 'bg-[#FBF9F4] text-[#6E635B] border-[#E8E1D5] hover:border-[#C2593F]'
+                    : 'bg-[#FBF9F4] text-[#6E635B] border-[#E8E1D5] hover:border-[#4F5B2A]'
                 }`}
               >
                 {cat}
@@ -99,7 +99,7 @@ export function EnquiryForm({
             required
             value={formData.name}
             onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
           />
         </label>
         <label className="block">
@@ -109,7 +109,7 @@ export function EnquiryForm({
             required
             value={formData.email}
             onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
           />
         </label>
       </div>
@@ -121,7 +121,7 @@ export function EnquiryForm({
             type="tel"
             value={formData.phone}
             onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
           />
         </label>
         {intent === 'group' && (
@@ -130,7 +130,7 @@ export function EnquiryForm({
             <input
               value={formData.organization}
               onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
-              className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+              className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
             />
           </label>
         )}
@@ -140,7 +140,7 @@ export function EnquiryForm({
             <input
               value={formData.city}
               onChange={(e) => setFormData({ ...formData, city: e.target.value })}
-              className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+              className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
             />
           </label>
         )}
@@ -152,7 +152,7 @@ export function EnquiryForm({
           <select
             value={formData.participantsCount}
             onChange={(e) => setFormData({ ...formData, participantsCount: e.target.value })}
-            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+            className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
           >
             {BATCH_OPTIONS.map((option) => (
               <option key={option} value={option}>
@@ -170,18 +170,18 @@ export function EnquiryForm({
           rows={4}
           value={formData.message}
           onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-          className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+          className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
         />
       </label>
 
       {status === 'error' && (
-        <p className="text-sm text-[#C2593F]">The request could not be sent. Please try again.</p>
+        <p className="text-sm text-[#4F5B2A]">The request could not be sent. Please try again.</p>
       )}
 
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="bg-[#C2593F] hover:bg-[#A84A33] text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] disabled:opacity-50"
+        className="bg-[#4F5B2A] hover:bg-[#3D4721] text-white px-8 py-3.5 text-xs font-semibold uppercase tracking-[0.2em] disabled:opacity-50"
       >
         {status === 'submitting' ? 'Sending…' : submitLabel || (intent === 'individual' ? 'Book Your Spot' : 'Send group enquiry')}
       </button>

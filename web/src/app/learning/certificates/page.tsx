@@ -36,17 +36,17 @@ export default function CertificatesPage() {
               <input
                 type="text"
                 placeholder="e.g. KIIRO-WRL-2026-889"
-                className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#C2593F]"
+                className="w-full bg-[#FBF9F4] border border-[#E8E1D5] px-4 py-3 text-sm text-[#2B231F] focus:outline-none focus:border-[#4F5B2A]"
               />
             </div>
 
-            <button className="w-full bg-[#C2593F] hover:bg-[#A84A33] text-white py-3.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors">
+            <button className="w-full bg-[#4F5B2A] hover:bg-[#3D4721] text-white py-3.5 text-xs font-semibold uppercase tracking-[0.2em] transition-colors">
               Verify Credential →
             </button>
           </div>
 
           <div className="text-center text-xs text-[#968A80] font-light">
-            Need help retrieving your certificate? <Link href="/enquire" className="text-[#C2593F] underline">Contact Learning Support</Link>
+            Need help retrieving your certificate? <Link href="/enquire" className="text-[#4F5B2A] underline">Contact Learning Support</Link>
           </div>
         </section>
       </main>

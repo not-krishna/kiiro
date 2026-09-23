@@ -42,7 +42,7 @@ export default async function CommunityPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <div className="bg-white border border-[#E8E1D5] p-8 space-y-6 flex flex-col justify-between">
               <div className="space-y-4">
-                <span className="text-xs font-semibold uppercase tracking-widest text-[#C2593F]">Community Initiative</span>
+                <span className="text-xs font-semibold uppercase tracking-widest text-[#4F5B2A]">Community Initiative</span>
                 <h2 className="font-serif text-3xl text-[#2B231F]">Creative Wellness Circle</h2>
                 <p className="text-sm text-[#6E635B] leading-relaxed font-light">
                   A monthly membership and gathering circle designed around mindful participation, grounding, tactile clay work, and shared reflection.
@@ -50,7 +50,7 @@ export default async function CommunityPage() {
               </div>
               <Link
                 href="/community/creative-wellness-circle"
-                className="text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
+                className="text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
               >
                 Explore Creative Wellness Circle →
               </Link>
@@ -66,7 +66,7 @@ export default async function CommunityPage() {
               </div>
               <Link
                 href="/weekly-events"
-                className="text-xs uppercase tracking-[0.18em] text-[#C2593F] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
+                className="text-xs uppercase tracking-[0.18em] text-[#4F5B2A] font-semibold hover:underline block pt-4 border-t border-[#E8E1D5]"
               >
                 View Event Schedule →
               </Link>

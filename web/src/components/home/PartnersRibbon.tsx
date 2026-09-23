@@ -49,11 +49,11 @@ export function PartnersRibbon() {
                   key={`${name}-${index}`}
                   className="logo-item flex shrink-0 items-center justify-center mx-3 md:mx-6 transition-all duration-300 group cursor-default"
                 >
-                  <div className="flex items-center gap-3 px-5 py-2.5 border border-[#3D332E] bg-[#332A25]/60 hover:bg-[#3D332E] hover:border-[#C2593F]/60 transition-all duration-300 shadow-xs">
+                  <div className="flex items-center gap-3 px-5 py-2.5 border border-[#3D332E] bg-[#332A25]/60 hover:bg-[#3D332E] hover:border-[#4F5B2A]/60 transition-all duration-300 shadow-xs">
                     <span className="font-display text-base md:text-lg font-normal tracking-wide text-[#FBF9F4] opacity-70 group-hover:opacity-100 group-hover:text-[#FBF9F4] transition-all duration-300 whitespace-nowrap">
                       {name}
                     </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#C2593F] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all shrink-0" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-[#4F5B2A] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all shrink-0" />
                   </div>
                 </div>
               ))}

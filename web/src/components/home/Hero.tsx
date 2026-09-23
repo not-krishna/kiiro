@@ -101,12 +101,12 @@ export function Hero({ data }: HeroProps) {
         <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
           <div className="lg:col-span-5 space-y-7 text-left">
             <div className="space-y-3">
-              <span className="inline-block font-sans text-sm text-[#C2593F]" data-hero-eyebrow>
+              <span className="inline-block font-sans text-sm text-[#4F5B2A]" data-hero-eyebrow>
                 {eyebrow}
               </span>
               <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
                 <span className="kiiro-word-wrap"><span className="kiiro-word text-[#2B231F]" data-hero-word>Root.</span></span>{' '}
-                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#C2593F]" data-hero-word>Create.</span></span>
+                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#4F5B2A]" data-hero-word>Create.</span></span>
                 <br />
                 <span className="kiiro-word-wrap"><span className="kiiro-word text-[#D99B26]" data-hero-word>Restore.</span></span>
               </h1>
@@ -122,7 +122,7 @@ export function Hero({ data }: HeroProps) {
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={primary.href}
-                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 bg-[#C2593F] text-white font-sans text-[14px] font-medium tracking-wide hover:bg-[#A84A33] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 bg-[#4F5B2A] text-white font-sans text-[14px] font-medium tracking-wide hover:bg-[#3D4721] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
                 data-hero-cta
               >
                 <span>{primary.label}</span>
@@ -130,7 +130,7 @@ export function Hero({ data }: HeroProps) {
               </Link>
               <Link
                 href={secondary.href}
-                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 border border-[#2B231F] text-[#2B231F] font-sans text-[14px] font-medium tracking-wide hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F]"
+                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 border border-[#2B231F] text-[#2B231F] font-sans text-[14px] font-medium tracking-wide hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
                 data-hero-cta
               >
                 <span>{secondary.label}</span>
@@ -149,7 +149,7 @@ export function Hero({ data }: HeroProps) {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex h-9 w-9 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#C2593F] hover:text-[#C2593F] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#C2593F] transition-colors"
+                    className="inline-flex h-9 w-9 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#4F5B2A] hover:text-[#4F5B2A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] transition-colors"
                     aria-label={`Visit Kiiro on ${label}`}
                     title={label}
                   >
