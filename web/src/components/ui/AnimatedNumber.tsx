@@ -93,8 +93,10 @@ export function AnimatedNumber({ value, className, duration = 1800 }: AnimatedNu
     // Check prefers-reduced-motion
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (prefersReducedMotion) {
-      setDisplayValue(parsed.original)
       hasAnimatedRef.current = true
+      requestAnimationFrame(() => {
+        setDisplayValue(parsed.original)
+      })
       return
     }
 

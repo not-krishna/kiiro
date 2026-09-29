@@ -7,6 +7,7 @@ import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { ARTFROM_CHAPTERS } from '@/content/homepage'
 import { workshopsByCategory } from '@/content/workshops'
+import { getOfferingBySlug } from '@/content/offeringsData'
 
 const CATEGORY_IMAGES: Record<string, string> = {
   traditional: '/images/hero/traditional-art-hero.jpg',
@@ -154,7 +155,8 @@ export default function ArtformsPage() {
 
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {offerings.map((workshop) => {
-                          const imageSrc = WORKSHOP_IMAGES[workshop.slug] || categoryImage
+                          const offeringItem = getOfferingBySlug(workshop.slug)
+                          const imageSrc = offeringItem?.imageUrl || WORKSHOP_IMAGES[workshop.slug] || categoryImage
                           return (
                             <article
                               key={workshop.slug}

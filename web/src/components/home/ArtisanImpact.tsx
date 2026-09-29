@@ -244,7 +244,7 @@ export function ArtisanImpact({ data, stories: propStories }: ArtisanImpactProps
             </div>
           </div>
 
-          {/* Minimal Centered Circular Carousel Indicators (● ○ ○) */}
+          {/* Minimal Centered Geometric Carousel Indicators (■ □ □) */}
           {stories.length > 1 && (
             <div className="flex justify-center items-center gap-3 pt-6" aria-label="Carousel navigation">
               {stories.map((story, idx) => {
@@ -254,7 +254,7 @@ export function ArtisanImpact({ data, stories: propStories }: ArtisanImpactProps
                     key={story.id || idx}
                     type="button"
                     onClick={() => handleIndicatorClick(idx)}
-                    className={`w-3 h-3 rounded-full transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#4F5B2A] focus:ring-offset-2 ${
+                    className={`w-2.5 h-2.5 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#4F5B2A] focus:ring-offset-2 ${
                       isActive
                         ? 'bg-[#2B231F] scale-110 shadow-sm'
                         : 'bg-transparent border border-[#2B231F]/40 hover:border-[#2B231F] hover:scale-105'

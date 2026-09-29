@@ -33,6 +33,17 @@ export const workshop = defineType({
     }),
     defineField({ name: 'definition', title: 'Definition', type: 'text', rows: 4 }),
     defineField({ name: 'origin', title: 'Origin', type: 'string' }),
+    defineField({ name: 'age', title: 'Age / How Old', type: 'string' }),
+    defineField({ name: 'impact', title: 'Cultural & Contemporary Impact', type: 'text', rows: 4 }),
+    defineField({ name: 'whyLearn', title: 'Why Should It Be Learnt', type: 'text', rows: 4 }),
+    defineField({ name: 'learningDuration', title: 'How Long It Takes To Learn', type: 'string' }),
+    defineField({ name: 'workshopDuration', title: 'Workshop Duration', type: 'string' }),
+    defineField({
+      name: 'locations',
+      title: 'Available Locations',
+      type: 'array',
+      of: [defineArrayMember({ type: 'string' })],
+    }),
     defineField({ name: 'process', title: 'Process', type: 'text', rows: 6 }),
     defineField({
       name: 'processSteps',

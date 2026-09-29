@@ -110,11 +110,11 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
   },
 ]
 
-// Profile Avatar / Silhouette component
+// Profile Avatar / Silhouette component - Sharp Architectural Geometry
 function ProfileAvatar({ src, name, sizeClasses = 'w-11 h-11' }: { src?: string | null; name: string; sizeClasses?: string }) {
   if (src && typeof src === 'string' && (src.startsWith('/') || src.startsWith('http'))) {
     return (
-      <div className={`relative z-10 flex-shrink-0 overflow-hidden rounded-full border border-[#D8CEBE] bg-[#F3EFE6] ${sizeClasses}`}>
+      <div className={`relative z-10 flex-shrink-0 overflow-hidden border border-[#D8CEBE] bg-[#F3EFE6] ${sizeClasses}`}>
         <Image src={src} alt={name} fill className="object-cover" sizes="56px" />
       </div>
     )
@@ -122,7 +122,7 @@ function ProfileAvatar({ src, name, sizeClasses = 'w-11 h-11' }: { src?: string 
 
   return (
     <div
-      className={`relative z-10 flex-shrink-0 overflow-hidden rounded-full border border-[#D8CEBE] bg-[#EAE3D5] flex items-center justify-center text-[#6E635B] ${sizeClasses}`}
+      className={`relative z-10 flex-shrink-0 overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] flex items-center justify-center text-[#6E635B] ${sizeClasses}`}
       aria-label={`Silhouette avatar for ${name}`}
     >
       <svg className="w-3/5 h-3/5 fill-current opacity-70" viewBox="0 0 24 24">
@@ -134,7 +134,7 @@ function ProfileAvatar({ src, name, sizeClasses = 'w-11 h-11' }: { src?: string 
 
 export function TestimonialsSection({
   testimonials,
-  title = 'Stories from the studio',
+  title = 'What the partner has to say',
 }: TestimonialsSectionProps) {
   const rawItems = testimonials && testimonials.length > 0 ? testimonials : DEFAULT_TESTIMONIALS
   const items = rawItems.filter((item) => item && (item.quote || item.personName || item.name))
@@ -419,7 +419,7 @@ export function TestimonialsSection({
                       type="button"
                       aria-current={isActive ? 'true' : 'false'}
                       aria-label={`Select testimonial from ${name}, ${desig}`}
-                      className={`testimonial-profile-item relative w-full flex items-center space-x-4 text-left p-3.5 rounded-sm transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F5B2A] ${
+                      className={`testimonial-profile-item relative w-full flex items-center space-x-4 text-left p-3.5 transition-all duration-300 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#4F5B2A] ${
                         isActive
                           ? 'bg-[#F3EFE6] border border-[#D8CEBE] shadow-md scale-[1.02] translate-x-2'
                           : 'hover:bg-[#F3EFE6]/50 opacity-50 hover:opacity-90 scale-[0.98]'
@@ -474,7 +474,7 @@ export function TestimonialsSection({
                     type="button"
                     aria-current={isActive ? 'true' : 'false'}
                     aria-label={`Select testimonial ${idx + 1}: ${name}`}
-                    className={`flex items-center space-x-2.5 px-3.5 py-2 border transition-all rounded-full flex-shrink-0 snap-start focus:outline-none ${
+                    className={`flex items-center space-x-2.5 px-3.5 py-2 border transition-all flex-shrink-0 snap-start focus:outline-none ${
                       isActive
                         ? 'bg-[#2B231F] text-[#FBF9F4] border-[#2B231F]'
                         : 'bg-[#F3EFE6] text-[#2B231F] border-[#D8CEBE] hover:border-[#2B231F]'

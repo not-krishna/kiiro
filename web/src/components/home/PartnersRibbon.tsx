@@ -1,23 +1,26 @@
 'use client'
 
-import { ORGANISATION_NAMES } from '@/content/presence'
+import Image from 'next/image'
 
-// Additional featured partner brands/institutions for a rich marquee ribbon
-const PARTNER_LOGOS = [
-  ...ORGANISATION_NAMES,
-  'Skill India',
-  'Mahindra Finance',
-  'Axis Bank',
-  'SBI Life',
-  'Infosys',
-  'Craft Council of India',
-  'Tata Capital',
-  'Urban Company',
+interface PartnerOrganisation {
+  name: string
+  logo: string
+}
+
+const PARTNER_ORGANISATIONS: PartnerOrganisation[] = [
+  { name: 'Taj Hotels', logo: '/images/organisations/taj-hotel.png' },
+  { name: 'Edubridge International School', logo: '/images/organisations/edubridge-school.png' },
+  { name: 'Tata Capital', logo: '/images/organisations/tata-capital.png' },
+  { name: 'Axis Bank', logo: '/images/organisations/axis-bank.png' },
+  { name: 'Mahindra Finance', logo: '/images/organisations/mahindra.png' },
+  { name: 'Infosys', logo: '/images/organisations/infosys.png' },
+  { name: 'Urban Company', logo: '/images/organisations/urban-company.png' },
+  { name: 'Craft Council of India', logo: '/images/organisations/craft-council.png' },
+  { name: 'SBI Life', logo: '/images/organisations/sbi-life.png' },
 ]
 
 export function PartnersRibbon() {
-  const names = [...PARTNER_LOGOS]
-  const track = [...names, ...names, ...names]
+  const track = [...PARTNER_ORGANISATIONS, ...PARTNER_ORGANISATIONS, ...PARTNER_ORGANISATIONS]
 
   return (
     <section
@@ -44,16 +47,23 @@ export function PartnersRibbon() {
             }}
           >
             <div className="flex w-max items-center animate-marquee hover:[animation-play-state:paused]">
-              {track.map((name, index) => (
+              {track.map((partner, index) => (
                 <div
-                  key={`${name}-${index}`}
-                  className="logo-item flex shrink-0 items-center justify-center mx-3 md:mx-6 transition-all duration-300 group cursor-default"
+                  key={`${partner.name}-${index}`}
+                  className="logo-item flex shrink-0 items-center justify-center mx-3 md:mx-5 transition-all duration-300 group cursor-default"
                 >
-                  <div className="flex items-center gap-3 px-5 py-2.5 border border-[#3D332E] bg-[#332A25]/60 hover:bg-[#3D332E] hover:border-[#4F5B2A]/60 transition-all duration-300 shadow-xs">
-                    <span className="font-display text-base md:text-lg font-normal tracking-wide text-[#FBF9F4] opacity-70 group-hover:opacity-100 group-hover:text-[#FBF9F4] transition-all duration-300 whitespace-nowrap">
-                      {name}
-                    </span>
-                    <span className="w-1.5 h-1.5 rounded-full bg-[#4F5B2A] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all shrink-0" />
+                  <div className="flex items-center gap-3.5 px-5 md:px-6 py-2.5 md:py-3 border border-[#3D332E] bg-[#332A25]/60 hover:bg-[#3D332E] hover:border-[#4F5B2A]/60 transition-all duration-300 shadow-xs">
+                    <div className="h-7 md:h-8 flex items-center justify-center">
+                      <Image
+                        src={partner.logo}
+                        alt={partner.name}
+                        width={180}
+                        height={60}
+                        className="h-6 md:h-7.5 w-auto max-w-[120px] md:max-w-[150px] object-contain opacity-75 group-hover:opacity-100 transition-all duration-300 brightness-110"
+                        priority={index < 9}
+                      />
+                    </div>
+                    <span className="w-1.5 h-1.5 bg-[#4F5B2A] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all shrink-0" />
                   </div>
                 </div>
               ))}
@@ -64,3 +74,4 @@ export function PartnersRibbon() {
     </section>
   )
 }
+

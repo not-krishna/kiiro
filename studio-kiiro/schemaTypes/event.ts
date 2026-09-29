@@ -12,6 +12,14 @@ export const event = defineType({
       validation: (Rule) => Rule.required(),
     }),
     defineField({
+      name: 'shortDescription',
+      title: 'Short Description',
+      type: 'text',
+      rows: 2,
+      description: 'Teaser summary for event cards on the homepage and weekly calendar (max 180 characters)',
+      validation: (Rule) => Rule.max(180),
+    }),
+    defineField({
       name: 'slug',
       title: 'Slug',
       type: 'slug',
@@ -90,6 +98,19 @@ export const event = defineType({
       name: 'experienceType',
       title: 'Experience type',
       type: 'string',
+    }),
+    defineField({
+      name: 'keyProcess',
+      title: 'Key Process',
+      type: 'text',
+      rows: 3,
+      description: 'Major stages and craft processes involved in this session',
+    }),
+    defineField({
+      name: 'takeAway',
+      title: 'Take Away / Keepsake',
+      type: 'string',
+      description: 'Handcrafted piece or keepsake participants take home',
     }),
     defineField({
       name: 'heroImage',

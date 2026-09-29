@@ -1,5 +1,5 @@
 import type { PricingTier, Workshop, WorkshopCategory } from './types'
-import raw from './workshops.raw.json'
+import { ALL_OFFERINGS, OFFERING_ALIASES } from './offeringsData'
 
 const BATCH_TIERS: Omit<PricingTier, 'pricePerPerson'>[] = [
   { min: 15, max: 25 },
@@ -8,57 +8,38 @@ const BATCH_TIERS: Omit<PricingTier, 'pricePerPerson'>[] = [
   { min: 100, max: null },
 ]
 
-function tiers(row: {
-  t15: number | null
-  t26: number | null
-  t46: number | null
-  t100: number | null
-}): PricingTier[] {
-  const prices = [row.t15, row.t26, row.t46, row.t100]
-  return BATCH_TIERS.map((tier, index) => ({
+export const CORPORATE_WORKSHOPS: Workshop[] = ALL_OFFERINGS.map((offering) => {
+  const p = offering.pricing || { t15: 1500, t26: 1200, t46: 1100, t100: 1000 }
+  const prices = [p.t15, p.t26, p.t46, p.t100]
+  const pricingTiers: PricingTier[] = BATCH_TIERS.map((tier, index) => ({
     ...tier,
     pricePerPerson: prices[index],
   }))
-}
 
-export const CORPORATE_WORKSHOPS: Workshop[] = (raw as Array<{
-  slug: string
-  name: string
-  category: WorkshopCategory
-  definition: string | null
-  origin: string | null
-  process: string | null
-  outcome: string | null
-  t15: number | null
-  t26: number | null
-  t46: number | null
-  t100: number | null
-  durationDays: number | null
-  processSteps?: string[]
-  skillLevel?: string
-  materials?: string
-}>).map((row) => ({
-  id: `workshop-${row.slug}`,
-  slug: row.slug,
-  name: row.name,
-  category: row.category,
-  definition: row.definition ?? undefined,
-  origin: row.origin ?? undefined,
-  process: row.process ?? undefined,
-  processSteps: parseProcessSteps(row.processSteps, row.process),
-  outcome: row.outcome ?? undefined,
-  skillLevel: row.skillLevel ?? undefined,
-  materials: row.materials ?? undefined,
-  durationDays: row.durationDays ?? undefined,
-  pricing: tiers(row),
-  corporateAvailable: true,
-  hospitalityAvailable: true,
-  individualAvailable: false,
-  media: [],
-}))
+  return {
+    id: `workshop-${offering.slug}`,
+    slug: offering.slug,
+    name: offering.title,
+    category: offering.category,
+    definition: offering.definition,
+    origin: offering.origin,
+    process: offering.keyProcess.join(' → '),
+    processSteps: offering.keyProcess,
+    outcome: offering.outcomes,
+    skillLevel: 'Open to Beginners & All Levels',
+    materials: 'All authentic natural materials and specialized tools provided',
+    durationDays: offering.workshopDuration.includes('Day') ? 2 : undefined,
+    pricing: pricingTiers,
+    corporateAvailable: true,
+    hospitalityAvailable: true,
+    individualAvailable: true,
+    media: offering.imageUrl ? [{ type: 'image', source: offering.imageUrl, alt: offering.title }] : [],
+  }
+})
 
 export function getWorkshopBySlug(slug: string): Workshop | undefined {
-  return CORPORATE_WORKSHOPS.find((workshop) => workshop.slug === slug)
+  const canonical = OFFERING_ALIASES[slug] || slug
+  return CORPORATE_WORKSHOPS.find((workshop) => workshop.slug === canonical)
 }
 
 export function workshopsByCategory(category: WorkshopCategory): Workshop[] {

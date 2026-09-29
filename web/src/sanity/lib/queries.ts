@@ -37,6 +37,7 @@ export const HOMEPAGE_QUERY = defineQuery(`
     featuredEvents[]-> {
       _id,
       title,
+      shortDescription,
       "slug": slug.current,
       date,
       startTime,
@@ -177,6 +178,7 @@ export const ALL_EVENTS_QUERY = defineQuery(`
   *[_type == "event" && published == true] | order(date asc) {
     _id,
     title,
+    shortDescription,
     "slug": slug.current,
     date,
     startTime,
@@ -207,6 +209,7 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
   *[_type == "event" && slug.current == $slug][0] {
     _id,
     title,
+    shortDescription,
     "slug": slug.current,
     date,
     startTime,

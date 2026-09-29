@@ -31,16 +31,16 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-8" data-motion-stagger>
             {stats.map((stat) => (
-              <div key={stat.label} className="space-y-2" data-motion-item>
+              <div key={stat.label} className="space-y-2 text-center flex flex-col items-center justify-center" data-motion-item>
                 <AnimatedNumber
                   value={stat.value}
-                  className="block font-display text-fluid-4xl font-normal text-[#2B231F] leading-none"
+                  className="block font-display text-fluid-4xl font-normal text-[#2B231F] leading-none text-center"
                 />
-                <div>
-                  <h3 className="font-sans text-sm font-medium text-[#2B231F]">
+                <div className="text-center">
+                  <h3 className="font-sans text-sm font-medium text-[#2B231F] text-center">
                     {stat.label}
                   </h3>
-                  <p className="font-sans text-sm text-[#6E635B] font-light mt-0.5">
+                  <p className="font-sans text-sm text-[#6E635B] font-light mt-0.5 text-center">
                     {stat.context}
                   </p>
                 </div>

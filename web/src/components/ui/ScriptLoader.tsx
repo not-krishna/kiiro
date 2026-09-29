@@ -33,8 +33,10 @@ export function ScriptLoader() {
     if (typeof window !== 'undefined') {
       const hasLoaded = sessionStorage.getItem('kiiro_script_loader_seen')
       if (hasLoaded) {
-        setShouldRender(false)
-        setIsDone(true)
+        requestAnimationFrame(() => {
+          setShouldRender(false)
+          setIsDone(true)
+        })
         return
       }
     }
@@ -92,7 +94,7 @@ export function ScriptLoader() {
       {/* Top Header Branding */}
       <div className="w-full max-w-7xl flex justify-between items-center text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#968A80]">
         <div className="flex items-center space-x-2">
-          <span className="w-1.5 h-1.5 rounded-full bg-[#4F5B2A] animate-pulse" />
+          <span className="w-1.5 h-1.5 bg-[#4F5B2A] animate-pulse" />
           <span>KIIRO CULTURAL PLATFORM</span>
         </div>
         <span className="hidden sm:inline tracking-[0.2em] text-[#B87B1E]">

@@ -59,7 +59,7 @@ export const PRIMARY_NAV: NavItem[] = [
       },
     ],
   },
-  { label: 'About', href: '/about' },
+  { label: 'About Us', href: '/about' },
   { label: 'CSR COLLABS', href: '/partnerships-csr' },
   { label: 'Journal', href: '/journal' },
   { label: 'Enquire', href: '/enquire', cta: true },

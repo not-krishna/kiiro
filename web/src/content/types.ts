@@ -81,6 +81,7 @@ export interface EventItem {
   id: string
   slug: string
   title: string
+  shortDescription?: string
   date?: string
   startTime?: string
   endTime?: string
@@ -98,6 +99,8 @@ export interface EventItem {
   workshopSlug?: string
   isWeekly?: boolean
   audience?: 'b2c' | 'b2b' | 'both'
+  keyProcess?: string | string[]
+  takeAway?: string
   media: MediaAsset[]
 }
 

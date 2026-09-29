@@ -156,12 +156,12 @@ export function buildExperienceCards(
 
 export function eventToCard(event: EventItem, workshop?: Workshop): ExperienceCardModel {
   const imageSource = workshop?.slug ? WORKSHOP_IMAGES[workshop.slug] : undefined
-  const media = event.media.length
+  const media: Workshop['media'] = event.media.length
     ? event.media
     : workshop?.media.length
       ? workshop.media
       : imageSource
-        ? [{ type: 'image', source: imageSource, alt: event.title }]
+        ? [{ type: 'image' as const, source: imageSource, alt: event.title }]
         : []
 
   return {

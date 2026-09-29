@@ -22,15 +22,24 @@ function matchesPath(pathname: string, href: string) {
 export function MobileNav({ isOpen, onClose }: MobileNavProps) {
   const pathname = usePathname()
   const closeButtonRef = useRef<HTMLButtonElement>(null)
-  const [openGroup, setOpenGroup] = useState<string | null>(null)
+
+  const currentGroup = PRIMARY_NAV.find((item) =>
+    item.children?.some((child) => matchesPath(pathname, child.href))
+  )
+  const [userSelectedGroup, setUserSelectedGroup] = useState<string | null>(null)
+  const [prevPathname, setPrevPathname] = useState(pathname)
+
+  if (prevPathname !== pathname) {
+    setPrevPathname(pathname)
+    setUserSelectedGroup(null)
+  }
+
+  const openGroup = userSelectedGroup !== null ? userSelectedGroup : (currentGroup?.label || null)
+  const setOpenGroup = (label: string | null) => setUserSelectedGroup(label)
 
   useEffect(() => {
     if (!isOpen) return
 
-    const currentGroup = PRIMARY_NAV.find((item) =>
-      item.children?.some((child) => matchesPath(pathname, child.href))
-    )
-    setOpenGroup(currentGroup?.label || null)
     closeButtonRef.current?.focus()
 
     const handleKeyDown = (e: KeyboardEvent) => {
@@ -44,7 +53,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       document.body.style.overflow = ''
       window.removeEventListener('keydown', handleKeyDown)
     }
-  }, [isOpen, onClose, pathname])
+  }, [isOpen, onClose])
 
   if (!isOpen) return null
 
