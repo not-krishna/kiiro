@@ -7,22 +7,25 @@ interface ManifestoImpactProps {
 }
 
 export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpactProps) {
-  const title = cleanVisibleCopy(
-    manifestoTitle ||
-      'We believe culture is not something to preserve behind glass. It is something to learn, make, share and carry forward.'
-  )
-  const text = cleanVisibleCopy(
-    manifestoText ||
-      'Kiiro connects heritage craft traditions directly to participants, ensuring cultural knowledge lives on through hands-on learning and sustained artisan livelihoods.'
-  )
+  const fallbackTitle = 'We spend our days in our heads. Kiiro brings you back to your hands.'
+  const fallbackText =
+    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.\n\nEvery Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.'
+
+  const cleanTitle = cleanVisibleCopy(manifestoTitle || '')
+  const title = (!cleanTitle || cleanTitle.includes('preserve behind glass')) ? fallbackTitle : cleanTitle
+
+  const cleanText = cleanVisibleCopy(manifestoText || '')
+  const text = (!cleanText || cleanText.includes('heritage craft traditions directly')) ? fallbackText : cleanText
 
   const stats = [
-    { value: '800+', label: 'Workshops', context: 'Across major Indian hubs' },
-    { value: '10,000+', label: 'Participants', context: 'Hands-on learners' },
-    { value: '7', label: 'Cities', context: 'Active programming footprint' },
-    { value: '15+', label: 'Corporate teams', context: 'Wellness and retreat formats' },
-    { value: '10+', label: 'Resorts', context: 'Guest programming formats' },
+    { value: '800+', label: 'Workshops', context: 'Hands-on sessions across India' },
+    { value: '10,000+', label: 'Participants', context: 'People who took a creative break' },
+    { value: '7', label: 'Cities', context: 'Mumbai, Kolkata, Pune, Goa, Bangalore, Jaipur' },
+    { value: '15+', label: 'Corporate teams', context: 'Team wellness through making' },
+    { value: '10+', label: 'Resorts', context: 'Guest wellness experiences' },
   ]
+
+  const textParagraphs = text.split('\n\n').filter(Boolean)
 
   return (
     <section id="about" className="bg-[#FBF9F4] text-[#2B231F] border-b border-[#E8E1D5]">
@@ -70,9 +73,11 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
           <h2 className="font-display text-fluid-3xl font-normal leading-[1.14] text-[#2B231F]" data-motion-text>
             {title}
           </h2>
-          <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed max-w-2xl mx-auto" data-motion-reveal data-motion-distance="18">
-            {text}
-          </p>
+          <div className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed max-w-2xl mx-auto space-y-4" data-motion-reveal data-motion-distance="18">
+            {textParagraphs.map((para, i) => (
+              <p key={i}>{para}</p>
+            ))}
+          </div>
         </div>
       </div>
     </section>

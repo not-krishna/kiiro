@@ -21,7 +21,7 @@ export default function PrivacyPage() {
 
         <section className="py-16 px-6 md:px-10 max-w-4xl mx-auto space-y-8 text-sm text-[#4A4036] font-light leading-relaxed">
           <p>
-            Kiiro Cultural Platform (&quot;Kiiro&quot;, &quot;we&quot;, &quot;our&quot;) respects your privacy. This document outlines how we collect, handle, and protect information submitted through our website and enquiry forms.
+            Kiiro Creative Wellness Space (&quot;Kiiro&quot;, &quot;we&quot;, &quot;our&quot;) respects your privacy. This document outlines how we collect, handle, and protect information submitted through our website and enquiry forms.
           </p>
 
           <h3 className="font-serif text-xl text-[#2B231F] font-normal pt-4">1. Information Collection</h3>

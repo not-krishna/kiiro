@@ -13,9 +13,9 @@ export function ExperiencesSection() {
     <section id="experiences" className="bg-[#F3EFE6] border-b border-[#E8E1D5] py-20 md:py-32 px-6 md:px-10">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="max-w-3xl space-y-4">
-          <h2 className="font-display text-fluid-3xl font-normal" data-motion-text>What you can participate in</h2>
+          <h2 className="font-display text-fluid-3xl font-normal" data-motion-text>Find your way in</h2>
           <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
-            Artforms are the practices. Experiences are the sessions and programmes you actually join.
+            Choose how you want to restore: on your own, with your team, or with your guests.
           </p>
         </div>
 

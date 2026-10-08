@@ -9,10 +9,10 @@ export function EnquirySection() {
         <div className="text-center max-w-2xl mx-auto space-y-3">
           <span className="inline-block text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold" data-motion-reveal data-motion-distance="14">Get Started</span>
           <h2 className="font-display text-3xl sm:text-4xl md:text-5xl text-[#2B231F] font-normal leading-tight" data-motion-text>
-            Designed for Groups & Individuals
+            Your hands already know how to unwind.
           </h2>
           <p className="text-sm md:text-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
-            Choose the experience path that matches your intention — customized corporate group workshops or individual creative resets.
+            Whether it&apos;s one quiet Sunday or a team day out, give yourself the break that actually restores.
           </p>
         </div>
 
@@ -34,7 +34,7 @@ export function EnquirySection() {
                 href="/experiences/corporates"
                 className="kiiro-cta w-full sm:w-auto inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#4F5B2A] text-white font-sans text-[15px] font-medium tracking-normal hover:bg-[#3D4721] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
               >
-                <span>Plan a Corporate Experience</span>
+                <span>Plan a Group Experience</span>
                 <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
             </div>
@@ -57,7 +57,7 @@ export function EnquirySection() {
                 href="/weekly-events"
                 className="kiiro-cta w-full sm:w-auto inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-[15px] font-medium tracking-normal hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
               >
-                <span>Book your weekly event</span>
+                <span>Book Your First Session</span>
                 <span aria-hidden="true" data-cta-arrow>&rarr;</span>
               </Link>
             </div>

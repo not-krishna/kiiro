@@ -8,6 +8,7 @@ import { urlFor } from '@/sanity/lib/image'
 export interface TestimonialItem {
   _id?: string
   quote: string
+  pullQuote?: string
   personName?: string
   name?: string
   role?: string
@@ -32,6 +33,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Dr. Soumitra Das',
     role: 'Dean Student Welfare',
     organisation: 'NIT Goa',
+    pullQuote: 'Tactile grounding and an inclusive, memorable icebreaker.',
     quote:
       'Kiiro brought incredible energy and tactile grounding to our first-year student inauguration. The combination of hands-on pottery and drum circle created an inclusive, memorable icebreaker that set a wonderful tone for the academic year.',
     portrait: '/images/testimonials/dr-soumitra-das.png',
@@ -41,6 +43,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Sharad',
     role: 'Wellness Lead',
     organisation: 'Capillary Technologies, Bangalore',
+    pullQuote: 'Watching colleagues slow down and bond was truly restorative.',
     quote:
       'The pottery workshop for employee wellness provided our team with much-needed screen-free grounding. Watching colleagues slow down, press raw clay, and bond outside work deadlines was truly restorative.',
     portrait: '/images/testimonials/sharad.png',
@@ -50,6 +53,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Yash',
     role: 'Community Manager',
     organisation: 'SoHo House, Mumbai',
+    pullQuote: 'A quiet, sophisticated cultural experience that elevated the evening.',
     quote:
       'Hosting Kiiro’s pottery masterclass at SoHo House was a highlight for our members. The quality of facilitation and master artisan guidance elevated the entire evening into a quiet, sophisticated cultural experience.',
     portrait: '/images/testimonials/yash.jpg',
@@ -59,6 +63,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Shubham Chaurasia',
     role: 'Associate Director',
     organisation: 'Hello World',
+    pullQuote: 'Beautiful custom textiles made with direct lineage techniques.',
     quote:
       'For our Women’s Day special, Kiiro curated an authentic block printing workshop. Our team created beautiful custom textiles while learning direct lineage techniques from master craftspeople.',
     portrait: '/images/testimonials/shubham.jpg',
@@ -68,6 +73,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Mayur Agarwal',
     role: 'ICAI Chairman',
     organisation: 'Kolkata Chapter',
+    pullQuote: 'An exceptional blend of artistic expression and stress relief.',
     quote:
       'The pottery workshop organized for ICAI members in Kolkata was an exceptional blend of artistic expression and stress relief. A deeply enriching experience that left a lasting impression on everyone present.',
     portrait: '/images/testimonials/mayur.jpg',
@@ -77,6 +83,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Adelle Almeida',
     role: 'Faculty & CAS Coordinator',
     organisation: 'Don Bosco Matunga, Mumbai',
+    pullQuote: 'Mindful stitching with generational artisans was exceptional.',
     quote:
       'Kolhapuri Chappal Making Workshop was one of a kind for me as well as my students. Experiencing the mindful stitching of soles with generational artisans from Kolhapur was exceptional. Look forward to collaborating again.',
     portrait: '/images/testimonials/adelle.jpg',
@@ -86,6 +93,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Prof. Kundu',
     role: 'Wellness Director',
     organisation: 'BITS Pilani Goa & Mpower',
+    pullQuote: 'Guidance, creativity, and patience brought this workshop to life.',
     quote:
       'On behalf of Mpower and BITS Goa, I extend our heartfelt gratitude to facilitators Sulagna and Neha, and master artists Apoorva, Ramakant, and Jay. Your guidance, creativity, and patience brought this workshop to life!',
     portrait: '/images/testimonials/prof-suman-kundu.webp',
@@ -95,6 +103,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Divya Sudarshana',
     role: 'AVP Human Resources',
     organisation: 'Network 18',
+    pullQuote: 'A culturally rooted approach that fostered connection and shared learning.',
     quote:
       'The hand building workshop with clay fostered connection and shared learning. Our employees appreciated the depth of the experience—a culturally rooted approach to corporate wellbeing programs.',
     portrait: '/images/testimonials/divya-sudarshana.png',
@@ -104,6 +113,7 @@ const DEFAULT_TESTIMONIALS: TestimonialItem[] = [
     personName: 'Marlies Bloemendaal',
     role: 'Founder & Creative Director',
     organisation: 'Ministry Of New',
+    pullQuote: 'Grounding and engaging — improved focus, reduced stress, and built belonging.',
     quote:
       'Kiiro’s workshop brought a hands-on creative experience with clay into our co-working ecosystem. It was grounding and engaging, improved focus, reduced stress, and created a stronger sense of belonging.',
     portrait: '/images/testimonials/marlies-bloemendaal.png',
@@ -134,7 +144,7 @@ function ProfileAvatar({ src, name, sizeClasses = 'w-11 h-11' }: { src?: string 
 
 export function TestimonialsSection({
   testimonials,
-  title = 'What the partner has to say',
+  title = 'What a creative break did for them',
 }: TestimonialsSectionProps) {
   const rawItems = testimonials && testimonials.length > 0 ? testimonials : DEFAULT_TESTIMONIALS
   const items = rawItems.filter((item) => item && (item.quote || item.personName || item.name))
@@ -155,6 +165,7 @@ export function TestimonialsSection({
   const listStackRef = useRef<HTMLDivElement | null>(null)
   const mobilePillsRef = useRef<HTMLDivElement | null>(null)
   
+  const pullQuoteRef = useRef<HTMLParagraphElement | null>(null)
   const quoteRef = useRef<HTMLQuoteElement | null>(null)
   const authorNameRef = useRef<HTMLHeadingElement | null>(null)
   const authorMetaRef = useRef<HTMLParagraphElement | null>(null)
@@ -246,7 +257,7 @@ export function TestimonialsSection({
       }
 
       // 2. Animate quote text out
-      const targets = [quoteRef.current, authorNameRef.current, authorMetaRef.current].filter(Boolean)
+      const targets = [pullQuoteRef.current, quoteRef.current, authorNameRef.current, authorMetaRef.current].filter(Boolean)
 
       gsap.to(targets, {
         opacity: 0,
@@ -276,11 +287,19 @@ export function TestimonialsSection({
 
           // 4. Animate new quote text in
           requestAnimationFrame(() => {
+            if (pullQuoteRef.current) {
+              gsap.fromTo(
+                pullQuoteRef.current,
+                { opacity: 0, y: 14 },
+                { opacity: 1, y: 0, duration: 0.35, ease: 'power2.out' }
+              )
+            }
+
             if (quoteRef.current) {
               gsap.fromTo(
                 quoteRef.current,
                 { opacity: 0, y: 14 },
-                { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out' }
+                { opacity: 1, y: 0, duration: 0.38, ease: 'power2.out', delay: 0.04 }
               )
             }
 
@@ -358,7 +377,7 @@ export function TestimonialsSection({
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="space-y-3 max-w-2xl">
             <span className="font-sans text-xs uppercase tracking-widest text-[#4F5B2A] font-medium">
-              Voices & Experiences
+              In their words
             </span>
             <h2 className="font-display text-fluid-3xl md:text-fluid-4xl font-normal text-[#2B231F] leading-[1.08]">
               {title}
@@ -496,7 +515,15 @@ export function TestimonialsSection({
             </div>
 
             {/* Quote Content Area */}
-            <div className="relative z-10 pt-4 md:pt-6 space-y-6">
+            <div className="relative z-10 pt-4 md:pt-6 space-y-5">
+              {/* Short bold pull-quote above testimonial */}
+              <p
+                ref={pullQuoteRef}
+                className="font-display font-semibold text-lg md:text-xl text-[#2B231F] leading-snug"
+              >
+                &ldquo;{currentItem.pullQuote || currentItem.quote}&rdquo;
+              </p>
+
               {/* Active Testimonial Quote */}
               <blockquote
                 ref={quoteRef}

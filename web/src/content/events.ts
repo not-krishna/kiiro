@@ -36,6 +36,8 @@ export function mapSanityEvent(doc: {
   workshop?: { title?: string; slug?: string; name?: string }
   keyProcess?: string | string[]
   takeAway?: string
+  format?: 'in-person' | 'online'
+  feelsLike?: string
   heroImageUrl?: string
   heroImageAlt?: string
 }): EventItem | null {
@@ -67,7 +69,8 @@ export function mapSanityEvent(doc: {
     isWeekly,
     audience: doc.audience || 'b2c',
     keyProcess: doc.keyProcess,
-    takeAway: doc.takeAway,
+    format: doc.format || 'in-person',
+    feelsLike: doc.feelsLike,
     media: doc.heroImageUrl
       ? [{ type: 'image', source: doc.heroImageUrl, alt: doc.heroImageAlt || doc.title }]
       : [],

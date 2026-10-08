@@ -16,12 +16,14 @@ interface WeeklyEventCardProps {
   event: EventItem
   isPast?: boolean
   priorityImage?: boolean
+  showDetailedSections?: boolean
 }
 
 export function WeeklyEventCard({
   event,
   isPast: forcedPast,
   priorityImage = false,
+  showDetailedSections = false,
 }: WeeklyEventCardProps) {
   const [showInfo, setShowInfo] = useState(false)
   const isPast = forcedPast ?? isEventPast(event.date)
@@ -58,7 +60,11 @@ export function WeeklyEventCard({
 
   return (
     <article
-      className={`group relative flex flex-col justify-between overflow-hidden border transition-all duration-500 min-h-[580px] shadow-sm ${
+      className={`group relative flex flex-col justify-between overflow-hidden border transition-all duration-500 ${
+        showDetailedSections
+          ? 'min-h-[580px]'
+          : 'min-h-[460px] md:min-h-[480px]'
+      } shadow-sm ${
         isPast
           ? 'border-[#3D332E]/60 bg-[#1A1513] opacity-85 hover:opacity-100 hover:border-[#6E635B]'
           : 'border-[#3D332E]/30 bg-[#1C1613] hover:border-[#4F5B2A] hover:shadow-xl hover:-translate-y-1'
@@ -132,6 +138,15 @@ export function WeeklyEventCard({
         )}
 
         <div className="flex items-center gap-2">
+          {/* In Person / Online Tag */}
+          <span className={`inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] border backdrop-blur-md shadow-sm ${
+            event.format === 'online'
+              ? 'bg-[#1E262C]/90 text-[#FBF9F4] border-white/20'
+              : 'bg-[#FBF9F4] text-[#2B231F] border-[#E8E1D5]'
+          }`}>
+            {event.format === 'online' ? 'Online' : 'In Person'}
+          </span>
+
           {/* Availability Badge */}
           {isPast ? (
             <span className="inline-flex items-center px-2.5 py-1 text-[10px] font-semibold uppercase tracking-[0.14em] bg-white/10 text-[#C2B7A8] border border-white/15 backdrop-blur-md">
@@ -194,6 +209,14 @@ export function WeeklyEventCard({
             </p>
 
             <dl className="space-y-2 text-xs text-[#D8CEBE] border-t border-[#3D332E] pt-3">
+              <div className="flex justify-between gap-3">
+                <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Format</dt>
+                <dd className="font-medium text-right text-[#FBF9F4]">{event.format === 'online' ? 'Online' : 'In Person'}</dd>
+              </div>
+              <div className="flex justify-between gap-3">
+                <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Feels Like</dt>
+                <dd className="font-light italic text-right text-[#FBF9F4]">{event.feelsLike || 'slow, rhythmic, meditative'}</dd>
+              </div>
               <div className="flex justify-between gap-3">
                 <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Date</dt>
                 <dd className="font-medium text-right text-[#FBF9F4]">{formattedDate}</dd>
@@ -258,6 +281,12 @@ export function WeeklyEventCard({
             {eventTitle}
           </Link>
         </h3>
+
+        {/* FEELS LIKE LINE */}
+        <p className="text-xs text-[#E8D9C8] font-sans">
+          <span className="text-[#A6B78F] font-medium">Feels like: </span>
+          <span className="italic font-light">{event.feelsLike || 'slow, rhythmic, meditative'}</span>
+        </p>
 
         {/* 2. DATE & 3. TIME */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#E8D9C8]">
@@ -327,38 +356,43 @@ export function WeeklyEventCard({
           <span className="font-medium text-[#FBF9F4] truncate">{locationText}</span>
         </div>
 
-        {/* 5. DESCRIPTION */}
-        <div className="space-y-0.5 border-t border-white/10 pt-2.5">
-          <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
-            Description
-          </span>
-          <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
-            {descriptionText}
-          </p>
-        </div>
+        {/* 5. DESCRIPTION, 6. KEY PROCESS, 7. TAKE AWAY / KEEP SAKE (Optional full details) */}
+        {showDetailedSections && (
+          <>
+            {/* 5. DESCRIPTION */}
+            <div className="space-y-0.5 border-t border-white/10 pt-2.5">
+              <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
+                Description
+              </span>
+              <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
+                {descriptionText}
+              </p>
+            </div>
 
-        {/* 6. KEY PROCESS */}
-        <div className="space-y-0.5 border-t border-white/10 pt-2">
-          <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
-            Key Process
-          </span>
-          <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
-            {keyProcessText}
-          </p>
-        </div>
+            {/* 6. KEY PROCESS */}
+            <div className="space-y-0.5 border-t border-white/10 pt-2">
+              <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
+                Key Process
+              </span>
+              <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
+                {keyProcessText}
+              </p>
+            </div>
 
-        {/* 7. TAKE AWAY / KEEP SAKE */}
-        <div className="space-y-0.5 border-t border-white/10 pt-2">
-          <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
-            Take Away / Keep Sake
-          </span>
-          <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
-            {takeAwayText}
-          </p>
-        </div>
+            {/* 7. TAKE AWAY / KEEP SAKE */}
+            <div className="space-y-0.5 border-t border-white/10 pt-2">
+              <span className="text-[10px] uppercase tracking-wider text-[#A6B78F] font-semibold block">
+                Take Away / Keep Sake
+              </span>
+              <p className="text-xs text-[#D8CEBE] font-light leading-relaxed line-clamp-2">
+                {takeAwayText}
+              </p>
+            </div>
+          </>
+        )}
 
         {/* FULL DETAILS → CTA & PRICE (REPLACES "INVESTMENT") */}
-        <div className="flex items-center justify-between text-xs pt-2.5 border-t border-white/10">
+        <div className="flex items-center justify-between text-xs pt-3 border-t border-white/10">
           <Link
             href={`/weekly-events/${event.slug}`}
             className="text-xs text-[#D8CEBE] underline underline-offset-4 hover:text-white"

@@ -40,10 +40,9 @@ const DEFAULT_STORIES: ArtisanStoryItem[] = [
     region: 'Kot Jewar, Rajasthan',
     portraitUrl: '/images/ramu-master-craftsman.png',
     quote: '"When participants hold the clay and feel the natural pigment, they are not just taking a workshop — they are taking home a living piece of our ancestral memory."',
-    description: 'By facilitating direct hands-on learning, Kiiro ensures master artisans receive fair remuneration, dignity of practice, and an active platform to pass their heritage down to new generations.',
+    description: "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
     impactMetric: '100%',
-    impactLabel: 'Fair Wages',
-    impactDescription: '& Transparent Craft Cluster Support',
+    impactLabel: 'Every session supports fair wages and dignity of practice for artisan communities.',
     ctaLabel: 'Meet the artisan network',
     ctaUrl: '#enquiry',
   },
@@ -54,10 +53,9 @@ const DEFAULT_STORIES: ArtisanStoryItem[] = [
     region: 'Bagru, Rajasthan',
     portraitUrl: '/images/artisans/block-printing-artisan.jpg',
     quote: '"Every relief carving in the teak wood block carries a rhythm passed down through five generations of indigo block printers."',
-    description: 'Through our residential craft masterclasses, Ram Lal connects directly with urban creators, keeping natural mud-resist Dabu printing thriving across traditional clusters.',
-    impactMetric: '40+',
-    impactLabel: 'Families Supported',
-    impactDescription: 'via Direct Craft Residencies',
+    description: "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
+    impactMetric: '100%',
+    impactLabel: 'Every session supports fair wages and dignity of practice for artisan communities.',
     ctaLabel: 'Explore Bagru Workshops',
     ctaUrl: '/experiences/bagru-block-printing',
   },
@@ -68,17 +66,16 @@ const DEFAULT_STORIES: ArtisanStoryItem[] = [
     region: 'Assagao, Goa',
     portraitUrl: '/images/artisans/kintsugi-artisan.jpg',
     quote: '"Kintsugi teaches us that brokenness is not the end of an object\'s life, but the beginning of its most beautiful, golden chapter."',
-    description: 'In our tranquil Goa studio sessions, Ananya guides participants through traditional urushi lacquer and gold joinery, turning fragile fractures into enduring art.',
+    description: "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
     impactMetric: '100%',
-    impactLabel: 'Mindful Craft',
-    impactDescription: '& Zero-Waste Studio Philosophy',
+    impactLabel: 'Every session supports fair wages and dignity of practice for artisan communities.',
     ctaLabel: 'Explore Kintsugi Sessions',
     ctaUrl: '/experiences/kintsugi',
   },
 ]
 
 export function ArtisanImpact({ data, stories: propStories }: ArtisanImpactProps) {
-  const heading = data?.heading || 'The Craft is the Experience. The Artisan is the Knowledge.'
+  const heading = data?.heading || 'The Craft Is the Experience. The Artisan Is the Wisdom.'
   
   const rawStories = propStories && propStories.length > 0
     ? propStories
@@ -219,18 +216,22 @@ export function ArtisanImpact({ data, stories: propStories }: ArtisanImpactProps
 
                 <p className="font-sans text-xs text-[#6E635B] font-light leading-relaxed transition-opacity duration-500">
                   {currentStory.description ||
-                    'By facilitating direct hands-on learning, Kiiro ensures master artisans receive fair remuneration, dignity of practice, and an active platform to pass their heritage down to new generations.'}
+                    "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it."}
                 </p>
               </div>
 
               <div className="pt-6 border-t border-[#E8E1D5] space-y-4">
                 <div className="font-sans text-xs text-[#6E635B]">
                   <span className="font-medium text-[#2B231F] block mb-1">Direct livelihood impact</span>
-                  <span className="inline-flex items-center gap-1 font-semibold text-[#2B231F]">
-                    <AnimatedNumber value={currentStory.impactMetric || '100%'} />{' '}
-                    {currentStory.impactLabel || 'Fair Wages'}
-                  </span>{' '}
-                  {currentStory.impactDescription || '& Transparent Craft Cluster Support'}
+                  <div className="inline-flex items-baseline gap-1.5 font-sans text-xs text-[#6E635B] leading-relaxed">
+                    <span className="font-semibold text-[#2B231F] text-sm">
+                      <AnimatedNumber value={currentStory.impactMetric || '100%'} />
+                    </span>
+                    <span>
+                      {currentStory.impactLabel ||
+                        'Every session supports fair wages and dignity of practice for artisan communities.'}
+                    </span>
+                  </div>
                 </div>
 
                 <Link

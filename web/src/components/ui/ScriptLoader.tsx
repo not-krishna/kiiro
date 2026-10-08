@@ -95,7 +95,7 @@ export function ScriptLoader() {
       <div className="w-full max-w-7xl flex justify-between items-center text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#968A80]">
         <div className="flex items-center space-x-2">
           <span className="w-1.5 h-1.5 bg-[#4F5B2A] animate-pulse" />
-          <span>KIIRO CULTURAL PLATFORM</span>
+          <span>KIIRO · CREATIVE WELLNESS, ROOTED IN LIVING ART</span>
         </div>
         <span className="hidden sm:inline tracking-[0.2em] text-[#B87B1E]">
           LIVING CRAFT TRADITIONS
@@ -112,7 +112,7 @@ export function ScriptLoader() {
                 KIIRO
               </span>
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#4F5B2A] font-semibold">
-                Living Cultural Platform
+                Creative Wellness Space
               </span>
             </div>
           ) : (

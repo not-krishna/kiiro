@@ -80,11 +80,27 @@ const HERO_SOCIAL_LINKS = [
 
 export function Hero({ data }: HeroProps) {
   const content = DEFAULT_HOMEPAGE
-  const eyebrow = cleanVisibleCopy(data?.heroEyebrow || content.heroEyebrow)
+  let eyebrow = cleanVisibleCopy(data?.heroEyebrow || content.heroEyebrow)
+  if (eyebrow.includes('cultural space for making') || !eyebrow) {
+    eyebrow = content.heroEyebrow
+  }
+
   const heading = cleanVisibleCopy(data?.heroHeading || content.heroHeading)
-  const subheading = cleanVisibleCopy(data?.heroSubheading || content.heroSubheading)
-  const primary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
-  const secondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
+
+  let subheading = cleanVisibleCopy(data?.heroSubheading || content.heroSubheading)
+  if (subheading.includes('together, offline') || subheading.includes('cultural experiences') || !subheading) {
+    subheading = content.heroSubheading
+  }
+
+  let primary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
+  if (primary.label === 'Explore Weekly Events' || !primary.label) {
+    primary.label = 'Book a Session'
+  }
+
+  let secondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
+  if (secondary.label === 'Discover Experiences' || !secondary.label) {
+    secondary.label = 'Explore Experiences'
+  }
   const media = data?.heroMedia?.length ? data.heroMedia : content.heroMedia
   const primaryImage = mediaSrc(media[0], data?.heroImage) || '/images/hero/hero-1.png'
   const secondImage = mediaSrc(media[1]) || '/images/hero/hero-2.png'
@@ -225,7 +241,7 @@ export function Hero({ data }: HeroProps) {
                   <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#2B231F]/60 to-transparent pointer-events-none" />
                   <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-[#FBF9F4]" data-hero-meta>
                     <span className="max-w-[11rem] text-[10px] uppercase tracking-[0.18em] leading-relaxed">
-                      Hands-on cultural experiences
+                      Hands-on creative wellness
                     </span>
                     <span className="text-[10px] uppercase tracking-[0.18em]">
                       Make / Connect / Restore

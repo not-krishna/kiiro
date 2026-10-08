@@ -1,17 +1,17 @@
 import type { AudiencePathway, Experience, HomepageContent, MethodologyStage } from './types'
 
 export const DEFAULT_HOMEPAGE: HomepageContent = {
-  heroEyebrow: 'A cultural space for making, discovering & connecting',
+  heroEyebrow: 'A creative wellness space for making, connecting & restoring',
   heroHeading: 'ROOT. CREATE. RESTORE.',
   heroSubheading:
-    'Kiiro is a destination for people who want to make something with their hands, learn from master artisans, and spend time differently — together, offline, and in person.',
+    "Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans, and leave lighter than you arrived. In person across India, and live online when you can't be there.",
   heroPrimaryCta: {
-    label: 'Explore Weekly Events',
+    label: 'Book a Session',
     href: '/weekly-events',
     kind: 'booking',
   },
   heroSecondaryCta: {
-    label: 'Discover Experiences',
+    label: 'Explore Experiences',
     href: '/experiences',
     kind: 'internal',
   },
@@ -33,42 +33,47 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
     },
   ],
   methodologyIntro:
-    'In a world of constant scrolling, Kiiro gives people something real to do with their time. Every experience follows a thoughtful three-part arc.',
+    'Co-led by a master artisan and a wellness facilitator, every session navigates you through three guided phases, from mental noise to calm.',
   methodologyStages: [
     {
       id: 'root',
-      title: 'Root',
-      heading: 'Context, material, culture, lineage',
-      body: 'Understand what you are about to create and where it comes from: history, hands, and story before making begins.',
+      title: '01 Root',
+      heading: 'Ground. Orient. Settle.',
+      body: 'A facilitated grounding practice, then the story of the craft and its lineage. Your attention shifts from racing thoughts to the present moment.',
+      ledBy: 'Facilitator + Artisan',
+      youFeel: 'Grounded, present',
     },
     {
       id: 'create',
-      title: 'Create',
-      heading: 'Hands-on making, guided practice',
-      body: 'Immerse in tactile process with master artisans and contemporary practitioners. Attention settles into the work of your hands.',
+      title: '02 Create',
+      heading: 'Hands busy. Mind quiet.',
+      body: 'Guided, rhythmic making that engages your senses, paired with breath cues that support nervous-system regulation. Repetitive, tactile movement is known to ease the stress response and invite a flow state.',
+      ledBy: 'Artisan + Facilitator',
+      youFeel: 'Regulated, absorbed',
     },
     {
       id: 'restore',
-      title: 'Restore',
-      heading: 'Connection, reflection, closure',
-      body: 'Leave with a handcrafted piece, a new skill, and meaningful connections made through shared creative discovery.',
+      title: '03 Restore',
+      heading: 'Reflect. Integrate. Carry it home.',
+      body: 'A guided group reflection gives you a way to express and process what came up, even when words fall short. Completing a piece brings a real sense of accomplishment.',
+      ledBy: 'Facilitator',
+      youFeel: 'Lighter, connected, accomplished',
     },
   ] satisfies MethodologyStage[],
-  manifestoTitle:
-    'Make something. Learn something. Try something new. Meet people. Spend time differently.',
+  manifestoTitle: 'We spend our days in our heads. Kiiro brings you back to your hands.',
   manifestoText:
-    'Kiiro is a place to discover things worth doing. Whether you are picking up clay for the first time, learning an ancient textile technique, or joining a weekend sound circle, our sessions prioritize the joy of making and the people you meet along the way.',
+    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.\n\nEvery Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.',
   impactStats: [
-    { value: '800+', label: 'Sessions hosted' },
-    { value: '10,000+', label: 'Hands-on makers' },
-    { value: '7', label: 'Active cities' },
-    { value: '15+', label: 'Corporate teams' },
-    { value: '10+', label: 'Hospitality partners' },
+    { value: '800+', label: 'Workshops', context: 'Hands-on sessions across India' },
+    { value: '10,000+', label: 'Participants', context: 'People who took a creative break' },
+    { value: '7', label: 'Cities', context: 'Mumbai, Kolkata, Pune, Goa, Bangalore, Jaipur' },
+    { value: '15+', label: 'Corporate teams', context: 'Team wellness through making' },
+    { value: '10+', label: 'Resorts', context: 'Guest wellness experiences' },
   ],
   ethicalHeading: 'Participant wellbeing and artisan livelihood are the same outcome.',
   ethicalBody:
     'Every session channels fair, transparent income to the master artisans who lead it. Creative wellness for participants and dignified livelihood for artisans are designed together, not as competing priorities.',
-  partnershipsTitle: 'Collaboration that holds culture and community in the same frame',
+  partnershipsTitle: 'Wellbeing that reaches further',
 }
 
 export const AUDIENCE_PATHWAYS: AudiencePathway[] = [
@@ -86,7 +91,7 @@ export const AUDIENCE_PATHWAYS: AudiencePathway[] = [
     promise: 'Team wellness through tactile collaboration: screen-free, quietly bonding, and not another icebreaker.',
     who: 'Organisations planning group experiences with measurable restoration, not theatre.',
     href: '/experiences/corporates',
-    cta: { label: 'Plan a Corporate Experience', href: '/experiences/corporates', kind: 'enquiry' },
+    cta: { label: 'Plan a Group Experience', href: '/experiences/corporates', kind: 'enquiry' },
   },
   {
     id: 'hospitality',
@@ -111,8 +116,7 @@ export const HOMEPAGE_EXPERIENCES: Experience[] = [
     id: 'exp-public',
     slug: 'weekly-sessions',
     name: 'Weekly public sessions',
-    description:
-      'Scheduled, artisan-led making for individuals and small groups. Book a seat when programming is listed.',
+    description: 'A few hours that are just for you. Book a seat, bring nothing but yourself.',
     audience: ['Individuals'],
     href: '/weekly-events',
     media: [],
@@ -120,9 +124,9 @@ export const HOMEPAGE_EXPERIENCES: Experience[] = [
   {
     id: 'exp-corporate',
     slug: 'group-corporate',
-    name: 'Corporate & organisation programmes',
+    name: 'Team wellness through making',
     description:
-      'Batch-priced workshops from the corporate and hospitality catalogue. Browse, compare, then enquire.',
+      'Replace the passive wellness talk with something real. Hands-on workshops that reduce stress and build connection, at your venue or online for distributed teams.',
     audience: ['Corporates', 'Organisations'],
     href: '/experiences/corporates',
     media: [],
@@ -130,9 +134,9 @@ export const HOMEPAGE_EXPERIENCES: Experience[] = [
   {
     id: 'exp-hospitality',
     slug: 'hospitality',
-    name: 'Hospitality & guest programming',
+    name: 'Signature wellness for your guests',
     description:
-      'The same living-art catalogue, framed for resorts and properties as signature cultural wellness.',
+      'Craft-led wellness experiences that give resorts and properties something memorable, rooted, and restorative.',
     audience: ['Hospitality'],
     href: '/experiences/hospitality-luxury',
     media: [],
@@ -140,8 +144,8 @@ export const HOMEPAGE_EXPERIENCES: Experience[] = [
   {
     id: 'exp-schools',
     slug: 'schools-colleges',
-    name: 'Schools & colleges',
-    description: 'Structured making for cultural literacy and student wellbeing.',
+    name: 'Wellbeing through creativity',
+    description: 'Structured making that supports student wellbeing, focus, and cultural literacy.',
     audience: ['Schools', 'Colleges'],
     href: '/experiences/schools-colleges',
     media: [],
@@ -154,7 +158,7 @@ export const ARTFROM_CHAPTERS = [
     title: 'Traditional Art',
     pillar: 'Root',
     description:
-      'Living heritage craft transmitted from master artisans. Lineage, patience, ritual, and the felt sense of continuing something ancestral rather than consuming it.',
+      'Slow down with something ancestral. Heritage crafts taught by the artisans who carry them. Patience, ritual, and the quiet comfort of continuing something older than you.',
     practices: [
       'Jaipur blue pottery and tile painting',
       'Warli ritual painting',
@@ -169,7 +173,7 @@ export const ARTFROM_CHAPTERS = [
     title: 'Contemporary Art',
     pillar: 'Create',
     description:
-      'Modern creative practice that sits alongside heritage craft rather than replacing it, with expression, experimentation, and relevance.',
+      'Express freely. Modern, experimental practices that make room for play, self-expression, and no wrong answers.',
     practices: [
       'Ceramics as sculptural form',
       'Mixed-media and resin studios',
@@ -180,10 +184,10 @@ export const ARTFROM_CHAPTERS = [
   },
   {
     id: 'wellness' as const,
-    title: 'Wellness Practice',
+    title: 'Restorative Practice',
     pillar: 'Restore',
     description:
-      'Mindful, embodied practice woven into making, not bolted on afterward. Nervous-system regulation, presence, and leaving lighter than you arrived.',
+      'Settle into your body. Sound, breath, and mindful movement woven into the making, so your whole system exhales.',
     practices: [
       'Art journaling and expressive art therapy',
       'Breathwork, sound, and somatic movement',

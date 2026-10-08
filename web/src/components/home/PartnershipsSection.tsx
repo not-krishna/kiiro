@@ -5,7 +5,7 @@ interface PartnershipsSectionProps {
 }
 
 export function PartnershipsSection({ title }: PartnershipsSectionProps) {
-  const heading = title || 'Institutional Partnerships, CSR & Capacity Building'
+  const heading = title || 'Wellbeing that reaches further'
 
   const capabilities = [
     {
@@ -35,10 +35,13 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
             <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F] leading-[1.15]" data-motion-text>
               {heading}
             </h2>
+            <p className="font-sans text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
+              Every session sustains artisan livelihoods. Our partnerships take that further through craft cluster development, measurable social impact, and meaningful corporate gifting.
+            </p>
           </div>
           <Link
             href="/partnerships-csr"
-            className="kiiro-cta inline-flex items-center px-8 py-4 bg-[#4F5B2A] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#3D4721] transition-all self-start lg:self-auto"
+            className="kiiro-cta inline-flex items-center px-8 py-4 bg-[#4F5B2A] text-[#FBF9F4] font-sans text-[15px] font-medium hover:bg-[#3D4721] transition-all self-start lg:self-auto shrink-0"
             data-motion-reveal
             data-motion-distance="18"
           >
@@ -47,7 +50,7 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
           </Link>
         </div>
 
-        {/* Institutional 4-Column Architectural Grid (No Card Containers) */}
+        {/* Institutional 4-Column Architectural Grid */}
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-y-10 gap-x-8" data-motion-stagger>
           {capabilities.map((cap) => (
             <div
@@ -68,4 +71,3 @@ export function PartnershipsSection({ title }: PartnershipsSectionProps) {
     </section>
   )
 }
-

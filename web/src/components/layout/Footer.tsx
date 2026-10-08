@@ -12,14 +12,14 @@ export function Footer() {
                 KIIRO
               </span>
               <span className="block text-sm tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
-                Living cultural platform
+                Creative wellness space
               </span>
             </Link>
             <p className="text-sm text-[#968A80] max-w-sm leading-relaxed font-light">
-              Connecting living cultural traditions, master artisans, knowledge, and contemporary experiences through immersive hands-on learning.
+              Kiiro is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.
             </p>
             <div className="pt-2 text-[11px] font-sans uppercase tracking-[0.2em] text-[#D99B26]">
-              Hands On. Rooted. Real.
+              Hands On. Rooted. Restored.
             </div>
           </div>
 
@@ -29,6 +29,11 @@ export function Footer() {
               <li>
                 <Link href="/weekly-events" className="hover:text-[#4F5B2A] transition-colors font-medium">
                   Weekly Events
+                </Link>
+              </li>
+              <li>
+                <Link href="/weekly-events?format=online" className="hover:text-[#FBF9F4] transition-colors">
+                  Online Sessions
                 </Link>
               </li>
               <li>
@@ -91,8 +96,15 @@ export function Footer() {
           </div>
         </div>
 
+        {/* Disclaimer above copyright line */}
+        <div className="pt-2 text-xs text-[#968A80] font-light leading-relaxed border-b border-[#3D332E]/60 pb-6">
+          <p>
+            Kiiro sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.
+          </p>
+        </div>
+
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-xs text-[#968A80]">
-          <p>© {new Date().getFullYear()} Kiiro Cultural Platform. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} Kiiro Creative Wellness Space. All rights reserved.</p>
           <div className="flex space-x-6 text-[11px] uppercase tracking-wider">
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy

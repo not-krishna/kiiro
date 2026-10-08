@@ -1,6 +1,6 @@
 'use client'
 
-import React, { useEffect, useRef, useState } from 'react'
+import React, { useEffect, useMemo, useRef, useState } from 'react'
 
 interface AnimatedNumberProps {
   value: string
@@ -78,67 +78,94 @@ function formatValue(current: number, config: ParsedStat): string {
   return `${config.prefix}${valStr}${config.suffix}`
 }
 
-export function AnimatedNumber({ value, className, duration = 1800 }: AnimatedNumberProps) {
+export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNumberProps) {
   const elementRef = useRef<HTMLSpanElement | null>(null)
-  const parsed = parseStat(value)
-  const [displayValue, setDisplayValue] = useState<string>(() => formatValue(0, parsed))
+  const parsed = useMemo(() => parseStat(value), [value])
+  const [displayValue, setDisplayValue] = useState<string>(() =>
+    parsed.isNumeric ? formatValue(0, parsed) : parsed.original
+  )
   const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
-    if (!parsed.isNumeric || hasAnimatedRef.current) return
+    if (!parsed.isNumeric) {
+      setDisplayValue(parsed.original)
+      return
+    }
+
+    if (hasAnimatedRef.current) {
+      setDisplayValue(parsed.original)
+      return
+    }
 
     const node = elementRef.current
     if (!node) return
 
     // Check prefers-reduced-motion
-    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (prefersReducedMotion) {
+    if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       hasAnimatedRef.current = true
-      requestAnimationFrame(() => {
-        setDisplayValue(parsed.original)
-      })
+      setDisplayValue(parsed.original)
+      return
+    }
+
+    const runAnimation = () => {
+      if (hasAnimatedRef.current) return
+      hasAnimatedRef.current = true
+
+      let startTime: number | null = null
+      const startVal = 0
+      const endVal = parsed.targetValue
+
+      const step = (now: number) => {
+        if (!startTime) startTime = now
+        const elapsed = now - startTime
+        const progress = Math.min(elapsed / duration, 1)
+
+        // Ease-out cubic animation curve
+        const easedProgress = 1 - Math.pow(1 - progress, 3)
+        const current = startVal + (endVal - startVal) * easedProgress
+
+        setDisplayValue(formatValue(current, parsed))
+
+        if (progress < 1) {
+          requestAnimationFrame(step)
+        } else {
+          setDisplayValue(parsed.original)
+        }
+      }
+
+      requestAnimationFrame(step)
+    }
+
+    // Check if element is already in viewport
+    const rect = node.getBoundingClientRect()
+    if (rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0) {
+      runAnimation()
       return
     }
 
     const observer = new IntersectionObserver(
       (entries) => {
         const [entry] = entries
-        if (entry.isIntersecting && !hasAnimatedRef.current) {
-          hasAnimatedRef.current = true
-          observer.unobserve(node)
-
-          let startTime: number | null = null
-          const startVal = 0
-          const endVal = parsed.targetValue
-
-          const step = (now: number) => {
-            if (!startTime) startTime = now
-            const elapsed = now - startTime
-            const progress = Math.min(elapsed / duration, 1)
-
-            // Ease-out cubic animation curve
-            const easedProgress = 1 - Math.pow(1 - progress, 3)
-            const current = startVal + (endVal - startVal) * easedProgress
-
-            setDisplayValue(formatValue(current, parsed))
-
-            if (progress < 1) {
-              requestAnimationFrame(step)
-            } else {
-              setDisplayValue(parsed.original)
-            }
-          }
-
-          requestAnimationFrame(step)
+        if (entry.isIntersecting) {
+          observer.disconnect()
+          runAnimation()
         }
       },
-      { threshold: 0.15 }
+      { threshold: 0.05, rootMargin: '50px' }
     )
 
     observer.observe(node)
 
+    // Fallback timer: ensure the real numbers appear even if observer misses
+    const safetyTimer = setTimeout(() => {
+      if (!hasAnimatedRef.current) {
+        runAnimation()
+      }
+    }, 800)
+
     return () => {
       observer.disconnect()
+      clearTimeout(safetyTimer)
     }
   }, [value, duration, parsed])
 

@@ -53,7 +53,7 @@ export const PRIMARY_NAV: NavItem[] = [
         description: 'Personal expression alongside heritage practice.',
       },
       {
-        label: 'Wellness Practice',
+        label: 'Restorative Practice',
         href: '/artforms?category=wellness',
         description: 'Embodied making that restores attention.',
       },

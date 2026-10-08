@@ -5,8 +5,9 @@ import { client } from '@/sanity/lib/client'
 import { ABOUT_PAGE_QUERY } from '@/sanity/lib/queries'
 
 export const metadata = {
-  title: 'About Kiiro | Living Cultural Platform & Manifesto',
-  description: 'Learn about Kiiro’s mission to connect living craft traditions, master artisans, knowledge, and contemporary experiences.',
+  title: 'About Kiiro | Creative Wellness Space & Manifesto',
+  description:
+    'Learn about Kiiro’s mission as a creative wellness space connecting living craft traditions, master artisans, and restorative hands-on making.',
 }
 
 export const revalidate = 30
@@ -14,10 +15,10 @@ export const revalidate = 30
 export default async function AboutPage() {
   const pageData = await client.fetch(ABOUT_PAGE_QUERY).catch(() => null)
 
-  const heroHeading = pageData?.heroHeading || 'Hands On. Rooted. Real.'
+  const heroHeading = pageData?.heroHeading || 'Hands On. Rooted. Restored.'
   const heroSubheading =
     pageData?.heroSubheading ||
-    'Kiiro is a credible cultural platform that makes living craft traditions, artisans, experiences, learning, community, and impact feel contemporary without flattening their identity.'
+    'Kiiro is a creative wellness space where people make something real with their hands, guided by master artisans. In person first, online when in person is not possible.'
   const visionTitle = pageData?.visionTitle || 'Our Core Purpose'
   const visionText =
     pageData?.visionText ||
@@ -99,6 +100,21 @@ export default async function AboutPage() {
                 <span className="text-xs uppercase tracking-widest text-[#4F5B2A] font-semibold">04. Fair Dignity</span>
                 <p className="text-xs text-[#6E635B] leading-relaxed">
                   Direct revenue sharing that honors artisan expertise and supports cluster economic independence.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Section 17 FAQ Entry */}
+          <div className="space-y-6 pt-4 border-t border-[#E8E1D5]">
+            <h3 className="font-serif text-2xl text-[#2B231F]">Frequently Asked Questions</h3>
+            <div className="space-y-4">
+              <div className="bg-white border border-[#E8E1D5] p-6 space-y-2 shadow-sm">
+                <h4 className="font-sans font-semibold text-base text-[#2B231F]">
+                  Is Kiiro in person or online?
+                </h4>
+                <p className="font-sans text-sm text-[#6E635B] font-light leading-relaxed">
+                  In person is our first choice, because shared, tactile making in a room is where the experience is at its fullest. When that isn&apos;t possible, we offer live, guided online sessions designed around real hands-on making.
                 </p>
               </div>
             </div>

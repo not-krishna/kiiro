@@ -10,6 +10,7 @@ interface WeeklyEventsBrowserProps {
 }
 
 export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps) {
+  const [selectedFormat, setSelectedFormat] = useState<'all' | 'in-person' | 'online'>('all')
   const [selectedCity, setSelectedCity] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState<string>('')
 
@@ -24,29 +25,85 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
     return Array.from(citySet).sort()
   }, [upcoming, past])
 
+  // Count by format
+  const inPersonCount = useMemo(() => {
+    return [...upcoming, ...past].filter((e) => e.format !== 'online').length
+  }, [upcoming, past])
+
+  const onlineCount = useMemo(() => {
+    return [...upcoming, ...past].filter((e) => e.format === 'online').length
+  }, [upcoming, past])
+
   // Filter helper
   const filterList = useCallback(
     (list: EventItem[]) => {
       return list.filter((evt) => {
-      const matchesCity =
-        selectedCity === 'all' ||
-        evt.city?.toLowerCase() === selectedCity.toLowerCase()
+        const matchesFormat =
+          selectedFormat === 'all' ||
+          (selectedFormat === 'online' ? evt.format === 'online' : evt.format !== 'online')
 
-      const haystack = `${evt.title} ${evt.shortDescription || ''} ${evt.city || ''} ${evt.venue || ''} ${evt.experienceType || ''} ${evt.facilitator || ''}`.toLowerCase()
-      const matchesSearch =
-        !searchQuery.trim() || haystack.includes(searchQuery.toLowerCase().trim())
+        const matchesCity =
+          selectedCity === 'all' ||
+          evt.city?.toLowerCase() === selectedCity.toLowerCase()
 
-      return matchesCity && matchesSearch
-    })
-  }, [selectedCity, searchQuery])
+        const haystack = `${evt.title} ${evt.shortDescription || ''} ${evt.city || ''} ${evt.venue || ''} ${evt.experienceType || ''} ${evt.facilitator || ''}`.toLowerCase()
+        const matchesSearch =
+          !searchQuery.trim() || haystack.includes(searchQuery.toLowerCase().trim())
+
+        return matchesFormat && matchesCity && matchesSearch
+      })
+    },
+    [selectedFormat, selectedCity, searchQuery]
+  )
 
   const filteredUpcoming = useMemo(() => filterList(upcoming), [upcoming, filterList])
   const filteredPast = useMemo(() => filterList(past), [past, filterList])
 
   return (
     <div className="space-y-16">
-      {/* Interactive Controls Bar: City Filter Tabs + Search */}
+      {/* Interactive Controls Bar: Format Filter Tabs + City Filter Tabs + Search */}
       <div className="bg-[#F3EFE6] border border-[#E8E1D5] p-5 md:p-6 space-y-4">
+        {/* Row 1: Format Filter Pills (In Person / Online) */}
+        <div className="flex flex-wrap items-center gap-2 border-b border-[#E8E1D5] pb-3">
+          <span className="text-xs uppercase tracking-wider text-[#968A80] mr-2 font-medium shrink-0">
+            Format:
+          </span>
+          <button
+            type="button"
+            onClick={() => setSelectedFormat('all')}
+            className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 ${
+              selectedFormat === 'all'
+                ? 'bg-[#2B231F] text-[#FBF9F4] shadow-sm'
+                : 'bg-white text-[#6E635B] hover:text-[#2B231F] border border-[#E8E1D5]'
+            }`}
+          >
+            All Formats ({upcoming.length + past.length})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedFormat('in-person')}
+            className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 ${
+              selectedFormat === 'in-person'
+                ? 'bg-[#2B231F] text-[#FBF9F4] shadow-sm'
+                : 'bg-white text-[#6E635B] hover:text-[#2B231F] border border-[#E8E1D5]'
+            }`}
+          >
+            In Person ({inPersonCount})
+          </button>
+          <button
+            type="button"
+            onClick={() => setSelectedFormat('online')}
+            className={`px-4 py-2 text-xs font-semibold uppercase tracking-wider transition-all duration-200 shrink-0 ${
+              selectedFormat === 'online'
+                ? 'bg-[#2B231F] text-[#FBF9F4] shadow-sm'
+                : 'bg-white text-[#6E635B] hover:text-[#2B231F] border border-[#E8E1D5]'
+            }`}
+          >
+            Online ({onlineCount})
+          </button>
+        </div>
+
+        {/* Row 2: City Filter Tabs + Search Input */}
         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
           {/* City Filter Pills */}
           <div className="flex items-center gap-2 overflow-x-auto no-scrollbar py-1">
@@ -107,16 +164,18 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
         </div>
 
         {/* Active Filter Info Badge */}
-        {(selectedCity !== 'all' || searchQuery.trim()) && (
+        {(selectedFormat !== 'all' || selectedCity !== 'all' || searchQuery.trim()) && (
           <div className="flex items-center justify-between text-xs text-[#6E635B] pt-2 border-t border-[#E8E1D5]">
             <span>
               Showing {filteredUpcoming.length} upcoming and {filteredPast.length} past sessions
+              {selectedFormat !== 'all' ? ` (${selectedFormat === 'online' ? 'Online' : 'In Person'})` : ''}
               {selectedCity !== 'all' ? ` in ${selectedCity}` : ''}
               {searchQuery.trim() ? ` matching "${searchQuery}"` : ''}
             </span>
             <button
               type="button"
               onClick={() => {
+                setSelectedFormat('all')
                 setSelectedCity('all')
                 setSearchQuery('')
               }}
@@ -149,7 +208,7 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
           <div className="border border-[#E8E1D5] bg-[#F3EFE6] p-10 md:p-14 text-center space-y-3">
             <p className="font-display text-2xl text-[#2B231F]">No upcoming sessions found</p>
             <p className="text-sm text-[#6E635B] font-light max-w-md mx-auto">
-              There are no upcoming sessions matching your current filter. Try selecting &ldquo;All Cities&rdquo;
+              There are no upcoming sessions matching your current filter. Try selecting &ldquo;All Formats&rdquo;, &ldquo;All Cities&rdquo;
               or clearing your search.
             </p>
           </div>
@@ -210,7 +269,7 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
         {filteredPast.length === 0 ? (
           <div className="border border-[#E8E1D5] bg-[#F3EFE6]/60 p-10 text-center space-y-2">
             <p className="font-display text-xl text-[#6E635B]">No archived sessions in this view</p>
-            <p className="text-xs text-[#968A80]">No past sessions match your selected city filter.</p>
+            <p className="text-xs text-[#968A80]">No past sessions match your selected filter.</p>
           </div>
         ) : (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">

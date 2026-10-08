@@ -101,6 +101,8 @@ export interface EventItem {
   audience?: 'b2c' | 'b2b' | 'both'
   keyProcess?: string | string[]
   takeAway?: string
+  format?: 'in-person' | 'online'
+  feelsLike?: string
   media: MediaAsset[]
 }
 
@@ -109,6 +111,8 @@ export interface MethodologyStage {
   title: string
   heading: string
   body: string
+  ledBy?: string
+  youFeel?: string
   media?: MediaAsset
 }
 
@@ -145,7 +149,7 @@ export interface HomepageContent {
   methodologyStages: MethodologyStage[]
   manifestoTitle: string
   manifestoText: string
-  impactStats: { value: string; label: string }[]
+  impactStats: { value: string; label: string; context?: string }[]
   ethicalHeading: string
   ethicalBody: string
   partnershipsTitle: string

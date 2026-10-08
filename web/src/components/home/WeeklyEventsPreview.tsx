@@ -29,18 +29,17 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
               data-motion-distance="14"
             >
               <span className="w-2 h-2 bg-[#4F5B2A] animate-pulse" />
-              Living Calendar
+              Your Calendar of Calm
             </span>
             <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F]" data-motion-text>
-              Upcoming Events
+              Upcoming Sessions
             </h2>
             <p
               className="text-fluid-base text-[#6E635B] font-light leading-relaxed"
               data-motion-reveal
               data-motion-distance="18"
             >
-              Tactile, hands-on weekend sessions for individuals and small groups. Only the next 3
-              upcoming dates are featured below—updated dynamically as new sessions open.
+              Weekend sessions for individuals and small groups. Pick a craft, book a seat, and give yourself a few unhurried hours.
             </p>
           </div>
 
@@ -52,10 +51,7 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
               data-motion-distance="18"
               data-link-motion
             >
-              <span>Explore all {totalUpcomingCount || 'weekly'} sessions</span>
-              <span aria-hidden="true" className="transition-transform group-hover:translate-x-1">
-                &rarr;
-              </span>
+              <span>Explore all sessions &rarr;</span>
             </Link>
           </div>
         </div>
@@ -87,6 +83,7 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
                 event={event}
                 isPast={false}
                 priorityImage={idx === 0}
+                showDetailedSections={false}
               />
             ))}
           </div>

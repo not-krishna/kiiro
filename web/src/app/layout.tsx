@@ -92,14 +92,20 @@ const gurmukhi = Noto_Sans_Gurmukhi({
 })
 
 export const metadata: Metadata = {
-  title: 'Kiiro — Root. Create. Restore.',
+  title: 'Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.',
   description:
-    'A creative wellness space rooted in living art. Traditional craft, contemporary practice, and restoration through making.',
+    'Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.',
   openGraph: {
-    title: 'Kiiro — Root. Create. Restore.',
+    title: 'Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.',
     description:
-      'A creative wellness space rooted in living art. The making is the medium. Restoration is the outcome.',
+      'Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.',
     type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.',
+    description:
+      'Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.',
   },
 }
 

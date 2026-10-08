@@ -8,7 +8,7 @@ import { mapSanityEvent, CONFIRMED_SCHEDULED_EVENTS, sortEventsChronologically }
 import type { EventItem } from '@/content/types'
 
 export const metadata = {
-  title: 'Living Calendar — Weekly Craft Sessions | Kiiro',
+  title: 'Your Calendar of Calm — Weekly Craft Sessions | Kiiro',
   description:
     'Hands-on weekend creative wellness workshops across Bangalore, Mumbai & Goa. Wheel pottery, indigo natural dyeing, heritage leathercraft, and mindful arts.',
 }
@@ -36,18 +36,17 @@ export default async function WeeklyEventsPage() {
             <div className="flex items-center gap-3">
               <span className="w-2 h-2 bg-[#A6B78F] animate-pulse" />
               <span className="text-xs uppercase tracking-[0.25em] text-[#A6B78F] font-semibold">
-                Weekly Public Programming
+                Your Calendar of Calm
               </span>
             </div>
 
             <div className="grid md:grid-cols-12 gap-8 items-end">
               <div className="md:col-span-8 space-y-4">
                 <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-normal leading-[1.15] text-[#FBF9F4]">
-                  Living Events Calendar
+                  Upcoming Sessions
                 </h1>
                 <p className="text-base md:text-lg text-[#D8CEBE] max-w-2xl leading-relaxed font-light">
-                  Tactile, small-group creative circles hosted in working artisan sanctuaries. Step away
-                  from digital screens and spend an intentional weekend making something real with your hands.
+                  Weekend sessions for individuals and small groups. Pick a craft, book a seat, and give yourself a few unhurried hours.
                 </p>
               </div>
 

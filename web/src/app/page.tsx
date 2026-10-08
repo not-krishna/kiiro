@@ -5,10 +5,13 @@ import { ManifestoImpact } from '@/components/home/ManifestoImpact'
 import { ExperiencesSection } from '@/components/home/ExperiencesSection'
 import { WeeklyEventsPreview } from '@/components/home/WeeklyEventsPreview'
 import { MethodologySection } from '@/components/home/MethodologySection'
+import { WhyMakingRestoresSection } from '@/components/home/WhyMakingRestoresSection'
 import { ArtformsSection } from '@/components/home/ArtformsSection'
 import { PartnersRibbon } from '@/components/home/PartnersRibbon'
 import { ArtisanImpact, type ArtisanStoryItem } from '@/components/home/ArtisanImpact'
 import { PartnershipsSection } from '@/components/home/PartnershipsSection'
+import { AdvisorySection } from '@/components/home/AdvisorySection'
+import { OnlineSessionsCallout } from '@/components/home/OnlineSessionsCallout'
 import { JournalSection } from '@/components/home/JournalSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { EnquirySection } from '@/components/home/EnquirySection'
@@ -78,13 +81,16 @@ export default async function HomePage() {
         />
         <ManifestoImpact manifestoTitle={homeData?.manifestoTitle} manifestoText={homeData?.manifestoText} />
         <MethodologySection intro={homeData?.methodologyIntro} stages={homeData?.methodologyStages} />
+        <WhyMakingRestoresSection />
         <WeeklyEventsPreview events={featuredEvents} />
         <ArtformsSection />
         <PartnersRibbon />
         <ArtisanImpact data={homeData?.artisanFeature} stories={artisanStories} />
         <TestimonialsSection testimonials={testimonialsData} />
         <ExperiencesSection />
+        <OnlineSessionsCallout />
         <PartnershipsSection title={homeData?.partnershipsTitle} />
+        <AdvisorySection />
         <JournalSection posts={homeData?.featuredJournalPosts || journalData} />
         <EnquirySection />
       </main>

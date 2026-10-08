@@ -51,10 +51,10 @@ export function ArtformsSection() {
       <div className="max-w-7xl mx-auto space-y-10">
         {/* Section Header */}
         <div className="max-w-3xl space-y-3">
-          <span className="inline-block text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold" data-motion-reveal data-motion-distance="14">Our Offerings</span>
-          <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F]" data-motion-text>The Pillars & Practices</h2>
+          <span className="inline-block text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold" data-motion-reveal data-motion-distance="14">What We Offer</span>
+          <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F]" data-motion-text>Three ways to root, create, and restore</h2>
           <p className="text-fluid-base text-[#6E635B] font-light leading-relaxed" data-motion-reveal data-motion-distance="18">
-            Explore our offerings structured inside three core disciplines: Traditional Art, Contemporary Art, and Wellness Practice. Click Explore on any category card to reveal the offerings contained inside.
+            Every practice at Kiiro is built to calm as much as it creates. Choose the path that fits your mood.
           </p>
         </div>
 
@@ -112,7 +112,7 @@ export function ArtformsSection() {
 
                     <div className="flex flex-wrap items-center justify-between gap-4 pt-4 border-t border-[#E8E1D5]">
                       <span className="text-xs text-[#968A80] font-sans">
-                        {offerings.length} curated {item.title.toLowerCase()} practices
+                        {offerings.length} curated practices
                       </span>
                       <button
                         type="button"

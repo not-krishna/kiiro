@@ -321,7 +321,7 @@ export function OfferingDetailView({ offering, relatedEvents }: OfferingDetailVi
         {/* ======================================================== */}
         {/* 5. TESTIMONIALS: "What the partner has to say"           */}
         {/* ======================================================== */}
-        <TestimonialsSection title="What the partner has to say" />
+        <TestimonialsSection title="What a creative break did for them" />
       </main>
 
       <Footer />
