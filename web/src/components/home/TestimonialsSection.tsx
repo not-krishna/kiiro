@@ -221,17 +221,26 @@ export function TestimonialsSection({
     []
   )
 
-  // Scroll active mobile pill into center view
+  // Scroll active mobile pill into center view within the horizontal container ONLY (never scrolls window)
   const centerActiveMobilePill = useCallback((realIdx: number) => {
-    if (!mobilePillsRef.current) return
-    const children = mobilePillsRef.current.children
-    if (children[realIdx]) {
-      (children[realIdx] as HTMLElement).scrollIntoView({
-        behavior: 'smooth',
-        block: 'nearest',
-        inline: 'center',
-      })
-    }
+    const container = mobilePillsRef.current
+    if (!container) return
+    const targetChild = container.children[realIdx] as HTMLElement | undefined
+    if (!targetChild) return
+
+    const childOffsetLeft = targetChild.offsetLeft
+    const childWidth = targetChild.offsetWidth
+    const containerWidth = container.clientWidth
+
+    if (containerWidth <= 0) return
+
+    // Compute target scroll offset to center the pill inside the container
+    const targetScrollLeft = childOffsetLeft - containerWidth / 2 + childWidth / 2
+
+    container.scrollTo({
+      left: Math.max(0, targetScrollLeft),
+      behavior: 'smooth',
+    })
   }, [])
 
   // Switch to target virtual index with infinite circular continuity
@@ -369,6 +378,8 @@ export function TestimonialsSection({
       ref={containerRef}
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
+      onTouchStart={() => setIsPaused(true)}
+      onTouchEnd={() => setIsPaused(false)}
       className="bg-[#FBF9F4] text-[#2B231F] border-t border-[#E8E1D5] py-16 md:py-24 px-6 md:px-12 overflow-hidden relative"
       aria-label="Testimonials and reviews"
     >
@@ -476,7 +487,7 @@ export function TestimonialsSection({
             {/* Mobile / Tablet Horizontal Profile Selection Track */}
             <div
               ref={mobilePillsRef}
-              className="lg:hidden flex items-center gap-3 overflow-x-auto pb-4 scrollbar-none snap-x"
+              className="lg:hidden relative flex items-center gap-3 overflow-x-auto pb-4 scrollbar-none snap-x"
             >
               {items.map((item, idx) => {
                 const isActive = idx === activeRealIndex
