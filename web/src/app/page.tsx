@@ -12,6 +12,7 @@ import { ArtisanImpact, type ArtisanStoryItem } from '@/components/home/ArtisanI
 import { PartnershipsSection } from '@/components/home/PartnershipsSection'
 import { AdvisorySection } from '@/components/home/AdvisorySection'
 import { OnlineSessionsCallout } from '@/components/home/OnlineSessionsCallout'
+import { SocialSection } from '@/components/home/SocialSection'
 import { JournalSection } from '@/components/home/JournalSection'
 import { TestimonialsSection } from '@/components/home/TestimonialsSection'
 import { EnquirySection } from '@/components/home/EnquirySection'
@@ -68,6 +69,7 @@ export default async function HomePage() {
     <div className="min-h-screen flex flex-col bg-[#FBF9F4] text-[#2B231F] font-sans selection:bg-[#E8D9C8]">
       <Header />
       <main className="flex-1">
+        {/* 1. Hero with Top Script Lineages above */}
         <Hero
           data={{
             heroEyebrow: homeData?.heroEyebrow,
@@ -79,19 +81,48 @@ export default async function HomePage() {
             heroImage: homeData?.heroImage,
           }}
         />
+
+        {/* 3 & 4. Stats Row & Manifesto Block */}
         <ManifestoImpact manifestoTitle={homeData?.manifestoTitle} manifestoText={homeData?.manifestoText} />
+
+        {/* 5. How a Session Unfolds */}
         <MethodologySection intro={homeData?.methodologyIntro} stages={homeData?.methodologyStages} />
+
+        {/* 6. Why Making Restores */}
         <WhyMakingRestoresSection />
+
+        {/* 7. Upcoming Sessions */}
         <WeeklyEventsPreview events={featuredEvents} />
+
+        {/* 8. Pillars Section: Three Ways to Root, Create, and Restore */}
         <ArtformsSection />
+
+        {/* 9. Organisations We Work With (Logos) */}
         <PartnersRibbon />
-        <ArtisanImpact data={homeData?.artisanFeature} stories={artisanStories} />
-        <TestimonialsSection testimonials={testimonialsData} />
+
+        {/* 12. Find Your Way In (Experiences Tailored For) — Reordered before Artisan Section */}
         <ExperiencesSection />
+
+        {/* 13. Can't Be There In Person? (Online Callout) — Directly below Find Your Way In */}
         <OnlineSessionsCallout />
-        <PartnershipsSection title={homeData?.partnershipsTitle} />
+
+        {/* 10. Artisan Section: The Craft Is the Experience */}
+        <ArtisanImpact data={homeData?.artisanFeature} stories={artisanStories} />
+
+        {/* 11. Testimonials: In Their Words */}
+        <TestimonialsSection testimonials={testimonialsData} />
+
+        {/* 14. Our Distinguished Advisory & Partnerships */}
         <AdvisorySection />
+        <PartnershipsSection title={homeData?.partnershipsTitle} />
+
+        {/* Community & Social Moments */}
+        <SocialSection />
+
+        {/* Field Dispatches / Journal */}
         <JournalSection posts={homeData?.featuredJournalPosts || journalData} />
+
+        {/* 15. Final CTA: Designed for Groups & Individuals */}
         <EnquirySection />
       </main>
       <Footer />

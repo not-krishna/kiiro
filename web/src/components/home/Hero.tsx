@@ -92,14 +92,16 @@ export function Hero({ data }: HeroProps) {
     subheading = content.heroSubheading
   }
 
-  let primary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
-  if (primary.label === 'Explore Weekly Events' || !primary.label) {
-    primary.label = 'Book a Session'
+  const rawPrimary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
+  const primary = {
+    ...rawPrimary,
+    label: rawPrimary.label === 'Explore Weekly Events' || !rawPrimary.label ? 'Book a Session' : rawPrimary.label,
   }
 
-  let secondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
-  if (secondary.label === 'Discover Experiences' || !secondary.label) {
-    secondary.label = 'Explore Experiences'
+  const rawSecondary = cleanCta(asCta(data?.heroSecondaryCta, content.heroSecondaryCta))
+  const secondary = {
+    ...rawSecondary,
+    label: rawSecondary.label === 'Discover Experiences' || !rawSecondary.label ? 'Explore Experiences' : rawSecondary.label,
   }
   const media = data?.heroMedia?.length ? data.heroMedia : content.heroMedia
   const primaryImage = mediaSrc(media[0], data?.heroImage) || '/images/hero/hero-1.png'

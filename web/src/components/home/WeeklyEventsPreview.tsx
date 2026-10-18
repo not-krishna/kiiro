@@ -1,6 +1,6 @@
 import Link from 'next/link'
 import { WeeklyEventCard } from '@/components/events/WeeklyEventCard'
-import { getUpcomingWeeklyEvents, sortEventsChronologically } from '@/content/events'
+import { getUpcomingWeeklyEvents } from '@/content/events'
 import type { EventItem } from '@/content/types'
 
 interface WeeklyEventsPreviewProps {
@@ -10,8 +10,6 @@ interface WeeklyEventsPreviewProps {
 export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
   // Only future/upcoming events should appear here, strictly the next 3 chronologically
   const upcomingEvents = getUpcomingWeeklyEvents(events, 3)
-  const { upcoming } = sortEventsChronologically(events)
-  const totalUpcomingCount = upcoming.length
 
   return (
     <section

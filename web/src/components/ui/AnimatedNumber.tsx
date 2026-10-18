@@ -31,7 +31,6 @@ function parseStat(raw: string): ParsedStat {
     }
   }
 
-  // Regex to isolate prefix, raw number (with optional commas/decimals), and suffix
   const match = raw.match(/^([^0-9.]*)([0-9,.]+)(.*)$/)
   if (!match) {
     return {
@@ -87,26 +86,21 @@ export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNu
   const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
-    if (!parsed.isNumeric) {
-      setDisplayValue(parsed.original)
-      return
-    }
-
-    if (hasAnimatedRef.current) {
-      setDisplayValue(parsed.original)
-      return
-    }
+    if (!parsed.isNumeric) return
 
     const node = elementRef.current
     if (!node) return
 
-    // Check prefers-reduced-motion
+    if (hasAnimatedRef.current) return
+
+    // If reduced motion is requested, show final immediately
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       hasAnimatedRef.current = true
-      setDisplayValue(parsed.original)
-      return
+      const id = requestAnimationFrame(() => setDisplayValue(parsed.original))
+      return () => cancelAnimationFrame(id)
     }
 
+    let rafId: number | null = null
     const runAnimation = () => {
       if (hasAnimatedRef.current) return
       hasAnimatedRef.current = true
@@ -127,20 +121,22 @@ export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNu
         setDisplayValue(formatValue(current, parsed))
 
         if (progress < 1) {
-          requestAnimationFrame(step)
+          rafId = requestAnimationFrame(step)
         } else {
           setDisplayValue(parsed.original)
         }
       }
 
-      requestAnimationFrame(step)
+      rafId = requestAnimationFrame(step)
     }
 
     // Check if element is already in viewport
     const rect = node.getBoundingClientRect()
     if (rect.top < (window.innerHeight || document.documentElement.clientHeight) && rect.bottom > 0) {
       runAnimation()
-      return
+      return () => {
+        if (rafId) cancelAnimationFrame(rafId)
+      }
     }
 
     const observer = new IntersectionObserver(
@@ -156,22 +152,23 @@ export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNu
 
     observer.observe(node)
 
-    // Fallback timer: ensure the real numbers appear even if observer misses
+    // Safety fallback: ensure final number is always visible
     const safetyTimer = setTimeout(() => {
       if (!hasAnimatedRef.current) {
         runAnimation()
       }
-    }, 800)
+    }, 600)
 
     return () => {
       observer.disconnect()
       clearTimeout(safetyTimer)
+      if (rafId) cancelAnimationFrame(rafId)
     }
   }, [value, duration, parsed])
 
   return (
     <span ref={elementRef} className={className}>
-      {displayValue}
+      {parsed.isNumeric ? displayValue : parsed.original}
     </span>
   )
 }

@@ -44,7 +44,7 @@ const DEFAULT_STORIES: ArtisanStoryItem[] = [
     impactMetric: '100%',
     impactLabel: 'Every session supports fair wages and dignity of practice for artisan communities.',
     ctaLabel: 'Meet the artisan network',
-    ctaUrl: '#enquiry',
+    ctaUrl: '/artisans',
   },
   {
     id: 'ram-lal',

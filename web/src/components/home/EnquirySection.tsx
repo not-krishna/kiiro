@@ -17,22 +17,22 @@ export function EnquirySection() {
         </div>
 
         <div className="grid md:grid-cols-2 gap-8 items-stretch" data-motion-stagger>
-          <article className="bg-[#2B231F] text-[#FBF9F4] p-8 sm:p-10 md:p-12 flex flex-col justify-between border border-[#3D332E] shadow-sm relative group hover:border-[#4F5B2A] transition-all duration-300" data-motion-item data-motion-card>
+          <article className="bg-[#2B231F] text-[#FBF9F4] p-8 sm:p-10 md:p-12 flex flex-col justify-between border border-[#4D423C] shadow-md relative group hover:border-[#A6B78F] transition-all duration-300" data-motion-item data-motion-card>
             <div className="space-y-6">
-              <span className="inline-block text-[10px] uppercase tracking-[0.22em] text-[#4F5B2A] font-semibold">
+              <span className="inline-block text-[11px] uppercase tracking-[0.22em] text-[#A6B78F] font-semibold">
                 B2B & Group Experiences
               </span>
-              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight" data-card-title>
+              <h3 className="font-display text-2xl sm:text-3xl md:text-4xl leading-tight text-[#FBF9F4]" data-card-title>
                 Create an Experience for Your Team
               </h3>
-              <p className="text-sm md:text-base text-[#D8CEBE] font-light leading-relaxed">
+              <p className="text-sm md:text-base text-[#E8E1D5] font-light leading-relaxed">
                 Planning a creative workshop or group experience? Tell us what you have in mind, and let&apos;s explore the possibilities.
               </p>
             </div>
-            <div className="pt-8 mt-6 border-t border-[#3D332E]">
+            <div className="pt-8 mt-6 border-t border-[#4D423C]">
               <Link
                 href="/experiences/corporates"
-                className="kiiro-cta w-full sm:w-auto inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#4F5B2A] text-white font-sans text-[15px] font-medium tracking-normal hover:bg-[#3D4721] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
+                className="kiiro-cta w-full sm:w-auto inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#4F5B2A] text-[#FBF9F4] font-sans text-[15px] font-medium tracking-normal hover:bg-[#3D4721] border border-[#A6B78F]/30 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#A6B78F]"
               >
                 <span>Plan a Group Experience</span>
                 <span aria-hidden="true" data-cta-arrow>&rarr;</span>
