@@ -1,4 +1,5 @@
 import React from 'react'
+import Image from 'next/image'
 
 interface Advisor {
   name: string
@@ -6,6 +7,7 @@ interface Advisor {
   title: string
   affiliation: string
   specialty?: string
+  portraitUrl?: string
 }
 
 const ADVISORS: Advisor[] = [
@@ -53,7 +55,8 @@ const ADVISORS: Advisor[] = [
   },
 ]
 
-export function AdvisorySection() {
+export function AdvisorySection({ advisors: propAdvisors }: { advisors?: Advisor[] }) {
+  const advisors = propAdvisors && propAdvisors.length > 0 ? propAdvisors : ADVISORS
   return (
     <section
       id="advisory"
@@ -83,7 +86,7 @@ export function AdvisorySection() {
 
         {/* 6-Card Architectural Grid with Full Credentials */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8" data-motion-stagger>
-          {ADVISORS.map((advisor) => (
+          {advisors.map((advisor) => (
             <article
               key={advisor.name}
               className="bg-[#F3EFE6] border border-[#D8CEBE] p-7 md:p-8 flex flex-col justify-between space-y-6 shadow-sm hover:border-[#4F5B2A] transition-all duration-300 group"
@@ -92,8 +95,19 @@ export function AdvisorySection() {
             >
               <div className="space-y-4">
                 <div className="flex items-center gap-4">
-                  <div className="w-13 h-13 rounded-none bg-[#EAE3D5] border border-[#D8CEBE] flex items-center justify-center text-[#4F5B2A] font-display font-medium text-lg shrink-0 shadow-inner group-hover:border-[#4F5B2A] transition-colors">
-                    {advisor.initials}
+                  <div className="relative w-13 h-13 rounded-none bg-[#EAE3D5] border border-[#D8CEBE] flex items-center justify-center text-[#4F5B2A] font-display font-medium text-lg shrink-0 shadow-inner group-hover:border-[#4F5B2A] transition-colors overflow-hidden">
+                    {advisor.portraitUrl ? (
+                      <Image
+                        src={advisor.portraitUrl}
+                        alt={`Portrait of ${advisor.name}`}
+                        fill
+                        sizes="52px"
+                        className="object-cover"
+                        unoptimized={advisor.portraitUrl.startsWith('/uploads/')}
+                      />
+                    ) : (
+                      advisor.initials
+                    )}
                   </div>
                   <div>
                     <h3 className="font-display text-lg md:text-xl text-[#2B231F] font-normal leading-snug">

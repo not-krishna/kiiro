@@ -2,6 +2,7 @@ import { notFound } from 'next/navigation'
 import { getOfferingBySlug, ALL_OFFERINGS, OFFERING_ALIASES } from '@/content/offeringsData'
 import { CONFIRMED_SCHEDULED_EVENTS } from '@/content/events'
 import { OfferingDetailView } from '@/components/offerings/OfferingDetailView'
+import { getContentStore } from '@/lib/cms/contentStore'
 import type { EventItem } from '@/content/types'
 
 interface PageProps {
@@ -18,7 +19,9 @@ export function generateStaticParams() {
 
 export async function generateMetadata({ params }: PageProps) {
   const { slug } = await params
-  const offering = getOfferingBySlug(slug)
+  const store = getContentStore()
+  const canonical = OFFERING_ALIASES[slug] || slug
+  const offering = store.offerings.find((o) => o.slug === canonical) || getOfferingBySlug(slug)
   if (!offering) {
     return {
       title: 'Offering | Kiiro Living Craft',
@@ -34,14 +37,20 @@ export async function generateMetadata({ params }: PageProps) {
 
 export default async function ExperienceDetailPage({ params }: PageProps) {
   const { slug } = await params
-  const offering = getOfferingBySlug(slug)
+  const store = getContentStore()
+  const canonical = OFFERING_ALIASES[slug] || slug
+  const offering = store.offerings.find((o) => o.slug === canonical) || getOfferingBySlug(slug)
 
   if (!offering) {
     notFound()
   }
 
+  const allEvents: EventItem[] = (store.events && store.events.length > 0)
+    ? (store.events as unknown as EventItem[]).filter(e => e.published !== false)
+    : CONFIRMED_SCHEDULED_EVENTS
+
   // Find related events associated with this offering
-  const relatedEvents: EventItem[] = CONFIRMED_SCHEDULED_EVENTS.filter((evt) => {
+  const relatedEvents: EventItem[] = allEvents.filter((evt) => {
     if (evt.workshopSlug === offering.slug) return true
     if (offering.slug === 'block-printing' && (evt.workshopSlug === 'bagru-block-printing' || evt.workshopSlug === 'block-printing')) return true
     if (offering.slug === 'jaipur-tile-painting' && (evt.workshopSlug === 'blue-pottery' || evt.workshopSlug === 'jaipur-tile-painting')) return true

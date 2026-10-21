@@ -4,9 +4,10 @@ import { cleanVisibleCopy } from '@/lib/copy'
 interface ManifestoImpactProps {
   manifestoTitle?: string
   manifestoText?: string
+  stats?: { value: string; label: string; context: string }[]
 }
 
-export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpactProps) {
+export function ManifestoImpact({ manifestoTitle, manifestoText, stats: propStats }: ManifestoImpactProps) {
   const fallbackTitle = 'We spend our days in our heads. Kiiro brings you back to your hands.'
   const fallbackText =
     'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.\n\nEvery Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.'
@@ -17,13 +18,14 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
   const cleanText = cleanVisibleCopy(manifestoText || '')
   const text = (!cleanText || cleanText.includes('heritage craft traditions directly')) ? fallbackText : cleanText
 
-  const stats = [
+  const defaultStats = [
     { value: '800+', label: 'Workshops', context: 'Hands-on sessions across India' },
     { value: '10,000+', label: 'Participants', context: 'People who took a creative break' },
     { value: '7', label: 'Cities', context: 'Mumbai, Kolkata, Pune, Goa, Bangalore, Jaipur' },
     { value: '15+', label: 'Corporate teams', context: 'Team wellness through making' },
     { value: '10+', label: 'Resorts', context: 'Guest wellness experiences' },
   ]
+  const stats = propStats && propStats.length > 0 ? propStats : defaultStats
 
   const textParagraphs = text.split('\n\n').filter(Boolean)
 
@@ -32,18 +34,27 @@ export function ManifestoImpact({ manifestoTitle, manifestoText }: ManifestoImpa
       {/* 1. Impact Stats Bar */}
       <div className="py-16 md:py-20 px-6 md:px-10 bg-[#FBF9F4] border-b border-[#E8E1D5]">
         <div className="max-w-7xl mx-auto">
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-8" data-motion-stagger>
-            {stats.map((stat) => (
-              <div key={stat.label} className="space-y-2 text-center flex flex-col items-center justify-center" data-motion-item>
+          <div
+            className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-6 md:gap-x-8 lg:gap-x-10 items-start justify-items-center"
+            data-motion-stagger
+          >
+            {stats.map((stat, idx) => (
+              <div
+                key={`${stat.label}-${idx}`}
+                className={`w-full max-w-[210px] flex flex-col items-center text-center space-y-2 ${
+                  idx === 4 ? 'col-span-2 sm:col-span-1' : ''
+                }`}
+                data-motion-item
+              >
                 <AnimatedNumber
                   value={stat.value}
-                  className="block font-display text-fluid-4xl font-normal text-[#2B231F] leading-none text-center"
+                  className="block font-display text-4xl sm:text-5xl lg:text-[3.25rem] font-normal text-[#2B231F] leading-none tracking-tight text-center"
                 />
-                <div className="text-center">
-                  <h3 className="font-sans text-sm font-medium text-[#2B231F] text-center">
+                <div className="text-center pt-1 space-y-1">
+                  <h3 className="font-sans text-sm sm:text-[15px] font-medium text-[#2B231F] tracking-normal text-center leading-snug">
                     {stat.label}
                   </h3>
-                  <p className="font-sans text-sm text-[#6E635B] font-light mt-0.5 text-center">
+                  <p className="font-sans text-xs sm:text-[13px] text-[#6E635B] font-light leading-relaxed text-center max-w-[190px] mx-auto">
                     {stat.context}
                   </p>
                 </div>

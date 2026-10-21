@@ -22,11 +22,10 @@ export function WeeklyEventsPreview({ events }: WeeklyEventsPreviewProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 border-b border-[#E8E1D5] pb-8">
           <div className="max-w-2xl space-y-3">
             <span
-              className="text-xs uppercase tracking-[0.25em] text-[#4F5B2A] font-semibold flex items-center gap-2"
+              className="text-xs uppercase tracking-[0.25em] text-[#4F5B2A] font-semibold block"
               data-motion-reveal
               data-motion-distance="14"
             >
-              <span className="w-2 h-2 bg-[#4F5B2A] animate-pulse" />
               Your Calendar of Calm
             </span>
             <h2 className="font-display text-fluid-3xl font-normal text-[#2B231F]" data-motion-text>

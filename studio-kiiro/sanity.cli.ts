@@ -5,6 +5,13 @@ export default defineCliConfig({
     projectId: 's47moswb',
     dataset: 'production',
   },
+  vite: (prevConfig) => ({
+    ...prevConfig,
+    build: {
+      ...prevConfig.build,
+      target: 'esnext',
+    },
+  }),
   // @ts-expect-error typegen is supported in Sanity CLI schema configuration
   typegen: {
     enabled: true,

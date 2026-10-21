@@ -54,6 +54,19 @@ export const event = defineType({
       initialValue: 'Venue to be confirmed',
     }),
     defineField({
+      name: 'address',
+      title: 'Full Address',
+      type: 'text',
+      rows: 2,
+      description: 'Full verified venue address from LOCATIONS.csv',
+    }),
+    defineField({
+      name: 'googleMapsUrl',
+      title: 'Google Maps Location Link',
+      type: 'url',
+      description: 'Optional Google Maps venue link (opens venue in Google Maps)',
+    }),
+    defineField({
       name: 'locationRef',
       title: 'Location Reference',
       type: 'reference',
@@ -105,6 +118,30 @@ export const event = defineType({
       type: 'text',
       rows: 3,
       description: 'Major stages and craft processes involved in this session',
+    }),
+    defineField({
+      name: 'format',
+      title: 'Session Format',
+      type: 'string',
+      options: {
+        list: [
+          { title: 'In Person', value: 'in-person' },
+          { title: 'Online Live', value: 'online' },
+        ],
+      },
+      initialValue: 'in-person',
+    }),
+    defineField({
+      name: 'feelsLike',
+      title: 'Feels Like (Emotional descriptor)',
+      type: 'string',
+      description: 'e.g. slow, rhythmic, meditative or earthy, centering, rhythmic',
+    }),
+    defineField({
+      name: 'bookingUrl',
+      title: 'Direct Booking URL',
+      type: 'string',
+      description: 'Optional external booking or custom URL override',
     }),
     defineField({
       name: 'takeAway',

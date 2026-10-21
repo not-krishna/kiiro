@@ -30,6 +30,27 @@ export const homePage = defineType({
       type: 'text',
       rows: 3,
     }),
+    defineField({
+      name: 'heroSupportingText',
+      title: 'Hero Supporting Paragraph',
+      type: 'text',
+      rows: 4,
+      description: 'Second paragraph rendered below the primary hero paragraph',
+    }),
+    defineField({
+      name: 'showArtisanStories',
+      title: 'Show Artisan Stories section',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Toggle whether the Artisan Stories section is visible on the public homepage',
+    }),
+    defineField({
+      name: 'showCsrSection',
+      title: 'Show CSR Section',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Toggle whether the CSR section and navigation entry are visible on the public website',
+    }),
     defineField({ name: 'heroPrimaryCta', title: 'Hero primary CTA', type: 'cta' }),
     defineField({ name: 'heroSecondaryCta', title: 'Hero secondary CTA', type: 'cta' }),
     defineField({

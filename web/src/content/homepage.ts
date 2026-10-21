@@ -4,7 +4,9 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
   heroEyebrow: 'A creative wellness space for making, connecting & restoring',
   heroHeading: 'ROOT. CREATE. RESTORE.',
   heroSubheading:
-    "Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans, and leave lighter than you arrived. In person across India, and live online when you can't be there.",
+    'Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans and wellness facilitators, and leave lighter than you arrived. In person across India, around...',
+  heroSupportingText:
+    'Kiiro pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.',
   heroPrimaryCta: {
     label: 'Book a Session',
     href: '/weekly-events',

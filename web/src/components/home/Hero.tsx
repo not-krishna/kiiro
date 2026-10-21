@@ -10,6 +10,7 @@ interface HeroProps {
     heroEyebrow?: string
     heroHeading?: string
     heroSubheading?: string
+    heroSupportingText?: string
     heroPrimaryCta?: Cta | string
     heroSecondaryCta?: Cta | string
     heroMedia?: MediaAsset[]
@@ -72,7 +73,7 @@ function YoutubeIcon() {
 }
 
 const HERO_SOCIAL_LINKS = [
-  { label: 'Instagram', href: 'https://www.instagram.com/kiiroexperiences/', Icon: InstagramIcon },
+  { label: 'Instagram', href: 'https://www.instagram.com/your_workshops/?hl=en', Icon: InstagramIcon },
   { label: 'Facebook', href: 'https://www.facebook.com/kiiroexperiences/', Icon: FacebookIcon },
   { label: 'LinkedIn', href: 'https://www.linkedin.com/company/kiiro-experiences/', Icon: LinkedinIcon },
   { label: 'YouTube', href: 'https://www.youtube.com/@kiiroexperiences', Icon: YoutubeIcon },
@@ -91,6 +92,8 @@ export function Hero({ data }: HeroProps) {
   if (subheading.includes('together, offline') || subheading.includes('cultural experiences') || !subheading) {
     subheading = content.heroSubheading
   }
+
+  const supportingText = cleanVisibleCopy(data?.heroSupportingText || content.heroSupportingText || '')
 
   const rawPrimary = cleanCta(asCta(data?.heroPrimaryCta, content.heroPrimaryCta))
   const primary = {
@@ -133,9 +136,14 @@ export function Hero({ data }: HeroProps) {
               )}
             </div>
 
-            <p className="font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg" data-hero-copy>
-              {subheading}
-            </p>
+            <div className="space-y-3 font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg" data-hero-copy>
+              <p>{subheading}</p>
+              {supportingText && (
+                <p className="text-xs md:text-sm text-[#7A6E65] leading-relaxed pt-2 border-t border-[#E8E1D5]/70">
+                  {supportingText}
+                </p>
+              )}
+            </div>
 
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
@@ -177,11 +185,6 @@ export function Hero({ data }: HeroProps) {
               </div>
             </div>
 
-            <div className="hidden md:flex items-center gap-3 pt-2 text-[11px] uppercase tracking-[0.18em] text-[#968A80]" data-hero-meta>
-              <span>Scroll</span>
-              <span className="h-10 w-px origin-top bg-[#D8CEBE]" data-hero-scroll-line />
-              <span>Discover</span>
-            </div>
           </div>
 
           <div className="lg:col-span-7 relative">

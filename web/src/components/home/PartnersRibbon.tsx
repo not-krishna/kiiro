@@ -63,7 +63,6 @@ export function PartnersRibbon() {
                         priority={index < 9}
                       />
                     </div>
-                    <span className="w-1.5 h-1.5 bg-[#4F5B2A] opacity-60 group-hover:opacity-100 group-hover:scale-125 transition-all shrink-0" />
                   </div>
                 </div>
               ))}

@@ -5,7 +5,7 @@ import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { MobileNav } from './MobileNav'
 import { LocationBar } from './LocationBar'
-import { PRIMARY_NAV, SITE_TAGLINE } from '@/content/navigation'
+import { PRIMARY_NAV, getPrimaryNav, SITE_TAGLINE } from '@/content/navigation'
 import type { NavItem } from '@/content/types'
 
 function cleanHref(href: string) {
@@ -105,9 +105,10 @@ function DesktopDropdown({ item, pathname }: { item: NavItem; pathname: string }
   )
 }
 
-export function Header() {
+export function Header({ showCsrSection = false }: { showCsrSection?: boolean } = {}) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const pathname = usePathname()
+  const navItems = getPrimaryNav(showCsrSection)
 
   return (
     <>
@@ -127,7 +128,7 @@ export function Header() {
               className="hidden lg:flex items-center gap-4 xl:gap-5.5 font-sans text-[#6E635B]"
               aria-label="Primary"
             >
-              {PRIMARY_NAV.map((item) =>
+              {navItems.map((item) =>
                 item.cta ? (
                   <Link
                     key={item.href}
@@ -160,7 +161,7 @@ export function Header() {
         <LocationBar />
       </header>
 
-      <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} />
+      <MobileNav isOpen={mobileMenuOpen} onClose={() => setMobileMenuOpen(false)} showCsrSection={showCsrSection} />
     </>
   )
 }

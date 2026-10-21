@@ -128,8 +128,7 @@ export function OfferingDetailView({ offering, relatedEvents }: OfferingDetailVi
                 <span className="text-[11px] uppercase tracking-[0.2em] font-semibold text-[#4F5B2A] block">
                   Why Should It Be Learnt
                 </span>
-                <h3 className="font-display text-2xl text-[#2B231F] flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#4F5B2A] shrink-0" />
+                <h3 className="font-display text-2xl text-[#2B231F]">
                   The Significance of Experiencing {offering.title}
                 </h3>
                 <p className="text-sm md:text-base text-[#4A4036] font-light leading-relaxed">
@@ -263,8 +262,7 @@ export function OfferingDetailView({ offering, relatedEvents }: OfferingDetailVi
           <div className="max-w-6xl mx-auto space-y-10">
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-[#E8E1D5] pb-6">
               <div className="space-y-1">
-                <span className="text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold flex items-center gap-2">
-                  <span className="w-2 h-2 bg-[#4F5B2A] animate-pulse" />
+                <span className="text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold block">
                   Upcoming Events
                 </span>
                 <h2 className="font-display text-3xl md:text-4xl text-[#2B231F]">

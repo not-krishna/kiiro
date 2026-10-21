@@ -7,13 +7,19 @@ import { ALL_JOURNAL_POSTS_QUERY } from '@/sanity/lib/queries'
 import { urlFor } from '@/sanity/lib/image'
 import { FALLBACK_JOURNAL, JournalItem } from '@/lib/data'
 
+import { getContentStore } from '@/lib/cms/contentStore'
+
 export const metadata = {
   title: 'Journal & Cultural Writing | Kiiro',
   description: 'Editorial essays, craft material histories, field notes, and cultural reflections.',
 }
 
+export const revalidate = 30
+
 export default async function JournalPage() {
-  let posts: JournalItem[] = []
+  const store = getContentStore()
+  let posts: any[] = []
+
   try {
     const fetched = await client.fetch(ALL_JOURNAL_POSTS_QUERY)
     if (fetched && fetched.length > 0) {
@@ -24,8 +30,12 @@ export default async function JournalPage() {
   }
 
   if (!posts || posts.length === 0) {
-    posts = FALLBACK_JOURNAL
+    const storePublished = (store.journal || []).filter((p) => p.published !== false)
+    posts = storePublished.length > 0 ? storePublished : FALLBACK_JOURNAL
   }
+
+  // Filter out any drafts
+  posts = posts.filter((p) => p.published !== false)
 
   return (
     <div className="min-h-screen bg-[#FBF9F4] flex flex-col font-sans">
@@ -49,12 +59,19 @@ export default async function JournalPage() {
 
         {/* Journal Index Grid */}
         <section className="py-20 px-6 md:px-10 max-w-7xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {posts.map((post) => {
-              const imageSrc = post.heroImage
-                ? urlFor(post.heroImage as any).url()
-                : post.imageUrl ||
-                  '/images/workshops/warli-art-workshop.jpg'
+          {posts.length === 0 ? (
+            <div className="border border-[#E8E1D5] bg-[#F3EFE6] p-12 text-center max-w-xl mx-auto space-y-3">
+              <p className="font-serif text-2xl text-[#2B231F]">No articles published yet</p>
+              <p className="text-xs text-[#6E635B] font-light leading-relaxed">
+                Our editorial team is documenting new field dispatches and craft essays. Check back soon.
+              </p>
+            </div>
+          ) : (
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {posts.map((post) => {
+                const imageSrc = post.imageUrl || (post.heroImage
+                  ? urlFor(post.heroImage as any).url()
+                  : '/images/workshops/warli-art-workshop.jpg')
 
               return (
                 <article
@@ -108,6 +125,7 @@ export default async function JournalPage() {
               )
             })}
           </div>
+        )}
         </section>
       </main>
 

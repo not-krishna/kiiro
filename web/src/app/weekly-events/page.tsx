@@ -5,6 +5,7 @@ import { WeeklyEventsBrowser } from '@/components/events/WeeklyEventsBrowser'
 import { client } from '@/sanity/lib/client'
 import { ALL_EVENTS_QUERY } from '@/sanity/lib/queries'
 import { mapSanityEvent, CONFIRMED_SCHEDULED_EVENTS, sortEventsChronologically } from '@/content/events'
+import { getContentStore } from '@/lib/cms/contentStore'
 import type { EventItem } from '@/content/types'
 
 export const metadata = {
@@ -16,6 +17,7 @@ export const metadata = {
 export const revalidate = 30
 
 export default async function WeeklyEventsPage() {
+  const store = getContentStore()
   const cmsEvents = await client.fetch(ALL_EVENTS_QUERY).catch(() => [])
 
   const eventsFromCms: EventItem[] = ((cmsEvents || []) as unknown[])
@@ -23,7 +25,11 @@ export default async function WeeklyEventsPage() {
     .filter((event): event is EventItem => Boolean(event))
     .filter((event) => event.audience !== 'b2b')
 
-  const rawEvents = eventsFromCms.length > 0 ? eventsFromCms : CONFIRMED_SCHEDULED_EVENTS
+  const storeEvents: EventItem[] = (store.events && store.events.length > 0)
+    ? (store.events as unknown as EventItem[]).filter((e) => e.published !== false && e.audience !== 'b2b')
+    : CONFIRMED_SCHEDULED_EVENTS
+
+  const rawEvents = eventsFromCms.length > 0 ? eventsFromCms : storeEvents
   const { upcoming, past } = sortEventsChronologically(rawEvents)
 
   return (
@@ -33,9 +39,8 @@ export default async function WeeklyEventsPage() {
         {/* Editorial Dark Hero */}
         <section className="bg-[#2B231F] text-[#FBF9F4] py-16 md:py-24 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-6">
-            <div className="flex items-center gap-3">
-              <span className="w-2 h-2 bg-[#A6B78F] animate-pulse" />
-              <span className="text-xs uppercase tracking-[0.25em] text-[#A6B78F] font-semibold">
+            <div>
+              <span className="text-xs uppercase tracking-[0.25em] text-[#A6B78F] font-semibold block">
                 Your Calendar of Calm
               </span>
             </div>

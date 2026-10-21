@@ -125,7 +125,14 @@ function ProfileAvatar({ src, name, sizeClasses = 'w-11 h-11' }: { src?: string 
   if (src && typeof src === 'string' && (src.startsWith('/') || src.startsWith('http'))) {
     return (
       <div className={`relative z-10 flex-shrink-0 overflow-hidden border border-[#D8CEBE] bg-[#F3EFE6] ${sizeClasses}`}>
-        <Image src={src} alt={name} fill className="object-cover" sizes="56px" />
+        <Image
+          src={src}
+          alt={name}
+          fill
+          className="object-cover"
+          sizes="56px"
+          unoptimized={src.startsWith('/uploads/') || src.startsWith('/images/')}
+        />
       </div>
     )
   }
@@ -181,8 +188,10 @@ export function TestimonialsSection({
 
   const getPortraitUrl = useCallback((item?: TestimonialItem) => {
     if (!item) return null
+    if ((item as any).imageUrl) return (item as any).imageUrl
+    if ((item as any).portraitUrl) return (item as any).portraitUrl
     const imgObj = item.portrait || item.profileImage
-    if (typeof imgObj === 'string') return imgObj
+    if (typeof imgObj === 'string' && imgObj.trim().length > 0) return imgObj
     if (imgObj && typeof imgObj === 'object' && 'asset' in imgObj) {
       try {
         return urlFor(imgObj).url()
@@ -526,16 +535,20 @@ export function TestimonialsSection({
             </div>
 
             {/* Quote Content Area */}
-            <div className="relative z-10 pt-4 md:pt-6 space-y-5">
-              {/* Short bold pull-quote above testimonial */}
-              <p
-                ref={pullQuoteRef}
-                className="font-display font-semibold text-lg md:text-xl text-[#2B231F] leading-snug"
-              >
-                &ldquo;{currentItem.pullQuote || currentItem.quote}&rdquo;
-              </p>
+            <div className="relative z-10 pt-4 md:pt-6 space-y-4">
+              {/* Optional short bold headline if distinct from full quote */}
+              {currentItem.pullQuote &&
+                currentItem.pullQuote.trim() !== currentItem.quote.trim() &&
+                currentItem.pullQuote.trim().length < currentItem.quote.trim().length && (
+                  <p
+                    ref={pullQuoteRef}
+                    className="font-display font-semibold text-lg md:text-xl text-[#4F5B2A] leading-snug"
+                  >
+                    &ldquo;{currentItem.pullQuote}&rdquo;
+                  </p>
+                )}
 
-              {/* Active Testimonial Quote */}
+              {/* Active Testimonial Quote - Rendered Only Once */}
               <blockquote
                 ref={quoteRef}
                 className="font-display text-fluid-xl md:text-fluid-2xl font-normal text-[#2B231F] leading-[1.38] tracking-tight italic"

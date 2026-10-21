@@ -1,0 +1,2774 @@
+{
+  "homepage": {
+    "heroEyebrow": "A creative wellness space for making, connecting & restoring",
+    "heroHeading": "Root. Create. Restore.",
+    "heroSubheading": "Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans and wellness facilitators, and leave lighter than you arrived. In person across India, around...",
+    "heroSupportingText": "Kiiro pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.",
+    "showArtisanStories": false,
+    "showCsrSection": false,
+    "heroPrimaryCtaLabel": "Book a Session",
+    "heroPrimaryCtaHref": "/weekly-events",
+    "heroSecondaryCtaLabel": "Explore Experiences",
+    "heroSecondaryCtaHref": "/experiences",
+    "heroImages": [
+      "/images/hero/hero-1.png",
+      "/images/hero/hero-2.png",
+      "/images/hero/hero-3.png"
+    ],
+    "statsWorkshops": "800+",
+    "statsWorkshopsTitle": "Workshops",
+    "statsWorkshopsLabel": "Hands-on sessions across India",
+    "statsParticipants": "10,000+",
+    "statsParticipantsTitle": "Participants",
+    "statsParticipantsLabel": "People who took a creative break",
+    "statsCities": "7",
+    "statsCitiesTitle": "Cities",
+    "statsCitiesLabel": "Mumbai, Kolkata, Pune, Goa, Bangalore, Jaipur",
+    "statsTeams": "15+",
+    "statsTeamsTitle": "Corporate teams",
+    "statsTeamsLabel": "Team wellness through making",
+    "statsResorts": "10+",
+    "statsResortsTitle": "Resorts",
+    "statsResortsLabel": "Guest wellness experiences",
+    "manifestoTitle": "We spend our days in our heads. Kiiro brings you back to your hands.",
+    "manifestoText": "Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.",
+    "manifestoSubtext": "Every Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.",
+    "methodologyIntro": "Co-led by a master artisan and a wellness facilitator, every session navigates you through three guided phases, from mental noise to calm.",
+    "methodologyStages": [
+      {
+        "id": "root",
+        "title": "Root",
+        "heading": "Ground. Orient. Settle.",
+        "body": "A facilitated grounding practice, then the story of the craft and its lineage. Your attention shifts from racing thoughts to the present moment.",
+        "ledBy": "Facilitator + Artisan",
+        "youFeel": "Grounded, present"
+      },
+      {
+        "id": "create",
+        "title": "Create",
+        "heading": "Hands busy. Mind quiet.",
+        "body": "Guided, rhythmic making that engages your senses, paired with breath cues that support nervous-system regulation. Repetitive, tactile movement is known to ease the stress response and invite a flow state.",
+        "ledBy": "Artisan + Facilitator",
+        "youFeel": "Regulated, absorbed"
+      },
+      {
+        "id": "restore",
+        "title": "Restore",
+        "heading": "Reflect. Integrate. Carry it home.",
+        "body": "A guided group reflection gives you a way to express and process what came up, even when words fall short. Completing a piece brings a real sense of accomplishment.",
+        "ledBy": "Facilitator",
+        "youFeel": "Lighter, connected, accomplished"
+      }
+    ],
+    "whyMakingRestoresHeadline": "Why a creative break works better",
+    "whyMakingRestoresIntro": "A scroll isn't rest, and neither is another meeting. Making things by hand offers a different kind of break.",
+    "whyMakingRestoresCards": [
+      {
+        "title": "Calms the nervous system",
+        "text": "Rhythmic, repetitive motions like stamping, weaving, or shading help your body shift out of stress mode. Many people notice slower breathing and a softer mind within minutes."
+      },
+      {
+        "title": "Quiets overthinking",
+        "text": "When you're absorbed in colour, texture, and process, there's no room left for the inner critic. This state of flow is often described as meditative."
+      },
+      {
+        "title": "Lifts your mood",
+        "text": "Finishing something with your own hands brings a real sense of accomplishment, a small, earned feeling of \"I made this.\""
+      },
+      {
+        "title": "Gives feelings a form",
+        "text": "Some things are hard to say. Making gives emotions a place to go, without needing words."
+      },
+      {
+        "title": "Builds belonging",
+        "text": "Working side by side helps ease loneliness. Shared making builds connection faster than small talk ever does."
+      }
+    ],
+    "ctaHeadline": "Your hands already know how to unwind.",
+    "ctaIntro": "Whether it's one quiet Sunday or a team day out, give yourself the break that actually restores.",
+    "ctaPrimaryLabel": "Plan a Group Experience",
+    "ctaPrimaryHref": "/experiences/corporates",
+    "ctaSecondaryLabel": "Book Your First Session",
+    "ctaSecondaryHref": "/weekly-events"
+  },
+  "events": [
+    {
+      "id": "event-pottery-1",
+      "slug": "pottery-studio-experience-bangalore",
+      "title": "Clay, Calm & Centering (Pottery Studio)",
+      "shortDescription": "Tactile wheel-throwing and centering session guided by master ceramicists.",
+      "date": "2026-10-03",
+      "startTime": "10:30 AM",
+      "endTime": "01:30 PM",
+      "city": "Bangalore",
+      "venue": "Indiranagar Craft Sanctuary",
+      "location": "Indiranagar Craft Sanctuary, Bangalore",
+      "price": 2500,
+      "capacity": 15,
+      "availability": "open",
+      "workshopSlug": "pottery",
+      "experienceType": "Studio Craft",
+      "duration": "3 hours",
+      "facilitator": "Master Ceramicist",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "earthy, centering, rhythmic",
+      "keyProcess": "Clay wedging and centering on wheel, throwing cylinder form, neck shaping, and wire cutting",
+      "takeAway": "1–2 handcrafted ceramic pieces (bisque-fired and studio glazed for pickup)",
+      "bookingHref": "/enquire?intent=individual&subject=Clay%2C%20Calm%20%26%20Centering&event=pottery-studio-experience-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-1.png",
+          "alt": "Clay Pottery Studio Experience"
+        }
+      ],
+      "googleMapsUrl": ""
+    },
+    {
+      "id": "event-block-printing-1",
+      "slug": "bagru-block-printing-bangalore",
+      "title": "Bagru Block Printing & Natural Dye Studio",
+      "shortDescription": "Carve teakwood impressions using centuries-old madder and harda mineral dyes.",
+      "date": "2026-10-04",
+      "startTime": "10:30 AM",
+      "endTime": "01:30 PM",
+      "city": "Bengaluru",
+      "venue": "Hello World",
+      "address": "20/B, 18th B Main Road, Sector 3, HSR Layout, Bengaluru, Karnataka 560102",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Hello+World,+20%2FB,+18th+B+Main+Road,+Sector+3,+HSR+Layout,+Bengaluru,+Karnataka+560102",
+      "location": "Hello World, HSR Layout, Bengaluru",
+      "price": 2200,
+      "capacity": 15,
+      "availability": "open",
+      "workshopSlug": "block-printing",
+      "experienceType": "Traditional Textile Craft",
+      "duration": "3 hours",
+      "facilitator": "Master Block Printer from Rajasthan",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "slow, rhythmic, meditative",
+      "keyProcess": "Fabric pre-mordanting with harda, layout alignment, hand-stamping with syahi and begar natural dyes, and cold-wash fixing",
+      "takeAway": "Bespoke hand-printed pure cotton stole or tote bag patterned with ancestral Bagru motifs",
+      "bookingHref": "/enquire?intent=individual&subject=Bagru%20Block%20Printing&event=bagru-block-printing-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/madhubani-painting-process.jpg",
+          "alt": "Bagru Block Printing Studio Experience"
+        }
+      ]
+    },
+    {
+      "id": "event-kolhapuri-1",
+      "slug": "kolhapuri-chappal-making-mumbai",
+      "title": "Kolhapuri Chappal & Hand-Stitched Leather Craft",
+      "shortDescription": "Hand-braiding, punching, and vegetable-tanned leather heritage footwear crafting.",
+      "date": "2026-10-10",
+      "startTime": "11:00 AM",
+      "endTime": "03:00 PM",
+      "city": "Mumbai",
+      "venue": "Sorozaie Restaurant",
+      "address": "Shop No. 1, Aaram Nagar Part 1, Seven Bungalows, JP Road, Versova, Andheri West, Mumbai, Maharashtra 400061",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=Sorozaie+Restaurant,+Shop+No.+1,+Aaram+Nagar+Part+1,+Seven+Bungalows,+JP+Road,+Versova,+Andheri+West,+Mumbai,+Maharashtra+400061",
+      "location": "Sorozaie Restaurant, Versova, Mumbai",
+      "price": 3200,
+      "capacity": 10,
+      "availability": "limited",
+      "workshopSlug": "kolhapuri-chappal-making",
+      "experienceType": "Generational Leather Craft",
+      "duration": "4 hours",
+      "facilitator": "Generational Artisan from Kolhapur",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "tactile, focused, heritage",
+      "keyProcess": "Sole template tracing, awl hole punching, traditional braided cord weaving, and brass stud riveting",
+      "takeAway": "Wearable pair of genuine vegetable-tanned Kolhapuri leather sandals custom-fitted to your feet",
+      "bookingHref": "/enquire?intent=individual&subject=Kolhapuri%20Chappal%20Craft&event=kolhapuri-chappal-making-mumbai&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-2.png",
+          "alt": "Kolhapuri Chappal Craft Session"
+        }
+      ]
+    },
+    {
+      "id": "event-block-printing-2",
+      "slug": "natural-dye-block-printing-bangalore",
+      "title": "Indigo & Woodblock Relief Printing",
+      "shortDescription": "Deep vat indigo fermentation and relief block printing on handwoven cotton.",
+      "date": "2026-10-11",
+      "startTime": "02:00 PM",
+      "endTime": "05:00 PM",
+      "city": "Bangalore",
+      "venue": "Koramangala Studio Hub",
+      "location": "Koramangala Studio Hub, Bangalore",
+      "price": 2400,
+      "capacity": 12,
+      "availability": "open",
+      "workshopSlug": "block-printing",
+      "experienceType": "Textile Art",
+      "duration": "3 hours",
+      "facilitator": "Master Block Printer",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "slow, grounding, immersive",
+      "keyProcess": "Indigo vat reduction, botanical motif block stamping with mud-resist dabu paste, vat dipping and oxidation",
+      "takeAway": "Handcrafted deep-indigo printed cotton table runner or wall tapestry",
+      "bookingHref": "/enquire?intent=individual&subject=Indigo%20%26%20Woodblock%20Printing&event=natural-dye-block-printing-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/kalamkari-art-process.jpg",
+          "alt": "Indigo Block Printing Masterclass"
+        }
+      ]
+    },
+    {
+      "id": "event-pottery-2",
+      "slug": "blue-pottery-glaze-bangalore",
+      "title": "Jaipur Blue Pottery Underglaze Workshop",
+      "shortDescription": "Non-clay Egyptian paste molding and cobalt oxide Persian botanical underglazing.",
+      "date": "2026-10-17",
+      "startTime": "02:30 PM",
+      "endTime": "05:30 PM",
+      "city": "Bangalore",
+      "venue": "Koramangala Studio Hub",
+      "location": "Koramangala Studio Hub, Bangalore",
+      "price": 2800,
+      "capacity": 12,
+      "availability": "limited",
+      "workshopSlug": "jaipur-tile-painting",
+      "experienceType": "Heritage Ceramics",
+      "duration": "3 hours",
+      "facilitator": "Master Blue Pottery Artisan",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "delicate, mindful, quiet",
+      "keyProcess": "Quartz-glass-gum dough molding, smoothing, motif stencil pouncing, cobalt and copper oxide brushwork",
+      "takeAway": "Pair of handcrafted, hand-painted Jaipur Blue Pottery decorative ceramic tiles",
+      "bookingHref": "/enquire?intent=individual&subject=Jaipur%20Blue%20Pottery&event=blue-pottery-glaze-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-3.png",
+          "alt": "Blue Pottery Tiles & Underglaze Masterclass"
+        }
+      ]
+    },
+    {
+      "id": "event-block-printing-3",
+      "slug": "contemporary-textile-block-printing-bangalore",
+      "title": "Botanical & Geometric Block Printing",
+      "shortDescription": "Contemporary layout compositions and eco-friendly pigment stamping on linen.",
+      "date": "2026-10-18",
+      "startTime": "11:00 AM",
+      "endTime": "02:00 PM",
+      "city": "Bangalore",
+      "venue": "Whitefield Creative Space",
+      "location": "Whitefield Creative Space, Bangalore",
+      "price": 2100,
+      "capacity": 15,
+      "availability": "open",
+      "workshopSlug": "block-printing",
+      "experienceType": "Contemporary Craft",
+      "duration": "3 hours",
+      "facilitator": "Textile Artisan Facilitator",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "playful, geometric, absorbing",
+      "keyProcess": "Modular geometric layout mapping, multi-tier pigment mixing, layered stamping and heat setting",
+      "takeAway": "Custom printed linen dining set (runner + 2 placemats)",
+      "bookingHref": "/enquire?intent=individual&subject=Botanical%20Block%20Printing&event=contemporary-textile-block-printing-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/madhubani-painting-process.jpg",
+          "alt": "Botanical Block Printing Workshop"
+        }
+      ]
+    },
+    {
+      "id": "event-portuguese-1",
+      "slug": "portuguese-azulejo-tile-painting-goa",
+      "title": "Portuguese Azulejo Tile Painting Workshop",
+      "shortDescription": "Majolica tin-glaze technique and cobalt tile motifs in Panjim heritage quarter.",
+      "date": "2026-10-24",
+      "startTime": "03:00 PM",
+      "endTime": "06:00 PM",
+      "city": "Goa",
+      "venue": "ITC Fortune",
+      "address": "Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515",
+      "location": "ITC Fortune, Candolim, Goa",
+      "price": 2600,
+      "capacity": 12,
+      "availability": "open",
+      "workshopSlug": "portuguese-azulejo-tile-painting",
+      "experienceType": "Heritage Tile Art",
+      "duration": "3 hours",
+      "facilitator": "Master Azulejo Painter",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "unhurried, coastal, contemplative",
+      "keyProcess": "Opaque tin-glaze base application, charcoal pounce design transfer, cobalt oxide brushwork with fine squirrel-hair brushes",
+      "takeAway": "Set of 2 glazed and fired authentic Azulejo ceramic tiles ready for mounting",
+      "bookingHref": "/enquire?intent=individual&subject=Azulejo%20Tile%20Painting&event=portuguese-azulejo-tile-painting-goa&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-3.png",
+          "alt": "Portuguese Azulejo Tile Painting Workshop"
+        }
+      ]
+    },
+    {
+      "id": "event-kintsugi-1",
+      "slug": "kintsugi-golden-repair-goa",
+      "title": "Kintsugi: The Mindful Art of Golden Joinery",
+      "shortDescription": "Philosophy of wabi-sabi through urushi lacquer repair and real 24k gold dusting.",
+      "date": "2026-10-25",
+      "startTime": "10:30 AM",
+      "endTime": "01:30 PM",
+      "city": "Goa",
+      "venue": "ITC Fortune",
+      "address": "Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515",
+      "location": "ITC Fortune, Candolim, Goa",
+      "price": 3500,
+      "capacity": 10,
+      "availability": "limited",
+      "workshopSlug": "kintsugi",
+      "experienceType": "Mindful Ceramic Repair",
+      "duration": "3 hours",
+      "facilitator": "Kintsugi Practitioner",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "quiet, reverent, restorative",
+      "keyProcess": "Careful ceramic fracture analysis, bio-resin/lacquer bonding, water-stone smoothing, and 24k gold mica burnishing",
+      "takeAway": "Your restored ceramic heirloom bowl or cup illuminated with luminous golden fracture veins",
+      "bookingHref": "/enquire?intent=individual&subject=Kintsugi%20Golden%20Joinery&event=kintsugi-golden-repair-goa&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-1.png",
+          "alt": "Kintsugi Golden Joinery Workshop"
+        }
+      ]
+    },
+    {
+      "id": "event-online-kalamkari",
+      "slug": "online-kalamkari-artisan-drawing-masterclass",
+      "title": "Live Online: Sacred Lineage Kalamkari & Botanical Drawing",
+      "shortDescription": "Guided live hands-on drawing session with master artisan and home-delivered botanical pigments.",
+      "date": "2026-10-31",
+      "startTime": "04:00 PM",
+      "endTime": "06:30 PM",
+      "city": "Online (Live Studio Stream)",
+      "venue": "Live Interactive Virtual Studio",
+      "location": "Online Live Stream — Materials Delivered to Your Door",
+      "price": 1800,
+      "capacity": 20,
+      "availability": "open",
+      "workshopSlug": "kalamkari",
+      "experienceType": "Live Online Masterclass",
+      "duration": "2.5 hours",
+      "facilitator": "Master Kalamkari Artisan & Wellness Host",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "online",
+      "feelsLike": "slow, rhythmic, meditative",
+      "keyProcess": "Bamboo kalam pen preparation, botanical ink flow regulation, traditional tree of life motif drafting, and guided breath reflection",
+      "takeAway": "Framed original Kalamkari drawing created during live artisan instruction with shipped materials kit",
+      "bookingHref": "/enquire?intent=individual&subject=Online%20Kalamkari%20Session&event=online-kalamkari-artisan-drawing-masterclass&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/kalamkari-art-process.jpg",
+          "alt": "Live Online Kalamkari Drawing Workshop"
+        }
+      ]
+    },
+    {
+      "id": "event-cyanotype-past",
+      "slug": "botanical-cyanotype-sun-printing-bangalore",
+      "title": "Botanical Cyanotype & Sun Printing Circle",
+      "shortDescription": "Prussian blue solar chemistry on handmade cotton rag paper with pressed botanicals.",
+      "date": "2026-09-20",
+      "startTime": "10:30 AM",
+      "endTime": "01:30 PM",
+      "city": "Bangalore",
+      "venue": "Indiranagar Craft Sanctuary",
+      "location": "Indiranagar Craft Sanctuary, Bangalore",
+      "price": 2100,
+      "capacity": 14,
+      "availability": "closed",
+      "workshopSlug": "cyanotype-printing",
+      "experienceType": "Sun Printing & Chemistry",
+      "duration": "3 hours",
+      "facilitator": "Alternative Process Photographer",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "sunlit, botanical, reflective",
+      "keyProcess": "Light-sensitive ferric ammonium citrate emulsion blending, negative & botanical contact arrangement, UV sunlight exposure, and water oxidation wash",
+      "takeAway": "Set of 3 archival Prussian blue sun-prints on 300gsm deckle-edge cotton rag",
+      "bookingHref": "/enquire?intent=individual&subject=Cyanotype%20Sun%20Printing&event=botanical-cyanotype-sun-printing-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/cyanotype-printing.jpg",
+          "alt": "Botanical Cyanotype Sun Printing Circle"
+        }
+      ]
+    },
+    {
+      "id": "event-terracotta-past",
+      "slug": "terracotta-sculpting-mumbai",
+      "title": "Terracotta Hand-Building & Primitive Firing",
+      "shortDescription": "Coiling, pinching, and natural burnishing of raw river clay figurines.",
+      "date": "2026-09-13",
+      "startTime": "02:00 PM",
+      "endTime": "05:30 PM",
+      "city": "Mumbai",
+      "venue": "Kiiro Studio, Bandra West",
+      "location": "Kiiro Studio, Bandra West, Mumbai",
+      "price": 2600,
+      "capacity": 12,
+      "availability": "closed",
+      "workshopSlug": "pottery",
+      "experienceType": "Sculptural Clay",
+      "duration": "3.5 hours",
+      "facilitator": "Sculptor & Ceramic Artist",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "primal, tactile, grounding",
+      "keyProcess": "Clay kneading with grog, slab building, structural hollow coiling, boxwood surface tool sculpting, and smooth pebble burnishing",
+      "takeAway": "Sculpted terracotta figurine or hollow planter",
+      "bookingHref": "/enquire?intent=individual&subject=Terracotta%20Sculpting&event=terracotta-sculpting-mumbai&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/pottery-2.png",
+          "alt": "Terracotta Hand-Building Workshop"
+        }
+      ]
+    },
+    {
+      "id": "event-madhubani-past",
+      "slug": "madhubani-mithila-painting-bangalore",
+      "title": "Madhubani Lineage Art & Natural Pigments",
+      "shortDescription": "Nib and twig drawing on cow-dung treated handmade paper with natural soot and indigo.",
+      "date": "2026-09-06",
+      "startTime": "11:00 AM",
+      "endTime": "02:00 PM",
+      "city": "Bangalore",
+      "venue": "Koramangala Studio Hub",
+      "location": "Koramangala Studio Hub, Bangalore",
+      "price": 2000,
+      "capacity": 15,
+      "availability": "closed",
+      "workshopSlug": "madhubani-painting",
+      "experienceType": "Folk Art Lineage",
+      "duration": "3 hours",
+      "facilitator": "Mithila National Awardee Artisan",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "intricate, rhythmic, meditative",
+      "keyProcess": "Traditional cow-dung paper preparation, double-line bamboo nib drawing (Kachni), and plant pigment color filling (Bharni)",
+      "takeAway": "Original handmade Madhubani folk painting with certificate of artisan lineage",
+      "bookingHref": "/enquire?intent=individual&subject=Madhubani%20Mithila%20Art&event=madhubani-mithila-painting-bangalore&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/madhubani-painting-process.jpg",
+          "alt": "Madhubani Lineage Art Masterclass"
+        }
+      ]
+    },
+    {
+      "id": "event-kaavi-past",
+      "slug": "kaavi-architectural-fresco-goa",
+      "title": "Kaavi Architectural Murals & Lime Plaster",
+      "shortDescription": "Ancient Konkan etching into wet red laterite lime plaster using steel styluses.",
+      "date": "2026-08-30",
+      "startTime": "03:00 PM",
+      "endTime": "06:00 PM",
+      "city": "Goa",
+      "venue": "ITC Fortune",
+      "address": "Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515",
+      "location": "ITC Fortune, Candolim, Goa",
+      "price": 2900,
+      "capacity": 10,
+      "availability": "closed",
+      "workshopSlug": "kaavi-art",
+      "experienceType": "Heritage Wall Fresco",
+      "duration": "3 hours",
+      "facilitator": "Kaavi Revival Researcher",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "sculptural, architectural, serene",
+      "keyProcess": "Sea-shell lime plaster preparation, application of red uran clay slip, sgraffito etching with steel stylus, and smooth agate burnishing",
+      "takeAway": "Architectural Kaavi fresco relief plaque ready for wall hanging",
+      "bookingHref": "/enquire?intent=individual&subject=Kaavi%20Architectural%20Fresco&event=kaavi-architectural-fresco-goa&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/workshops/warli-art-workshop.jpg",
+          "alt": "Kaavi Architectural Mural Workshop"
+        }
+      ]
+    },
+    {
+      "slug": "kintsugi-bangalore-march",
+      "title": "Kintsugi: The Art of Golden Repair",
+      "city": "Bangalore",
+      "venue": "Kiiro Studio, Indiranagar",
+      "price": 3200
+    }
+  ],
+  "offerings": [
+    {
+      "slug": "pottery",
+      "title": "Pottery & Wheel Throwing",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The ancient practice of shaping earthy clay through manual hand-building and kinetic wheel-throwing into hollow vessels and sculptural forms.",
+      "origin": "Indus Valley Civilisation (Mehrgarh, Harappa, Mohenjo-daro) and river valleys worldwide.",
+      "age": "Over 18,000 years globally; documented across the Indian subcontinent since approximately 6000 BCE.",
+      "impact": "Pottery cultivates tactile groundedness and spatial awareness. Culturally, earthenware remains the foundational material of domestic and ritual Indian daily life.",
+      "whyLearn": "Working with wet clay demands full mental presence, slows breathing, and teaches humility in letting go of rigid perfection.",
+      "keyProcess": [
+        "Story telling ",
+        "Hand building with artisan  tools & moulds",
+        "Wheel throwing - Centering the spinning clay mass onto the wheel head",
+        "Opening and pulling the cylinder walls to achieve uniform thickness",
+        "Collar shaping, rim burnishing, and wire-cutoff from the bat"
+      ],
+      "learningDuration": "Introductory familiarity: 3–4 hours. Foundation wheel proficiency: 6–8 weeks of regular practice. Master craftsmanship: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Studio Masterclass & Hands-on Workshop",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa",
+        "Pune"
+      ],
+      "audience": [
+        "Beginners",
+        "Design Professionals",
+        "Mindful Seekers",
+        "Corporate Teams"
+      ],
+      "facilitator": "Master Ceramicist & Studio Potter",
+      "outcomes": "1–2 wheel-thrown pieces (fired and glazed for collection), understanding of clay chemistry and centering techniques.",
+      "imageUrl": "/images/other/pottery-1.png",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "kintsugi",
+      "title": "Kintsugi (Golden Joinery)",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The Japanese philosophy and practice of repairing fractured ceramics using natural lacquer dusted with powdered gold, silver, or brass, honoring the object’s history rather than concealing its break.",
+      "origin": "Muromachi period Japan (late 15th century), traditionally credited to Shogun Ashikaga Yoshimasa.",
+      "age": "Approximately 550 years of uninterrupted philosophical craft lineage.",
+      "impact": "Kintsugi reframes human perceptions of damage and healing, offering an architectural metaphor for emotional resilience and wabi-sabi aesthetics.",
+      "whyLearn": "It invites an experiential understanding that fractures, repairs, and weathered history make an object more precious and singular than flawless novelty.",
+      "keyProcess": [
+        "Fracture mapping, cleaning, and dry shard assembly",
+        "Preparing mugi-urushi (flour and natural lacquer binder)",
+        "Joining structural shards with precision edge alignment",
+        "Gap-filling with kokuso paste and wet-stone smoothing",
+        "Fine bengara lacquer line application and dusting with 24k gold powder"
+      ],
+      "learningDuration": "Introductory familiarity: 3–4 hours. Contemporary technique mastery: 1–2 months. Traditional urushi mastery: 2–3 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Mindful Philosophy & Craft Studio",
+      "locations": [
+        "Goa",
+        "Bangalore",
+        "Mumbai"
+      ],
+      "audience": [
+        "Creative Practitioners",
+        "Wellness Seekers",
+        "Philosophy & Design Lovers"
+      ],
+      "facilitator": "Certified Kintsugi Practitioner & Restorer",
+      "outcomes": "Your restored keepsake bowl or cup highlighted with golden joinery, accompanied by deep insight into wabi-sabi resilience.",
+      "imageUrl": "/images/other/kintsugi-1.png",
+      "pricing": {
+        "t15": 1850,
+        "t26": 1850,
+        "t46": 1850,
+        "t100": 1850
+      }
+    },
+    {
+      "slug": "bandhni-tie-dye",
+      "title": "Bandhni / Tie-Dye Textile Craft",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A heritage resist-dyeing technique where fine handloom fabric is plucked and bound into thousands of tiny knots before immersion into dye baths, revealing intricate rhythmic dots.",
+      "origin": "Kutch and Jamnagar (Gujarat), and Jaipur and Sikar (Rajasthan), India.",
+      "age": "Over 1,400 years; depicted in the 6th-century CE Ajanta cave frescoes.",
+      "impact": "Bandhni supports multi-generational women artisan clusters in semi-arid western India and embodies regional social identities through color geography.",
+      "whyLearn": "It trains patience, rhythmic fine-motor dexterity, and a deep appreciation for the time-intensive mathematics of heritage textile design.",
+      "keyProcess": [
+        "Fabric selection and layout stamping with geru fugitive guidelines",
+        "Plucking and binding microscopic knots with waxed cotton thread",
+        "First-stage light color dyeing and cold fixing",
+        "Secondary tying for color layering and dark vat immersion",
+        "Rinsing, sun-drying, and rhythmic opening to reveal the crinkled bandhej dots"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Basic knotting fluency: 2–4 weeks. Intricate bridal bandhej expertise: 5–7 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Hands-on Textile Studio",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Jaipur",
+        "Kolkata"
+      ],
+      "audience": [
+        "Textile Enthusiasts",
+        "Fashion Students",
+        "Creative Groups"
+      ],
+      "facilitator": "Generational Khatri Master Dyer",
+      "outcomes": "A hand-tied and dyed silk-cotton stole or scarf, plus mastery of geometric resist patterns.",
+      "imageUrl": "/images/workshops/bandhni-tie-dye.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "batik-print-wax-resist-dyeing",
+      "title": "Batik Print & Wax Resist Dyeing",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A sophisticated textile art where molten bee and paraffin wax is applied with copper canting tools or brushes to resist dye penetration, yielding layered motifs and crackle effects.",
+      "origin": "Island of Java (Indonesia), with ancient parallel traditions across coastal India and Egypt.",
+      "age": "Over 1,500 years; documented in Indian trade textiles across the Indian Ocean since the early Common Era.",
+      "impact": "UNESCO Intangible Cultural Heritage that bridges South and Southeast Asian trade routes, botanical dyeing, and fine textile storytelling.",
+      "whyLearn": "Batik teaches negative-space visualization, thermal wax handling, and the organic beauty of fluid crackle textures.",
+      "keyProcess": [
+        "Tracing motifs onto pure cambric cotton or mulberry silk",
+        "Melting precise ratio of beeswax and paraffin in copper pans",
+        "Applying hot wax using a canting spouted pen or brass tjap stamp",
+        "Immersion in cold dye bath to prevent wax melting",
+        "Boiling off wax in clean water bath and fixing colors"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Multi-color wax layering skill: 3–6 months. Master batik artisan: 4–6 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Material & Fiber Arts Masterclass",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa",
+        "Kolkata"
+      ],
+      "audience": [
+        "Artists",
+        "Designers",
+        "Artisan Lovers",
+        "Adult Learners"
+      ],
+      "facilitator": "Master Batik Artist & Textile Designer",
+      "outcomes": "A multi-layered framed batik wall tapestry or custom scarf with distinctive wax-resist crackle veins.",
+      "imageUrl": "/images/workshops/bandhni-tie-dye.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "cyanotype-printing",
+      "title": "Botanical Cyanotype Sun Printing",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A 19th-century photographic contact printing process utilizing sunlight and iron salts to produce archival Prussian blue silhouettes of botanicals and negatives.",
+      "origin": "Invented in England by Sir John Herschel (1842) and pioneered botanically by Anna Atkins.",
+      "age": "Approximately 184 years of historical alternative photography lineage.",
+      "impact": "Connects botanical science, nature foraging, and non-toxic analog chemistry, offering a contemplative bridge between sunlight and paper.",
+      "whyLearn": "Encourages mindful observation of natural silhouettes, shadows, and the tactile alchemy of water-developed sun prints.",
+      "keyProcess": [
+        "Blending ferric ammonium citrate and potassium ferricyanide chemistry in subdued light",
+        "Hand-coating 300gsm acid-free cotton rag paper using Japanese hake brushes",
+        "Arranging pressed botanical specimens and transparent negatives onto the sensitized paper",
+        "Contact-frame glass exposure under natural solar UV rays",
+        "Cold water bath wash to clear unexposed salts and reveal rich Prussian blue"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5–3 hours. Precision exposure control: 1–2 months. Advanced toning & multi-emulsion printing: 1 year.",
+      "workshopDuration": "3 Hours",
+      "format": "Sun & Chemistry Atelier",
+      "locations": [
+        "Bangalore",
+        "Goa",
+        "Mumbai",
+        "Pune"
+      ],
+      "audience": [
+        "Photographers",
+        "Botanists",
+        "Printmakers",
+        "Nature Enthusiasts"
+      ],
+      "facilitator": "Alternative Process Photographer & Printmaker",
+      "outcomes": "A suite of 3 archival 8x10 Prussian blue botanical prints on deckle-edged cotton paper.",
+      "imageUrl": "/images/workshops/cyanotype-printing.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "kolhapuri-chappal-making",
+      "title": "Kolhapuri Chappal & Hand-Stitched Leather Craft",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The handcrafted construction of iconic open-toed sandals made entirely from natural vegetable-tanned leather, hand-punched, and bound with braided leather threads without nails or synthetic glues.",
+      "origin": "Kolhapur and surrounding villages in southern Maharashtra and northern Karnataka.",
+      "age": "Documented since the 12th century under King Bijjala and patrons of the Shahu Maharaj era.",
+      "impact": "A GI-tagged Indian heritage craft supporting hundreds of rural tanning and cobbler artisan families across the Deccan plateau.",
+      "whyLearn": "Understanding genuine vegetable-tanned leather, manual skiving, awl stitching, and sustainable footwear design built to last a lifetime.",
+      "keyProcess": [
+        "Selection and soaking of bagda vegetable-tanned buff leather",
+        "Hand-cutting soles, straps, and kurki ear pieces using traditional rapi knives",
+        "Awl hole punching and fine braiding with natural leather cord",
+        "Hand-stitching layers with babul bark-conditioned thongs",
+        "Natural seed-oil polishing and wooden block burnishing"
+      ],
+      "learningDuration": "Introductory familiarity: 4 hours. Core assembly fluency: 3–6 months. Master leather craftsman: 4–6 years.",
+      "workshopDuration": "4 Hours",
+      "format": "Artisan Atelier & Leather Masterclass",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Pune"
+      ],
+      "audience": [
+        "Design Students",
+        "Craft Enthusiasts",
+        "Shoemakers",
+        "Conscious Consumers"
+      ],
+      "facilitator": "Generational Kolhapuri Master Cobbler",
+      "outcomes": "A wearable, custom-fitted pair of authentic handmade vegetable-tanned Kolhapuri sandals crafted by your own hands.",
+      "imageUrl": "/images/other/pottery-2.png",
+      "pricing": {
+        "t15": 1650,
+        "t26": 1350,
+        "t46": 1200,
+        "t100": 1100
+      }
+    },
+    {
+      "slug": "channapatna-toy-making",
+      "title": "Channapatna Lacquerware & Wooden Toy Craft",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The turning and shaping of soft ivory wood (Wrightia tinctoria) on traditional lathes, finished with non-toxic vegetal lacquers derived from tree resin and natural pigments.",
+      "origin": "Channapatna, Karnataka (the \"Toy City of India\"), patronized by Tipu Sultan who invited Persian artisans.",
+      "age": "Over 230 years of continuous royal and community patronage.",
+      "impact": "GI-tagged non-toxic craft that provides safe, sustainable play while sustaining forest communities and lathe-turning families.",
+      "whyLearn": "Experiencing the kinetic joy of lathe woodturning, thermal friction lacquering, and eco-friendly child-safe manufacturing.",
+      "keyProcess": [
+        "Wood seasoning and lathe centering of Wrightia tinctoria logs",
+        "Chisel turning to carve beads, figurines, and spinning tops",
+        "Applying natural lac resin sticks tinted with turmeric, indigo, and vermilion",
+        "Friction polishing using screw-pine (talipot) leaves to melt and burnish the lacquer",
+        "Parting tool cutoff and fine hand assembly"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Safe lathe turning proficiency: 2–3 months. Master lacquer woodturner: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Kinetic Wood & Lathe Workshop",
+      "locations": [
+        "Bangalore",
+        "Mysore",
+        "Mumbai"
+      ],
+      "audience": [
+        "Makers",
+        "Educators",
+        "Parents & Kids",
+        "Design Enthusiasts"
+      ],
+      "facilitator": "State Awardee Channapatna Craftsman",
+      "outcomes": "Hand-turned lacquered wooden keepsake toys, spinning tops, or minimalist figurines polished with natural tree lac.",
+      "imageUrl": "/images/other/pottery-2.png",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "madhubani-painting",
+      "title": "Madhubani / Mithila Ritual Folk Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "An ancient folk painting tradition characterized by geometric patterns, two-dimensional planes, and dual-line contouring depicting nature, celestial bodies, and sacred harmony.",
+      "origin": "Mithila region of Bihar (India) and southeastern Nepal.",
+      "age": "Dating back to the Ramayana era; centuries of domestic wall and floor painting tradition by Mithila women.",
+      "impact": "A living matriarchal tradition that has empowered women artists into international prominence while documenting regional flora, fauna, and ritual myth.",
+      "whyLearn": "Develops disciplined linework with natural bamboo nibs and teaches the meditative rhythm of Kachni (hatching) and Bharni (color filling).",
+      "keyProcess": [
+        "Treating handmade cotton rag paper with natural cow-dung and multani mitti wash",
+        "Mixing soot (kajal) with gum acacia for deep archival black ink",
+        "Double-line drawing using hand-sharpened bamboo nibs without preliminary pencil sketches",
+        "Kachni fine linear hatching and Godna geometric stippling",
+        "Filling vibrant mineral and botanical colors (madder, turmeric, haritaki)"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Motifs and linework fluency: 2–3 months. Master Mithila artist: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Folk Art Lineage Studio",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Kolkata",
+        "Delhi"
+      ],
+      "audience": [
+        "Art Enthusiasts",
+        "Cultural Historians",
+        "Meditative Creators"
+      ],
+      "facilitator": "Mithila National Awardee Artisan",
+      "outcomes": "A finished, framed Madhubani artwork on cow-dung treated handmade paper featuring traditional tree-of-life or celestial motifs.",
+      "imageUrl": "/images/workshops/madhubani-painting-process.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "warli-painting",
+      "title": "Warli Ritual Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "Sacred tribal art of the Warli community using minimal geometric primitives (circle, triangle, line) painted with rice paste onto earth-ochre walls celebrating communal harmony.",
+      "origin": "North Sahyadri range, Maharashtra, India.",
+      "age": "Roots trace back to 2500–3000 BCE, sharing visual syntax with Mesolithic rock shelters of Bhimbetka.",
+      "impact": "A non-commercial animist visual language documenting social ecology, sacred ceremonies (Tarpa dance), and peaceful coexistence with nature.",
+      "whyLearn": "Teaches elemental visual storytelling through the simplest geometric syntax and releases inhibitions around complex academic drawing.",
+      "keyProcess": [
+        "Preparing the red ochre (geru) and clay background ground",
+        "Grinding rice flour with natural gum binder into an archival white pigment",
+        "Fashioning bamboo twigs into flexible dip brushes",
+        "Constructing human and animal forms using inverted triangles representing male and female harmony",
+        "Composing dynamic spiral choreographies around the musical Tarpa horn"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5–3 hours. Tribal motif vocabulary: 1–2 months. Community storytelling master: 2–4 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Indigenous Wisdom Workshop",
+      "locations": [
+        "Mumbai",
+        "Pune",
+        "Bangalore",
+        "Goa"
+      ],
+      "audience": [
+        "All Ages",
+        "Corporate Teams",
+        "Designers",
+        "Folk Art Lovers"
+      ],
+      "facilitator": "Warli Tribal Artisan & Cultural Custodian",
+      "outcomes": "An original Warli painting on primed canvas or handmade terracotta tile depicting traditional community rhythms.",
+      "imageUrl": "/images/workshops/warli-art-workshop.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "gond-art",
+      "title": "Gond Tribal Art",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A vibrant tribal painting form from central India where vivid mythic animals and trees are built up through signature textured patterns of dots, dashes, and scales.",
+      "origin": "Patanbgarh and Dindori districts of Madhya Pradesh, India.",
+      "age": "Centuries of forest dwelling and sacred mural custom, transformed into canvas works by Jangarh Singh Shyam in the 1980s.",
+      "impact": "World-renowned indigenous art form celebrating animist spiritual belief that viewing sacred art brings auspicious vitality and good luck.",
+      "whyLearn": "Builds boundless creative imagination, intricate patterning stamina, and an organic relationship with colors derived from the forest.",
+      "keyProcess": [
+        "Mapping organic contours of spirit animals, avian forms, and the Mahua tree",
+        "Establishing bold contrasting base color planes",
+        "Developing personal artisan signature patterns (dana, tinka, bindu)",
+        "Layering rhythmic dots and repetitive wave marks with fine brushes",
+        "Refining edges and contour harmonization"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Pattern density mastery: 3–6 months. Master Gond painter: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Tribal Pattern & Color Atelier",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Kolkata",
+        "Delhi"
+      ],
+      "audience": [
+        "Illustrators",
+        "Designers",
+        "Art Lovers",
+        "Folk Enthusiasts"
+      ],
+      "facilitator": "Master Gond Artist from Madhya Pradesh",
+      "outcomes": "A vibrant, framed Gond artwork featuring custom signature line and dot textures on archival paper.",
+      "imageUrl": "/images/workshops/gond-art-workshop.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "jaipur-tile-painting",
+      "title": "Jaipur Blue Pottery & Tile Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A distinctive ceramic tradition made without clay, utilizing an Egyptian paste mixture of quartz powder, fuller’s earth, and glass frit, painted with cobalt and copper oxide floral arabesques.",
+      "origin": "Turko-Persian craft lineage adapted in Jaipur under Maharaja Sawai Ram Singh II.",
+      "age": "Over 160 years in Rajasthan; lineage traces to 14th-century Persian architectural glazes.",
+      "impact": "A GI-protected low-temperature ceramic unique in the subcontinent for its glassy translucence and zero-clay formulation.",
+      "whyLearn": "Working with non-clay vitreous paste provides unique tactile insight into historical ceramic chemistry and Persian floral brushwork.",
+      "keyProcess": [
+        "Mixing ground quartz powder, cullet glass, saji, and Katira gond binder",
+        "Molding and rolling dough slabs into architectural tile formats",
+        "Pouncing floral and botanical motifs through charcoal stencils",
+        "Freehand underglaze painting using cobalt blue and copper green metal oxides",
+        "Glazing with silica-borax suspension and single-firing in wood/gas kilns"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Underglaze brushwork mastery: 2–4 months. Master glaze ceramicist: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Heritage Ceramic Masterclass",
+      "locations": [
+        "Jaipur",
+        "Bangalore",
+        "Mumbai",
+        "Goa"
+      ],
+      "audience": [
+        "Ceramists",
+        "Home Decorators",
+        "Architects",
+        "Design Lovers"
+      ],
+      "facilitator": "Master Craftsman from the Jaipur Blue Pottery Cluster",
+      "outcomes": "Pair of glazed, kiln-fired Blue Pottery tiles painted with classical Persian-Rajasthani motifs.",
+      "imageUrl": "/images/other/pottery-3.png",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "portuguese-azulejo-tile-painting",
+      "title": "Portuguese Azulejo Tile Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The art of tin-glazed ceramic tile painting featuring luminous cobalt blue motifs on white majolica grounds, rooted in Iberian and Indo-Portuguese architectural ornament.",
+      "origin": "Portugal and Moorish Spain, established in Goa during the 16th century.",
+      "age": "Over 500 years of Iberian ceramic lineage; over 400 years of Goan architectural heritage.",
+      "impact": "Defines the architectural memory of Fontainhas, Panjim, and Old Goa, preserving maritime narratives and colonial botanicals.",
+      "whyLearn": "Masters the rare technique of painting onto raw, unbaked glaze powder where errors cannot be erased, training decisive hand confidence.",
+      "keyProcess": [
+        "Applying the raw, opaque white majolica tin-glaze ground onto bisque tiles",
+        "Transferring historical design stencils using charcoal powder pounce bags",
+        "Grinding cobalt oxide pigment with clove oil and water mediums",
+        "Executing nuanced monochromatic brushwork using squirrel-hair liner brushes",
+        "Kiln firing at 1000°C where cobalt melts into vitreous glass"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Majolica linework control: 1–2 months. Master tile artisan: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Heritage Architectural Tile Studio",
+      "locations": [
+        "Goa",
+        "Mumbai",
+        "Bangalore"
+      ],
+      "audience": [
+        "Architects",
+        "Designers",
+        "Travelers",
+        "Art Lovers"
+      ],
+      "facilitator": "Master Azulejo Artist from Panjim",
+      "outcomes": "Two authentic, kiln-fired Azulejo ceramic tiles ready for mounting or architectural installation.",
+      "imageUrl": "/images/other/pottery-3.png",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "kaavi-art",
+      "title": "Kaavi Architectural Fresco & Sgraffito",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "An endangered architectural sgraffito mural art from the Konkan coast where intricate motifs are etched through wet red laterite clay plaster into white lime undercoats.",
+      "origin": "Konkan coastal belt across Goa, coastal Maharashtra, and coastal Karnataka.",
+      "age": "Documented since the 16th century across temple garbhagrihas and Portuguese-era mansions.",
+      "impact": "A critically endangered indigenous architectural craft utilizing local sea-shell lime and red uran laterite earth.",
+      "whyLearn": "Offers hands-on experience with breathable ancient lime plasters and the irreversibility of sgraffito stylus etching.",
+      "keyProcess": [
+        "Preparing slaked sea-shell lime and marble dust mortar",
+        "Applying wet red uran (laterite earth) burnished plaster slip",
+        "Etching freehand motifs with pointed steel styluses before the plaster sets",
+        "Scraping away red slip to expose brilliant white lime plaster beneath",
+        "Agate stone burnishing to achieve water-resistant marble sheen"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Plaster timing and etching fluency: 3–6 months. Kaavi revival master: 3–5 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Architectural Fresco & Earth Workshop",
+      "locations": [
+        "Goa",
+        "Mumbai",
+        "Bangalore"
+      ],
+      "audience": [
+        "Heritage Architects",
+        "Conservationists",
+        "Makers",
+        "Designers"
+      ],
+      "facilitator": "Kaavi Revivalist & Mural Conservator",
+      "outcomes": "A handcrafted Kaavi architectural fresco relief plaque ready for indoor or garden wall hanging.",
+      "imageUrl": "/images/workshops/warli-art-workshop.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "block-printing",
+      "title": "Bagru & Natural Dye Block Printing",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The relief stamping of hand-carved teakwood blocks onto natural fibers using traditional mineral and botanical mordants, natural indigo vats, and mud-resist dabu paste.",
+      "origin": "Bagru, Sanganer, and Akola clusters in Rajasthan, India.",
+      "age": "Over 800 years of continuous Chhipa community guild practice.",
+      "impact": "The heartbeat of Indian artisanal textile sustainability, utilizing circular riverbed washing, sun-bleaching, and zero petrochemical dyes.",
+      "whyLearn": "Connects the practitioner to rhythmic bodily alignment, pressure balance, and centuries-old botanical color chemistry.",
+      "keyProcess": [
+        "Fabric scouring and pre-mordanting with myrobalan (harda)",
+        "Aligning wooden registration points along long printing tables",
+        "Ink-pad dipping and rhythmic palm-strike woodblock stamping",
+        "Dabu mud-resist application and sawdust sprinkling for multi-tone designs",
+        "Indigo vat immersion, solar drying, and boiling bath fixation with alizarin"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Clean alignment & color mixing: 2–3 months. Master block printer: 4–6 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Textile Guild Masterclass",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Jaipur",
+        "Goa"
+      ],
+      "audience": [
+        "Fashion Creatives",
+        "Textile Lovers",
+        "Sustainability Seekers",
+        "Teams"
+      ],
+      "facilitator": "Generational Chhipa Master Craftsman from Bagru",
+      "outcomes": "A bespoke hand-printed pure cotton stole or tote bag, with comprehensive understanding of natural dye chemistry.",
+      "imageUrl": "/images/workshops/block-printing-workshop.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "kalamkari",
+      "title": "Sacred Kalamkari Hand-Painted Textile Art",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The intricate art of drawing and painting sacred textiles using a bamboo kalam (pen) and natural plant and mineral dyes over a rigorous 23-step purification process.",
+      "origin": "Srikalahasti and Machilipatnam, Andhra Pradesh, India.",
+      "age": "Over 3,000 years; mentioned in ancient Hindu scriptures and found in archeological sites at Fustat (Egypt).",
+      "impact": "A spiritual textile narrative tradition that sustains temple temple canopy craft, vegetable chemistry, and riparian washing guilds.",
+      "whyLearn": "Teaches deep surrender to natural timing, milk-protein mordants, and the expressive fluidity of the organic bamboo reed pen.",
+      "keyProcess": [
+        "Treating raw handloom cloth with buffalo milk and myrobalan to prevent dye bleed",
+        "Charcoal twig sketching of mythological and botanical narratives",
+        "Drawing black outlines using fermented jaggery and iron acetate (kasimi)",
+        "Freehand painting of madder red, indigo blue, and pomegranate yellow with the cloth-wound bamboo kalam",
+        "Flowing river washing and sun-curing on riverbanks"
+      ],
+      "learningDuration": "Introductory familiarity: 3.5 hours. Kalam control & mordant chemistry: 6–12 months. Master Kalamkari artist: 5–7 years.",
+      "workshopDuration": "3.5 Hours",
+      "format": "Sacred Textile & Fiber Masterclass",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Chennai",
+        "Hyderabad"
+      ],
+      "audience": [
+        "Fine Artists",
+        "Textile Scholars",
+        "Conscious Creators"
+      ],
+      "facilitator": "National Awardee Kalamkari Master Artisan",
+      "outcomes": "A finished hand-painted Kalamkari scroll artwork on natural buffalo-milk treated cotton.",
+      "imageUrl": "/images/workshops/kalamkari-art-process.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "paper-mache",
+      "title": "Kashmir Papier-Mâché Craft",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The meticulous molding of recycled paper pulp (Sakhtsazi) finished with luminous hand-painted floral miniature patterns and gold-leaf illumination (Naqqashi).",
+      "origin": "Kashmir Valley, brought from Central Asia by Mir Sayyid Ali Hamadani and patronized by Sultan Zain-ul-Abidin.",
+      "age": "Over 600 years of Himalayan craft lineage.",
+      "impact": "A GI-protected craft that embodies Kashmir’s syncretic botanical art, Sufi devotion, and sustainable paper upcycling.",
+      "whyLearn": "Combines structural paper sculpting with the exquisite micro-detail of Persian miniature brushwork.",
+      "keyProcess": [
+        "Pounding waste paper and cloth pulp, molding around wooden formers",
+        "Drying, sanding, and coating with fine gesso (chalk and rice starch paste)",
+        "Applying solid lacquer base coats and burnishing with agate stone",
+        "Micro-brush Naqqashi painting of hazara (thousand flowers) or chinar motifs",
+        "Applying real gold leaf leafing and transparent protective amber copal varnish"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Naqqashi floral miniaturism: 3–6 months. Master papier-mâché artist: 5–8 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Himalayan Lacquer & Miniature Atelier",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Delhi",
+        "Goa"
+      ],
+      "audience": [
+        "Miniature Art Enthusiasts",
+        "Craft Collectors",
+        "Fine Painters"
+      ],
+      "facilitator": "Master Craftsman from Srinagar, Kashmir",
+      "outcomes": "A hand-molded and intricately Naqqashi-painted papier-mâché keepsake box or decorative egg.",
+      "imageUrl": "/images/workshops/madhubani-painting-process.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "earth-dialogues-naturalist-sculptor",
+      "title": "Earth Dialogues & Naturalist Sculpting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "An experiential 2-day land-art and sculptural immersion engaging directly with local soils, river clays, stone dust, and botanical binders in outdoor sanctuary environments.",
+      "origin": "Indigenous earthen construction and earth sculpture practices of the Deccan and Western Ghats.",
+      "age": "Ancient living practice rooted in prehistoric earthen sheltering and ecological rituals.",
+      "impact": "Restores ecological relationship with native soil geography, proving that materials under our feet hold both architectural and sculptural vitality.",
+      "whyLearn": "Grounds the body in non-commercial, foraged materials, deepening visceral connection with landscape, touch, and spatial scale.",
+      "keyProcess": [
+        "Soil foraging, tactile grading, and gravel-sand-silt ratio assessment",
+        "Preparing natural binders using cactus juice, cow-dung wash, and rice husk",
+        "Constructing load-bearing earthen armatures and relief wall panels",
+        "Hand-building monumental naturalist sculptures and textured murals",
+        "Sun-drying and natural beeswax-linseed oil surface sealing"
+      ],
+      "learningDuration": "Introductory familiarity: 2-day intensive. Site-specific earth installation fluency: 6–12 months. Master earth architect: 3–5 years.",
+      "workshopDuration": "2 Days (Residential/Intensive)",
+      "format": "Residential Land-Art & Sculptural Residency",
+      "locations": [
+        "Bangalore Sanctuary",
+        "Goa Outpost",
+        "Pune Foothills"
+      ],
+      "audience": [
+        "Architects",
+        "Sculptors",
+        "Ecology Seekers",
+        "Creative Leaders"
+      ],
+      "facilitator": "Master Naturalist Sculptor & Earth Architect",
+      "outcomes": "Personal earthen relief sculpture and shared collective land-art installation using foraged site clays.",
+      "imageUrl": "/images/other/ramu-master-craftsman.png",
+      "pricing": {
+        "t15": 3500,
+        "t26": 3000,
+        "t46": 2800,
+        "t100": 2500
+      }
+    },
+    {
+      "slug": "mata-ni-pachedi",
+      "title": "Mata ni Pachedi Sacred Cloth Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "The sacred ritual art of hand-painting nomadic shrine cloths dedicated to the Mother Goddess, created by the nomadic Vaghari community using carved wooden blocks and fine date-palm reed pens.",
+      "origin": "Banks of the Sabarmati River, Ahmedabad, Gujarat, India.",
+      "age": "Over 300 years of unbroken nomadic religious and textile practice.",
+      "impact": "Created as portable shrines by marginalized communities barred from temples, turning cloth into sacred architecture and resilient defiance.",
+      "whyLearn": "Teaches sacred geometry, bold storytelling, and natural dye alchemy through harda, fermented alum, and boiling alizarin vats.",
+      "keyProcess": [
+        "Pre-treating raw cotton with harda fruit extract to prepare the mordant ground",
+        "Block-printing central architectural goddess thrones with wooden stamps",
+        "Freehand drawing surrounding devotees, musicians, and spirit fauna with date-palm pens",
+        "Filling alum mordants for deep alizarin reds and iron acetate for obsidian blacks",
+        "Boiling cloth in copper cauldrons with dhawda flowers to clear unprinted grounds"
+      ],
+      "learningDuration": "Introductory familiarity: 3.5 hours. Narrative drafting & mordant mastery: 6–12 months. Master Pachedi artist: 4–6 years.",
+      "workshopDuration": "3.5 Hours",
+      "format": "Sacred Ritual Textile Masterclass",
+      "locations": [
+        "Ahmedabad",
+        "Mumbai",
+        "Bangalore",
+        "Goa"
+      ],
+      "audience": [
+        "Textile Historians",
+        "Folk Art Collectors",
+        "Artists",
+        "Designers"
+      ],
+      "facilitator": "Chitara Family Master Artisan from Ahmedabad",
+      "outcomes": "A finished hand-drawn and block-printed Mata ni Pachedi shrine cloth on natural cotton.",
+      "imageUrl": "/images/workshops/kalamkari-art-process.jpg",
+      "pricing": {
+        "t15": 1600,
+        "t26": 1300,
+        "t46": 1200,
+        "t100": 1100
+      }
+    },
+    {
+      "slug": "phad-painting",
+      "title": "Phad Rajasthani Folk Scroll Painting",
+      "category": "traditional",
+      "pillar": "Root",
+      "definition": "A vibrant 700-year-old scroll painting tradition illustrating epic legends of folk deities (Pabuji and Devnarayan), historically used as mobile performance backdrops by traveling Bhopa bards.",
+      "origin": "Shahpura and Bhilwara, Rajasthan, India.",
+      "age": "Over 700 years of hereditary Joshi community artistic transmission.",
+      "impact": "An extraordinary synthesis of visual narrative, bardic song, mobile theater, and indigenous community history.",
+      "whyLearn": "Masters traditional natural mineral pigment grinding, dynamic multi-character composition, and the sacred ritual of \"opening the deity’s eyes\".",
+      "keyProcess": [
+        "Starching handwoven khadi cloth with wheat flour and gum paste, burnishing with cowrie shells",
+        "Mapping dense multi-character narrative spaces with light yellow ochre lines",
+        "Grinding raw natural mineral stones (orpiment, indigo, cinnabar, lapis)",
+        "Layering sequential color palettes: orange for flesh, yellow for ornaments, red for nobility, blue/green for nature",
+        "Executing ceremonial final black eye-opening linework (Aankh-Kholna)"
+      ],
+      "learningDuration": "Introductory familiarity: 3 hours. Classical Phad character anatomy: 3–6 months. Master Phad scroll painter: 5–8 years.",
+      "workshopDuration": "3 Hours",
+      "format": "Heroic Scroll Painting Atelier",
+      "locations": [
+        "Jaipur",
+        "Bangalore",
+        "Mumbai",
+        "Delhi"
+      ],
+      "audience": [
+        "Illustrators",
+        "Narrative Artists",
+        "Folk Art Lovers",
+        "Cultural Historians"
+      ],
+      "facilitator": "National Awardee Joshi Family Master Painter",
+      "outcomes": "A completed, framed Rajasthani Phad miniature scroll on cowrie-burnished khadi cloth.",
+      "imageUrl": "/images/workshops/madhubani-painting-process.jpg",
+      "pricing": {
+        "t15": 1600,
+        "t26": 1300,
+        "t46": 1200,
+        "t100": 1100
+      }
+    },
+    {
+      "slug": "resin-art",
+      "title": "Contemporary Resin Art & Botanical Preservation",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "The experimental layering of high-gloss epoxy resins with suspended metallic pigments, preserved pressed flora, and organic mineral sands.",
+      "origin": "Contemporary studio art movements originating in Australia and the United States in the late 20th century.",
+      "age": "Approximately 40 years of evolving studio craft.",
+      "impact": "Allows modern creators to explore fluid dynamics, translucent depth, and encapsulate ephemeral natural botanicals into durable keepsakes.",
+      "whyLearn": "Teaches chemical ratio precision, color gradients, heat-gun fluid movement, and air-bubble degassing.",
+      "keyProcess": [
+        "Substrate leveling and edge taping with silicone barriers",
+        "Precision 2:1 or 3:1 resin and hardener measuring by weight",
+        "Color blending with mica powders, alcohol inks, and paste pigments",
+        "Layered pouring and manipulation with heat torches and isopropyl sprays",
+        "Curing in a dust-free enclosure for 24–48 hours"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5 hours. Void-free casting fluency: 1–2 months. Professional resin artist: 1–2 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Fluid Design Studio",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Pune",
+        "Goa"
+      ],
+      "audience": [
+        "Modern Makers",
+        "Interior Design Lovers",
+        "Creative Beginners"
+      ],
+      "facilitator": "Contemporary Resin Artist & Product Designer",
+      "outcomes": "A finished set of resin art coasters or an ocean-inspired wall artwork.",
+      "imageUrl": "/images/workshops/cyanotype-printing.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "candle-making",
+      "title": "Botanical Soy Candle Craft & Aromatics",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "Hand-pouring artisanal candles utilizing biodegradable soy, coconut, and beeswax, paired with natural essential oils and dried botanicals.",
+      "origin": "Origins trace to ancient tallow and beeswax casting, revolutionized by modern botanical wax movements in Europe and North America.",
+      "age": "Ancient tradition reinvented over the last 30 years into eco-conscious botanical craft.",
+      "impact": "Promotes non-toxic clean indoor living, replacing petroleum paraffin with circular botanical waxes and pure therapeutic aromas.",
+      "whyLearn": "Develops olfactory scent blending skills, wick physics calculation, and thermal wax mastery.",
+      "keyProcess": [
+        "Calculating vessel volume and fragrance load percentages",
+        "Melting natural soy wax flakes to precise pouring temperatures (70–75°C)",
+        "Centering and securing lead-free cotton or crackling wooden wicks",
+        "Blending top, middle, and base notes of pure botanical essential oils",
+        "Controlled pouring, cooling, and surface embellishment with dried flora"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Professional burn-testing fluency: 1–2 months. Master candle maker: 1 year.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Aromatic Maker Atelier",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Goa",
+        "Pune"
+      ],
+      "audience": [
+        "Wellness Enthusiasts",
+        "Gift Creators",
+        "Beginners",
+        "Corporate Teams"
+      ],
+      "facilitator": "Artisanal Candle Maker & Olfactory Designer",
+      "outcomes": "Two custom hand-poured botanical soy candles in amber jars with personal scent blends.",
+      "imageUrl": "/images/workshops/perfume-blending-masterclass.jpg",
+      "pricing": {
+        "t15": 1400,
+        "t26": 1100,
+        "t46": 1000,
+        "t100": 900
+      }
+    },
+    {
+      "slug": "perfume-making",
+      "title": "Bespoke Olfactory Blending & Botanical Perfumery",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "The art of composing bespoke fragrance harmonies by understanding the chemistry of top, heart, and base notes using natural essential oils and absolutes.",
+      "origin": "Ancient Kannauj (India), Grasse (France), and ancient Mesopotamia and Egypt.",
+      "age": "Over 4,000 years of distillation heritage, modern perfumery structured over the last 150 years.",
+      "impact": "Awakens sensory literacy, memory recall, and mindful appreciation for endangered botanical scents.",
+      "whyLearn": "Trains the nose to distinguish olfactory families, harmonize accords, and bottle personal emotional memories.",
+      "keyProcess": [
+        "Olfactory training: identifying citrus, floral, spicy, woody, and balsamic families",
+        "Formulating the fragrance pyramid on smelling blotters",
+        "Balancing volatility evaporation rates between notes",
+        "Precision pipette blending in organic perfumer’s alcohol",
+        "Maceration guidance and personal signature bottling"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5 hours. Accord harmonization fluency: 6–12 months. Master perfumer (Nez): 7–10 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Sensory Alchemy Masterclass",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Goa"
+      ],
+      "audience": [
+        "Fragrance Lovers",
+        "Couples",
+        "Sensory Seekers",
+        "Creative Minds"
+      ],
+      "facilitator": "Certified Independent Perfumer & Nose",
+      "outcomes": "A 30ml bottle of your own bespoke Eau de Parfum with customized formula card.",
+      "imageUrl": "/images/workshops/perfume-blending-masterclass.jpg",
+      "pricing": {
+        "t15": 1800,
+        "t26": 1500,
+        "t46": 1350,
+        "t100": 1200
+      }
+    },
+    {
+      "slug": "bollywood-dance-workshop",
+      "title": "Expressive Bollywood Movement & Rhythm",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "A dynamic fusion of classical Indian dance mudras, regional folk rhythms, and modern cinematic choreography that celebrates joy and narrative expression.",
+      "origin": "Bombay cinema industry, evolving from 1930s theatrical traditions into global choreography.",
+      "age": "Approximately 90 years of continuous cinematic evolution.",
+      "impact": "Creates instant cross-cultural camaraderie, cardiovascular wellness, and joyful release of physical self-consciousness.",
+      "whyLearn": "Enhances body coordination, emotional expression through facial abhinaya, and infectious communal joy.",
+      "keyProcess": [
+        "Gentle spinal warm-up and classical mudra hand-gesture orientation",
+        "Rhythmic footwork breakdown to upbeat cinematic percussion",
+        "Translating lyrical emotion into expressive facial and torso gestures",
+        "Choreographic sequencing into a high-energy group routine",
+        "Cool-down, communal circle celebration, and restorative breathwork"
+      ],
+      "learningDuration": "Introductory familiarity: 1.5–2 hours. Performance rhythm fluency: 2–3 months. Professional commercial dancer: 2–4 years.",
+      "workshopDuration": "2 Hours",
+      "format": "Energetic Movement Studio",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Pune",
+        "Goa"
+      ],
+      "audience": [
+        "All Fitness Levels",
+        "Corporate Groups",
+        "Celebration Circles",
+        "Beginners"
+      ],
+      "facilitator": "Industry Choreographer & Movement Facilitator",
+      "outcomes": "Mastery of a complete expressive dance routine, enhanced vitality, and shared team joy.",
+      "imageUrl": "/images/other/pottery-1.png",
+      "pricing": {
+        "t15": 1200,
+        "t26": 950,
+        "t46": 850,
+        "t100": 750
+      }
+    },
+    {
+      "slug": "drum-circle",
+      "title": "Community Drum Circle & Percussive Resonance",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "An inclusive rhythm-making circle where participants use djembes, darbukas, and frame drums to co-create spontaneous acoustic beats without requiring prior musical training.",
+      "origin": "Pan-African communal drumming and worldwide indigenous circle traditions.",
+      "age": "Ancient tribal practice adapted into modern therapeutic circles over the last 40 years.",
+      "impact": "Proven neuro-chemical benefit in reducing stress, syncing brainwaves, and fostering effortless non-verbal human connection.",
+      "whyLearn": "Releases mental overthinking through pure visceral pulse, rebuilding innate rhythmic confidence.",
+      "keyProcess": [
+        "Bass, tone, and slap hand-striking technique orientation on djembes",
+        "Call-and-response rhythm entrainment with the facilitator",
+        "Layering interlocking polyrhythmic pulses across the circle",
+        "Spontaneous tempo accelerations and communal rhythmic climaxes",
+        "Settling into a restorative quiet pulse and vibrational silence"
+      ],
+      "learningDuration": "Introductory familiarity: 1.5 hours. Independent polyrhythmic fluency: 1–2 months. Master percussionist: 3–5 years.",
+      "workshopDuration": "1.5–2 Hours",
+      "format": "Communal Acoustic Circle",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa",
+        "Pune",
+        "Kolkata"
+      ],
+      "audience": [
+        "Teams & Corporates",
+        "Families",
+        "Music Lovers",
+        "Community Gatherings"
+      ],
+      "facilitator": "Certified Drum Circle Facilitator & Ethno-Percussionist",
+      "outcomes": "Sustained cognitive de-stressing, entrained group synchronization, and profound rhythmic recharge.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1200,
+        "t26": 900,
+        "t46": 800,
+        "t100": 700
+      }
+    },
+    {
+      "slug": "choir-workshop",
+      "title": "Vocal Harmony & Communal Choral Ensemble",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "A group singing experience where diverse voices are blended into multi-part vocal harmonies across world music, indigenous chants, and contemporary arrangements.",
+      "origin": "Global choral traditions spanning European polyphony, African choral call, and Indian bhajan assemblies.",
+      "age": "Millennia of collective singing lineage.",
+      "impact": "Synchronizes heart rates, boosts oxytocin, and overcomes the modern epidemic of vocal isolation and self-judgement.",
+      "whyLearn": "Demystifies singing, teaches active listening, and allows participants to feel the physical resonance of collective vocal unity.",
+      "keyProcess": [
+        "Diaphragmatic breath grounding and gentle vocal fold sirens",
+        "Vocal range placement into soprano, alto, tenor, and bass parts",
+        "Learning melodic motifs through call-and-echo without sheet music",
+        "Layering harmonies and counter-melodies in four-part polyphony",
+        "A cappella group singing and resonant acoustic playback"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Part-singing confidence: 2–3 months. Choral ensemble vocalist: 1–3 years.",
+      "workshopDuration": "2 Hours",
+      "format": "Collective Voice Sanctuary",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa"
+      ],
+      "audience": [
+        "Music Enthusiasts",
+        "Beginner Singers",
+        "Corporate Teams",
+        "Community Circles"
+      ],
+      "facilitator": "Choral Director & Vocal Arranger",
+      "outcomes": "Experience of singing in harmonious 3-to-4 part group harmony, expanded vocal range, and uplifted emotional state.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1200,
+        "t26": 950,
+        "t46": 850,
+        "t100": 750
+      }
+    },
+    {
+      "slug": "music-jam-session",
+      "title": "Collaborative Acoustic Jam & Improvisation",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "An unscripted, facilitated collaborative session where acoustic musicians and curious non-musicians interact through intuitive melodic dialogues and percussion.",
+      "origin": "Jazz jam traditions of early 20th-century New Orleans and open Indian baul and mehfil musical gatherings.",
+      "age": "Over a century of collaborative improvisational heritage.",
+      "impact": "Breaks creative blocks, promotes deep conversational listening, and democratizes spontaneous musical creation.",
+      "whyLearn": "Fosters adaptability, eliminates fear of making \"wrong notes\", and teaches real-time creative risk-taking.",
+      "keyProcess": [
+        "Grounding the room with a continuous acoustic drone (tanpura/harmonium)",
+        "Passing intuitive rhythmic pulses from player to player",
+        "Facilitated musical cues for dynamic swells, solos, and quiet bridges",
+        "Spontaneous lyric and vocal chant integration",
+        "Collective acoustic resolution and reflective circle debrief"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Spontaneous improvisation fluency: 3–6 months. Seasoned session musician: 3–5 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Improvisational Sound Lab",
+      "locations": [
+        "Bangalore",
+        "Goa",
+        "Mumbai"
+      ],
+      "audience": [
+        "Instrument Players",
+        "Vocalists",
+        "Curious Explorers",
+        "Creative Teams"
+      ],
+      "facilitator": "Multi-Instrumentalist & Improvisation Coach",
+      "outcomes": "Deepened musical empathy, intuitive improvisational confidence, and recorded collective soundscapes.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1300,
+        "t26": 1000,
+        "t46": 900,
+        "t100": 800
+      }
+    },
+    {
+      "slug": "vocal-expression-workshop",
+      "title": "Vocal Freedom & Authentic Voice Masterclass",
+      "category": "contemporary",
+      "pillar": "Create",
+      "definition": "A somatic voice immersion designed to dismantle internal vocal inhibitions, release throat tension, and access the primal, resonant power of your natural voice.",
+      "origin": "Pioneered by Roy Hart vocal theatre and classical Indian dhrupad voice traditions.",
+      "age": "Ancient roots in sacred sound; contemporary voice coaching evolved over the past 50 years.",
+      "impact": "Assists public speakers, leaders, and individuals in reclaiming confidence, authenticity, and physiological grounding through their true voice.",
+      "whyLearn": "Releases the chronic constriction of modern office silence and unlocks expressive vocal range without straining vocal cords.",
+      "keyProcess": [
+        "Somatic jaw, neck, and pelvic diaphragm myofascial release",
+        "Sub-glottal breath support exercises derived from classical dhrupad",
+        "Primal sound exploration: humming, groaning, resonating the sinus cavities",
+        "Projecting sound from the chest, heart, and crown resonators",
+        "Empowered personal vocal expression circle and acoustic grounding"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5 hours. Vocal confidence integration: 1–2 months. Professional vocal coach: 3–5 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Somatic Voice Atelier",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Goa"
+      ],
+      "audience": [
+        "Professionals",
+        "Speakers",
+        "Actors",
+        "Introverted Learners",
+        "Leaders"
+      ],
+      "facilitator": "Master Vocal Coach & Somatic Voice Therapist",
+      "outcomes": "Free, unforced vocal projection, release of throat tension, and an empowered embodied relationship with your voice.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "art-journaling",
+      "title": "Mindful Art Journaling & Inner Mapping",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "A non-judgmental mixed-media practice combining reflective writing, collage, watercolor, and intuitive mark-making to process emotions and nurture self-discovery.",
+      "origin": "Psychological journaling pioneered by Carl Jung and adapted into modern expressive art therapy.",
+      "age": "Over a century of psycho-creative practice.",
+      "impact": "Provides an intimate, screen-free sanctuary for mental hygiene, emotional regulation, and non-verbal processing.",
+      "whyLearn": "Liberates personal expression from the pressure of making \"fine art\" and establishes a daily mindful journaling ritual.",
+      "keyProcess": [
+        "Prompt-driven free-writing to clear cognitive chatter",
+        "Intuitive background wash application with watercolors and gouache",
+        "Torn-paper collage, archival text clipping, and material layering",
+        "Blind contour drawing and emotional color scribbling",
+        "Quiet journaling closure and private integration reflection"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5 hours. Habitual practice integration: 3–4 weeks. Expressive journal facilitator: 1–2 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Quiet Reflective Studio",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa",
+        "Pune"
+      ],
+      "audience": [
+        "Wellness Seekers",
+        "Overthinking Professionals",
+        "Makers",
+        "Writers"
+      ],
+      "facilitator": "Expressive Arts Facilitator & Journaling Mentor",
+      "outcomes": "A personalized, bound multimedia journal initiated with your own emotional cartography and prompt toolkit.",
+      "imageUrl": "/images/workshops/madhubani-painting-process.jpg",
+      "pricing": {
+        "t15": 1400,
+        "t26": 1100,
+        "t46": 1000,
+        "t100": 900
+      }
+    },
+    {
+      "slug": "sound-healing",
+      "title": "Tibetan Sound Bowl & Vibrational Resonance",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "An immersive auditory meditation utilizing hand-hammered 7-metal Tibetan singing bowls, gongs, and chimes to induce deep alpha and theta brainwave states.",
+      "origin": "Himalayan Buddhist monastic communities (Tibet, Nepal, Northern India).",
+      "age": "Over 2,500 years of contemplative acoustic lineage.",
+      "impact": "Calms sympathetic fight-or-flight nervous states, down-regulates cortisol, and facilitates cellular vibrational recalibration.",
+      "whyLearn": "Effortlessly quiets a racing mind without requiring forced mental discipline, leading to restorative somatic relaxation.",
+      "keyProcess": [
+        "Gentle restorative yoga postures and breath deceleration",
+        "Placement of therapeutic singing bowls on and around the body",
+        "Systematic acoustic sweep through root to crown resonant frequencies",
+        "Gong crescendo and binaural wave induction",
+        "Deep silent integration and gentle awakening with Koshi chimes"
+      ],
+      "learningDuration": "Introductory familiarity: 1.5 hours. Bowl striking & acoustic harmony: 2–3 months. Certified sound master: 1–3 years.",
+      "workshopDuration": "1.5–2 Hours",
+      "format": "Restorative Acoustic Sanctuary",
+      "locations": [
+        "Goa",
+        "Bangalore",
+        "Mumbai",
+        "Pune"
+      ],
+      "audience": [
+        "High-Stress Professionals",
+        "Insomniacs",
+        "Meditators",
+        "All Adults"
+      ],
+      "facilitator": "Certified Sound Master & Nada Yoga Practitioner",
+      "outcomes": "Profound nervous system reset, mental clarity, and release of chronic bodily tension.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "breathwork",
+      "title": "Pranayama & Conscious Connected Breathwork",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "The intentional modulation of breathing rhythms, from ancient Vedic pranayama techniques to modern somatic breathwork, to clear energetic blockages and restore oxygenation.",
+      "origin": "Classical Indian Yogic texts (Hatha Yoga Pradipika, Patanjali Yoga Sutras) and modern holotropic therapies.",
+      "age": "Over 3,000 years of documented yogic pranic science.",
+      "impact": "Regulates autonomic nervous tone, increases heart-rate variability (HRV), and provides a chemical-free bridge to emotional clarity.",
+      "whyLearn": "Mastering the single autonomic physiological function that can be consciously controlled unlocks immediate mastery over anxiety and fatigue.",
+      "keyProcess": [
+        "Diaphragmatic alignment and carbon dioxide tolerance assessment",
+        "Nadi Shodhana (alternate nostril breathing) for hemispherically balanced focus",
+        "Bhastrika and Kapalabhati for mitochondrial vitality and digestive fire",
+        "Guided continuous circular conscious breathwork for somatic emotional release",
+        "Extended retention (kumbhaka) and silent meditation settling"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Daily self-regulation mastery: 4–6 weeks. Advanced breathwork coach: 1–2 years.",
+      "workshopDuration": "2 Hours",
+      "format": "Somatic Breath Sanctuary",
+      "locations": [
+        "Bangalore",
+        "Goa",
+        "Mumbai",
+        "Pune"
+      ],
+      "audience": [
+        "Anyone Experiencing Stress",
+        "Athletes",
+        "Executives",
+        "Seekers"
+      ],
+      "facilitator": "Certified Breathwork Coach & Pranayama Acharya",
+      "outcomes": "A customized daily breathwork blueprint, immediate reduction in resting anxiety, and heightened respiratory stamina.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1300,
+        "t26": 1000,
+        "t46": 900,
+        "t100": 800
+      }
+    },
+    {
+      "slug": "somatic-movement",
+      "title": "Somatic Awareness & Nervous System Regulation",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "A slow, sensory movement practice based on Thomas Hanna somatics and polyvagal theory that re-educates the brain to release chronically contracted muscles (sensory-motor amnesia).",
+      "origin": "Developed by Thomas Hanna and Moshe Feldenkrais in mid-to-late 20th-century somatic lineages.",
+      "age": "Approximately 50 years of clinical somatic movement science.",
+      "impact": "Permanently unwinds posture distortions, desk-slouch compensation, and bodily pain by addressing the nervous system root rather than stretching.",
+      "whyLearn": "Replaces aggressive stretching with gentle pandiculation, restoring effortless fluidity and bodily freedom.",
+      "keyProcess": [
+        "Lying body-scan to identify unperceived muscle contractions",
+        "Voluntary gentle contraction of chronically tight muscle groups",
+        "Slow, conscious, gravity-assisted lengthening (pandiculation)",
+        "Complete neurological reset at rest to imprint new baseline resting length",
+        "Standing integration and mindful gait exploration"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Daily somatic unwinding fluency: 3–4 weeks. Certified clinical somatics practitioner: 2–3 years.",
+      "workshopDuration": "2 Hours",
+      "format": "Somatic Neuro-Movement Lab",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa"
+      ],
+      "audience": [
+        "Desk Workers",
+        "Chronic Pain Sufferers",
+        "Yogis",
+        "Athletes"
+      ],
+      "facilitator": "Certified Clinical Somatic Educator",
+      "outcomes": "Measurable relief from chronic neck, shoulder, and lower back tension, with heightened kinesthetic awareness.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1400,
+        "t26": 1100,
+        "t46": 1000,
+        "t100": 900
+      }
+    },
+    {
+      "slug": "dance-movement-therapy",
+      "title": "Dance Movement Therapy & Embodiment",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "The psychotherapeutic use of movement and dance to support emotional, cognitive, physical, and social integration of the individual.",
+      "origin": "Pioneered by Marian Chace in the 1940s in the United States, bridging dance art with psychiatric care.",
+      "age": "Over 80 years of clinical and expressive therapeutic history.",
+      "impact": "Transfers unarticulated trauma, anxiety, and bodily numbness into expressive motion, restoring holistic mind-body vitality.",
+      "whyLearn": "Helps reconnect with intuition, boundary setting, and bodily truth without needing to perform or master technical steps.",
+      "keyProcess": [
+        "Grounding the kinesphere through weight-shifting and rhythmic breathing",
+        "Chace kinesthetic mirroring: validating emotional states in movement",
+        "Metaphoric movement prompts (roots, currents, boundaries, flight)",
+        "Shared group circle dances fostering communal safety and joy",
+        "Cooling stillness and verbal/artistic somatic integration"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Embodied self-awareness: 2–3 months. Registered Dance Movement Therapist: 2–4 years (postgraduate).",
+      "workshopDuration": "2 Hours",
+      "format": "Embodied Therapy Sanctuary",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Goa",
+        "Pune"
+      ],
+      "audience": [
+        "Therapy Seekers",
+        "Creative Explorers",
+        "Women Circles",
+        "Teams"
+      ],
+      "facilitator": "Registered Dance Movement Psychotherapist (R-DMP)",
+      "outcomes": "Cathartic emotional release, enhanced bodily empathy, and tools for self-soothing through movement.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1500,
+        "t26": 1200,
+        "t46": 1100,
+        "t100": 1000
+      }
+    },
+    {
+      "slug": "pet-therapy",
+      "title": "Pet Therapy & Animal-Assisted Wellness",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "A structured, guided interaction with certified therapy animals designed to improve social, emotional, and cognitive functioning.",
+      "origin": "Modern clinical animal-assisted therapy pioneered by Dr. Boris Levinson in the 1960s.",
+      "age": "Over 60 years of formal veterinary and clinical psychological collaboration.",
+      "impact": "Triggering immediate releases of oxytocin, lowering arterial blood pressure, and lifting mood in high-stress and isolated populations.",
+      "whyLearn": "Experience the unconditional acceptance of therapy animals, reducing loneliness and resetting social comfort.",
+      "keyProcess": [
+        "Calm group orientation and respectful animal body-language reading",
+        "Mindful tactile petting and brushing to co-regulate heart rhythms",
+        "Guided interactive games and trust exercises with certified therapy dogs",
+        "Unstructured quiet resting and companion observation",
+        "Closing circle gratitude and mindful connection reflection"
+      ],
+      "learningDuration": "Introductory familiarity: 1.5–2 hours. Certified animal handler: 6–12 months.",
+      "workshopDuration": "2 Hours",
+      "format": "Animal-Assisted Wellness Session",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Pune"
+      ],
+      "audience": [
+        "Families",
+        "Corporate Teams",
+        "Students",
+        "Neurodivergent Learners"
+      ],
+      "facilitator": "Certified Animal-Assisted Therapist & Canine Handler",
+      "outcomes": "Profound reduction in psychological stress, boosted oxytocin levels, and heart-centered calm.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1600,
+        "t26": 1300,
+        "t46": 1200,
+        "t100": 1100
+      }
+    },
+    {
+      "slug": "expressive-art-therapy",
+      "title": "Expressive Arts Therapy & Creative Catharsis",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "A multimodal therapeutic approach integrating visual art, clay sculpting, sandplay, and creative writing to explore inner psyche and heal emotional wounds.",
+      "origin": "Developed by Natalie Rogers, Shaun McNiff, and Paolo Knill in the 1970s.",
+      "age": "Over 50 years of clinical and academic lineage.",
+      "impact": "Allows participants to bypass rational defensive intellect to express and resolve subconscious conflicts safely.",
+      "whyLearn": "Provides a safe, non-verbal vocabulary for grief, life transitions, and anxiety when spoken words prove inadequate.",
+      "keyProcess": [
+        "Somatic check-in and selecting resonant tactile mediums (clay, charcoal, paints)",
+        "Blind impulse art-making focused strictly on sensation rather than appearance",
+        "Intermodal transfer: moving from drawing into brief sound or poetic writing",
+        "Witnessing the creation without critique, diagnostic labeling, or aesthetic analysis",
+        "Empowering closure and personal insight integration"
+      ],
+      "learningDuration": "Introductory familiarity: 2.5 hours. Self-reflective creative integration: 2–3 months. Expressive arts therapist: 2–3 years.",
+      "workshopDuration": "2.5 Hours",
+      "format": "Multi-Modal Expressive Sanctuary",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Goa",
+        "Pune"
+      ],
+      "audience": [
+        "Individuals in Transition",
+        "Mental Health Seekers",
+        "Healthcare Workers"
+      ],
+      "facilitator": "Licensed Expressive Arts Therapist",
+      "outcomes": "Personal psychological catharsis, release of subconscious tension, and tangible symbolic artifacts of healing.",
+      "imageUrl": "/images/workshops/madhubani-painting-process.jpg",
+      "pricing": {
+        "t15": 1600,
+        "t26": 1300,
+        "t46": 1200,
+        "t100": 1100
+      }
+    },
+    {
+      "slug": "posture-correction-yoga",
+      "title": "Posture Correction & Restorative Alignment Yoga",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "A biomechanically informed restorative yoga practice combining Iyengar-style prop alignment, myofascial opening, and neuromuscular re-patterning for spinal health.",
+      "origin": "Pioneered by B.K.S. Iyengar in Pune (India) and refined by modern orthopedic yoga therapy.",
+      "age": "Centuries of classical hatha yoga, specialized into clinical alignment over the past 60 years.",
+      "impact": "Counteracts chronic desk hunch (kyphosis), anterior pelvic tilt, and repetitive strain injuries from modern screen work.",
+      "whyLearn": "Teaches structural body alignment principles you can carry into every chair, car seat, and standing moment of daily life.",
+      "keyProcess": [
+        "Individual postural plum-line assessment (cervical, thoracic, lumbar check)",
+        "Myofascial release using therapy balls along sub-occipital and pectoral tissues",
+        "Prop-supported restorative poses (bolster back-bends, traction belts)",
+        "Neuromuscular activation of deep core and scapular stabilizers",
+        "Constructive rest pose and diaphragmatic nervous reset"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Postural habit reformation: 4–8 weeks. Certified alignment yoga teacher: 1–2 years.",
+      "workshopDuration": "2 Hours",
+      "format": "Anatomical Alignment Studio",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Pune",
+        "Goa"
+      ],
+      "audience": [
+        "Corporate Professionals",
+        "Sedentary Workers",
+        "Seniors",
+        "Yoga Students"
+      ],
+      "facilitator": "Certified Iyengar / Yoga Therapist",
+      "outcomes": "Measurably improved posture alignment, decompression of the spine, and a personalized 10-minute daily desk routine.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1300,
+        "t26": 1000,
+        "t46": 900,
+        "t100": 800
+      }
+    },
+    {
+      "slug": "pre-natal-post-natal",
+      "title": "Pre-Natal & Post-Natal Movement & Wellbeing",
+      "category": "wellness",
+      "pillar": "Restore",
+      "definition": "Specialized nurturing movement, pelvic floor awareness, gentle breathwork, and emotional grounding tailored for expectant and new mothers.",
+      "origin": "Traditional Indian mother-care traditions (Soothika Paricharya) integrated with modern perinatal physiotherapy.",
+      "age": "Centuries of traditional maternal care, updated into modern evidence-based perinatal movement.",
+      "impact": "Reduces maternal anxiety, alleviates pelvic-girdle discomfort, promotes birth preparation, and nurtures maternal recovery.",
+      "whyLearn": "Builds physical trust and emotional strength during transformative motherhood phases, connecting women in supportive peer circles.",
+      "keyProcess": [
+        "Safe pelvic-neutral postural adjustments and bolster cushioning",
+        "Gentle pelvic floor engagement and release breathing (apana vayu)",
+        "Hip mobility rotations and gentle side-body lengthening",
+        "Partner or self-massage techniques using warm herbal oils",
+        "Deep guided yogic sleep (Yoga Nidra) for maternal nervous restoration"
+      ],
+      "learningDuration": "Introductory familiarity: 2 hours. Weekly perinatal continuity: ongoing throughout pregnancy and postpartum.",
+      "workshopDuration": "2 Hours",
+      "format": "Maternal Circle & Restorative Studio",
+      "locations": [
+        "Bangalore",
+        "Mumbai",
+        "Pune"
+      ],
+      "audience": [
+        "Expectant Mothers (2nd & 3rd Trimester)",
+        "Postpartum Mothers",
+        "Partners"
+      ],
+      "facilitator": "Certified Perinatal Yoga Specialist & Doula",
+      "outcomes": "Relief from pregnancy aches, deepened maternal-infant bond, and practical breathing tools for labor and recovery.",
+      "imageUrl": "/images/workshops/sound-healing-session.jpg",
+      "pricing": {
+        "t15": 1400,
+        "t26": 1100,
+        "t46": 1000,
+        "t100": 900
+      }
+    },
+    {
+      "slug": "sacred-terracotta-clay-craft",
+      "title": "Sacred Terracotta Clay Craft",
+      "category": "traditional",
+      "pillar": "Root",
+      "origin": "India",
+      "age": "Generations of living heritage",
+      "definition": "The ancient sacred practice of shaping raw terracotta clay into ritual and utility vessels, connecting hands to earth.",
+      "impact": "Supports rural potter communities and sustains indigenous terracotta heritage.",
+      "whyLearn": "Supports rural potter communities and sustains indigenous terracotta heritage.",
+      "keyProcess": [
+        "Preparation of authentic raw materials and craft history",
+        "Step-by-step master artisan demonstration",
+        "Guided hands-on crafting and tactile repetition",
+        "Finishing, detailing, and restorative reflection"
+      ],
+      "learningDuration": "A lifetime of disciplined lineage study",
+      "workshopDuration": "3 Hours hands-on masterclass",
+      "format": "Hands-on experiential workshop",
+      "locations": [
+        "Mumbai",
+        "Bangalore",
+        "Goa",
+        "Jaipur"
+      ],
+      "audience": [
+        "Corporate teams",
+        "Individuals",
+        "Creative leaders"
+      ],
+      "facilitator": "Master Artisan & Lineage Practitioner",
+      "outcomes": "Handcrafted keepsake created with your own hands",
+      "pricing": {
+        "t15": 3500,
+        "t26": 3000,
+        "t46": 2500,
+        "t100": 2000
+      },
+      "imageUrl": ""
+    }
+  ],
+  "studioMoments": [
+    {
+      "id": "moment-1",
+      "url": "https://www.instagram.com/p/DUiWSHsESoe/?xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==",
+      "type": "post",
+      "typeLabel": "Post",
+      "handle": "@themitti.company",
+      "authorName": "The Mitti Company",
+      "badgeBg": "bg-[#C17F59]",
+      "imageSrc": "/images/studio-moments/moment-1.jpg",
+      "imageAlt": "Happy customer holding handcrafted clay pottery during studio workshop",
+      "quote": "Happy customer make us happy:)",
+      "caption": "“Happy customer make us happy:)”",
+      "overlayTag": "Handcrafted Clay Diya",
+      "contextLine": "Pottery Studio · Living Craft",
+      "order": 1,
+      "published": true
+    },
+    {
+      "id": "moment-2",
+      "url": "https://www.instagram.com/reel/DTsCHt2DH-a/?vrfl=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==",
+      "type": "reel",
+      "typeLabel": "Reel",
+      "handle": "@certifiedbhukkadco",
+      "authorName": "Ruchika",
+      "badgeBg": "bg-[#4F5B2A]",
+      "imageSrc": "/images/studio-moments/moment-2.jpg",
+      "imageAlt": "Hands shaping terracotta clay on the pottery wheel during creative wellness session",
+      "quote": "Pottery era activated! 10/10 would get messy again",
+      "caption": "“I came in as a beginner, made a mess, laughed a lot, and absolutely loved every minute of this pottery workshop.”",
+      "overlayTag": "Wheel Throwing · Thane",
+      "contextLine": "Original audio · Thane Workshop",
+      "order": 2,
+      "published": true
+    },
+    {
+      "id": "moment-3",
+      "url": "https://www.instagram.com/reel/DNVLoSjzhgv/",
+      "type": "reel",
+      "typeLabel": "Reel",
+      "handle": "@kiiro.blr",
+      "authorName": "Kiiro Studio",
+      "badgeBg": "bg-[#8F6A48]",
+      "imageSrc": "/images/studio-moments/moment-3.jpg",
+      "imageAlt": "Master artisan demonstrating pottery making outdoors at Versova Mumbai",
+      "quote": "Pottery workshop in Versova Mumbai",
+      "caption": "“Pottery workshop in Versova Mumbai, this Sunday 17th August”",
+      "overlayTag": "Master Demonstration · Versova",
+      "contextLine": "Original audio · Versova, Mumbai",
+      "order": 3,
+      "published": true
+    }
+  ],
+  "testimonials": [
+    {
+      "id": "test-1",
+      "personName": "Dr. Soumitra Das",
+      "role": "Dean Student Welfare",
+      "organisation": "NIT Goa",
+      "pullQuote": "Tactile grounding and an inclusive, memorable icebreaker.",
+      "quote": "Kiiro brought incredible energy and tactile grounding to our first-year student inauguration. The combination of hands-on pottery and drum circle created an inclusive, memorable icebreaker that set a wonderful tone for the academic year.",
+      "portrait": "/images/testimonials/dr-soumitra-das.png",
+      "rating": 5,
+      "order": 1,
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "test-2",
+      "personName": "Sharad",
+      "role": "Wellness Lead",
+      "organisation": "Capillary Technologies, Bangalore",
+      "pullQuote": "Watching colleagues slow down and bond was truly restorative.",
+      "quote": "The pottery workshop for employee wellness provided our team with much-needed screen-free grounding. Watching colleagues slow down, press raw clay, and bond outside work deadlines was truly restorative.",
+      "portrait": "/images/testimonials/sharad.png",
+      "rating": 5,
+      "order": 2,
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "test-3",
+      "personName": "Yash",
+      "role": "Community Manager",
+      "organisation": "SoHo House, Mumbai",
+      "pullQuote": "A quiet, sophisticated cultural experience that elevated the evening.",
+      "quote": "Hosting Kiiro’s pottery masterclass at SoHo House was a highlight for our members. The quality of facilitation and master artisan guidance elevated the entire evening into a quiet, sophisticated cultural experience.",
+      "portrait": "/images/testimonials/yash.jpg",
+      "rating": 5,
+      "order": 3,
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "test-4",
+      "personName": "Shubham Chaurasia",
+      "role": "Associate Director",
+      "organisation": "Hello World",
+      "pullQuote": "Beautiful custom textiles made with direct lineage techniques.",
+      "quote": "For our Women’s Day special, Kiiro curated an authentic block printing workshop. Our team created beautiful custom textiles while learning direct lineage techniques from master craftspeople.",
+      "portrait": "/images/testimonials/shubham.jpg",
+      "rating": 5,
+      "order": 4,
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "test-5",
+      "personName": "Mayur Agarwal",
+      "role": "ICAI Chairman",
+      "organisation": "Kolkata Chapter",
+      "pullQuote": "An exceptional blend of artistic expression and stress relief.",
+      "quote": "The pottery workshop organized for ICAI members in Kolkata was an exceptional blend of artistic expression and stress relief. A deeply enriching experience that left a lasting impression on everyone present.",
+      "portrait": "/images/testimonials/mayur.jpg",
+      "rating": 5,
+      "order": 5,
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "test-6",
+      "personName": "Adelle Almeida",
+      "role": "Faculty & CAS Coordinator",
+      "organisation": "Don Bosco Matunga, Mumbai",
+      "pullQuote": "Mindful stitching with generational artisans was exceptional.",
+      "quote": "Kolhapuri Chappal Making Workshop was one of a kind for me as well as my students. Experiencing the mindful stitching of soles with generational artisans from Kolhapur was exceptional. Look forward to collaborating again.",
+      "portrait": "/images/testimonials/adelle.jpg",
+      "rating": 5,
+      "order": 6,
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "test-7",
+      "personName": "Prof. Kundu",
+      "role": "Wellness Director",
+      "organisation": "BITS Pilani Goa & Mpower",
+      "pullQuote": "Guidance, creativity, and patience brought this workshop to life.",
+      "quote": "On behalf of Mpower and BITS Goa, I extend our heartfelt gratitude to facilitators Sulagna and Neha, and master artists Apoorva, Ramakant, and Jay. Your guidance, creativity, and patience brought this workshop to life!",
+      "portrait": "/images/testimonials/prof-suman-kundu.webp",
+      "rating": 5,
+      "order": 7,
+      "featured": true,
+      "published": true
+    },
+    {
+      "id": "test-8",
+      "personName": "Divya Sudarshana",
+      "role": "AVP Human Resources",
+      "organisation": "Network 18",
+      "pullQuote": "A culturally rooted approach that fostered connection and shared learning.",
+      "quote": "The hand building workshop with clay fostered connection and shared learning. Our employees appreciated the depth of the experience—a culturally rooted approach to corporate wellbeing programs.",
+      "portrait": "/images/testimonials/divya-sudarshana.png",
+      "rating": 5,
+      "order": 8,
+      "featured": false,
+      "published": true
+    },
+    {
+      "id": "test-9",
+      "personName": "Marlies Bloemendaal",
+      "role": "Founder & Creative Director",
+      "organisation": "Ministry Of New",
+      "pullQuote": "Grounding and engaging — improved focus, reduced stress, and built belonging.",
+      "quote": "Kiiro’s workshop brought a hands-on creative experience with clay into our co-working ecosystem. It was grounding and engaging, improved focus, reduced stress, and created a stronger sense of belonging.",
+      "portrait": "/images/testimonials/marlies-bloemendaal.png",
+      "rating": 5,
+      "order": 9,
+      "featured": false,
+      "published": true
+    }
+  ],
+  "advisors": [
+    {
+      "id": "dr-t-kundu",
+      "name": "Dr. Tapanendu Kundu",
+      "initials": "TK",
+      "title": "Chief Adviser Students Care, BITS Pilani Goa Campus",
+      "affiliation": "Ex. Dean of Students Affairs, IIT Bombay",
+      "specialty": "Expressive Art Specialist",
+      "bio": "Pioneering student mental health initiatives and creative wellness integration at premier engineering institutions across India.",
+      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/1e3163b42a46c9e453bbbd3b84f76ea3c41d3cf7-272x265.png",
+      "order": 1,
+      "published": true
+    },
+    {
+      "id": "dr-shalini-purohit",
+      "name": "Dr. Shalini Purohit",
+      "initials": "SP",
+      "title": "Chartered Psychologist",
+      "affiliation": "British Psychological Society",
+      "specialty": "Specialist Mentor Mental Health, Sheffield, UK",
+      "bio": "Specialist clinical mentor focused on creative expression and grounding techniques for emotional regulation.",
+      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/72520cf55d94dc3f3b1ae77b7a906970dea6c34b-382x387.png",
+      "order": 2,
+      "published": true
+    },
+    {
+      "id": "dr-sanjay-pandey",
+      "name": "Dr. Sanjay Pandey",
+      "initials": "SP",
+      "title": "Head of Department",
+      "affiliation": "Andrology & Reconstructive Urology, Kokilaben Hospital",
+      "specialty": "Clinical Healthcare & Restorative Care",
+      "bio": "Advocating for holistic patient recovery and stress reduction through mindful tactile engagement.",
+      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/3a2340a994800c2c0a002c7da610b1212bfb63b0-291x215.png",
+      "order": 3,
+      "published": true
+    },
+    {
+      "id": "sham-pahelpakar",
+      "name": "Sham Pahelpakar",
+      "initials": "SP",
+      "title": "Contemporary Visual Artist & Experience Facilitator",
+      "affiliation": "Creative Facilitator at NID Ahmedabad & IIT Roorkee",
+      "specialty": "Tribal Culture, Panchatatva & Natural Materials",
+      "bio": "Deep expertise in indigenous Indian art forms and material intelligence.",
+      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/e34b4b6e1d41cf2233a3f92205b0e2d28c8e08df-285x307.png",
+      "order": 4,
+      "published": true
+    }
+  ],
+  "artisans": [
+    {
+      "id": "ramu",
+      "name": "Master Craftsman Ramu",
+      "craft": "Jaipur Blue Pottery Master",
+      "region": "Kot Jewar, Rajasthan",
+      "portraitUrl": "/images/ramu-master-craftsman.png",
+      "quote": "\"When participants hold the clay and feel the natural pigment, they are not just taking a workshop — they are taking home a living piece of our ancestral memory.\"",
+      "description": "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
+      "impactMetric": "100%",
+      "impactLabel": "Every session supports fair wages and dignity of practice for artisan communities.",
+      "ctaLabel": "Meet the artisan network",
+      "ctaUrl": "/artisans",
+      "order": 1,
+      "published": true
+    },
+    {
+      "id": "ram-lal",
+      "name": "Ram Lal Chhipa",
+      "craft": "Bagru Woodblock Printing Master",
+      "region": "Bagru, Rajasthan",
+      "portraitUrl": "/images/artisans/block-printing-artisan.jpg",
+      "quote": "\"Every relief carving in the teak wood block carries a rhythm passed down through five generations of indigo block printers.\"",
+      "description": "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
+      "impactMetric": "100%",
+      "impactLabel": "Every session supports fair wages and dignity of practice for artisan communities.",
+      "ctaLabel": "Explore Bagru Workshops",
+      "ctaUrl": "/experiences/bagru-block-printing",
+      "order": 2,
+      "published": true
+    },
+    {
+      "id": "ananya-menon",
+      "name": "Ananya Menon",
+      "craft": "Kintsugi & Ceramic Restoration",
+      "region": "Assagao, Goa",
+      "portraitUrl": "/images/artisans/kintsugi-artisan.jpg",
+      "quote": "\"Kintsugi teaches us that brokenness is not the end of an object's life, but the beginning of its most beautiful, golden chapter.\"",
+      "description": "Behind every session is a master who has spent a lifetime with their material. When you learn from them, you're not just calming your mind. You're helping sustain a living tradition and the person who carries it.",
+      "impactMetric": "100%",
+      "impactLabel": "Every session supports fair wages and dignity of practice for artisan communities.",
+      "ctaLabel": "Explore Kintsugi Sessions",
+      "ctaUrl": "/experiences/kintsugi",
+      "order": 3,
+      "published": true
+    }
+  ],
+  "siteSettings": {
+    "siteTitle": "Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.",
+    "tagline": "Root. Create. Restore.",
+    "metaDescription": "Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.",
+    "contactEmail": "connect@kiiroexperiences.com",
+    "contactPhone": "+91 98200 12345",
+    "address": "Mumbai · Bangalore · Goa · Kolkata · Pune · Jaipur",
+    "instagramUrl": "https://www.instagram.com/your_workshops/?hl=en",
+    "facebookUrl": "https://www.facebook.com/kiiroexperiences/",
+    "linkedinUrl": "https://www.linkedin.com/company/kiiro-experiences/",
+    "youtubeUrl": "https://www.youtube.com/@kiiroexperiences",
+    "footerTagline": "Hands On. Rooted. Restored.",
+    "footerDescription": "Kiiro is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.",
+    "footerDisclaimer": "Kiiro sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.",
+    "showCsrSection": false
+  },
+  "lastUpdated": "2026-10-21T14:51:51.567Z",
+  "pendingChanges": [
+    {
+      "id": "siteSettings-1792594311567",
+      "docId": "siteSettings",
+      "section": "siteSettings",
+      "title": "Site Settings & Brand Metadata",
+      "action": "update",
+      "timestamp": "2026-10-21T14:51:51.567Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792594309496-1792594310681",
+      "docId": "e2e-test-article-1792594309496",
+      "section": "journal",
+      "title": "Test Article 1792594309496",
+      "action": "delete",
+      "timestamp": "2026-10-21T14:51:50.681Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792594285147-1792594286241",
+      "docId": "e2e-test-article-1792594285147",
+      "section": "journal",
+      "title": "Test Article 1792594285147",
+      "action": "delete",
+      "timestamp": "2026-10-21T14:51:26.241Z",
+      "author": "Kiiro Administrator"
+    }
+  ],
+  "publishingHistory": [
+    {
+      "id": "pub-1792593779884",
+      "timestamp": "2026-10-21T14:42:59.884Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 13,
+      "revalidatedRoutes": [
+        "/about",
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/artforms",
+        "/journal",
+        "/journal/e2e-test-article-1792592730990",
+        "/journal/e2e-test-article-1792592712472",
+        "/journal/e2e-test-article-1792592604610",
+        "/journal/e2e-test-article-1792592578512",
+        "/journal/test-direct-pub-1792592460025",
+        "/journal/e2e-test-article-1792592416979",
+        "/journal/e2e-test-article-1792592283425",
+        "/journal/journal-1792592284176",
+        "/journal/journal-1792592283551"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 15,
+      "durationMs": 3110,
+      "mode": "targeted"
+    },
+    {
+      "id": "pub-1792589055496",
+      "timestamp": "2026-10-21T13:24:15.496Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 1,
+      "revalidatedRoutes": [
+        "/about",
+        "/"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1,
+      "durationMs": 1064,
+      "mode": "targeted"
+    },
+    {
+      "id": "pub-1792588132463",
+      "timestamp": "2026-10-21T13:08:52.463Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 2,
+      "revalidatedRoutes": [
+        "/journal",
+        "/",
+        "/journal/test-draft-1792588110515",
+        "/journal/draft-1792588110515",
+        "/journal/test-draft-1792588032490",
+        "/journal/draft-1792588032490"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 4,
+      "durationMs": 495,
+      "mode": "targeted"
+    },
+    {
+      "id": "pub-1792572438085",
+      "timestamp": "2026-10-21T08:47:18.085Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/artisans",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 0,
+      "durationMs": 14609,
+      "mode": "full"
+    },
+    {
+      "id": "pub-1792572407868",
+      "timestamp": "2026-10-21T08:46:47.868Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 1,
+      "revalidatedRoutes": [
+        "/weekly-events",
+        "/",
+        "/weekly-events/kintsugi-bangalore-march"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1,
+      "durationMs": 1000,
+      "mode": "targeted"
+    },
+    {
+      "id": "pub-1792572069428",
+      "timestamp": "2026-10-21T08:41:09.428Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 78,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 0
+    },
+    {
+      "id": "pub-1792571523684",
+      "timestamp": "2026-10-21T08:32:03.684Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792567126018",
+      "timestamp": "2026-10-21T07:18:46.018Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792566278867",
+      "timestamp": "2026-10-21T07:04:38.867Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 2
+    },
+    {
+      "id": "pub-1792563335143",
+      "timestamp": "2026-10-21T06:15:35.143Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792542440080",
+      "timestamp": "2026-10-21T00:27:20.080Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 79,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792539924566",
+      "timestamp": "2026-10-20T23:45:24.566Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 74,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792539179297",
+      "timestamp": "2026-10-20T23:32:59.297Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 74,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 0
+    },
+    {
+      "id": "pub-1792539074164",
+      "timestamp": "2026-10-20T23:31:14.164Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 74,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792538765281",
+      "timestamp": "2026-10-20T23:26:05.281Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 74,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792535806365",
+      "timestamp": "2026-10-20T22:36:46.365Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 73,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    },
+    {
+      "id": "pub-1792535154033",
+      "timestamp": "2026-10-20T22:25:54.033Z",
+      "author": "Kiiro Administrator",
+      "syncedCount": 72,
+      "revalidatedRoutes": [
+        "/",
+        "/weekly-events",
+        "/experiences",
+        "/offerings",
+        "/artforms",
+        "/about",
+        "/products",
+        "/impact"
+      ],
+      "errors": [],
+      "success": true,
+      "publishedChangesCount": 1
+    }
+  ],
+  "journal": [
+    {
+      "id": "journal-1",
+      "title": "The Grammar of Warli: Why Triangles Sing of Mountains",
+      "slug": "grammar-of-warli-art",
+      "standfirst": "In the quiet villages of Dahanu, walls made of karvy reeds and red mud are transformed during harvest. There are no written books in traditional Warli culture; the wall is the canvas, and the triangle is the word.",
+      "excerpt": "In the quiet villages of Dahanu, walls made of karvy reeds and red mud are transformed during harvest. There are no written books in traditional Warli culture; the wall is the canvas, and the triangle is the word.",
+      "category": "Craft Heritage",
+      "author": "Sunil Sahdev",
+      "publishedAt": "2026-08-20",
+      "imageUrl": "/images/workshops/warli-art-workshop.jpg",
+      "body": "In the quiet villages of Dahanu, walls made of karvy reeds and red mud are transformed during harvest. There are no written books in traditional Warli culture; the wall is the canvas, and the triangle is the word.\n\nA circle represents the sun and moon. A square indicates sacred land or enclosure. Two triangles joined at the tip represent a human being—the upper triangle points to the heavens, while the lower rests upon the earth.\n\nWhen master artisan Ramesh Hengadi paints a Tarpa dance, hundreds of tiny geometric figures swirl around a musician. The dance does not end at the edge of the painting; it radiates into the surrounding forest.",
+      "published": true,
+      "seoTitle": "The Grammar of Warli: Why Triangles Sing of Mountains | Kiiro Journal",
+      "seoDescription": "Exploring how simple geometric forms communicate thousands of years of ecological wisdom without a written script.",
+      "order": 1
+    },
+    {
+      "id": "journal-2",
+      "title": "Boiling Madder & Rust: The 23 Steps of Sacred Kalamkari",
+      "slug": "23-steps-of-sacred-kalamkari",
+      "standfirst": "Behind every vibrant red and deep black line of Srikalahasti Kalamkari lies weeks of patient natural alchemy with myrobalan and iron.",
+      "excerpt": "Behind every vibrant red and deep black line of Srikalahasti Kalamkari lies weeks of patient natural alchemy with myrobalan and iron.",
+      "category": "Material Wisdom",
+      "author": "Ananya Roy",
+      "publishedAt": "2026-08-14",
+      "imageUrl": "/images/workshops/kalamkari-art-process.jpg",
+      "body": "Modern synthetic printing promises instant color in minutes. Kalamkari requires twenty-three days of ritualized interaction with nature.\n\nThe cloth is first treated with myrobalan (harda) fruit milk so the natural tannins bind with iron. Ferrous acetate—made by fermenting rusted iron nails in sugarcane jaggery water—creates permanent deep black outlines.\n\nTo see a master artisan draw freehand with a bamboo reed wrapped in wool is to witness muscle memory forged over generations.",
+      "published": true,
+      "seoTitle": "Boiling Madder & Rust: The 23 Steps of Sacred Kalamkari | Kiiro Journal",
+      "seoDescription": "Behind every vibrant red and deep black line of Srikalahasti Kalamkari lies weeks of patient natural alchemy with myrobalan and iron.",
+      "order": 2
+    },
+    {
+      "id": "journal-3",
+      "title": "Slowing Down in a Fast World: Creative Wellness through Craft",
+      "slug": "slowing-down-creative-wellness",
+      "standfirst": "How hands-on engagement with tactile materials acts as a powerful antidote to digital burnout and mental fatigue.",
+      "excerpt": "How hands-on engagement with tactile materials acts as a powerful antidote to digital burnout and mental fatigue.",
+      "category": "Creative Wellbeing",
+      "author": "Dr. Meera Iyer",
+      "publishedAt": "2026-08-01",
+      "imageUrl": "/images/other/pottery-2.png",
+      "body": "Our hands were designed to shape, press, weave, and hold earth. Yet modern professional work confines our physical interaction to glass touchscreens and plastic keyboards.\n\nWhen participants join Kiiro’s Creative Wellness Circle, the shift in brainwave activity is palpable within twenty minutes. As raw clay or natural paint engages tactile receptors, focus sharpens and digital anxiety recedes.\n\nCraft is not merely art appreciation; it is active somatic grounding.",
+      "published": true,
+      "seoTitle": "Slowing Down in a Fast World: Creative Wellness through Craft | Kiiro Journal",
+      "seoDescription": "How hands-on engagement with tactile materials acts as a powerful antidote to digital burnout and mental fatigue.",
+      "order": 3
+    }
+  ],
+  "lastPublishedAt": "2026-10-21T14:42:59.884Z"
+}

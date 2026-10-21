@@ -59,7 +59,6 @@ function setupHero(root: ParentNode) {
   const images = toArray<HTMLElement>(hero, '[data-hero-image]')
   const imageMedia = images.flatMap((image) => toArray<HTMLElement>(image, 'img, video'))
   const words = toArray<HTMLElement>(hero, '[data-hero-word]')
-  const scrollLine = hero.querySelector<HTMLElement>('[data-hero-scroll-line]')
 
   gsap.set(images, { clipPath: 'inset(100% 0 0 0)' })
   gsap.set(imageMedia, { scale: KIIRO_MOTION.imageScale.reveal, transformOrigin: '50% 50%' })
@@ -117,20 +116,7 @@ function setupHero(root: ParentNode) {
       hero.querySelectorAll('[data-hero-meta]'),
       { y: 12, autoAlpha: 0 },
       { y: 0, autoAlpha: 1, duration: 0.64, stagger: 0.08 },
-      0.86
     )
-
-  if (scrollLine) {
-    gsap.to(scrollLine, {
-      scaleY: 0.35,
-      transformOrigin: 'top center',
-      duration: 1.35,
-      ease: KIIRO_MOTION.ease.calm,
-      repeat: -1,
-      yoyo: true,
-      delay: delay + 1.1,
-    })
-  }
 }
 
 function setupTextReveals(root: ParentNode) {

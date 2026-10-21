@@ -49,10 +49,12 @@ export const structure: StructureResolver = (S) =>
             .items([
               S.documentTypeListItem('artform').title('Artforms'),
               S.documentTypeListItem('artisan').title('Artisans'),
+              S.documentTypeListItem('artisanStory').title('Artisan Stories'),
               S.documentTypeListItem('experience').title('Experiences'),
               S.documentTypeListItem('workshop').title('Workshops'),
               S.documentTypeListItem('workshopCategory').title('Workshop categories'),
               S.documentTypeListItem('event').title('Events'),
+              S.documentTypeListItem('studioMoment').title('Moments From The Studio'),
               S.documentTypeListItem('journalPost').title('Journal Stories'),
             ])
         ),
@@ -72,14 +74,15 @@ export const structure: StructureResolver = (S) =>
 
       S.divider(),
 
-      // INSTITUTIONAL, PROOF & LOCATIONS
+      // INSTITUTIONAL, PROOF & ADVISORY
       S.listItem()
-        .title('Institutional & Proof')
+        .title('Institutional, Proof & Advisory')
         .child(
           S.list()
-            .title('Partnerships & Locations')
+            .title('Proof, Governance & People')
             .items([
-              S.documentTypeListItem('partner').title('Partners'),
+              S.documentTypeListItem('advisor').title('Distinguished Advisory'),
+              S.documentTypeListItem('partner').title('Partners & Collaborators'),
               S.documentTypeListItem('testimonial').title('Testimonials'),
               S.documentTypeListItem('impactStat').title('Impact Stats'),
               S.documentTypeListItem('location').title('Active Cities / Locations'),

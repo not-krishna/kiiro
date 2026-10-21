@@ -213,10 +213,12 @@ export function WeeklyEventCard({
                 <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Format</dt>
                 <dd className="font-medium text-right text-[#FBF9F4]">{event.format === 'online' ? 'Online' : 'In Person'}</dd>
               </div>
-              <div className="flex justify-between gap-3">
-                <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Feels Like</dt>
-                <dd className="font-light italic text-right text-[#FBF9F4]">{event.feelsLike || 'slow, rhythmic, meditative'}</dd>
-              </div>
+              {event.feelsLike && (
+                <div className="flex justify-between gap-3">
+                  <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Feels Like</dt>
+                  <dd className="font-light italic text-right text-[#FBF9F4]">{event.feelsLike}</dd>
+                </div>
+              )}
               <div className="flex justify-between gap-3">
                 <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Date</dt>
                 <dd className="font-medium text-right text-[#FBF9F4]">{formattedDate}</dd>
@@ -227,7 +229,24 @@ export function WeeklyEventCard({
               </div>
               <div className="flex justify-between gap-3">
                 <dt className="text-[#968A80] uppercase tracking-wider text-[10px]">Location</dt>
-                <dd className="font-medium text-right text-[#FBF9F4]">{locationText}</dd>
+                <dd className="font-medium text-right text-[#FBF9F4]">
+                  {event.googleMapsUrl ? (
+                    <a
+                      href={event.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="hover:text-[#C89B53] hover:underline transition-colors inline-flex items-center gap-1 justify-end"
+                      title="Open in Google Maps"
+                    >
+                      <span>{locationText}</span>
+                      <svg className="w-2.5 h-2.5 text-[#C89B53]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    locationText
+                  )}
+                </dd>
               </div>
               {event.facilitator && (
                 <div className="flex justify-between gap-3">
@@ -283,10 +302,12 @@ export function WeeklyEventCard({
         </h3>
 
         {/* FEELS LIKE LINE */}
-        <p className="text-xs text-[#E8D9C8] font-sans">
-          <span className="text-[#A6B78F] font-medium">Feels like: </span>
-          <span className="italic font-light">{event.feelsLike || 'slow, rhythmic, meditative'}</span>
-        </p>
+        {event.feelsLike && (
+          <p className="text-xs text-[#E8D9C8] font-sans">
+            <span className="text-[#A6B78F] font-medium">Feels like: </span>
+            <span className="italic font-light">{event.feelsLike}</span>
+          </p>
+        )}
 
         {/* 2. DATE & 3. TIME */}
         <div className="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs text-[#E8D9C8]">
@@ -353,7 +374,23 @@ export function WeeklyEventCard({
               d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
             />
           </svg>
-          <span className="font-medium text-[#FBF9F4] truncate">{locationText}</span>
+          {event.googleMapsUrl ? (
+            <a
+              href={event.googleMapsUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={(e) => e.stopPropagation()}
+              className="font-medium text-[#FBF9F4] truncate hover:text-[#C89B53] hover:underline underline-offset-2 transition-colors inline-flex items-center gap-1 focus:outline-none focus:ring-1 focus:ring-[#C89B53]"
+              title="Open venue in Google Maps"
+            >
+              <span>{locationText}</span>
+              <svg className="w-3 h-3 text-[#C89B53] shrink-0 opacity-80" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          ) : (
+            <span className="font-medium text-[#FBF9F4] truncate">{locationText}</span>
+          )}
         </div>
 
         {/* 5. DESCRIPTION, 6. KEY PROCESS, 7. TAKE AWAY / KEEP SAKE (Optional full details) */}

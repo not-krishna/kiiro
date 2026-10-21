@@ -5,5 +5,5 @@ export const client = createClient({
   projectId,
   dataset,
   apiVersion,
-  useCdn: true, // Set to false if using ISR or tag-based revalidation
+  useCdn: false, // Live origin queries ensure immediate Next.js ISR & revalidation updates
 })

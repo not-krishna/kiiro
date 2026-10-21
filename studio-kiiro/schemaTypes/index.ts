@@ -22,6 +22,8 @@ import { workshopCategory } from './workshopCategory'
 import { cta } from './cta'
 import { mediaAsset } from './mediaAsset'
 import { pricingTier } from './pricingTier'
+import { advisor } from './advisor'
+import { studioMoment } from './studioMoment'
 
 export const schemaTypes = [
   cta,
@@ -39,6 +41,9 @@ export const schemaTypes = [
 
   artform,
   artisan,
+  artisanStory,
+  advisor,
+  studioMoment,
   experience,
   event,
   workshop,

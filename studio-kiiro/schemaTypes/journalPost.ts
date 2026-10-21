@@ -53,6 +53,18 @@ export const journalPost = defineType({
       ],
     }),
     defineField({
+      name: 'imageUrl',
+      title: 'Direct Image URL',
+      type: 'url',
+      description: 'Image URL from Media Library or CDN',
+    }),
+    defineField({
+      name: 'excerpt',
+      title: 'Excerpt',
+      type: 'text',
+      rows: 3,
+    }),
+    defineField({
       name: 'body',
       title: 'Body Content',
       type: 'array',
@@ -69,6 +81,17 @@ export const journalPost = defineType({
       title: 'Related Artisans',
       type: 'array',
       of: [defineArrayMember({ type: 'reference', to: [{ type: 'artisan' }] })],
+    }),
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO Meta Title',
+      type: 'string',
+    }),
+    defineField({
+      name: 'seoDescription',
+      title: 'SEO Meta Description',
+      type: 'text',
+      rows: 2,
     }),
     defineField({
       name: 'published',

@@ -88,6 +88,8 @@ export interface EventItem {
   location?: string
   city?: string
   venue?: string
+  address?: string
+  googleMapsUrl?: string
   experienceType?: string
   duration?: string
   facilitator?: string
@@ -104,6 +106,7 @@ export interface EventItem {
   format?: 'in-person' | 'online'
   feelsLike?: string
   media: MediaAsset[]
+  published?: boolean
 }
 
 export interface MethodologyStage {
@@ -142,6 +145,7 @@ export interface HomepageContent {
   heroEyebrow: string
   heroHeading: string
   heroSubheading: string
+  heroSupportingText?: string
   heroPrimaryCta: Cta
   heroSecondaryCta: Cta
   heroMedia: MediaAsset[]

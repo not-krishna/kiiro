@@ -80,9 +80,8 @@ function formatValue(current: number, config: ParsedStat): string {
 export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNumberProps) {
   const elementRef = useRef<HTMLSpanElement | null>(null)
   const parsed = useMemo(() => parseStat(value), [value])
-  const [displayValue, setDisplayValue] = useState<string>(() =>
-    parsed.isNumeric ? formatValue(0, parsed) : parsed.original
-  )
+  // Always initialize with parsed.original so SSR and static HTML never display 0 or 0+
+  const [displayValue, setDisplayValue] = useState<string>(() => parsed.original)
   const hasAnimatedRef = useRef(false)
 
   useEffect(() => {
@@ -93,11 +92,10 @@ export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNu
 
     if (hasAnimatedRef.current) return
 
-    // If reduced motion is requested, show final immediately
+    // If reduced motion is requested, keep final value
     if (typeof window !== 'undefined' && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       hasAnimatedRef.current = true
-      const id = requestAnimationFrame(() => setDisplayValue(parsed.original))
-      return () => cancelAnimationFrame(id)
+      return
     }
 
     let rafId: number | null = null
@@ -152,12 +150,10 @@ export function AnimatedNumber({ value, className, duration = 1500 }: AnimatedNu
 
     observer.observe(node)
 
-    // Safety fallback: ensure final number is always visible
+    // Safety fallback: ensure final authentic number is ALWAYS displayed
     const safetyTimer = setTimeout(() => {
-      if (!hasAnimatedRef.current) {
-        runAnimation()
-      }
-    }, 600)
+      setDisplayValue(parsed.original)
+    }, 1000)
 
     return () => {
       observer.disconnect()

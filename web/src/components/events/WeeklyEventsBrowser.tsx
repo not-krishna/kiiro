@@ -191,8 +191,7 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
       <section aria-labelledby="upcoming-sessions-heading" className="space-y-8">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-[#E8E1D5] pb-5">
           <div className="space-y-1">
-            <span className="text-xs uppercase tracking-[0.25em] text-[#4F5B2A] font-semibold flex items-center gap-2">
-              <span className="w-2 h-2 bg-[#4F5B2A] animate-pulse" />
+            <span className="text-xs uppercase tracking-[0.25em] text-[#4F5B2A] font-semibold block">
               Live Reservations
             </span>
             <h2 id="upcoming-sessions-heading" className="font-display text-3xl md:text-4xl text-[#2B231F]">

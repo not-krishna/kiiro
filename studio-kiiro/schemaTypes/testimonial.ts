@@ -37,6 +37,12 @@ export const testimonial = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'portraitUrl',
+      title: 'Profile / Portrait Image URL',
+      type: 'string',
+      description: 'Direct image path or URL for the testimonial portrait',
+    }),
+    defineField({
       name: 'order',
       title: 'Display Order',
       type: 'number',
@@ -61,10 +67,28 @@ export const testimonial = defineType({
       options: { hotspot: true },
     }),
     defineField({
+      name: 'pullQuote',
+      title: 'Pull Quote (Short bold statement)',
+      type: 'string',
+      description: 'Short headline displayed prominently above testimonial text',
+    }),
+    defineField({
+      name: 'rating',
+      title: 'Star Rating (1-5)',
+      type: 'number',
+      initialValue: 5,
+    }),
+    defineField({
       name: 'featured',
       title: 'Featured',
       type: 'boolean',
       initialValue: false,
+    }),
+    defineField({
+      name: 'published',
+      title: 'Published',
+      type: 'boolean',
+      initialValue: true,
     }),
   ],
   orderings: [

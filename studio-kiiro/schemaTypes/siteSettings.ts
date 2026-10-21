@@ -48,5 +48,19 @@ export const siteSettings = defineType({
       title: 'Facebook URL',
       type: 'url',
     }),
+    defineField({
+      name: 'showArtisanStories',
+      title: 'Show Artisan Stories section',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Toggle whether the Artisan Stories section is visible on the public homepage',
+    }),
+    defineField({
+      name: 'showCsrSection',
+      title: 'Show CSR Section',
+      type: 'boolean',
+      initialValue: false,
+      description: 'Toggle whether the CSR section and navigation entry are visible on the public website',
+    }),
   ],
 })

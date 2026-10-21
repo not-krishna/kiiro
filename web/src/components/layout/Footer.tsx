@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { ACTIVE_CITIES } from '@/content/presence'
 
-export function Footer() {
+export function Footer({ showCsrSection = false }: { showCsrSection?: boolean } = {}) {
   return (
     <footer className="bg-[#2B231F] text-[#E8E1D5] pt-20 pb-12 border-t border-[#3D332E] font-sans">
       <div className="max-w-7xl mx-auto px-6 md:px-10 space-y-16">
@@ -56,6 +56,11 @@ export function Footer() {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link href="/journal" className="hover:text-[#FBF9F4] transition-colors">
+                  Journal & Stories
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -77,11 +82,13 @@ export function Footer() {
                   Hospitality & Luxury
                 </Link>
               </li>
-              <li>
-                <Link href="/partnerships-csr" className="hover:text-[#FBF9F4] transition-colors">
-                  CSR & Partnerships
-                </Link>
-              </li>
+              {showCsrSection && (
+                <li>
+                  <Link href="/partnerships-csr" className="hover:text-[#FBF9F4] transition-colors">
+                    CSR & Partnerships
+                  </Link>
+                </li>
+              )}
             </ul>
           </div>
 

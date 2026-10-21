@@ -7,6 +7,9 @@ export const HOMEPAGE_QUERY = defineQuery(`
     heroEyebrow,
     heroHeading,
     heroSubheading,
+    heroSupportingText,
+    showArtisanStories,
+    showCsrSection,
     heroPrimaryCta,
     heroSecondaryCta,
     heroMedia[] {
@@ -41,14 +44,21 @@ export const HOMEPAGE_QUERY = defineQuery(`
       "slug": slug.current,
       date,
       startTime,
+      endTime,
       city,
       venue,
+      address,
+      googleMapsUrl,
       price,
       capacity,
       bookingStatus,
       duration,
       facilitator,
       experienceType,
+      format,
+      feelsLike,
+      keyProcess,
+      takeAway,
       isWeekly,
       audience,
       "heroImageUrl": heroImage.asset->url,
@@ -81,6 +91,16 @@ export const HOMEPAGE_QUERY = defineQuery(`
       publishedAt,
       heroImage
     }
+  }
+`)
+
+export const IMPACT_STATS_QUERY = defineQuery(`
+  *[_type == "impactStat"] | order(order asc) {
+    _id,
+    value,
+    label,
+    context,
+    order
   }
 `)
 
@@ -185,12 +205,18 @@ export const ALL_EVENTS_QUERY = defineQuery(`
     endTime,
     city,
     venue,
+    address,
+    googleMapsUrl,
     price,
     capacity,
     bookingStatus,
     duration,
     facilitator,
     experienceType,
+    format,
+    feelsLike,
+    keyProcess,
+    takeAway,
     isWeekly,
     audience,
     "heroImageUrl": heroImage.asset->url,
@@ -216,12 +242,18 @@ export const EVENT_BY_SLUG_QUERY = defineQuery(`
     endTime,
     city,
     venue,
+    address,
+    googleMapsUrl,
     price,
     capacity,
     bookingStatus,
     duration,
     facilitator,
     experienceType,
+    format,
+    feelsLike,
+    keyProcess,
+    takeAway,
     isWeekly,
     audience,
     "heroImageUrl": heroImage.asset->url,
@@ -294,10 +326,12 @@ export const ALL_JOURNAL_POSTS_QUERY = defineQuery(`
     title,
     "slug": slug.current,
     standfirst,
+    "excerpt": coalesce(excerpt, standfirst),
     category,
     author,
     publishedAt,
-    heroImage
+    heroImage,
+    "imageUrl": coalesce(imageUrl, heroImage.asset->url)
   }
 `)
 
@@ -307,11 +341,15 @@ export const JOURNAL_POST_BY_SLUG_QUERY = defineQuery(`
     title,
     "slug": slug.current,
     standfirst,
+    "excerpt": coalesce(excerpt, standfirst),
     category,
     author,
     publishedAt,
     heroImage,
+    "imageUrl": coalesce(imageUrl, heroImage.asset->url),
     body,
+    seoTitle,
+    seoDescription,
     artforms[]-> {
       _id,
       title,
@@ -331,6 +369,22 @@ export const EXPERIENCES_QUERY = ALL_EXPERIENCES_QUERY
 export const ARTISANS_QUERY = ALL_ARTISANS_QUERY
 export const JOURNAL_QUERY = ALL_JOURNAL_POSTS_QUERY
 
+export const ALL_ADVISORS_QUERY = defineQuery(`
+  *[_type == "advisor" && published == true] | order(order asc) {
+    _id,
+    name,
+    initials,
+    title,
+    affiliation,
+    specialty,
+    bio,
+    "portraitUrl": coalesce(portraitUrl, portrait.asset->url),
+    order,
+    published
+  }
+`)
+export const ADVISORS_QUERY = ALL_ADVISORS_QUERY
+
 export const TESTIMONIALS_QUERY = defineQuery(`
   *[_type == "testimonial"] | order(order asc, featured desc, _createdAt desc) {
     _id,
@@ -343,6 +397,12 @@ export const TESTIMONIALS_QUERY = defineQuery(`
     "company": organisation,
     portrait,
     "profileImage": portrait,
+    portraitUrl,
+    "imageUrl": select(
+      defined(portraitUrl) => portraitUrl,
+      defined(portrait.asset->url) => portrait.asset->url,
+      null
+    ),
     isVideo,
     videoUrl,
     videoThumbnail
@@ -511,7 +571,9 @@ export const SITE_SETTINGS_QUERY = defineQuery(`
     contactPhone,
     address,
     socialLinks,
-    footerTagline
+    footerTagline,
+    showArtisanStories,
+    showCsrSection
   }
 `)
 

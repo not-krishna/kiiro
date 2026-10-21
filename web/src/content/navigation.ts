@@ -64,3 +64,10 @@ export const PRIMARY_NAV: NavItem[] = [
   { label: 'Journal', href: '/journal' },
   { label: 'Enquire', href: '/enquire', cta: true },
 ]
+
+export function getPrimaryNav(showCsrSection: boolean = false): NavItem[] {
+  if (showCsrSection) {
+    return PRIMARY_NAV
+  }
+  return PRIMARY_NAV.filter((item) => item.href !== '/partnerships-csr')
+}

@@ -10,15 +10,31 @@ interface StudioMoment {
   typeLabel: string
   handle: string
   authorName: string
-  initials: string
-  badgeBg: string
+  initials?: string
+  badgeBg?: string
   imageSrc: string
   imageAlt: string
   quote: string
   caption: string
   overlayTag: string
   contextLine: string
+  videoUrl?: string
 }
+
+function getInstagramEmbedUrl(url?: string): string | null {
+  if (!url) return null
+  const reelMatch = url.match(/instagram\.com\/reel\/([A-Za-z0-9_-]+)/i)
+  if (reelMatch && reelMatch[1]) {
+    return `https://www.instagram.com/reel/${reelMatch[1]}/embed/`
+  }
+  const postMatch = url.match(/instagram\.com\/p\/([A-Za-z0-9_-]+)/i)
+  if (postMatch && postMatch[1]) {
+    return `https://www.instagram.com/p/${postMatch[1]}/embed/`
+  }
+  return null
+}
+
+const OFFICIAL_INSTAGRAM_URL = 'https://www.instagram.com/your_workshops/?hl=en'
 
 const STUDIO_MOMENTS: StudioMoment[] = [
   {
@@ -26,7 +42,7 @@ const STUDIO_MOMENTS: StudioMoment[] = [
     url: 'https://www.instagram.com/p/DUiWSHsESoe/?xtok=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==',
     type: 'post',
     typeLabel: 'Post',
-    handle: '@themitti.company',
+    handle: '@your_workshops',
     authorName: 'The Mitti Company',
     initials: 'MC',
     badgeBg: 'bg-[#C17F59]',
@@ -42,7 +58,7 @@ const STUDIO_MOMENTS: StudioMoment[] = [
     url: 'https://www.instagram.com/reel/DTsCHt2DH-a/?vrfl=MzRlODBiNWFlZA==&srtk=MzRlODBiNWFlZA==',
     type: 'reel',
     typeLabel: 'Reel',
-    handle: '@certifiedbhukkadco',
+    handle: '@your_workshops',
     authorName: 'Ruchika',
     initials: 'RC',
     badgeBg: 'bg-[#4F5B2A]',
@@ -59,7 +75,7 @@ const STUDIO_MOMENTS: StudioMoment[] = [
     url: 'https://www.instagram.com/reel/DNVLoSjzhgv/',
     type: 'reel',
     typeLabel: 'Reel',
-    handle: '@kiiro.blr',
+    handle: '@your_workshops',
     authorName: 'Kiiro Studio',
     initials: 'KR',
     badgeBg: 'bg-[#8F6A48]',
@@ -72,11 +88,17 @@ const STUDIO_MOMENTS: StudioMoment[] = [
   },
 ]
 
-export function SocialSection() {
+export function SocialSection({ moments: propMoments }: { moments?: StudioMoment[] } = {}) {
+  const moments = (propMoments && propMoments.length > 0 ? propMoments : STUDIO_MOMENTS).map(m => ({
+    ...m,
+    initials: m.initials || m.authorName?.split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase() || 'KR',
+    badgeBg: m.badgeBg || 'bg-[#4F5B2A]',
+  }))
   const trackRef = useRef<HTMLDivElement>(null)
   const [canScrollLeft, setCanScrollLeft] = useState(false)
   const [canScrollRight, setCanScrollRight] = useState(true)
   const [activeIndex, setActiveIndex] = useState(0)
+  const [playingId, setPlayingId] = useState<string | null>(null)
 
   // Update navigation button states and active index on scroll
   const handleScroll = useCallback(() => {
@@ -90,11 +112,11 @@ export function SocialSection() {
     // Calculate approximate active card
     const cardWidth = el.firstElementChild ? (el.firstElementChild as HTMLElement).offsetWidth : clientWidth
     const newIndex = Math.min(
-      STUDIO_MOMENTS.length - 1,
+      moments.length - 1,
       Math.max(0, Math.round(scrollLeft / (cardWidth + 24)))
     )
     setActiveIndex(newIndex)
-  }, [])
+  }, [moments.length])
 
   useEffect(() => {
     const el = trackRef.current
@@ -161,12 +183,12 @@ export function SocialSection() {
 
           <div className="flex items-center gap-6 self-start md:self-end">
             <a
-              href="https://www.instagram.com/kiiroexperiences/"
+              href={OFFICIAL_INSTAGRAM_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-[#2B231F] hover:text-[#4F5B2A] border-b border-[#2B231F] hover:border-[#4F5B2A] pb-1 transition-colors"
+              className="inline-flex items-center gap-2 text-xs font-sans font-semibold uppercase tracking-[0.16em] text-[#2B231F] hover:text-[#4F5B2A] border-b border-[#2B231F] hover:border-[#4F5B2A] pb-1 transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A]"
             >
-              <span>Follow @kiiroexperiences</span>
+              <span>Follow @your_workshops</span>
               <span aria-hidden="true">&rarr;</span>
             </a>
 
@@ -177,7 +199,7 @@ export function SocialSection() {
                 onClick={() => scrollByCard('left')}
                 disabled={!canScrollLeft}
                 aria-label="Previous moment"
-                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
+                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A] ${
                   canScrollLeft
                     ? 'border-[#D8CEBE] bg-[#F3EFE6] text-[#2B231F] hover:bg-[#4F5B2A] hover:text-[#FBF9F4] hover:border-[#4F5B2A] active:scale-95'
                     : 'border-[#E8E1D5] bg-[#FBF9F4] text-[#D8CEBE] cursor-not-allowed opacity-50'
@@ -193,7 +215,7 @@ export function SocialSection() {
                 onClick={() => scrollByCard('right')}
                 disabled={!canScrollRight}
                 aria-label="Next moment"
-                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all ${
+                className={`w-10 h-10 rounded-full border flex items-center justify-center transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A] ${
                   canScrollRight
                     ? 'border-[#D8CEBE] bg-[#F3EFE6] text-[#2B231F] hover:bg-[#4F5B2A] hover:text-[#FBF9F4] hover:border-[#4F5B2A] active:scale-95'
                     : 'border-[#E8E1D5] bg-[#FBF9F4] text-[#D8CEBE] cursor-not-allowed opacity-50'
@@ -215,7 +237,7 @@ export function SocialSection() {
             onClick={() => scrollByCard('left')}
             disabled={!canScrollLeft}
             aria-label="Previous moment"
-            className={`hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border shadow-md items-center justify-center transition-all ${
+            className={`hidden lg:flex absolute -left-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border shadow-md items-center justify-center transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A] ${
               canScrollLeft
                 ? 'border-[#D8CEBE] bg-[#FBF9F4] text-[#2B231F] hover:bg-[#4F5B2A] hover:text-white hover:border-[#4F5B2A] opacity-90 hover:opacity-100 hover:scale-105'
                 : 'opacity-0 pointer-events-none'
@@ -231,7 +253,7 @@ export function SocialSection() {
             onClick={() => scrollByCard('right')}
             disabled={!canScrollRight}
             aria-label="Next moment"
-            className={`hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border shadow-md items-center justify-center transition-all ${
+            className={`hidden lg:flex absolute -right-5 top-1/2 -translate-y-1/2 z-20 w-11 h-11 rounded-full border shadow-md items-center justify-center transition-all focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A] ${
               canScrollRight
                 ? 'border-[#D8CEBE] bg-[#FBF9F4] text-[#2B231F] hover:bg-[#4F5B2A] hover:text-white hover:border-[#4F5B2A] opacity-90 hover:opacity-100 hover:scale-105'
                 : 'opacity-0 pointer-events-none'
@@ -255,7 +277,7 @@ export function SocialSection() {
             role="region"
             aria-label="Studio moments carousel"
           >
-            {STUDIO_MOMENTS.map((moment, idx) => (
+            {moments.map((moment, idx) => (
               <article
                 key={moment.id}
                 className="group relative flex-none w-[85vw] sm:w-[360px] lg:w-[calc(33.333%-1rem)] max-w-[400px] snap-center sm:snap-start bg-white border border-[#E8E1D5] rounded-2xl overflow-hidden shadow-sm hover:shadow-md hover:border-[#4F5B2A]/40 transition-all duration-300 flex flex-col"
@@ -291,69 +313,102 @@ export function SocialSection() {
                 </div>
 
                 {/* Media Window (Portrait Aspect Ratio) */}
-                <a
-                  href={moment.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="relative w-full aspect-[9/13] bg-[#241F1C] overflow-hidden block focus:outline-none focus:ring-2 focus:ring-[#4F5B2A] focus:ring-inset"
-                  aria-label={`Open Instagram ${moment.typeLabel}: ${moment.quote}`}
-                >
-                  <Image
-                    src={moment.imageSrc}
-                    alt={moment.imageAlt}
-                    fill
-                    className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
-                    sizes="(max-width: 640px) 85vw, (max-width: 1024px) 360px, 400px"
-                    priority={idx === 0}
-                  />
-
-                  {/* Gradient Scrims for Readability */}
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
-
-                  {/* Top Badge: Type Indicator */}
-                  <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between text-white/90 z-10 pointer-events-none">
-                    <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-sans uppercase tracking-wider font-semibold border border-white/20">
-                      {moment.type === 'reel' ? (
-                        <>
-                          <svg className="w-3 h-3 text-[#E8A87C]" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
-                          </svg>
-                          <span>Reel</span>
-                        </>
+                <div className="relative w-full aspect-[9/13] bg-[#241F1C] overflow-hidden block">
+                  {playingId === moment.id ? (
+                    <div className="relative w-full h-full bg-black">
+                      {moment.videoUrl ? (
+                        <video
+                          src={moment.videoUrl}
+                          controls
+                          autoPlay
+                          className="w-full h-full object-cover"
+                        />
                       ) : (
-                        <>
-                          <svg className="w-3 h-3 text-[#E8A87C]" fill="currentColor" viewBox="0 0 24 24">
-                            <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
-                          </svg>
-                          <span>Post</span>
-                        </>
+                        <iframe
+                          src={getInstagramEmbedUrl(moment.url) || `${moment.url}embed/`}
+                          className="w-full h-full border-0"
+                          allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                          allowFullScreen
+                          title={`Instagram video player for ${moment.handle}`}
+                        />
                       )}
-                    </span>
-
-                    <span className="text-[10px] font-sans tracking-wide text-white/80 px-2 py-0.5 rounded bg-black/30 backdrop-blur-sm">
-                      {moment.overlayTag}
-                    </span>
-                  </div>
-
-                  {/* Centered Play Button (Reference Concept) */}
-                  <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
-                    <div className="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-xl transition-all duration-300 group-hover:scale-115 group-hover:bg-[#4F5B2A] group-hover:border-[#4F5B2A]">
-                      <svg className="w-6 h-6 translate-x-0.5 text-white" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M8 5v14l11-7z" />
-                      </svg>
+                      <button
+                        type="button"
+                        onClick={(e) => {
+                          e.stopPropagation()
+                          setPlayingId(null)
+                        }}
+                        className="absolute top-2 right-2 z-20 px-2.5 py-1 bg-black/80 hover:bg-black text-white text-[11px] font-sans font-medium rounded shadow-md flex items-center gap-1 cursor-pointer focus-visible:outline focus-visible:outline-2 focus-visible:outline-white"
+                        aria-label="Close video player"
+                      >
+                        ✕ Close
+                      </button>
                     </div>
-                  </div>
+                  ) : (
+                    <div className="relative w-full h-full">
+                      <Image
+                        src={moment.imageSrc}
+                        alt={moment.imageAlt}
+                        fill
+                        className="object-cover transition-transform duration-700 ease-out group-hover:scale-105"
+                        sizes="(max-width: 640px) 85vw, (max-width: 1024px) 360px, 400px"
+                        priority={idx === 0}
+                      />
 
-                  {/* Bottom Vignette Caption */}
-                  <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 pointer-events-none">
-                    <p className="text-white text-xs font-sans font-medium line-clamp-2 drop-shadow-md leading-relaxed">
-                      {moment.quote}
-                    </p>
-                    <p className="text-white/70 text-[10px] font-mono mt-1 tracking-wide">
-                      {moment.contextLine}
-                    </p>
-                  </div>
-                </a>
+                      {/* Gradient Scrims for Readability */}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-black/30 pointer-events-none" />
+
+                      {/* Top Badge: Type Indicator */}
+                      <div className="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between text-white/90 z-10 pointer-events-none">
+                        <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-black/40 backdrop-blur-md text-[10px] font-sans uppercase tracking-wider font-semibold border border-white/20">
+                          {moment.type === 'reel' ? (
+                            <>
+                              <svg className="w-3 h-3 text-[#E8A87C]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 14.5v-9l6 4.5-6 4.5z" />
+                              </svg>
+                              <span>Reel</span>
+                            </>
+                          ) : (
+                            <>
+                              <svg className="w-3 h-3 text-[#E8A87C]" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z" />
+                              </svg>
+                              <span>Post</span>
+                            </>
+                          )}
+                        </span>
+
+                        <span className="text-[10px] font-sans tracking-wide text-white/80 px-2 py-0.5 rounded bg-black/30 backdrop-blur-sm">
+                          {moment.overlayTag}
+                        </span>
+                      </div>
+
+                      {/* Centered Play Button */}
+                      <div className="absolute inset-0 flex items-center justify-center z-10">
+                        <button
+                          type="button"
+                          onClick={() => setPlayingId(moment.id)}
+                          aria-label={`Play Instagram ${moment.typeLabel} from ${moment.authorName}`}
+                          className="w-14 h-14 rounded-full bg-white/25 backdrop-blur-md border border-white/40 flex items-center justify-center text-white shadow-xl transition-all duration-300 hover:scale-115 hover:bg-[#4F5B2A] hover:border-[#4F5B2A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-white cursor-pointer"
+                        >
+                          <svg className="w-6 h-6 translate-x-0.5 text-white" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M8 5v14l11-7z" />
+                          </svg>
+                        </button>
+                      </div>
+
+                      {/* Bottom Vignette Caption */}
+                      <div className="absolute bottom-3.5 left-3.5 right-3.5 z-10 pointer-events-none">
+                        <p className="text-white text-xs font-sans font-medium line-clamp-2 drop-shadow-md leading-relaxed">
+                          {moment.quote}
+                        </p>
+                        <p className="text-white/70 text-[10px] font-mono mt-1 tracking-wide">
+                          {moment.contextLine}
+                        </p>
+                      </div>
+                    </div>
+                  )}
+                </div>
 
                 {/* Card Lower Content & Footer */}
                 <div className="p-5 flex-1 flex flex-col justify-between bg-white space-y-4">
@@ -370,7 +425,7 @@ export function SocialSection() {
                       href={moment.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="inline-flex items-center gap-1 font-semibold text-[#4F5B2A] hover:text-[#38421D] transition-colors"
+                      className="inline-flex items-center gap-1 font-semibold text-[#4F5B2A] hover:text-[#38421D] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A]"
                     >
                       <span>Watch on Instagram</span>
                       <span aria-hidden="true">&rarr;</span>
@@ -383,13 +438,13 @@ export function SocialSection() {
 
           {/* Mobile / Tablet Pagination Dots */}
           <div className="flex sm:hidden justify-center items-center gap-2 pt-4" aria-label="Slide indicators">
-            {STUDIO_MOMENTS.map((_, idx) => (
+            {moments.map((_, idx) => (
               <button
                 key={idx}
                 type="button"
                 onClick={() => scrollToIndex(idx)}
                 aria-label={`Go to moment ${idx + 1}`}
-                className={`transition-all duration-300 rounded-full ${
+                className={`transition-all duration-300 rounded-full focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A] ${
                   idx === activeIndex
                     ? 'w-6 h-2 bg-[#4F5B2A]'
                     : 'w-2 h-2 bg-[#D8CEBE] hover:bg-[#8C827A]'
@@ -409,12 +464,12 @@ export function SocialSection() {
           </p>
 
           <a
-            href="https://www.instagram.com/kiiroexperiences/"
+            href={OFFICIAL_INSTAGRAM_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-[#4F5B2A] hover:underline"
+            className="text-[#4F5B2A] hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-[#4F5B2A]"
           >
-            Tag @kiiroexperiences to be featured
+            Tag @your_workshops to be featured
           </a>
         </div>
       </div>

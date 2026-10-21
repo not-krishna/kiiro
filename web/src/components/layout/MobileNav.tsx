@@ -3,11 +3,12 @@
 import { useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { PRIMARY_NAV, SITE_TAGLINE } from '@/content/navigation'
+import { PRIMARY_NAV, getPrimaryNav, SITE_TAGLINE } from '@/content/navigation'
 
 interface MobileNavProps {
   isOpen: boolean
   onClose: () => void
+  showCsrSection?: boolean
 }
 
 function cleanHref(href: string) {
@@ -19,11 +20,12 @@ function matchesPath(pathname: string, href: string) {
   return pathname === path || (path !== '/' && pathname.startsWith(`${path}/`))
 }
 
-export function MobileNav({ isOpen, onClose }: MobileNavProps) {
+export function MobileNav({ isOpen, onClose, showCsrSection = false }: MobileNavProps) {
   const pathname = usePathname()
   const closeButtonRef = useRef<HTMLButtonElement>(null)
+  const navItems = getPrimaryNav(showCsrSection)
 
-  const currentGroup = PRIMARY_NAV.find((item) =>
+  const currentGroup = navItems.find((item) =>
     item.children?.some((child) => matchesPath(pathname, child.href))
   )
   const [userSelectedGroup, setUserSelectedGroup] = useState<string | null>(null)
@@ -85,7 +87,7 @@ export function MobileNav({ isOpen, onClose }: MobileNavProps) {
       </div>
 
       <nav className="flex flex-col py-6 font-sans text-[15px] font-medium tracking-[0.06em] uppercase">
-        {PRIMARY_NAV.map((item) => {
+        {navItems.map((item) => {
           if (item.cta) {
             const active = matchesPath(pathname, item.href)
             return (

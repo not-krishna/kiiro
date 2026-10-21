@@ -8,6 +8,7 @@ import { MediaSlot } from '@/components/ui/MediaSlot'
 import { client } from '@/sanity/lib/client'
 import { EVENT_BY_SLUG_QUERY } from '@/sanity/lib/queries'
 import { availabilityLabel, CONFIRMED_SCHEDULED_EVENTS, formatEventDate, formatPrice, mapSanityEvent } from '@/content/events'
+import { getContentStore } from '@/lib/cms/contentStore'
 import type { EventItem } from '@/content/types'
 
 export const revalidate = 30
@@ -22,6 +23,10 @@ async function loadEvent(slug: string): Promise<EventItem | null> {
   } catch {
     // CMS not connected or fetch failed
   }
+  const store = getContentStore()
+  const foundInStore = store.events.find((e) => e.slug === slug && e.published !== false)
+  if (foundInStore) return foundInStore as unknown as EventItem
+
   return CONFIRMED_SCHEDULED_EVENTS.find((e) => e.slug === slug) || null
 }
 
@@ -77,9 +82,24 @@ export default async function EventDetailPage({ params }: { params: Promise<{ sl
                 </div>
                 <div>
                   <span className="block text-[10px] uppercase tracking-[0.18em] text-[#968A80] font-semibold">Location</span>
-                  <span className="font-medium text-[#2B231F] mt-0.5 block">
-                    {event.location || event.city || 'Studio Hub'}
-                  </span>
+                  {event.googleMapsUrl ? (
+                    <a
+                      href={event.googleMapsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[#2B231F] hover:text-[#4F5B2A] hover:underline mt-0.5 inline-flex items-center gap-1 transition-colors"
+                      title="Open venue in Google Maps"
+                    >
+                      <span>{event.location || event.city || 'Studio Hub'}</span>
+                      <svg className="w-3 h-3 text-[#4F5B2A] shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                      </svg>
+                    </a>
+                  ) : (
+                    <span className="font-medium text-[#2B231F] mt-0.5 block">
+                      {event.location || event.city || 'Studio Hub'}
+                    </span>
+                  )}
                 </div>
               </div>
 
