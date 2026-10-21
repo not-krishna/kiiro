@@ -183,7 +183,11 @@ export async function DELETE(req: NextRequest) {
           if (asset.originalFilename) {
             const localCachedPath = path.join(process.cwd(), 'public', 'uploads', asset.originalFilename)
             if (fs.existsSync(localCachedPath)) {
-              fs.unlinkSync(localCachedPath)
+              try {
+                fs.unlinkSync(localCachedPath)
+              } catch (e) {
+                // Ignore unlink errors on read-only serverless filesystems
+              }
             }
           }
         }
@@ -198,7 +202,11 @@ export async function DELETE(req: NextRequest) {
       const filePath = path.join(process.cwd(), 'public', 'uploads', filename)
 
       if (fs.existsSync(filePath)) {
-        fs.unlinkSync(filePath)
+        try {
+          fs.unlinkSync(filePath)
+        } catch (e) {
+          // Ignore unlink errors on read-only serverless filesystems
+        }
       }
 
       // Also clean up from Sanity if matching by originalFilename

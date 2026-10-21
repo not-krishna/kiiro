@@ -27,22 +27,14 @@ export async function POST(req: NextRequest) {
     const bytes = await file.arrayBuffer()
     const buffer = Buffer.from(bytes)
 
-    // Ensure uploads folder exists in public directory
-    const uploadsDir = path.join(process.cwd(), 'public', 'uploads')
-    if (!fs.existsSync(uploadsDir)) {
-      fs.mkdirSync(uploadsDir, { recursive: true })
-    }
-
     // Clean filename
     const ext = path.extname(file.name) || '.jpg'
     const baseName = path.basename(file.name, ext).replace(/[^a-zA-Z0-9_-]/g, '-').toLowerCase()
     const uniqueName = `${baseName}-${Date.now()}${ext}`
-    const targetPath = path.join(uploadsDir, uniqueName)
 
-    fs.writeFileSync(targetPath, buffer)
-    const localUrl = `/uploads/${uniqueName}`
-
+    // 1. Upload to Sanity Cloud Asset Storage (PRIMARY)
     let sanityAsset = null
+    let sanityError: string | null = null
     const writeToken = process.env.SANITY_API_WRITE_TOKEN || process.env.SANITY_AUTH_TOKEN
     if (writeToken) {
       try {
@@ -57,18 +49,56 @@ export async function POST(req: NextRequest) {
           filename: uniqueName,
           contentType: file.type,
         })
-      } catch (sanityErr) {
-        console.warn('Failed to upload asset to Sanity cloud, local upload succeeded:', sanityErr)
+      } catch (sanityErr: any) {
+        console.error('Failed to upload asset to Sanity cloud:', sanityErr)
+        sanityError = sanityErr?.message || 'Sanity upload failed'
       }
     }
 
-    // Return canonical Sanity URL if uploaded to cloud, fallback to local URL
+    // 2. Attempt local disk save (for local development fallback)
+    let localUrl: string | null = null
+    try {
+      const uploadsDir = path.join(process.cwd(), 'public', 'uploads')
+      if (!fs.existsSync(uploadsDir)) {
+        fs.mkdirSync(uploadsDir, { recursive: true })
+      }
+      const targetPath = path.join(uploadsDir, uniqueName)
+      fs.writeFileSync(targetPath, buffer)
+      localUrl = `/uploads/${uniqueName}`
+    } catch (fsErr: any) {
+      // In serverless environments (like Vercel Lambda / AWS Lambda /var/task),
+      // the filesystem is strictly read-only (EROFS). We log this harmlessly.
+      console.warn('Local filesystem write skipped (serverless read-only filesystem):', fsErr?.message)
+    }
+
+    // 3. Resolve the public URL
+    // Canonical Sanity CDN URL (https://cdn.sanity.io/images/...) is primary.
+    // If not in cloud, fallback to localUrl (e.g. offline dev).
     const publicUrl = sanityAsset?.url || localUrl
+
+    if (!publicUrl) {
+      if (!writeToken) {
+        return NextResponse.json(
+          {
+            error:
+              'Upload failed: Serverless filesystem is read-only (EROFS) and SANITY_API_WRITE_TOKEN is missing in environment variables. Please add SANITY_API_WRITE_TOKEN to your Vercel Project Settings.',
+          },
+          { status: 500 }
+        )
+      }
+
+      return NextResponse.json(
+        {
+          error: `Upload failed: Could not upload to Sanity cloud (${sanityError || 'unknown error'}) and serverless filesystem is read-only.`,
+        },
+        { status: 500 }
+      )
+    }
 
     return NextResponse.json({
       success: true,
       url: publicUrl,
-      localUrl,
+      localUrl: localUrl || publicUrl,
       filename: uniqueName,
       size: buffer.length,
       sanityAsset,
