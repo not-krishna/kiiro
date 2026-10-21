@@ -55,20 +55,27 @@ export async function POST(req: NextRequest) {
       }
     }
 
-    // 2. Attempt local disk save (for local development fallback)
+    // 2. Attempt local disk save ONLY in non-serverless local development
     let localUrl: string | null = null
-    try {
-      const uploadsDir = path.join(process.cwd(), 'public', 'uploads')
-      if (!fs.existsSync(uploadsDir)) {
-        fs.mkdirSync(uploadsDir, { recursive: true })
+    const isServerless = Boolean(
+      process.env.VERCEL ||
+      process.env.AWS_LAMBDA_FUNCTION_NAME ||
+      process.env.LAMBDA_TASK_ROOT ||
+      process.env.NODE_ENV === 'production'
+    )
+
+    if (!isServerless) {
+      try {
+        const uploadsDir = path.join(process.cwd(), 'public', 'uploads')
+        if (!fs.existsSync(uploadsDir)) {
+          fs.mkdirSync(uploadsDir, { recursive: true })
+        }
+        const targetPath = path.join(uploadsDir, uniqueName)
+        fs.writeFileSync(targetPath, buffer)
+        localUrl = `/uploads/${uniqueName}`
+      } catch (fsErr: any) {
+        console.warn('Local filesystem write skipped:', fsErr?.message)
       }
-      const targetPath = path.join(uploadsDir, uniqueName)
-      fs.writeFileSync(targetPath, buffer)
-      localUrl = `/uploads/${uniqueName}`
-    } catch (fsErr: any) {
-      // In serverless environments (like Vercel Lambda / AWS Lambda /var/task),
-      // the filesystem is strictly read-only (EROFS). We log this harmlessly.
-      console.warn('Local filesystem write skipped (serverless read-only filesystem):', fsErr?.message)
     }
 
     // 3. Resolve the public URL
@@ -81,7 +88,8 @@ export async function POST(req: NextRequest) {
         return NextResponse.json(
           {
             error:
-              'Upload failed: Serverless filesystem is read-only (EROFS) and SANITY_API_WRITE_TOKEN is missing in environment variables. Please add SANITY_API_WRITE_TOKEN to your Vercel Project Settings.',
+              'Missing SANITY_API_WRITE_TOKEN in Vercel environment variables. In production, image uploads are sent to Sanity Cloud Asset Storage. Please add SANITY_API_WRITE_TOKEN to your Vercel Project Settings -> Environment Variables and redeploy.',
+            apiBuild: '2026-10-21-cloud-v3',
           },
           { status: 500 }
         )
@@ -89,7 +97,8 @@ export async function POST(req: NextRequest) {
 
       return NextResponse.json(
         {
-          error: `Upload failed: Could not upload to Sanity cloud (${sanityError || 'unknown error'}) and serverless filesystem is read-only.`,
+          error: `Upload failed: Could not upload to Sanity cloud (${sanityError || 'unknown error'}). Check your Sanity token permissions in Vercel Project Settings.`,
+          apiBuild: '2026-10-21-cloud-v3',
         },
         { status: 500 }
       )
@@ -102,6 +111,7 @@ export async function POST(req: NextRequest) {
       filename: uniqueName,
       size: buffer.length,
       sanityAsset,
+      apiBuild: '2026-10-21-cloud-v3',
     })
   } catch (error: any) {
     console.error('Upload error:', error)
