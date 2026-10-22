@@ -77,12 +77,21 @@ export async function GET(req: NextRequest) {
       for (const a of sanityAssets) {
         if (!a.url) continue
 
-        // Check if an entry for this exact filename or URL already exists
-        const matchIndex = assets.findIndex(
-          (x) =>
-            x.url === a.url ||
-            (a.originalFilename && x.filename === a.originalFilename)
-        )
+        const cleanBase = (name?: string) =>
+          (name || '')
+            .toLowerCase()
+            .replace(/-\d+(\.[a-z0-9]+)$/i, '$1')
+            .replace(/\.[a-z0-9]+$/i, '')
+
+        // Check if an entry for this exact filename, base name, or URL already exists
+        const matchIndex = assets.findIndex((x) => {
+          if (x.url === a.url) return true
+          if (a.originalFilename && x.filename === a.originalFilename) return true
+          if (a.originalFilename && cleanBase(x.filename) && cleanBase(x.filename) === cleanBase(a.originalFilename)) {
+            return true
+          }
+          return false
+        })
 
         if (matchIndex >= 0) {
           // Upgrade the existing local entry with the canonical Sanity cloud metadata

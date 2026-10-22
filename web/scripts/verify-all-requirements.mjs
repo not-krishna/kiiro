@@ -61,11 +61,11 @@ async function runVerification() {
   const expectedHeadline = 'Root. Create. Restore.'
   check('Hero headline unchanged', homeRes.text.includes(expectedHeadline), 'Headline unchanged')
 
-  const expectedParagraph = 'Put the phone down and pick up the clay, the thread, the indigo'
-  check('Hero paragraph updated with supplied copy', homeRes.text.includes(expectedParagraph), 'Primary paragraph rendered')
+  const rejectedParagraph = 'Put the phone down and pick up the clay'
+  check('Rejected "Put the phone down..." copy completely removed', !homeRes.text.includes(rejectedParagraph), 'Rejected paragraph absent')
 
-  const expectedSupporting = 'Kiiro pairs master artisans with wellness facilitators'
-  check('Hero supporting paragraph added', homeRes.text.includes(expectedSupporting), 'Supporting paragraph rendered')
+  const approvedHeroParagraph = 'MELD pairs master artisans with wellness facilitators to guide every session'
+  check('Hero paragraph updated with approved MELD copy', homeRes.text.includes(approvedHeroParagraph), 'Approved MELD paragraph rendered')
 
   // -------------------------------------------------------------
   // Phase B: Upcoming Sessions / Events Verification
@@ -152,11 +152,13 @@ async function runVerification() {
   // -------------------------------------------------------------
   // Phase E: Artisan Stories Visibility Toggle
   // -------------------------------------------------------------
-  console.log('\n--- Phase E: Artisan Stories Visibility ---')
-  check('Artisan Stories is HIDDEN on public homepage by default', !homeRes.text.includes('The Craft Is the Experience. The Artisan Is the Wisdom.'))
+  check('Artisan Stories section rendered with approved headline', homeRes.text.includes('The Craft Is the Experience. The Artisan Is the Wisdom.'))
 
   // Verify artisan records are fully preserved in store
-  const contentRaw = fs.readFileSync(path.join(process.cwd(), 'src', 'content', 'store', 'content.json'), 'utf8')
+  const contentPath = fs.existsSync(path.join(process.cwd(), 'web', 'src', 'content', 'store', 'content.json'))
+    ? path.join(process.cwd(), 'web', 'src', 'content', 'store', 'content.json')
+    : path.join(process.cwd(), 'src', 'content', 'store', 'content.json')
+  const contentRaw = fs.readFileSync(contentPath, 'utf8')
   const contentObj = JSON.parse(contentRaw)
   check('Artisan records remain intact in content store (3 artisans)', Array.isArray(contentObj.artisans) && contentObj.artisans.length === 3)
 

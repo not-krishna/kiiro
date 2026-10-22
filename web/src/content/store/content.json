@@ -2388,15 +2388,51 @@
     "footerDisclaimer": "MELD sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.",
     "showCsrSection": false
   },
-  "lastUpdated": "2026-10-22T07:15:14.905Z",
+  "lastUpdated": "2026-10-22T07:23:21.018Z",
   "pendingChanges": [
     {
-      "id": "siteSettings-1792653314905",
+      "id": "test-draft-1792653800157-1792653801018",
+      "docId": "test-draft-1792653800157",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:23:21.018Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "siteSettings-1792653788990",
       "docId": "siteSettings",
       "section": "siteSettings",
       "title": "Site Settings & Brand Metadata",
       "action": "update",
-      "timestamp": "2026-10-22T07:15:14.905Z",
+      "timestamp": "2026-10-22T07:23:08.990Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792653785469-1792653786766",
+      "docId": "e2e-test-article-1792653785469",
+      "section": "journal",
+      "title": "Test Article 1792653785469",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:23:06.766Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "test-draft-1792653624401-1792653625054",
+      "docId": "test-draft-1792653624401",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:20:25.054Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "test-draft-1792653597800-1792653598319",
+      "docId": "test-draft-1792653597800",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:19:58.319Z",
       "author": "Kiiro Administrator"
     },
     {
