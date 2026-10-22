@@ -24,13 +24,13 @@ export async function generateMetadata({ params }: PageProps) {
   const offering = store.offerings.find((o) => o.slug === canonical) || getOfferingBySlug(slug)
   if (!offering) {
     return {
-      title: 'Offering | Kiiro Living Craft',
+      title: 'Offering | MELD EXPERIENCES',
       description: 'Discover living traditional craft practices and cultural context.',
     }
   }
 
   return {
-    title: `${offering.title} | Our Offerings | Kiiro`,
+    title: `${offering.title} | Our Offerings | MELD EXPERIENCES`,
     description: `${offering.definition} Experience hands-on masterclasses and workshops with master artisans.`,
   }
 }

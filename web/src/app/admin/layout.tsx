@@ -6,8 +6,8 @@ import { AdminLayoutClient } from '@/components/admin/AdminLayoutClient'
 export const dynamic = 'force-dynamic'
 
 export const metadata = {
-  title: 'Kiiro CMS Studio & Admin',
-  description: 'Manage website content, events, offerings, advisory, and media for Kiiro Experience.',
+  title: 'MELD EXPERIENCES CMS Studio & Admin',
+  description: 'Manage website content, events, offerings, advisory, and media for MELD EXPERIENCES.',
 }
 
 export default async function AdminLayout({

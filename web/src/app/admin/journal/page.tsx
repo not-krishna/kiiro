@@ -76,7 +76,7 @@ export default function AdminJournalPage() {
       title: '',
       slug: '',
       category: 'Craft Heritage',
-      author: 'Kiiro Studio',
+      author: 'MELD Studio',
       publishedAt: new Date().toISOString().split('T')[0],
       imageUrl: '',
       excerpt: '',
@@ -123,7 +123,7 @@ export default function AdminJournalPage() {
         standfirst: editingArticle.excerpt?.trim() || editingArticle.standfirst?.trim(),
         excerpt: editingArticle.excerpt?.trim() || editingArticle.standfirst?.trim(),
         category: editingArticle.category?.trim() || 'Craft Heritage',
-        author: editingArticle.author?.trim() || 'Kiiro Studio',
+        author: editingArticle.author?.trim() || 'MELD Studio',
         publishedAt: editingArticle.publishedAt || new Date().toISOString().split('T')[0],
         imageUrl: editingArticle.imageUrl || undefined,
         body: editingArticle.body || '',
@@ -365,7 +365,7 @@ export default function AdminJournalPage() {
                 {/* Content info */}
                 <div className="p-5 space-y-2.5">
                   <div className="flex items-center gap-3 text-[11px] text-[#6E635B] font-light">
-                    <span>{art.author || 'Kiiro Studio'}</span>
+                    <span>{art.author || 'MELD Studio'}</span>
                     <span>•</span>
                     <span>{art.publishedAt || 'Recent'}</span>
                   </div>
@@ -505,7 +505,7 @@ export default function AdminJournalPage() {
                     onChange={(e) =>
                       setEditingArticle((prev) => (prev ? { ...prev, author: e.target.value } : null))
                     }
-                    placeholder="Kiiro Studio"
+                    placeholder="MELD Studio"
                     className="w-full text-xs px-3 py-2 border border-[#D8CEBE] rounded-md bg-white text-[#2B231F] focus:border-[#4F5B2A] focus:outline-hidden"
                   />
                 </div>

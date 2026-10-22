@@ -116,10 +116,10 @@ export function Header({ showCsrSection = false }: { showCsrSection?: boolean } 
         <div className="border-b border-[#E8E1D5]">
           <div className="max-w-7xl mx-auto px-6 md:px-10 h-[4.125rem] flex items-center justify-between gap-6">
             <Link href="/" className="group focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] py-1 shrink-0" data-nav-motion>
-              <span className="font-sans text-[1.55rem] font-bold tracking-[0.18em] uppercase text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors leading-none block">
-                KIIRO
+              <span className="font-sans text-[1.45rem] font-bold tracking-[0.14em] uppercase text-[#2B231F] group-hover:text-[#4F5B2A] transition-colors leading-none block">
+                MELD EXPERIENCES
               </span>
-              <span className="block text-[11px] tracking-normal normal-case text-[#6E635B] font-sans mt-0.5 max-w-[16rem] leading-snug">
+              <span className="block text-[11px] tracking-normal normal-case text-[#6E635B] font-sans mt-0.5 max-w-[18rem] leading-snug">
                 {SITE_TAGLINE}
               </span>
             </Link>

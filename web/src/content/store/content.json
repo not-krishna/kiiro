@@ -2,18 +2,18 @@
   "homepage": {
     "heroEyebrow": "A creative wellness space for making, connecting & restoring",
     "heroHeading": "Root. Create. Restore.",
-    "heroSubheading": "Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans and wellness facilitators, and leave lighter than you arrived. In person across India, around...",
-    "heroSupportingText": "Kiiro pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.",
-    "showArtisanStories": false,
+    "heroSubheading": "MELD pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.",
+    "heroSupportingText": "",
+    "showArtisanStories": true,
     "showCsrSection": false,
     "heroPrimaryCtaLabel": "Book a Session",
     "heroPrimaryCtaHref": "/weekly-events",
     "heroSecondaryCtaLabel": "Explore Experiences",
     "heroSecondaryCtaHref": "/experiences",
     "heroImages": [
-      "/images/hero/hero-1.png",
-      "/images/hero/hero-2.png",
-      "/images/hero/hero-3.png"
+      "/images/other/pottery-1.png",
+      "/images/workshops/block-printing-workshop.jpg",
+      "/images/other/kintsugi-1.png"
     ],
     "statsWorkshops": "800+",
     "statsWorkshopsTitle": "Workshops",
@@ -30,9 +30,9 @@
     "statsResorts": "10+",
     "statsResortsTitle": "Resorts",
     "statsResortsLabel": "Guest wellness experiences",
-    "manifestoTitle": "We spend our days in our heads. Kiiro brings you back to your hands.",
-    "manifestoText": "Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.",
-    "manifestoSubtext": "Every Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.",
+    "manifestoTitle": "We spend our days in our heads. MELD brings you back to your hands.",
+    "manifestoText": "Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise.",
+    "manifestoSubtext": "",
     "methodologyIntro": "Co-led by a master artisan and a wellness facilitator, every session navigates you through three guided phases, from mental noise to calm.",
     "methodologyStages": [
       {
@@ -533,11 +533,39 @@
       ]
     },
     {
-      "slug": "kintsugi-bangalore-march",
-      "title": "Kintsugi: The Art of Golden Repair",
-      "city": "Bangalore",
-      "venue": "Kiiro Studio, Indiranagar",
-      "price": 3200
+      "id": "event-kintsugi-goa",
+      "slug": "kintsugi-golden-repair-goa",
+      "title": "Kintsugi: The Mindful Art of Golden Joinery",
+      "shortDescription": "Philosophy of wabi-sabi through urushi lacquer repair and real 24k gold dusting.",
+      "date": "2026-10-25",
+      "startTime": "10:30 AM",
+      "endTime": "01:30 PM",
+      "city": "Goa",
+      "venue": "ITC Fortune",
+      "address": "Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516",
+      "googleMapsUrl": "https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515",
+      "location": "ITC Fortune, Candolim, Goa",
+      "price": 3500,
+      "capacity": 10,
+      "availability": "limited",
+      "workshopSlug": "kintsugi",
+      "experienceType": "Mindful Ceramic Repair",
+      "duration": "3 hours",
+      "facilitator": "Kintsugi Practitioner",
+      "isWeekly": true,
+      "audience": "b2c",
+      "format": "in-person",
+      "feelsLike": "quiet, reverent, restorative",
+      "keyProcess": "Careful ceramic fracture analysis, bio-resin/lacquer bonding, water-stone smoothing, and 24k gold mica burnishing",
+      "takeAway": "Your restored ceramic heirloom bowl or cup illuminated with luminous golden fracture veins",
+      "bookingHref": "/enquire?intent=individual&subject=Kintsugi%20Golden%20Joinery&event=kintsugi-golden-repair-goa&weekly=1",
+      "media": [
+        {
+          "type": "image",
+          "source": "/images/other/kintsugi-1.png",
+          "alt": "Kintsugi Golden Joinery Workshop"
+        }
+      ]
     }
   ],
   "offerings": [
@@ -2273,6 +2301,18 @@
       "published": true
     },
     {
+      "id": "sham-pahelpakar",
+      "name": "Shaam Pahelpakar",
+      "initials": "SP",
+      "title": "Contemporary Visual Artist & Experience Facilitator",
+      "affiliation": "Creative Facilitator at NID Ahmedabad & IIT Roorkee",
+      "specialty": "Tribal Culture, Panchatatva & Natural Materials",
+      "bio": "Deep expertise in indigenous Indian art forms and material intelligence.",
+      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/e34b4b6e1d41cf2233a3f92205b0e2d28c8e08df-285x307.png",
+      "order": 3,
+      "published": true
+    },
+    {
       "id": "dr-sanjay-pandey",
       "name": "Dr. Sanjay Pandey",
       "initials": "SP",
@@ -2281,18 +2321,6 @@
       "specialty": "Clinical Healthcare & Restorative Care",
       "bio": "Advocating for holistic patient recovery and stress reduction through mindful tactile engagement.",
       "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/3a2340a994800c2c0a002c7da610b1212bfb63b0-291x215.png",
-      "order": 3,
-      "published": true
-    },
-    {
-      "id": "sham-pahelpakar",
-      "name": "Sham Pahelpakar",
-      "initials": "SP",
-      "title": "Contemporary Visual Artist & Experience Facilitator",
-      "affiliation": "Creative Facilitator at NID Ahmedabad & IIT Roorkee",
-      "specialty": "Tribal Culture, Panchatatva & Natural Materials",
-      "bio": "Deep expertise in indigenous Indian art forms and material intelligence.",
-      "portraitUrl": "https://cdn.sanity.io/images/s47moswb/production/e34b4b6e1d41cf2233a3f92205b0e2d28c8e08df-285x307.png",
       "order": 4,
       "published": true
     }
@@ -2345,30 +2373,48 @@
     }
   ],
   "siteSettings": {
-    "siteTitle": "Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.",
+    "siteTitle": "MELD EXPERIENCES: Creative Wellness Space | Root. Create. Restore.",
     "tagline": "Root. Create. Restore.",
     "metaDescription": "Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.",
-    "contactEmail": "connect@kiiroexperiences.com",
+    "contactEmail": "connect@meldexperiences.com",
     "contactPhone": "+91 98200 12345",
-    "address": "Mumbai · Bangalore · Goa · Kolkata · Pune · Jaipur",
+    "address": "Mumbai · Bangalore · Goa · Kolkata · Pune · Jaipur · Chennai · Hyderabad · Delhi",
     "instagramUrl": "https://www.instagram.com/your_workshops/?hl=en",
     "facebookUrl": "https://www.facebook.com/kiiroexperiences/",
     "linkedinUrl": "https://www.linkedin.com/company/kiiro-experiences/",
     "youtubeUrl": "https://www.youtube.com/@kiiroexperiences",
     "footerTagline": "Hands On. Rooted. Restored.",
-    "footerDescription": "Kiiro is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.",
-    "footerDisclaimer": "Kiiro sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.",
+    "footerDescription": "MELD is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.",
+    "footerDisclaimer": "MELD sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.",
     "showCsrSection": false
   },
-  "lastUpdated": "2026-10-21T14:51:51.567Z",
+  "lastUpdated": "2026-10-22T07:15:14.905Z",
   "pendingChanges": [
     {
-      "id": "siteSettings-1792594311567",
+      "id": "siteSettings-1792653314905",
       "docId": "siteSettings",
       "section": "siteSettings",
       "title": "Site Settings & Brand Metadata",
       "action": "update",
-      "timestamp": "2026-10-21T14:51:51.567Z",
+      "timestamp": "2026-10-22T07:15:14.905Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792653311859-1792653312855",
+      "docId": "e2e-test-article-1792653311859",
+      "section": "journal",
+      "title": "Test Article 1792653311859",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:15:12.855Z",
+      "author": "Kiiro Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792652781224-1792652783581",
+      "docId": "e2e-test-article-1792652781224",
+      "section": "journal",
+      "title": "Test Article 1792652781224",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:06:23.581Z",
       "author": "Kiiro Administrator"
     },
     {

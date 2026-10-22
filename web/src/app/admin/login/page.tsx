@@ -56,8 +56,8 @@ function LoginForm() {
       {/* Brand Header */}
       <div className="mb-8 text-center space-y-2">
         <Link href="/" className="inline-block">
-          <span className="font-display text-3xl font-semibold tracking-wider text-[#2B231F]">
-            KIIRO
+          <span className="font-display text-2xl font-semibold tracking-wider text-[#2B231F]">
+            MELD EXPERIENCES
           </span>
         </Link>
         <p className="font-sans text-xs uppercase tracking-[0.2em] text-[#4F5B2A] font-semibold">

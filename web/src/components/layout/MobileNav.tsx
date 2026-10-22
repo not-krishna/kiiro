@@ -68,7 +68,9 @@ export function MobileNav({ isOpen, onClose, showCsrSection = false }: MobileNav
     >
       <div className="flex items-center justify-between border-b border-[#3D332E] pb-6">
         <Link href="/" onClick={onClose} className="group">
-          <span className="font-sans text-[1.6rem] font-bold tracking-[0.18em] uppercase text-[#FBF9F4] leading-none block">KIIRO</span>
+          <span className="font-sans text-[1.45rem] font-bold tracking-[0.14em] uppercase text-[#FBF9F4] leading-none block">
+            MELD EXPERIENCES
+          </span>
           <span className="block text-[12px] tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
             {SITE_TAGLINE}
           </span>

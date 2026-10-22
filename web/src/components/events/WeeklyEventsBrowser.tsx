@@ -14,15 +14,16 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
   const [selectedCity, setSelectedCity] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState<string>('')
 
-  // Dynamically extract unique cities from both upcoming and past events
+  // Client requested cities list: Mumbai, Kolkata, Pune, Bangalore, Goa, Chennai, Hyderabad, Delhi
   const allCities = useMemo(() => {
-    const citySet = new Set<string>()
+    const requested = ['Mumbai', 'Kolkata', 'Pune', 'Bangalore', 'Goa', 'Chennai', 'Hyderabad', 'Delhi']
+    const citySet = new Set<string>(requested)
     for (const evt of [...upcoming, ...past]) {
-      if (evt.city) {
+      if (evt.city && evt.city !== 'Online (Live Studio Stream)' && evt.city !== 'Bengaluru') {
         citySet.add(evt.city)
       }
     }
-    return Array.from(citySet).sort()
+    return Array.from(citySet)
   }, [upcoming, past])
 
   // Count by format
@@ -44,7 +45,11 @@ export function WeeklyEventsBrowser({ upcoming, past }: WeeklyEventsBrowserProps
 
         const matchesCity =
           selectedCity === 'all' ||
-          evt.city?.toLowerCase() === selectedCity.toLowerCase()
+          (evt.city && (
+            evt.city.toLowerCase() === selectedCity.toLowerCase() ||
+            (selectedCity.toLowerCase() === 'bangalore' && evt.city.toLowerCase() === 'bengaluru') ||
+            (selectedCity.toLowerCase() === 'bengaluru' && evt.city.toLowerCase() === 'bangalore')
+          ))
 
         const haystack = `${evt.title} ${evt.shortDescription || ''} ${evt.city || ''} ${evt.venue || ''} ${evt.experienceType || ''} ${evt.facilitator || ''}`.toLowerCase()
         const matchesSearch =

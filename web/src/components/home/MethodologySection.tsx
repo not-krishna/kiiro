@@ -108,7 +108,7 @@ export function MethodologySection({ intro, stages }: MethodologySectionProps) {
 
         {/* Small print disclaimer below steps */}
         <p className="text-xs text-[#968A80] font-sans font-light italic max-w-3xl leading-relaxed pt-2">
-          Informed by research on creative activity and wellbeing. Kiiro sessions support relaxation and wellbeing and are not a substitute for medical or mental health care.
+          Informed by research on creative activity and wellbeing. MELD sessions support relaxation and wellbeing and are not a substitute for medical or mental health care.
         </p>
       </div>
     </section>

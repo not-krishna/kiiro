@@ -4,9 +4,8 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
   heroEyebrow: 'A creative wellness space for making, connecting & restoring',
   heroHeading: 'ROOT. CREATE. RESTORE.',
   heroSubheading:
-    'Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans and wellness facilitators, and leave lighter than you arrived. In person across India, around...',
-  heroSupportingText:
-    'Kiiro pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.',
+    'MELD pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.',
+  heroSupportingText: '',
   heroPrimaryCta: {
     label: 'Book a Session',
     href: '/weekly-events',
@@ -20,18 +19,18 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
   heroMedia: [
     {
       type: 'image',
-      source: '/images/hero/hero-1.png',
-      alt: 'Kiiro workshop experience - Making process',
+      source: '/images/other/pottery-1.png',
+      alt: 'Hands shaping clay on the pottery wheel',
     },
     {
       type: 'image',
-      source: '/images/hero/hero-2.png',
-      alt: 'Artisan-led practice session',
+      source: '/images/workshops/block-printing-workshop.jpg',
+      alt: 'Hands printing patterns with carved woodblock',
     },
     {
       type: 'image',
-      source: '/images/hero/hero-3.png',
-      alt: 'Participants engaged in creative workshop',
+      source: '/images/other/kintsugi-1.png',
+      alt: 'Hands repairing ceramics with traditional gold joinery',
     },
   ],
   methodologyIntro:
@@ -62,9 +61,9 @@ export const DEFAULT_HOMEPAGE: HomepageContent = {
       youFeel: 'Lighter, connected, accomplished',
     },
   ] satisfies MethodologyStage[],
-  manifestoTitle: 'We spend our days in our heads. Kiiro brings you back to your hands.',
+  manifestoTitle: 'We spend our days in our heads. MELD brings you back to your hands.',
   manifestoText:
-    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.\n\nEvery Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.',
+    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise.',
   impactStats: [
     { value: '800+', label: 'Workshops', context: 'Hands-on sessions across India' },
     { value: '10,000+', label: 'Participants', context: 'People who took a creative break' },

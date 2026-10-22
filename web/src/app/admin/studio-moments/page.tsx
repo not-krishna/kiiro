@@ -42,7 +42,7 @@ export default function AdminStudioMomentsPage() {
     const newMoment: StudioMomentItem = {
       id: `moment-${Date.now()}`,
       handle: '@your_workshops',
-      authorName: 'Kiiro Studio',
+      authorName: 'MELD Studio',
       type: 'post',
       typeLabel: 'Post',
       url: 'https://www.instagram.com/your_workshops/?hl=en',

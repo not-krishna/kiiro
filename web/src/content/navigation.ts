@@ -14,7 +14,7 @@ export const PRIMARY_NAV: NavItem[] = [
       {
         label: 'All Experiences',
         href: '/experiences',
-        description: 'Browse workshops by category and book as an individual.',
+        description: 'Browse workshops by category.',
       },
       {
         label: 'Corporates & Organisations',

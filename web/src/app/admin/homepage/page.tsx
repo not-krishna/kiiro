@@ -216,7 +216,7 @@ export default function AdminHomepagePage() {
                 rows={3}
                 value={data.heroSupportingText || ''}
                 onChange={(e) => setData({ ...data, heroSupportingText: e.target.value })}
-                placeholder="Kiiro pairs master artisans with wellness facilitators..."
+                placeholder="MELD pairs master artisans with wellness facilitators..."
                 className="w-full px-3 py-2 text-sm border border-[#D8CEBE] rounded bg-[#FBF9F4] text-[#2B231F] focus:border-[#4F5B2A] focus:outline-hidden"
               />
             </div>

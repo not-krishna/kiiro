@@ -220,6 +220,18 @@ const INITIAL_ADVISORS: AdvisorItem[] = [
     published: true,
   },
   {
+    id: 'sham-pahelpakar',
+    name: 'Shaam Pahelpakar',
+    initials: 'SP',
+    title: 'Contemporary Visual Artist & Experience Facilitator',
+    affiliation: 'Creative Facilitator at NID Ahmedabad & IIT Roorkee',
+    specialty: 'Tribal Culture, Panchatatva & Natural Materials',
+    bio: 'Deep expertise in indigenous Indian art forms and material intelligence.',
+    portraitUrl: '',
+    order: 3,
+    published: true,
+  },
+  {
     id: 'dr-sanjay-pandey',
     name: 'Dr. Sanjay Pandey',
     initials: 'SP',
@@ -227,18 +239,6 @@ const INITIAL_ADVISORS: AdvisorItem[] = [
     affiliation: 'Andrology & Reconstructive Urology, Kokilaben Hospital',
     specialty: 'Clinical Healthcare & Restorative Care',
     bio: 'Advocating for holistic patient recovery and stress reduction through mindful tactile engagement.',
-    portraitUrl: '',
-    order: 3,
-    published: true,
-  },
-  {
-    id: 'sham-pahelpakar',
-    name: 'Sham Pahelpakar',
-    initials: 'SP',
-    title: 'Contemporary Visual Artist & Experience Facilitator',
-    affiliation: 'Creative Facilitator at NID Ahmedabad & IIT Roorkee',
-    specialty: 'Tribal Culture, Panchatatva & Natural Materials',
-    bio: 'Deep expertise in indigenous Indian art forms and material intelligence.',
     portraitUrl: '',
     order: 4,
     published: true,
@@ -546,15 +546,14 @@ const INITIAL_HOMEPAGE: HomepageData = {
   heroEyebrow: 'A creative wellness space for making, connecting & restoring',
   heroHeading: 'Root. Create. Restore.',
   heroSubheading:
-    'Put the phone down and pick up the clay, the thread, the indigo. Kiiro is where you slow down, make something with your hands alongside master artisans and wellness facilitators, and leave lighter than you arrived. In person across India, around...',
-  heroSupportingText:
-    'Kiiro pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.',
-  showArtisanStories: false,
+    'MELD pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.',
+  heroSupportingText: '',
+  showArtisanStories: true,
   heroPrimaryCtaLabel: 'Book a Session',
   heroPrimaryCtaHref: '/weekly-events',
   heroSecondaryCtaLabel: 'Explore Experiences',
   heroSecondaryCtaHref: '/experiences',
-  heroImages: ['/images/hero/hero-1.png', '/images/hero/hero-2.png', '/images/hero/hero-3.png'],
+  heroImages: ['/images/other/pottery-1.png', '/images/workshops/block-printing-workshop.jpg', '/images/other/kintsugi-1.png'],
   statsWorkshops: '800+',
   statsWorkshopsTitle: 'Workshops',
   statsWorkshopsLabel: 'Hands-on sessions across India',
@@ -570,11 +569,10 @@ const INITIAL_HOMEPAGE: HomepageData = {
   statsResorts: '10+',
   statsResortsTitle: 'Resorts',
   statsResortsLabel: 'Guest wellness experiences',
-  manifestoTitle: 'We spend our days in our heads. Kiiro brings you back to your hands.',
+  manifestoTitle: 'We spend our days in our heads. MELD brings you back to your hands.',
   manifestoText:
-    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.',
-  manifestoSubtext:
-    'Every Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.',
+    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise.',
+  manifestoSubtext: '',
   methodologyIntro:
     'Co-led by a master artisan and a wellness facilitator, every session navigates you through three guided phases, from mental noise to calm.',
   methodologyStages: [
@@ -636,21 +634,21 @@ const INITIAL_HOMEPAGE: HomepageData = {
 }
 
 const INITIAL_SITE_SETTINGS: SiteSettingsData = {
-  siteTitle: 'Kiiro: Creative Wellness Through Living Craft | Root. Create. Restore.',
+  siteTitle: 'MELD EXPERIENCES: Creative Wellness Space | Root. Create. Restore.',
   tagline: 'Root. Create. Restore.',
   metaDescription:
     'Reduce stress and reconnect through hands-on making with master artisans. Creative wellness workshops for individuals, teams, and resorts across India, in person and online.',
-  contactEmail: 'connect@kiiroexperiences.com',
+  contactEmail: 'connect@meldexperiences.com',
   contactPhone: '+91 98200 12345',
-  address: 'Mumbai · Bangalore · Goa · Kolkata · Pune · Jaipur',
+  address: 'Mumbai · Bangalore · Goa · Kolkata · Pune · Jaipur · Chennai · Hyderabad · Delhi',
   instagramUrl: 'https://www.instagram.com/your_workshops/?hl=en',
   facebookUrl: 'https://www.facebook.com/kiiroexperiences/',
   linkedinUrl: 'https://www.linkedin.com/company/kiiro-experiences/',
   youtubeUrl: 'https://www.youtube.com/@kiiroexperiences',
   footerTagline: 'Hands On. Rooted. Restored.',
   footerDescription:
-    'Kiiro is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.',
-  footerDisclaimer: 'Kiiro sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.',
+    'MELD is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.',
+  footerDisclaimer: 'MELD sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.',
   showArtisanStories: false,
   showCsrSection: false,
 }

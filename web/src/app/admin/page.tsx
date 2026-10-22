@@ -49,7 +49,7 @@ export default function AdminDashboardPage() {
             Central Content Control
           </span>
           <h1 className="font-display text-3xl font-semibold text-[#2B231F] mt-1">
-            Kiiro Experience Dashboard
+            MELD EXPERIENCES Dashboard
           </h1>
           <p className="text-xs text-[#6E635B] mt-1 font-light">
             Manage live masterclasses, studio moments, 36 offerings, and advisory governance.

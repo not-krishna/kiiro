@@ -5,9 +5,9 @@ import { client } from '@/sanity/lib/client'
 import { ABOUT_PAGE_QUERY } from '@/sanity/lib/queries'
 
 export const metadata = {
-  title: 'About Kiiro | Creative Wellness Space & Manifesto',
+  title: 'About MELD EXPERIENCES | Creative Wellness Space & Manifesto',
   description:
-    'Learn about Kiiro’s mission as a creative wellness space connecting living craft traditions, master artisans, and restorative hands-on making.',
+    'Learn about MELD’s mission as a creative wellness space connecting living craft traditions, master artisans, and restorative hands-on making.',
 }
 
 export const revalidate = 30
@@ -18,7 +18,7 @@ export default async function AboutPage() {
   const heroHeading = pageData?.heroHeading || 'Hands On. Rooted. Restored.'
   const heroSubheading =
     pageData?.heroSubheading ||
-    'Kiiro is a creative wellness space where people make something real with their hands, guided by master artisans. In person first, online when in person is not possible.'
+    'MELD is a creative wellness space where people make something real with their hands, guided by master artisans. In person first, online when in person is not possible.'
   const visionTitle = pageData?.visionTitle || 'Our Core Purpose'
   const visionText =
     pageData?.visionText ||
@@ -57,7 +57,7 @@ export default async function AboutPage() {
           <div className="bg-[#F3EDE2] border border-[#E8E1D5] p-8 space-y-6">
             <h3 className="font-serif text-2xl text-[#2B231F]">The Living Ecosystem Model</h3>
             <p className="text-sm text-[#6E635B] leading-relaxed font-light">
-              Every interaction on Kiiro connects seven core pillars:
+              Every interaction on MELD connects seven core pillars:
             </p>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center font-serif text-sm text-[#2B231F]">
@@ -111,7 +111,7 @@ export default async function AboutPage() {
             <div className="space-y-4">
               <div className="bg-white border border-[#E8E1D5] p-6 space-y-2 shadow-sm">
                 <h4 className="font-sans font-semibold text-base text-[#2B231F]">
-                  Is Kiiro in person or online?
+                  Is MELD in person or online?
                 </h4>
                 <p className="font-sans text-sm text-[#6E635B] font-light leading-relaxed">
                   In person is our first choice, because shared, tactile making in a room is where the experience is at its fullest. When that isn&apos;t possible, we offer live, guided online sessions designed around real hands-on making.
@@ -125,7 +125,7 @@ export default async function AboutPage() {
               href="/enquire"
               className="inline-block bg-[#4F5B2A] hover:bg-[#3D4721] text-white px-8 py-3.5 text-xs uppercase tracking-[0.2em] font-semibold transition-colors"
             >
-              Get In Touch With Kiiro →
+              Get In Touch With MELD →
             </Link>
           </div>
         </section>

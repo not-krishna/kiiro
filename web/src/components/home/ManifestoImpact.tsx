@@ -8,15 +8,19 @@ interface ManifestoImpactProps {
 }
 
 export function ManifestoImpact({ manifestoTitle, manifestoText, stats: propStats }: ManifestoImpactProps) {
-  const fallbackTitle = 'We spend our days in our heads. Kiiro brings you back to your hands.'
+  const fallbackTitle = 'We spend our days in our heads. MELD brings you back to your hands.'
   const fallbackText =
-    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise. Add a master artisan, a centuries-old craft, and good company, and an ordinary afternoon becomes a reset.\n\nEvery Kiiro session is guided by living traditions, so your restoration also keeps a craft, and a craftsperson, alive.'
+    'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise.'
 
   const cleanTitle = cleanVisibleCopy(manifestoTitle || '')
-  const title = (!cleanTitle || cleanTitle.includes('preserve behind glass')) ? fallbackTitle : cleanTitle
+  let title = (!cleanTitle || cleanTitle.includes('preserve behind glass') || cleanTitle.includes('Kiiro') || cleanTitle.includes('kiiro')) ? fallbackTitle : cleanTitle
 
   const cleanText = cleanVisibleCopy(manifestoText || '')
-  const text = (!cleanText || cleanText.includes('heritage craft traditions directly')) ? fallbackText : cleanText
+  let text = (!cleanText || cleanText.includes('heritage craft traditions directly') || cleanText.includes('Add a master artisan') || cleanText.includes('Every Kiiro session') || cleanText.includes('craftsperson, alive')) ? fallbackText : cleanText
+
+  if (text.includes('Stress lives in the body, and so does relief.')) {
+    text = fallbackText
+  }
 
   const defaultStats = [
     { value: '800+', label: 'Workshops', context: 'Hands-on sessions across India' },

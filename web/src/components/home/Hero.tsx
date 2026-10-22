@@ -28,7 +28,7 @@ function cleanCta(cta: Cta): Cta {
   return { ...cta, label: cleanVisibleCopy(cta.label) }
 }
 
-function mediaSrc(media?: MediaAsset, sanityImage?: unknown) {
+function mediaSrc(media?: MediaAsset, sanityImage?: unknown): string | null {
   if (media?.source) return media.source
   if (sanityImage) {
     try {
@@ -82,14 +82,24 @@ const HERO_SOCIAL_LINKS = [
 export function Hero({ data }: HeroProps) {
   const content = DEFAULT_HOMEPAGE
   let eyebrow = cleanVisibleCopy(data?.heroEyebrow || content.heroEyebrow)
-  if (eyebrow.includes('cultural space for making') || !eyebrow) {
+  if (
+    eyebrow.toLowerCase().includes('cultural platform') ||
+    eyebrow.toLowerCase().includes('cultural space') ||
+    eyebrow.toLowerCase().includes('offline') ||
+    !eyebrow
+  ) {
     eyebrow = content.heroEyebrow
   }
 
   const heading = cleanVisibleCopy(data?.heroHeading || content.heroHeading)
 
   let subheading = cleanVisibleCopy(data?.heroSubheading || content.heroSubheading)
-  if (subheading.includes('together, offline') || subheading.includes('cultural experiences') || !subheading) {
+  if (
+    subheading.toLowerCase().includes('put the phone down') ||
+    subheading.includes('together, offline') ||
+    subheading.includes('cultural experiences') ||
+    !subheading
+  ) {
     subheading = content.heroSubheading
   }
 
@@ -106,11 +116,35 @@ export function Hero({ data }: HeroProps) {
     ...rawSecondary,
     label: rawSecondary.label === 'Discover Experiences' || !rawSecondary.label ? 'Explore Experiences' : rawSecondary.label,
   }
+
   const media = data?.heroMedia?.length ? data.heroMedia : content.heroMedia
-  const primaryImage = mediaSrc(media[0], data?.heroImage) || '/images/hero/hero-1.png'
-  const secondImage = mediaSrc(media[1]) || '/images/hero/hero-2.png'
-  const thirdImage = mediaSrc(media[2]) || '/images/hero/hero-3.png'
-  const featuredImage = thirdImage || primaryImage || secondImage
+  const img1 = mediaSrc(media[0], data?.heroImage) || '/images/other/pottery-1.png'
+  const img2 = mediaSrc(media[1]) || '/images/workshops/block-printing-workshop.jpg'
+  const img3 = mediaSrc(media[2]) || '/images/other/kintsugi-1.png'
+
+  const heroImages = [
+    {
+      src: img1,
+      alt: media[0]?.alt || 'Close-up of hands shaping wet clay on a pottery wheel',
+      artform: 'Pottery & Ceramics',
+      caption: 'Clay, water & rhythm',
+      index: '01',
+    },
+    {
+      src: img2,
+      alt: media[1]?.alt || 'Hands pressing carved wooden block onto textile with natural indigo',
+      artform: 'Hand Block Printing',
+      caption: 'Hand-carved wood & natural indigo',
+      index: '02',
+    },
+    {
+      src: img3,
+      alt: media[2]?.alt || 'Hands carefully mending ceramic fractures with gold lacquer',
+      artform: 'Traditional Kintsugi',
+      caption: 'Gold lacquer & patient mending',
+      index: '03',
+    },
+  ]
 
   return (
     <section
@@ -118,25 +152,22 @@ export function Hero({ data }: HeroProps) {
       data-motion-hero
       data-parallax-container
     >
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-10 md:py-16 lg:py-20 relative z-10">
-        <div className="grid lg:grid-cols-12 gap-10 lg:gap-12 items-center">
-          <div className="lg:col-span-5 space-y-7 text-left">
-            <div className="space-y-3">
-              <span className="inline-block font-sans text-sm text-[#4F5B2A]" data-hero-eyebrow>
-                {eyebrow}
-              </span>
-              <h1 className="font-display text-4xl sm:text-5xl md:text-6xl font-semibold text-[#2B231F] leading-[1.08]">
-                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#2B231F]" data-hero-word>Root.</span></span>{' '}
-                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#4F5B2A]" data-hero-word>Create.</span></span>
-                <br />
-                <span className="kiiro-word-wrap"><span className="kiiro-word text-[#D99B26]" data-hero-word>Restore.</span></span>
-              </h1>
-              {heading !== 'ROOT. CREATE. RESTORE.' && (
-                <p className="sr-only">{heading}</p>
-              )}
-            </div>
-
-            <div className="space-y-3 font-sans text-sm md:text-base text-[#6E635B] font-light leading-relaxed max-w-lg" data-hero-copy>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-12 md:py-16 lg:py-20 relative z-10">
+        {/* Top Section: Eyebrow, Heading, Description, and CTAs */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-12 items-end mb-12 lg:mb-16">
+          <div className="lg:col-span-7 space-y-5 text-left">
+            <span className="inline-block font-sans text-xs md:text-sm font-medium tracking-wider text-[#4F5B2A] uppercase" data-hero-eyebrow>
+              {eyebrow}
+            </span>
+            <h1 className="font-display text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-semibold text-[#2B231F] leading-[1.06]">
+              <span className="kiiro-word-wrap"><span className="kiiro-word text-[#2B231F]" data-hero-word>Root.</span></span>{' '}
+              <span className="kiiro-word-wrap"><span className="kiiro-word text-[#4F5B2A]" data-hero-word>Create.</span></span>{' '}
+              <span className="kiiro-word-wrap"><span className="kiiro-word text-[#D99B26]" data-hero-word>Restore.</span></span>
+            </h1>
+            {heading !== 'ROOT. CREATE. RESTORE.' && (
+              <p className="sr-only">{heading}</p>
+            )}
+            <div className="space-y-3 font-sans text-base md:text-lg text-[#6E635B] font-light leading-relaxed max-w-2xl" data-hero-copy>
               <p>{subheading}</p>
               {supportingText && (
                 <p className="text-xs md:text-sm text-[#7A6E65] leading-relaxed pt-2 border-t border-[#E8E1D5]/70">
@@ -144,31 +175,33 @@ export function Hero({ data }: HeroProps) {
                 </p>
               )}
             </div>
+          </div>
 
+          <div className="lg:col-span-5 flex flex-col justify-end space-y-6">
             <div className="flex flex-col sm:flex-row gap-3">
               <Link
                 href={primary.href}
-                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 bg-[#4F5B2A] text-white font-sans text-[14px] font-medium tracking-wide hover:bg-[#3D4721] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
+                className="kiiro-cta inline-flex min-h-12 items-center justify-center px-7 py-3.5 bg-[#4F5B2A] text-white font-sans text-[14px] font-medium tracking-wide hover:bg-[#3D4721] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
                 data-hero-cta
               >
                 <span>{primary.label}</span>
-                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
+                <span aria-hidden="true" data-cta-arrow className="ml-2">&rarr;</span>
               </Link>
               <Link
                 href={secondary.href}
-                className="kiiro-cta inline-flex min-h-11 items-center justify-center px-6 py-3 border border-[#2B231F] text-[#2B231F] font-sans text-[14px] font-medium tracking-wide hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
+                className="kiiro-cta inline-flex min-h-12 items-center justify-center px-7 py-3.5 border border-[#2B231F] text-[#2B231F] font-sans text-[14px] font-medium tracking-wide hover:bg-[#2B231F] hover:text-[#FBF9F4] transition-colors focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A]"
                 data-hero-cta
               >
                 <span>{secondary.label}</span>
-                <span aria-hidden="true" data-cta-arrow>&rarr;</span>
+                <span aria-hidden="true" data-cta-arrow className="ml-2">&rarr;</span>
               </Link>
             </div>
 
-            <div className="pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-2.5 text-[#2B231F]" data-hero-meta>
+            <div className="pt-4 border-t border-[#E8E1D5] flex flex-col sm:flex-row sm:items-center gap-3 text-[#2B231F]" data-hero-meta>
               <span className="text-xs uppercase tracking-[0.08em] font-medium text-[#6E635B]">
                 Follow the studio
               </span>
-              <div className="flex items-center gap-1.5" aria-label="Kiiro social channels">
+              <div className="flex items-center gap-2" aria-label="MELD social channels">
                 {HERO_SOCIAL_LINKS.map(({ label, href, Icon }) => (
                   <a
                     key={label}
@@ -176,7 +209,7 @@ export function Hero({ data }: HeroProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex h-9 w-9 items-center justify-center border border-[#D8CEBE] bg-white text-[#2B231F] hover:border-[#4F5B2A] hover:text-[#4F5B2A] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#4F5B2A] transition-colors"
-                    aria-label={`Visit Kiiro on ${label}`}
+                    aria-label={`Visit MELD on ${label}`}
                     title={label}
                   >
                     <Icon />
@@ -184,80 +217,72 @@ export function Hero({ data }: HeroProps) {
                 ))}
               </div>
             </div>
+          </div>
+        </div>
 
+        {/* Visual Artwork Section: Substantial 3-Image Horizontal Row focusing on hands and materials */}
+        <div className="pt-4">
+          <div className="flex items-center justify-between pb-3 border-b border-[#E8E1D5] mb-6">
+            <div className="flex items-center gap-2.5">
+              <span className="w-2 h-2 rounded-full bg-[#4F5B2A]" />
+              <span className="text-xs font-sans uppercase tracking-[0.18em] text-[#6E635B] font-medium">
+                Hands In Practice &middot; Living Craft Traditions
+              </span>
+            </div>
+            <span className="font-serif italic text-sm md:text-base text-[#4F5B2A] tracking-wide">
+              Craft your calm
+            </span>
           </div>
 
-          <div className="lg:col-span-7 relative">
-            <div className="grid grid-cols-12 gap-4 md:gap-5 items-end">
-              <div className="hidden sm:block sm:col-span-5 space-y-5">
-                <div className="relative group">
-                  <div className="relative h-48 md:h-56 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300" data-hero-image data-parallax="-5">
-                    {primaryImage ? (
-                      <Image
-                        src={primaryImage}
-                        alt={media[0]?.alt || 'Making process'}
-                        fill
-                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                        priority
-                        sizes="(max-width: 768px) 100vw, 30vw"
-                      />
-                    ) : (
-                      <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
-                        Making process
-                      </span>
-                    )}
-                  </div>
-                </div>
-                <div className="relative group">
-                  <div className="relative h-64 md:h-72 w-full overflow-hidden border border-[#E8E1D5] bg-[#EAE3D5] group-hover:border-[#D8CEBE] transition-colors duration-300" data-hero-image data-parallax="-8">
-                    {secondImage ? (
-                      <Image
-                        src={secondImage}
-                        alt={media[1]?.alt || 'Artisan-led practice'}
-                        fill
-                        className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                        sizes="(max-width: 768px) 100vw, 30vw"
-                      />
-                    ) : (
-                      <span className="absolute bottom-4 left-5 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
-                        Artisan-led practice
-                      </span>
-                    )}
-                  </div>
-                </div>
-              </div>
+          {/* Desktop 3-column horizontal row; Mobile horizontally scrollable with snap */}
+          <div className="flex overflow-x-auto snap-x snap-mandatory gap-5 pb-4 -mx-6 px-6 sm:mx-0 sm:px-0 md:grid md:grid-cols-3 md:gap-6 md:overflow-visible">
+            {heroImages.map((item, idx) => (
+              <div
+                key={item.artform}
+                className="w-[82vw] sm:w-[48vw] md:w-auto flex-shrink-0 snap-center relative group"
+                data-hero-image
+                data-parallax={idx === 1 ? '-6' : '-10'}
+              >
+                <div className="relative h-[340px] sm:h-[400px] lg:h-[440px] w-full overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] group-hover:border-[#4F5B2A] transition-colors duration-300">
+                  <Image
+                    src={item.src}
+                    alt={item.alt}
+                    fill
+                    className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
+                    priority={idx === 0}
+                    sizes="(max-width: 768px) 85vw, (max-width: 1024px) 33vw, 400px"
+                  />
+                  {/* Subtle vignette gradient */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#2B231F]/75 via-transparent to-black/10 pointer-events-none" />
 
-              <div className="col-span-12 sm:col-span-7 relative">
-                <div className="relative h-64 sm:h-[460px] w-full overflow-hidden border border-[#D8CEBE] bg-[#EAE3D5] group" data-hero-image data-parallax="-10">
-                  {featuredImage ? (
-                    <Image
-                      src={featuredImage}
-                      alt={media[2]?.alt || 'Participants at work'}
-                      fill
-                      className="object-cover group-hover:scale-[1.04] transition-transform duration-700 ease-out"
-                      priority
-                      sizes="(max-width: 768px) 100vw, 35vw"
-                    />
-                  ) : (
-                    <span className="absolute bottom-6 left-6 text-[10px] uppercase tracking-[0.2em] text-[#968A80]">
-                      Participants at work
+                  {/* Top pill / badge */}
+                  <div className="absolute top-4 left-4 right-4 flex items-center justify-between">
+                    <span className="px-2.5 py-1 bg-[#2B231F]/80 backdrop-blur-sm text-[#FBF9F4] text-[10px] font-sans tracking-[0.2em] uppercase font-medium">
+                      {item.index} &middot; Hands-on
                     </span>
-                  )}
-                  <div className="absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-[#2B231F]/60 to-transparent pointer-events-none" />
-                  <div className="absolute bottom-4 left-4 right-4 flex items-end justify-between gap-4 text-[#FBF9F4]" data-hero-meta>
-                    <span className="max-w-[11rem] text-[10px] uppercase tracking-[0.18em] leading-relaxed">
-                      Hands-on creative wellness
-                    </span>
-                    <span className="text-[10px] uppercase tracking-[0.18em]">
-                      Make / Connect / Restore
-                    </span>
+                    {idx === 1 && (
+                      <span className="px-2.5 py-1 bg-[#4F5B2A]/90 backdrop-blur-sm text-[#FBF9F4] text-[10px] font-sans tracking-[0.16em] uppercase font-medium">
+                        Craft your calm
+                      </span>
+                    )}
+                  </div>
+
+                  {/* Bottom caption overlay */}
+                  <div className="absolute bottom-4 left-4 right-4 text-[#FBF9F4]">
+                    <h3 className="font-display text-lg lg:text-xl font-normal leading-tight text-white drop-shadow-sm">
+                      {item.artform}
+                    </h3>
+                    <p className="text-[11px] font-sans uppercase tracking-[0.16em] text-white/80 mt-1">
+                      {item.caption}
+                    </p>
                   </div>
                 </div>
               </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
     </section>
   )
 }
+

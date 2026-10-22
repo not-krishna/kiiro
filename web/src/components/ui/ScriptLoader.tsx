@@ -89,13 +89,13 @@ export function ScriptLoader() {
         isFadingOut ? 'opacity-0 pointer-events-none' : 'opacity-100'
       }`}
       aria-busy="true"
-      aria-label="Loading Kiiro Experience"
+      aria-label="Loading MELD Experience"
     >
       {/* Top Header Branding */}
       <div className="w-full max-w-7xl flex justify-between items-center text-[11px] font-sans font-semibold uppercase tracking-[0.25em] text-[#968A80]">
         <div className="flex items-center space-x-2">
           <span className="w-1.5 h-1.5 bg-[#4F5B2A] animate-pulse" />
-          <span>KIIRO · CREATIVE WELLNESS, ROOTED IN LIVING ART</span>
+          <span>MELD · CREATIVE WELLNESS, ROOTED IN LIVING ART</span>
         </div>
         <span className="hidden sm:inline tracking-[0.2em] text-[#B87B1E]">
           LIVING CRAFT TRADITIONS
@@ -109,7 +109,7 @@ export function ScriptLoader() {
           {isFinal ? (
             <div className="animate-in fade-in zoom-in-95 duration-300 flex flex-col items-center space-y-3">
               <span className="font-display text-fluid-4xl font-normal tracking-[0.15em] text-[#2B231F] leading-none">
-                KIIRO
+                MELD EXPERIENCES
               </span>
               <span className="font-sans text-xs uppercase tracking-[0.3em] text-[#4F5B2A] font-semibold">
                 Creative Wellness Space

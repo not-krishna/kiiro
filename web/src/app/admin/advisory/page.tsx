@@ -123,7 +123,7 @@ export default function AdminAdvisoryPage() {
             Distinguished Advisory Board
           </h1>
           <p className="text-xs text-[#6E635B] font-light mt-0.5">
-            Guiding Kiiro’s creative wellness methodology across expressive art therapies, psychology, clinical care, and living crafts.
+            Guiding MELD’s creative wellness methodology across expressive art therapies, psychology, clinical care, and living crafts.
           </p>
         </div>
 

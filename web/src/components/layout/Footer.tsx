@@ -8,15 +8,15 @@ export function Footer({ showCsrSection = false }: { showCsrSection?: boolean } 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 lg:gap-8 pb-12 border-b border-[#3D332E]">
           <div className="lg:col-span-2 space-y-4">
             <Link href="/" className="inline-block group">
-              <span className="font-sans text-2xl font-bold tracking-[0.25em] uppercase text-[#FBF9F4] group-hover:text-[#4F5B2A] transition-colors">
-                KIIRO
+              <span className="font-sans text-xl sm:text-2xl font-bold tracking-[0.18em] uppercase text-[#FBF9F4] group-hover:text-[#4F5B2A] transition-colors">
+                MELD EXPERIENCES
               </span>
               <span className="block text-sm tracking-normal normal-case text-[#968A80] font-sans mt-0.5">
                 Creative wellness space
               </span>
             </Link>
             <p className="text-sm text-[#968A80] max-w-sm leading-relaxed font-light">
-              Kiiro is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.
+              MELD is a creative wellness space where living craft traditions, master artisans, and mindful making come together, in person first and online when needed.
             </p>
             <div className="pt-2 text-[11px] font-sans uppercase tracking-[0.2em] text-[#D99B26]">
               Hands On. Rooted. Restored.
@@ -106,12 +106,12 @@ export function Footer({ showCsrSection = false }: { showCsrSection?: boolean } 
         {/* Disclaimer above copyright line */}
         <div className="pt-2 text-xs text-[#968A80] font-light leading-relaxed border-b border-[#3D332E]/60 pb-6">
           <p>
-            Kiiro sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.
+            MELD sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.
           </p>
         </div>
 
         <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0 text-xs text-[#968A80]">
-          <p>© {new Date().getFullYear()} Kiiro Creative Wellness Space. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} MELD EXPERIENCES. All rights reserved.</p>
           <div className="flex space-x-6 text-[11px] uppercase tracking-wider">
             <Link href="/privacy" className="hover:text-white transition-colors">
               Privacy Policy
