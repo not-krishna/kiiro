@@ -309,8 +309,8 @@ const INITIAL_STUDIO_MOMENTS: StudioMomentItem[] = [
     url: 'https://www.instagram.com/reel/DNVLoSjzhgv/',
     type: 'reel',
     typeLabel: 'Reel',
-    handle: '@kiiro.blr',
-    authorName: 'Kiiro Studio',
+    handle: '@your_workshops',
+    authorName: 'MELD Studio',
     badgeBg: 'bg-[#8F6A48]',
     imageSrc: '/images/studio-moments/moment-3.jpg',
     imageAlt: 'Master artisan demonstrating pottery making outdoors at Versova Mumbai',
@@ -682,6 +682,26 @@ export function getContentStore(): CMSContentStore {
       if (parsed && parsed.homepage && Array.isArray(parsed.events)) {
         if (!parsed.journal || !Array.isArray(parsed.journal)) {
           parsed.journal = INITIAL_JOURNAL
+        }
+        // Sanitize hero copy against any legacy rejected copy
+        if (
+          !parsed.homepage.heroSubheading ||
+          parsed.homepage.heroSubheading.toLowerCase().includes('put the phone down')
+        ) {
+          parsed.homepage.heroSubheading = INITIAL_HOMEPAGE.heroSubheading
+        }
+        if (
+          !parsed.homepage.heroEyebrow ||
+          parsed.homepage.heroEyebrow.toLowerCase().includes('cultural space') ||
+          parsed.homepage.heroEyebrow.toLowerCase().includes('offline')
+        ) {
+          parsed.homepage.heroEyebrow = INITIAL_HOMEPAGE.heroEyebrow
+        }
+        if (!parsed.homepage.heroHeading) {
+          parsed.homepage.heroHeading = INITIAL_HOMEPAGE.heroHeading
+        }
+        if (!parsed.homepage.heroImages || parsed.homepage.heroImages.length < 3) {
+          parsed.homepage.heroImages = INITIAL_HOMEPAGE.heroImages
         }
         inMemoryStore = parsed
         return parsed
@@ -1055,7 +1075,7 @@ function buildJournalDoc(post: JournalPostItem) {
     slug: { _type: 'slug', current: post.slug },
     standfirst: post.standfirst || post.excerpt,
     category: post.category || 'Craft Heritage',
-    author: post.author || 'Kiiro Studio',
+    author: post.author || 'MELD Studio',
     publishedAt: post.publishedAt || new Date().toISOString(),
     imageUrl: post.imageUrl || undefined,
     body: blocks.length > 0 ? blocks : undefined,

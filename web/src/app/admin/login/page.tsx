@@ -101,7 +101,7 @@ function LoginForm() {
               required
               value={username}
               onChange={(e) => setUsername(e.target.value)}
-              placeholder="e.g. kiiroadmin"
+              placeholder="e.g. meldadmin"
               className="w-full px-3.5 py-2.5 text-sm bg-[#FBF9F4] border border-[#D8CEBE] rounded-md text-[#2B231F] focus:border-[#4F5B2A] focus:outline-hidden transition-colors"
             />
           </div>

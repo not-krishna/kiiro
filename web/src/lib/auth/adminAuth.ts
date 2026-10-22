@@ -70,6 +70,14 @@ export function getOrCreateAdminCredentials(): StoredAuth {
     try {
       const data = JSON.parse(fs.readFileSync(storePath, 'utf8')) as StoredAuth
       if (data.username && data.passwordHash && data.salt) {
+        if (data.name === 'Kiiro Administrator' || !data.name) {
+          data.name = 'MELD Administrator'
+          try {
+            fs.writeFileSync(storePath, JSON.stringify(data, null, 2), 'utf8')
+          } catch {
+            // ignore
+          }
+        }
         return data
       }
     } catch {
@@ -78,15 +86,15 @@ export function getOrCreateAdminCredentials(): StoredAuth {
   }
 
   // Bootstrap initial admin credentials securely
-  const defaultUsername = process.env.KIIRO_ADMIN_USERNAME || 'kiiroadmin'
-  const defaultPassword = process.env.KIIRO_ADMIN_INITIAL_PASSWORD || 'k1rr0@dmin'
+  const defaultUsername = process.env.MELD_ADMIN_USERNAME || process.env.KIIRO_ADMIN_USERNAME || 'meldadmin'
+  const defaultPassword = process.env.MELD_ADMIN_INITIAL_PASSWORD || process.env.KIIRO_ADMIN_INITIAL_PASSWORD || 'k1rr0@dmin'
   const { hash, salt } = hashPassword(defaultPassword)
 
   const initialAuth: StoredAuth = {
     username: defaultUsername,
     salt,
     passwordHash: hash,
-    name: 'Kiiro Administrator',
+    name: 'MELD Administrator',
     updatedAt: new Date().toISOString(),
   }
 

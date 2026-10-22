@@ -32,8 +32,14 @@ export async function POST(req: NextRequest) {
 
     const admin = getOrCreateAdminCredentials()
 
-    // Compare username case-insensitively and password with timing-safe hash verification
-    const isUserMatch = admin.username.toLowerCase() === username.trim().toLowerCase()
+    // Compare username case-insensitively (supports both meldadmin and kiiroadmin)
+    const normalizedInputUser = username.trim().toLowerCase()
+    const storedUser = admin.username.toLowerCase()
+    const isUserMatch =
+      storedUser === normalizedInputUser ||
+      (normalizedInputUser === 'meldadmin' && (storedUser === 'kiiroadmin' || storedUser === 'meldadmin')) ||
+      (normalizedInputUser === 'kiiroadmin' && (storedUser === 'kiiroadmin' || storedUser === 'meldadmin'))
+
     const isPassMatch = isUserMatch ? verifyPassword(password, admin.passwordHash, admin.salt) : false
 
     if (!isUserMatch || !isPassMatch) {

@@ -20,7 +20,12 @@ export function EventForm({ initialData = {}, isNew = false }: EventFormProps) {
   const { refreshPublishStatus } = usePublish()
   const [saving, setSaving] = useState(false)
 
-  const [formData, setFormData] = useState<Partial<EventItem>>({
+  const isKintsugiInitial =
+    initialData.slug?.toLowerCase().includes('kintsugi') ||
+    initialData.title?.toLowerCase().includes('kintsugi') ||
+    initialData.workshopSlug?.toLowerCase() === 'kintsugi'
+
+  const [formData, setFormData] = useState<Partial<EventItem>>(() => ({
     id: initialData.id || `event-${Date.now()}`,
     title: initialData.title || '',
     slug: initialData.slug || '',
@@ -29,10 +34,12 @@ export function EventForm({ initialData = {}, isNew = false }: EventFormProps) {
     startTime: initialData.startTime || '10:30 AM',
     endTime: initialData.endTime || '01:30 PM',
     duration: initialData.duration || '3 hours',
-    city: initialData.city || 'Bangalore',
-    venue: initialData.venue || 'Indiranagar Craft Sanctuary',
-    address: initialData.address || '',
-    googleMapsUrl: initialData.googleMapsUrl || '',
+    city: isKintsugiInitial ? 'Goa' : (initialData.city || 'Bangalore'),
+    venue: isKintsugiInitial ? 'ITC Fortune' : (initialData.venue || 'Indiranagar Craft Sanctuary'),
+    address: isKintsugiInitial ? 'Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516' : (initialData.address || ''),
+    googleMapsUrl: isKintsugiInitial
+      ? 'https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515'
+      : (initialData.googleMapsUrl || ''),
     price: initialData.price !== undefined ? initialData.price : 2500,
     capacity: initialData.capacity || 15,
     availability: initialData.availability || 'open',
@@ -46,7 +53,7 @@ export function EventForm({ initialData = {}, isNew = false }: EventFormProps) {
     keyProcess: initialData.keyProcess || '',
     takeAway: initialData.takeAway || '',
     media: initialData.media || [],
-  })
+  }))
 
   // Auto-generate slug from title if new
   const handleTitleChange = (val: string) => {

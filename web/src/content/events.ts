@@ -43,23 +43,39 @@ export function mapSanityEvent(doc: {
   heroImageUrl?: string
   heroImageAlt?: string
 }): EventItem | null {
-  if (!doc.title || !doc.slug) return null
-  const venue = doc.venue || 'Venue to be confirmed'
-  const location = [venue, doc.city].filter(Boolean).join(', ')
+  const slug = doc.slug || doc._id || 'event'
+  const title = doc.title || 'Untitled Session'
+  const id = doc._id || slug
+
+  const isKintsugi =
+    slug.toLowerCase().includes('kintsugi') ||
+    title.toLowerCase().includes('kintsugi') ||
+    doc.workshopSlug?.toLowerCase() === 'kintsugi' ||
+    doc.workshop?.slug?.toLowerCase() === 'kintsugi'
+
+  const venue = isKintsugi ? 'ITC Fortune' : (doc.venue || 'Venue to be confirmed')
+  const city = isKintsugi ? 'Goa' : doc.city
+  const address = isKintsugi
+    ? 'Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516'
+    : doc.address
+  const googleMapsUrl = isKintsugi
+    ? 'https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515'
+    : doc.googleMapsUrl
+  const location = isKintsugi ? 'ITC Fortune, Candolim, Goa' : [venue, city].filter(Boolean).join(', ')
   const workshopSlug = doc.workshopSlug || doc.workshop?.slug
   const isWeekly = Boolean(doc.isWeekly)
   return {
-    id: doc._id || doc.slug,
-    slug: doc.slug,
-    title: doc.title,
+    id,
+    slug,
+    title,
     shortDescription: doc.shortDescription,
     date: doc.date,
     startTime: doc.startTime,
     endTime: doc.endTime,
-    city: doc.city,
+    city,
     venue,
-    address: doc.address,
-    googleMapsUrl: doc.googleMapsUrl,
+    address,
+    googleMapsUrl,
     location: location || undefined,
     experienceType: doc.experienceType || doc.experienceReference?.title || doc.workshop?.name,
     duration: doc.duration,
@@ -67,7 +83,7 @@ export function mapSanityEvent(doc: {
     price: doc.price,
     capacity: doc.capacity,
     availability: availabilityFromStatus(doc.bookingStatus),
-    bookingHref: `/enquire?intent=individual&subject=${encodeURIComponent(doc.title)}&event=${encodeURIComponent(doc.slug)}${isWeekly ? '&weekly=1' : ''}`,
+    bookingHref: `/enquire?intent=individual&subject=${encodeURIComponent(title)}&event=${encodeURIComponent(slug)}${isWeekly ? '&weekly=1' : ''}`,
     experienceSlug: doc.experienceReference?.slug,
     workshopSlug,
     isWeekly,
@@ -76,7 +92,7 @@ export function mapSanityEvent(doc: {
     format: doc.format || 'in-person',
     feelsLike: doc.feelsLike,
     media: doc.heroImageUrl
-      ? [{ type: 'image', source: doc.heroImageUrl, alt: doc.heroImageAlt || doc.title }]
+      ? [{ type: 'image', source: doc.heroImageUrl, alt: doc.heroImageAlt || title || 'Event image' }]
       : [],
   }
 }
@@ -672,8 +688,8 @@ export const CONFIRMED_SCHEDULED_EVENTS: EventItem[] = [
     startTime: '02:00 PM',
     endTime: '05:30 PM',
     city: 'Mumbai',
-    venue: 'Kiiro Studio, Bandra West',
-    location: 'Kiiro Studio, Bandra West, Mumbai',
+    venue: 'MELD Studio, Bandra West',
+    location: 'MELD Studio, Bandra West, Mumbai',
     price: 2600,
     capacity: 12,
     availability: 'closed',

@@ -10,8 +10,8 @@ import { FALLBACK_JOURNAL, JournalItem } from '@/lib/data'
 import { getContentStore } from '@/lib/cms/contentStore'
 
 export const metadata = {
-  title: 'Journal & Cultural Writing | Kiiro',
-  description: 'Editorial essays, craft material histories, field notes, and cultural reflections.',
+  title: 'Journal & Cultural Writing | MELD EXPERIENCES',
+  description: 'Editorial essays, craft material histories, field notes, and cultural reflections from MELD.',
 }
 
 export const revalidate = 30
@@ -46,7 +46,7 @@ export default async function JournalPage() {
         <section className="bg-[#2B231F] text-[#FBF9F4] py-20 px-6 md:px-10 border-b border-[#3D332E]">
           <div className="max-w-7xl mx-auto space-y-6">
             <span className="text-xs uppercase tracking-[0.25em] text-[#D99B26] font-semibold">
-              Kiiro Editorial & Field Notes
+              MELD Editorial & Field Notes
             </span>
             <h1 className="font-serif text-4xl md:text-6xl font-normal max-w-3xl leading-tight">
               Essays on Living Culture & Material Wisdom

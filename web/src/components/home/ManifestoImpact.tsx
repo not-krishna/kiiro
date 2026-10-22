@@ -13,7 +13,7 @@ export function ManifestoImpact({ manifestoTitle, manifestoText, stats: propStat
     'Stress lives in the body, and so does relief. When you shade, stitch, stamp, or shape, your breathing slows and your mind finally gets a break from the noise.'
 
   const cleanTitle = cleanVisibleCopy(manifestoTitle || '')
-  let title = (!cleanTitle || cleanTitle.includes('preserve behind glass') || cleanTitle.includes('Kiiro') || cleanTitle.includes('kiiro')) ? fallbackTitle : cleanTitle
+  const title = (!cleanTitle || cleanTitle.includes('preserve behind glass') || cleanTitle.includes('Kiiro') || cleanTitle.includes('kiiro')) ? fallbackTitle : cleanTitle
 
   const cleanText = cleanVisibleCopy(manifestoText || '')
   let text = (!cleanText || cleanText.includes('heritage craft traditions directly') || cleanText.includes('Add a master artisan') || cleanText.includes('Every Kiiro session') || cleanText.includes('craftsperson, alive')) ? fallbackText : cleanText

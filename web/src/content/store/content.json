@@ -440,8 +440,8 @@
       "startTime": "02:00 PM",
       "endTime": "05:30 PM",
       "city": "Mumbai",
-      "venue": "Kiiro Studio, Bandra West",
-      "location": "Kiiro Studio, Bandra West, Mumbai",
+      "venue": "MELD Studio, Bandra West",
+      "location": "MELD Studio, Bandra West, Mumbai",
       "price": 2600,
       "capacity": 12,
       "availability": "closed",
@@ -2143,8 +2143,8 @@
       "url": "https://www.instagram.com/reel/DNVLoSjzhgv/",
       "type": "reel",
       "typeLabel": "Reel",
-      "handle": "@kiiro.blr",
-      "authorName": "Kiiro Studio",
+      "handle": "@your_workshops",
+      "authorName": "MELD Studio",
       "badgeBg": "bg-[#8F6A48]",
       "imageSrc": "/images/studio-moments/moment-3.jpg",
       "imageAlt": "Master artisan demonstrating pottery making outdoors at Versova Mumbai",
@@ -2388,8 +2388,71 @@
     "footerDisclaimer": "MELD sessions are creative and relaxation-focused and are not a substitute for medical or mental health care.",
     "showCsrSection": false
   },
-  "lastUpdated": "2026-10-22T07:23:21.018Z",
+  "lastUpdated": "2026-10-22T07:49:20.910Z",
   "pendingChanges": [
+    {
+      "id": "siteSettings-1792655360910",
+      "docId": "siteSettings",
+      "section": "siteSettings",
+      "title": "Site Settings & Brand Metadata",
+      "action": "update",
+      "timestamp": "2026-10-22T07:49:20.910Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792655359184-1792655360192",
+      "docId": "e2e-test-article-1792655359184",
+      "section": "journal",
+      "title": "Test Article 1792655359184",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:49:20.192Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "test-draft-1792655354058-1792655354370",
+      "docId": "test-draft-1792655354058",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:49:14.370Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792655293553-1792655294436",
+      "docId": "e2e-test-article-1792655293553",
+      "section": "journal",
+      "title": "Test Article 1792655293553",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:48:14.436Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "test-draft-1792655283144-1792655283595",
+      "docId": "test-draft-1792655283144",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:48:03.595Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "e2e-test-article-1792655146861-1792655147826",
+      "docId": "e2e-test-article-1792655146861",
+      "section": "journal",
+      "title": "Test Article 1792655146861",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:45:47.826Z",
+      "author": "MELD Administrator"
+    },
+    {
+      "id": "test-draft-1792655123486-1792655123947",
+      "docId": "test-draft-1792655123486",
+      "section": "journal",
+      "title": "Secret Draft Article",
+      "action": "delete",
+      "timestamp": "2026-10-22T07:45:23.947Z",
+      "author": "MELD Administrator"
+    },
     {
       "id": "test-draft-1792653800157-1792653801018",
       "docId": "test-draft-1792653800157",
@@ -2397,15 +2460,6 @@
       "title": "Secret Draft Article",
       "action": "delete",
       "timestamp": "2026-10-22T07:23:21.018Z",
-      "author": "Kiiro Administrator"
-    },
-    {
-      "id": "siteSettings-1792653788990",
-      "docId": "siteSettings",
-      "section": "siteSettings",
-      "title": "Site Settings & Brand Metadata",
-      "action": "update",
-      "timestamp": "2026-10-22T07:23:08.990Z",
       "author": "Kiiro Administrator"
     },
     {

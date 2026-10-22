@@ -94,11 +94,11 @@ export function AdminSidebar({ collapsed = false, onToggleCollapse, onCloseMobil
         {!collapsed ? (
           <Link href="/admin" className="flex items-center gap-2.5" onClick={onCloseMobile}>
             <div className="w-8 h-8 rounded-lg bg-[#4F5B2A] flex items-center justify-center font-serif text-white font-bold text-sm shadow-inner">
-              K
+              M
             </div>
             <div>
               <span className="font-display text-lg font-bold tracking-wider text-[#FBF9F4] block leading-none">
-                KIIRO
+                MELD
               </span>
               <span className="text-[9px] uppercase tracking-[0.25em] text-[#D99B26] font-mono block mt-1">
                 Studio CMS
@@ -108,7 +108,7 @@ export function AdminSidebar({ collapsed = false, onToggleCollapse, onCloseMobil
         ) : (
           <Link href="/admin" className="mx-auto block" onClick={onCloseMobile}>
             <div className="w-9 h-9 rounded-lg bg-[#4F5B2A] flex items-center justify-center font-serif text-white font-bold text-base shadow-inner">
-              K
+              M
             </div>
           </Link>
         )}

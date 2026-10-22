@@ -273,7 +273,7 @@ export const FALLBACK_EVENTS: EventItem[] = [
     date: '2026-09-12',
     startTime: '10:30 AM',
     city: 'Mumbai',
-    venue: 'Kiiro Studio, Bandra West',
+    venue: 'MELD Studio, Bandra West',
     price: 2400,
     capacity: 15,
     bookingStatus: 'open',

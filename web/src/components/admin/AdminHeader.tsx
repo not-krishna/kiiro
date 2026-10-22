@@ -207,14 +207,14 @@ export function AdminHeader({ user, onToggleSidebar, sidebarCollapsed }: AdminHe
             className="flex items-center gap-2 text-right p-1 rounded-lg hover:bg-[#F3EFE6] transition-colors min-w-[40px] min-h-[40px] cursor-pointer"
           >
             <div className="w-8 h-8 rounded-full bg-[#EAE3D5] text-[#4F5B2A] border border-[#D8CEBE] flex items-center justify-center text-xs font-bold font-mono">
-              {user?.name ? user.name[0] : 'K'}
+              {user?.name ? user.name[0] : 'M'}
             </div>
             <div className="hidden lg:block text-left">
               <div className="text-xs font-semibold text-[#1C1613] leading-tight">
-                {user?.name || 'Administrator'}
+                {user?.name || 'MELD Administrator'}
               </div>
               <div className="text-[10px] text-[#7A6E65] font-mono leading-tight">
-                @{user?.username || 'kiiroadmin'}
+                @{user?.username || 'meldadmin'}
               </div>
             </div>
           </button>
@@ -225,7 +225,7 @@ export function AdminHeader({ user, onToggleSidebar, sidebarCollapsed }: AdminHe
               onClick={() => setProfileDropdownOpen(false)}
             >
               <div className="px-4 py-2 border-b border-[#F3EFE6]">
-                <div className="text-xs font-semibold text-[#1C1613]">{user?.name || 'Administrator'}</div>
+                <div className="text-xs font-semibold text-[#1C1613]">{user?.name || 'MELD Administrator'}</div>
                 <div className="text-[11px] text-[#7A6E65] font-mono">Role: Full Publisher</div>
                 {lastPublishedAt && (
                   <div className="text-[10px] text-[#9E9085] mt-1">

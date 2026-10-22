@@ -23,18 +23,35 @@ async function loadEvent(slug: string): Promise<EventItem | null> {
   } catch {
     // CMS not connected or fetch failed
   }
+
+  let event: EventItem | null = null
   const store = getContentStore()
   const foundInStore = store.events.find((e) => e.slug === slug && e.published !== false)
-  if (foundInStore) return foundInStore as unknown as EventItem
+  if (foundInStore) {
+    event = foundInStore as unknown as EventItem
+  } else {
+    event = CONFIRMED_SCHEDULED_EVENTS.find((e) => e.slug === slug) || null
+  }
 
-  return CONFIRMED_SCHEDULED_EVENTS.find((e) => e.slug === slug) || null
+  if (event && (event.slug?.toLowerCase().includes('kintsugi') || event.title?.toLowerCase().includes('kintsugi'))) {
+    event = {
+      ...event,
+      venue: 'ITC Fortune',
+      city: 'Goa',
+      location: 'ITC Fortune, Candolim, Goa',
+      address: 'Bamon Vaddo, Candolim, Bardez, North Goa, 403515 / 403516',
+      googleMapsUrl: 'https://www.google.com/maps/search/?api=1&query=ITC+Fortune,+Bamon+Vaddo,+Candolim,+Bardez,+North+Goa,+403515',
+    }
+  }
+
+  return event
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const event = await loadEvent(slug)
   return {
-    title: event ? `${event.title} | Kiiro Events` : 'Event | Kiiro',
+    title: event ? `${event.title} | MELD EXPERIENCES` : 'Event | MELD EXPERIENCES',
     description: event
       ? `Book a spot for ${event.title}${event.location ? ` in ${event.location}` : ''}.`
       : 'Weekly creative wellness session.',

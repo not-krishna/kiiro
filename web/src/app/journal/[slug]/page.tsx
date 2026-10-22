@@ -33,14 +33,14 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
 
   if (!post || post.published === false) {
     return {
-      title: 'Article Not Found | Kiiro Field Notes',
+      title: 'Article Not Found | MELD Field Notes',
       description: 'The requested journal article could not be found.',
     }
   }
 
   return {
-    title: post.seoTitle || `${post.title} | Kiiro Field Notes`,
-    description: post.seoDescription || post.standfirst || post.excerpt || 'Cultural essay and material heritage story.',
+    title: post.seoTitle || `${post.title} | MELD Field Notes`,
+    description: post.seoDescription || post.standfirst || post.excerpt || 'Cultural essay and material heritage story from MELD.',
   }
 }
 
@@ -106,7 +106,7 @@ export default async function JournalPostPage({ params }: { params: Promise<{ sl
 
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-[#968A80] uppercase tracking-wider pt-2 border-t border-[#3D332E]">
               <div>
-                By <span className="text-[#FBF9F4] font-medium">{post.author || 'Kiiro Studio'}</span>
+                By <span className="text-[#FBF9F4] font-medium">{post.author || 'MELD Studio'}</span>
               </div>
               <div>
                 Published: <span className="text-[#E8E1D5]">{displayDate}</span>

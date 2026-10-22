@@ -43,10 +43,17 @@ export function WeeklyEventCard({
   const eventTime = event.startTime
     ? `${event.startTime}${event.endTime ? ` – ${event.endTime}` : ''}`
     : '10:30 AM – 01:30 PM'
-  const locationText =
-    event.location ||
-    [event.venue, event.city].filter(Boolean).join(', ') ||
-    (event.city ? `${event.city}, India` : 'Indiranagar Craft Sanctuary, Bangalore')
+  // Enforce verified Kintsugi location from LOCATIONS(1).csv (Candolim, Goa at ITC Fortune)
+  const isKintsugi =
+    event.slug?.toLowerCase().includes('kintsugi') ||
+    event.title?.toLowerCase().includes('kintsugi') ||
+    event.workshopSlug?.toLowerCase() === 'kintsugi'
+
+  const locationText = isKintsugi
+    ? 'ITC Fortune, Candolim, Goa'
+    : event.location ||
+      [event.venue, event.city].filter(Boolean).join(', ') ||
+      (event.city ? `${event.city}, India` : 'Candolim, Goa')
   const descriptionText =
     event.shortDescription ||
     'Immersive hands-on masterclass guided by master artisans, focusing on tactile techniques, traditional materials, and living cultural heritage.'

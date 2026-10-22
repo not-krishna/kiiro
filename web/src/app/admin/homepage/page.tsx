@@ -13,7 +13,7 @@ export default function AdminHomepagePage() {
   const [loading, setLoading] = useState(true)
   const [saving, setSaving] = useState(false)
   const [data, setData] = useState<HomepageData | null>(null)
-  const [activeTab, setActiveTab] = useState<'hero' | 'stats' | 'manifesto' | 'methodology' | 'restores' | 'cta'>('hero')
+  const [activeTab, setActiveTab] = useState<'hero' | 'stats' | 'manifesto' | 'methodology' | 'cta'>('hero')
 
   useEffect(() => {
     async function loadData() {
@@ -21,7 +21,33 @@ export default function AdminHomepagePage() {
         const res = await fetch('/api/admin/content?section=homepage')
         const json = await res.json()
         if (json.success && json.data) {
-          setData(json.data)
+          const loaded = { ...json.data }
+          // Guarantee approved hero copy is always prefilled and never legacy rejected copy
+          if (
+            !loaded.heroSubheading ||
+            loaded.heroSubheading.toLowerCase().includes('put the phone down')
+          ) {
+            loaded.heroSubheading =
+              'MELD pairs master artisans with wellness facilitators to guide every session across traditional and contemporary art, alongside restorative practices. Rhythmic making with clay, thread or indigo slows the breath and settles the thoughts, so you leave softer, calmer, and a little more yourself.'
+          }
+          if (
+            !loaded.heroEyebrow ||
+            loaded.heroEyebrow.toLowerCase().includes('cultural space') ||
+            loaded.heroEyebrow.toLowerCase().includes('offline')
+          ) {
+            loaded.heroEyebrow = 'A creative wellness space for making, connecting & restoring'
+          }
+          if (!loaded.heroHeading) {
+            loaded.heroHeading = 'Root. Create. Restore.'
+          }
+          if (!loaded.heroImages || loaded.heroImages.length < 3) {
+            loaded.heroImages = [
+              '/images/other/pottery-1.png',
+              '/images/workshops/block-printing-workshop.jpg',
+              '/images/other/kintsugi-1.png',
+            ]
+          }
+          setData(loaded)
         } else {
           error('Failed to load homepage content')
         }
@@ -142,17 +168,6 @@ export default function AdminHomepagePage() {
         </button>
         <button
           type="button"
-          onClick={() => setActiveTab('restores')}
-          className={`px-4 py-2 border-b-2 transition-colors whitespace-nowrap cursor-pointer ${
-            activeTab === 'restores'
-              ? 'border-[#4F5B2A] text-[#4F5B2A] font-semibold'
-              : 'border-transparent text-[#6E635B] hover:text-[#2B231F]'
-          }`}
-        >
-          5. Why Making Restores
-        </button>
-        <button
-          type="button"
           onClick={() => setActiveTab('cta')}
           className={`px-4 py-2 border-b-2 transition-colors whitespace-nowrap cursor-pointer ${
             activeTab === 'cta'
@@ -160,7 +175,7 @@ export default function AdminHomepagePage() {
               : 'border-transparent text-[#6E635B] hover:text-[#2B231F]'
           }`}
         >
-          6. Final CTA Block
+          5. Final CTA Block
         </button>
       </div>
 
@@ -673,7 +688,7 @@ export default function AdminHomepagePage() {
 
                   <div className="md:col-span-2">
                     <label className="text-[11px] font-semibold text-[#6E635B] block mb-1">
-                      "You feel" Chip Label
+                      &ldquo;You feel&rdquo; Chip Label
                     </label>
                     <input
                       type="text"
@@ -694,78 +709,11 @@ export default function AdminHomepagePage() {
         </div>
       )}
 
-      {/* Tab 5: Why Making Restores */}
-      {activeTab === 'restores' && (
-        <div className="bg-white border border-[#D8CEBE] p-6 rounded-lg shadow-xs space-y-6">
-          <h2 className="font-display text-lg font-semibold text-[#2B231F]">
-            Why Making Restores (5 Guided Wellness Benefits)
-          </h2>
-
-          <div className="grid md:grid-cols-2 gap-4">
-            <div className="md:col-span-2 space-y-1.5">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#4F5B2A]">
-                Section Headline
-              </label>
-              <input
-                type="text"
-                value={data.whyMakingRestoresHeadline}
-                onChange={(e) => setData({ ...data, whyMakingRestoresHeadline: e.target.value })}
-                className="w-full px-3 py-2 text-sm border border-[#D8CEBE] rounded bg-[#FBF9F4]"
-              />
-            </div>
-
-            <div className="md:col-span-2 space-y-1.5">
-              <label className="text-xs uppercase tracking-wider font-semibold text-[#4F5B2A]">
-                Section Intro
-              </label>
-              <input
-                type="text"
-                value={data.whyMakingRestoresIntro}
-                onChange={(e) => setData({ ...data, whyMakingRestoresIntro: e.target.value })}
-                className="w-full px-3 py-2 text-sm border border-[#D8CEBE] rounded bg-[#FBF9F4]"
-              />
-            </div>
-          </div>
-
-          <div className="space-y-4 pt-4 border-t border-[#E8E1D5]">
-            <h3 className="text-xs uppercase tracking-wider font-semibold text-[#4F5B2A]">
-              5 Benefit Cards
-            </h3>
-            {data.whyMakingRestoresCards.map((card, idx) => (
-              <div key={idx} className="p-4 bg-[#FBF9F4] border border-[#D8CEBE] rounded-md space-y-2">
-                <input
-                  type="text"
-                  value={card.title}
-                  onChange={(e) => {
-                    const updated = [...data.whyMakingRestoresCards]
-                    updated[idx].title = e.target.value
-                    setData({ ...data, whyMakingRestoresCards: updated })
-                  }}
-                  className="w-full text-xs font-semibold px-3 py-1.5 border rounded bg-white"
-                  placeholder="Card title..."
-                />
-                <textarea
-                  rows={2}
-                  value={card.text}
-                  onChange={(e) => {
-                    const updated = [...data.whyMakingRestoresCards]
-                    updated[idx].text = e.target.value
-                    setData({ ...data, whyMakingRestoresCards: updated })
-                  }}
-                  className="w-full text-xs px-3 py-1.5 border rounded bg-white text-[#6E635B]"
-                  placeholder="Card text..."
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-      )}
-
-      {/* Tab 6: Final CTA */}
+      {/* Tab 5: Final CTA */}
       {activeTab === 'cta' && (
         <div className="bg-white border border-[#D8CEBE] p-6 rounded-lg shadow-xs space-y-6">
           <h2 className="font-display text-lg font-semibold text-[#2B231F]">
-            Final CTA Block: "Designed for Groups & Individuals"
+            Final CTA Block: &ldquo;Designed for Groups &amp; Individuals&rdquo;
           </h2>
 
           <div className="grid md:grid-cols-2 gap-4">
